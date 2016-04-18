@@ -40,6 +40,23 @@ namespace GroupProjectStart
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //start change password restrictions
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(o =>
+            {
+                // configure identity options
+                o.Password.RequireDigit = false;
+                o.Password.RequireLowercase = false;
+                o.Password.RequireUppercase = false;
+                o.Password.RequireNonLetterOrDigit = false; ;
+                o.Password.RequiredLength = 6;
+            });
+            //.AddEntityFrameworkStores<ApplicationIdentityDbContext>()
+            //.AddDefaultTokenProviders();
+
+            //end change password restrictions
+
+
             // Add framework services.
             services.AddScoped<IGenericRepository, GenericRepository>();
             services.AddEntityFramework()
