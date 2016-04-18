@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using GroupProjectStart.Models;
 using GroupProjectStart.Services;
 using Newtonsoft.Json.Serialization;
+using CoderCamps;
 
 namespace GroupProjectStart
 {
@@ -40,6 +41,7 @@ namespace GroupProjectStart
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddScoped<IGenericRepository, GenericRepository>();
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<ApplicationDbContext>(options =>
