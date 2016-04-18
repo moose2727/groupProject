@@ -24,10 +24,45 @@ namespace GroupProjectStart.Controllers {
             return this.accountService.getExternalLogins();
         }
 
-        constructor(private accountService: GroupProjectStart.Services.AccountService, private $location: ng.ILocationService) {
+        public showSignInModal(x) {
+
+            this.$uibModal.open({
+                templateUrl: '/ngApp/views/modalViews/login.html',
+                controller: GroupProjectStart.Controllers.LoginController,
+                controllerAs: 'controller',
+                resolve: {
+                    x: () => x,
+
+                },
+                size: 'lg'
+            });
+
+        }
+        public showSignUpModal(x) {
+
+            this.$uibModal.open({
+                templateUrl: '/ngApp/views/modalViews/signUp.html',
+                controller: GroupProjectStart.Controllers.RegisterController,
+                controllerAs: 'controller',
+                resolve: {
+                    x: () => x,
+
+                },
+                size: 'lg'
+            });
+
+        }
+
+
+
+        constructor(private accountService: GroupProjectStart.Services.AccountService, private $location: ng.ILocationService, private $uibModal: ng.ui.bootstrap.IModalService, private $state: ng.ui.IStateService, private $stateParams: ng.ui.IStateParamsService) {
             this.getExternalLogins().then((results) => {
                 this.externalLogins = results;
             });
+        }
+        cancel() {
+
+            this.$state.go('/');
         }
     }
 
@@ -41,12 +76,19 @@ namespace GroupProjectStart.Controllers {
         public login() {
             this.accountService.login(this.loginUser).then(() => {
                 this.$location.path('/');
+                this.ok();
             }).catch((results) => {
                 this.validationMessages = results;
             });
         }
 
-        constructor(private accountService: GroupProjectStart.Services.AccountService, private $location: ng.ILocationService) { }
+        public ok() {
+
+            this.$uibModalInstance.close();
+
+        }
+
+        constructor(private accountService: GroupProjectStart.Services.AccountService, private $location: ng.ILocationService, private $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance, private $state: ng.ui.IStateService, private x, private $stateParams: ng.ui.IStateParamsService) { }
     }
 
 
@@ -57,12 +99,19 @@ namespace GroupProjectStart.Controllers {
         public register() {
             this.accountService.register(this.registerUser).then(() => {
                 this.$location.path('/');
+                this.ok();
             }).catch((results) => {
                 this.validationMessages = results;
             });
         }
 
-        constructor(private accountService: GroupProjectStart.Services.AccountService, private $location: ng.ILocationService) { }
+        public ok() {
+
+            this.$uibModalInstance.close();
+
+        }
+
+        constructor(private accountService: GroupProjectStart.Services.AccountService, private $location: ng.ILocationService, private $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance, private x, private $state: ng.ui.IStateService, private $stateParams: ng.ui.IStateParamsService) { }
     }
 
 
