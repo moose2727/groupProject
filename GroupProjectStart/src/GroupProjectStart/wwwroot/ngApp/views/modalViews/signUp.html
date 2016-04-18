@@ -1,0 +1,51 @@
+﻿<div class="container-fluid" id="signUpModal">
+
+    <div class="container-fluid">
+        <div class="modal-dialog">
+            <div class="modal-content" id="signUpModalContent">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Register
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <fieldset>
+                        <legend>Local Registration</legend>
+                        <ul>
+                            <li ng-repeat="message in controller.validationMessages">
+                                {{message}}
+                            </li>
+                        </ul>
+
+                        <form ng-submit="controller.register()">
+                            <div>
+                                <label>Email:</label>
+                                <input ng-model="controller.registerUser.email" />
+                            </div>
+                            <div>
+                                <label>Password:</label>
+                                <input ng-model="controller.registerUser.password" />
+                            </div>
+                            <div>
+                                <label>Confirm Password:</label>
+                                <input ng-model="controller.registerUser.confirmPassword" />
+                            </div>
+                            <input type="submit" value="Register" />
+                        </form>
+
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+
+                 
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

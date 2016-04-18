@@ -5,13 +5,14 @@
     <link href="~/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <base href="/" />
 </head>
-<body ng-controller="AccountController as account">
+<body ng-controller="AccountController as controller">
     <div class="container">
         <h1>GroupProjectStart</h1>
         <div>
           <a href="/">Home</a> /
            <a href="/about">About</a>
-
+            <button class="btn btn-lg btn-success" ng-click="controller.showSignInModal()">Log In</button>
+            <button class="btn btn-lg btn-default" ng-click="controller.showSignUpModal()">Sign Up</button>
            / <a href="/secret">Secret</a> /
            <a href="/login" ng-show="!account.isLoggedIn()">Login</a>
            <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
@@ -34,13 +35,13 @@
 
     <!-- App Files-->
     <script src="~/ngapp/app.js"></script>
-    <script src="~/ngapp/controllers/controllers.js"></script>
     <script src="~/ngapp/services/services.js"></script>
-
+    <script src="~/ngapp/controllers/controllers.js"></script>
 
     <!-- Security -->
     <script src="~/ngapp/controllers/accountcontroller.js"></script>
     <script src="~/ngapp/services/accountservice.js"></script>
+ 
 
 </body>
 </html>
