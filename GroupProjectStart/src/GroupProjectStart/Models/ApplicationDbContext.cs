@@ -9,6 +9,11 @@ namespace GroupProjectStart.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Loaner> Loaners { get; set; }
+        public DbSet<Renter> Renters { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

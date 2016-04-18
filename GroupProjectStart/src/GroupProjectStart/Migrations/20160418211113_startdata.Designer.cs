@@ -8,9 +8,10 @@ using GroupProjectStart.Models;
 namespace GroupProjectStart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160418211113_startdata")]
+    partial class startdata
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -25,21 +26,10 @@ namespace GroupProjectStart.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired();
-
-                    b.Property<string>("DisplayName");
-
                     b.Property<string>("Email")
                         .HasAnnotation("MaxLength", 256);
 
                     b.Property<bool>("EmailConfirmed");
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("Image");
-
-                    b.Property<string>("LastName");
 
                     b.Property<bool>("LockoutEnabled");
 
@@ -72,10 +62,6 @@ namespace GroupProjectStart.Migrations
                     b.HasIndex("NormalizedUserName")
                         .HasAnnotation("Relational:Name", "UserNameIndex");
 
-                    b.HasAnnotation("Relational:DiscriminatorProperty", "Discriminator");
-
-                    b.HasAnnotation("Relational:DiscriminatorValue", "ApplicationUser");
-
                     b.HasAnnotation("Relational:TableName", "AspNetUsers");
                 });
 
@@ -87,8 +73,6 @@ namespace GroupProjectStart.Migrations
                     b.Property<int>("Door");
 
                     b.Property<string>("Image");
-
-                    b.Property<string>("LoanerId");
 
                     b.Property<string>("Make");
 
@@ -181,33 +165,6 @@ namespace GroupProjectStart.Migrations
                     b.HasKey("UserId", "RoleId");
 
                     b.HasAnnotation("Relational:TableName", "AspNetUserRoles");
-                });
-
-            modelBuilder.Entity("GroupProjectStart.Models.Loaner", b =>
-                {
-                    b.HasBaseType("GroupProjectStart.Models.ApplicationUser");
-
-                    b.Property<bool>("HasTheftInsurance");
-
-                    b.HasAnnotation("Relational:DiscriminatorValue", "Loaner");
-                });
-
-            modelBuilder.Entity("GroupProjectStart.Models.Renter", b =>
-                {
-                    b.HasBaseType("GroupProjectStart.Models.ApplicationUser");
-
-                    b.Property<bool>("HasDamageInsurance");
-
-                    b.Property<bool>("HasLicense");
-
-                    b.HasAnnotation("Relational:DiscriminatorValue", "Renter");
-                });
-
-            modelBuilder.Entity("GroupProjectStart.Models.Car", b =>
-                {
-                    b.HasOne("GroupProjectStart.Models.Loaner")
-                        .WithMany()
-                        .HasForeignKey("LoanerId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>
