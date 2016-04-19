@@ -1,3 +1,4 @@
+using GroupProjectStart.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -23,5 +24,32 @@ namespace GroupProjectStart.ViewModels.Account
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string DisplayName { get; set; }
+
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        public string Image { get; set; }
+
+        public bool IsRenter { get; set; }
+
+        public bool IsLoaner { get; set; }
+
+
+        //Loaner properties
+        public ICollection<Car> CarsToLoan { get; set; }
+
+        public bool HasTheftInsurance { get; set; }
+
+
+        //Renter properties
+        public bool HasDamageInsurance { get; set; }
+
+        public bool HasLicense { get; set; }
     }
 }
