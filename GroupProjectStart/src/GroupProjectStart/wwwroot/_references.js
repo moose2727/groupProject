@@ -2,6 +2,7 @@
 /// <reference path="../_references.js" />
 /// <reference path="../all.js" />
 /// <reference path="../gulpfile.js" />
+/// <reference path="all.js" />
 /// <reference path="lib/angular/angular.js" />
 /// <reference path="lib/angular-animate/angular-animate.js" />
 /// <reference path="lib/angular-bootstrap/ui-bootstrap-tpls.js" />
