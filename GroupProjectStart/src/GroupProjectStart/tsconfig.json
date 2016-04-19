@@ -1,7 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "outFile": "all.js",
+    //"outFile": "all.js",
     "noImplicitAny": false,
     "noEmitOnError": true,
     "removeComments": false,

@@ -6,16 +6,15 @@
 </head>
 <body>
     <div>
-        <form>
-            Make: <input type="text" name="make" /><br />
-            Model: <input type="text" name="model" /><br />
-            Year: <input type="text" name="year" /><br />
-            Price Per Day: <input type="text" name="price" /><br />
-            Number of Doors: <input type="text" name="doors" /><br />
-            Image of Car: <input type="text" name="image" /><br /> <br />
+ 
+            Make: {{controller.carDetail.make}}<br />
+            Model: {{controller.carDetail.model}}<br />
+            Year: {{controller.carDetail.year}}<br />
+            Price Per Day: {{controller.carDetail.price}}<br />
+            Number of Doors: {{controller.carDetail.doors}}<br />
+            Image of Car: <img src="{{controller.carDetail.image}}" /><br /> <br />
 
-            input type="submit" value="Submit"
-        </form>
+   
     </div>
 </body>
 </html>
