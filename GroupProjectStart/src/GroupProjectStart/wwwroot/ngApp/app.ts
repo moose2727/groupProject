@@ -43,6 +43,12 @@ namespace GroupProjectStart {
                 controller: GroupProjectStart.Controllers.AboutController,
                 controllerAs: 'controller'
             })
+            .state('edit', {
+                url: '/edit/:id',
+                templateUrl: '/ngApp/views/carEdit.html',
+                controller: GroupProjectStart.Controllers.CarsEditController,
+                controllerAs: 'controller'
+            })
             .state('notFound', {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'
