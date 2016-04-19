@@ -14,6 +14,7 @@
 /// <reference path="ngapp/app.js" />
 /// <reference path="ngapp/controllers/accountcontroller.js" />
 /// <reference path="ngapp/controllers/carcontrollers.js" />
+/// <reference path="ngapp/controllers/carseditcontroller.js" />
 /// <reference path="ngapp/controllers/controllers.js" />
 /// <reference path="ngapp/services/accountservice.js" />
 /// <reference path="ngapp/services/carservices.js" />

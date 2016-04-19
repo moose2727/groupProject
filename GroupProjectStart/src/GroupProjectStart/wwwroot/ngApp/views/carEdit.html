@@ -1,0 +1,51 @@
+﻿<h1>Edit Car Information</h1>
+
+<!-- ng-submit allows you to add event handler -->
+<form ng-submit="controller.editCar()">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            
+            <!-- input field for Make -->
+            <div class="form-group">
+                <label>Make</label>
+                <input type="text" ng-model="controller.carToEdit.make" class="form-control" />
+            </div>
+
+            <!-- input field for Model -->
+            <div class="form-group">
+                <label>Model</label>
+                <input type="text" ng-model="controller.carToEdit.model" class="form-control" />
+            </div>
+
+            <!-- input field for Year -->
+            <div class="form-group">
+                <label>Year</label>
+                <input type="text" ng-model="controller.carToEdit.year" class="form-control" />
+            </div>
+
+            <!-- input field for Price -->
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" ng-model="controller.carToEdit.price" class="form-control" />
+            </div>
+
+            <!-- input field for Image -->
+            <!--<div class="form-group">
+                <label>Style</label>
+                <input type="text" ng-model="controller.carToEdit.Image" class="form-control" />
+            </div>-->
+
+            <!-- input field for Door -->
+            <div class="form-group">
+                <label>Door</label>
+                <input type="text" ng-model="controller.carToEdit.Door" class="form-control" />
+            </div>
+
+            <!-- submit button -->
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+                <input type="button" value="Cancel" ng-click="controller.cancel()" class="btn btn-warning" />
+            </div>
+        </div>
+    </div>
+</form>
