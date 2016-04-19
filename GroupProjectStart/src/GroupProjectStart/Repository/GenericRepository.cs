@@ -6,9 +6,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace GroupProjectStart.Repository
+namespace CoderCamps
 {
-    public class GenericRepository
+    public class GenericRepository : IGenericRepository
     {
         private ApplicationDbContext _db;
 
