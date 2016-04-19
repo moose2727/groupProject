@@ -16,6 +16,14 @@
         getCar(id) {
             return this.carResource.get({ id: id });
         }
+
+        saveCar(carToSave) {
+            return this.carResource.save(carToSave).$promise;
+        }
+
+        deleteCar(id) {
+            return this.carResource.delete({ id: id }).$promise;
+        }
     } 
     angular.module("GroupProjectStart").service('carService', CarService);
 }
