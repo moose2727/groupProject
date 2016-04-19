@@ -20,8 +20,9 @@
         }
 
         saveCar() {
-            this.carService.saveCar(this.carToAdd).then(() =>
-                this.$state.go('cars'));
+            this.carService.saveCar(this.carToAdd).then(() => {
+                this.$state.go('cars');
+            });
         }
 
         cancel() {
