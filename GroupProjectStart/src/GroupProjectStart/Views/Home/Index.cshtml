@@ -3,6 +3,7 @@
     <title>GroupProjectStart</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
     <base href="/" />
 </head>
 <body ng-controller="AccountController as account">
@@ -11,7 +12,8 @@
         <div>
           <a href="/">Home</a> /
            <a href="/about">About</a>
-
+            <button class="btn btn-default" ng-click="account.showSignInModal()">Login</button>
+            <button class="btn btn-default" ng-click="account.showSignUpModal()">Sign Up</button>
            / <a href="/secret">Secret</a> /
            <a href="/login" ng-show="!account.isLoggedIn()">Login</a>
            <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
