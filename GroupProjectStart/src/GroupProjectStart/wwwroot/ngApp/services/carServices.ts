@@ -10,7 +10,12 @@
         }
         getCars() {
             return this.carResource.query()
-        }  
+        }
+
+        // Method that will get a single car
+        getCar(id) {
+            return this.carResource.get({ id: id });
+        }
     } 
     angular.module("GroupProjectStart").service('carService', CarService);
 }
