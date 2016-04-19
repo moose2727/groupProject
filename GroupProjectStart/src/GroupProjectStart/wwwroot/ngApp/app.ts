@@ -36,7 +36,7 @@ namespace GroupProjectStart {
                 templateUrl: '/ngApp/views/externalRegister.html',
                 controller: GroupProjectStart.Controllers.ExternalRegisterController,
                 controllerAs: 'controller'
-            }) 
+            })
             .state('about', {
                 url: '/about',
                 templateUrl: '/ngApp/views/about.html',
@@ -47,6 +47,12 @@ namespace GroupProjectStart {
                 url: '/edit/:id',
                 templateUrl: '/ngApp/views/carEdit.html',
                 controller: GroupProjectStart.Controllers.CarsEditController,
+                controllerAs: 'controller'
+            })
+            .state('cars', {
+                url: '/cars',
+                templateUrl: '/ngApp/views/car.html',
+                controller: GroupProjectStart.Controllers.CarsController,
                 controllerAs: 'controller'
             })
             .state('notFound', {
