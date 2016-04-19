@@ -59,6 +59,7 @@ namespace GroupProjectStart
 
             // Add framework services.
             services.AddScoped<IGenericRepository, GenericRepository>();
+            services.AddScoped<ICarService, CarService>();
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<ApplicationDbContext>(options =>
