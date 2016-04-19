@@ -14,6 +14,9 @@ namespace GroupProjectStart.Models
         public decimal Price { get; set; }
         public string Image { get; set; }
         public int Door { get; set; }
+        public int UserId { get; set; }
+        public Loaner Loaner { get; set; }
+
     }
 }
 //id, make, model, year, price, image, doors

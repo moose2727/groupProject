@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using GroupProjectStart.Models;
+using GroupProjectStart.Services;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,31 +13,40 @@ namespace GroupProjectStart.API
     [Route("api/[controller]")]
     public class CarsController : Controller
     {
-        private ApplicationDbContext _db;
-        public CarsController(ApplicationDbContext db)
+        ICarService _repo;
+
+        public CarsController(ICarService repo)
         {
-            this._db = db;
+            this._repo = repo;
         }
 
         // GET: api/values
         [HttpGet]
-        public IEnumerable<Car> Get()
+        public IActionResult Get()
         {
-            return _db.Cars.ToList();
+            return Ok(_repo.GetCars());
         }
 
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            return Ok(_repo.GetCar(id));
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]Car car)
         {
+            if(car.Id == 0)
+            {
+                _repo.AddCar(car);
+            } else
+            {
+                _repo.UpdateCar(car);
+            }
+            return Ok(car);
         }
 
         // PUT api/values/5
@@ -49,6 +59,7 @@ namespace GroupProjectStart.API
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _repo.DeleteCar(id);
         }
     }
 }

@@ -36,11 +36,41 @@ namespace GroupProjectStart {
                 templateUrl: '/ngApp/views/externalRegister.html',
                 controller: GroupProjectStart.Controllers.ExternalRegisterController,
                 controllerAs: 'controller'
-            }) 
+            })
             .state('about', {
                 url: '/about',
                 templateUrl: '/ngApp/views/about.html',
                 controller: GroupProjectStart.Controllers.AboutController,
+                controllerAs: 'controller'
+            })
+            .state('edit', {
+                url: '/edit/:id',
+                templateUrl: '/ngApp/views/carEdit.html',
+                controller: GroupProjectStart.Controllers.CarsEditController,
+                controllerAs: 'controller'
+            })
+            .state('cars', {
+                url: '/cars',
+                templateUrl: '/ngApp/views/car.html',
+                controller: GroupProjectStart.Controllers.CarsController,
+                controllerAs: 'controller'
+            })
+            .state('carDetail', {
+                url: '/car/:id',
+                templateUrl: '/ngApp/views/carForm.html',
+                controller: GroupProjectStart.Controllers.CarDetailController,
+                controllerAs: 'controller'
+            })
+            .state('carAdd', {
+                url: '/carAdd',
+                templateUrl: '/ngApp/views/carAdd.html',
+                controller: GroupProjectStart.Controllers.CarFormController,
+                controllerAs: 'controller'
+            })
+            .state('carDelete', {
+                url: '/deleteCar/:id',
+                templateUrl: '/ngApp/views/deleteCar.html',
+                controller: GroupProjectStart.Controllers.DeleteCarController,
                 controllerAs: 'controller'
             })
             .state('notFound', {
