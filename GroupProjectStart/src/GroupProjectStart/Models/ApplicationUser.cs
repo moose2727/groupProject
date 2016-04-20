@@ -13,5 +13,8 @@ namespace GroupProjectStart.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Image { get; set; }
+        public bool IsLoaner { get; set; }
+        public bool HasDamageInsurance { get; set; }
+        public bool HasLicense { get; set; }
     }
 }

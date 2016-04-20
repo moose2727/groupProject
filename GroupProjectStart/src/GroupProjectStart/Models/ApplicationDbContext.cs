@@ -11,7 +11,9 @@ namespace GroupProjectStart.Models
     {
         public DbSet<Car> Cars { get; set; }
         public DbSet<Loaner> Loaners { get; set; }
-        public DbSet<Renter> Renters { get; set; }
+        //public DbSet<Renter> Renters { get; set; }
+        //public DbSet<RenterLoaner> RenterLoaners { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder builder)

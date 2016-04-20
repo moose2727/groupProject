@@ -16,6 +16,8 @@ namespace GroupProjectStart.Models
         public int Door { get; set; }
         public int UserId { get; set; }
         public Loaner Loaner { get; set; }
+        public bool IsActive { get; set; }
+
 
     }
 }

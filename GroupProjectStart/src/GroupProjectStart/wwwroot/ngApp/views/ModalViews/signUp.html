@@ -30,9 +30,26 @@
                                 <label>Password:</label>
                                 <input ng-model="controller.registerUser.password" />
                             </div>
+                            
                             <div>
                                 <label>Confirm Password:</label>
                                 <input ng-model="controller.registerUser.confirmPassword" />
+                            </div>
+                            <div>
+                                <label>User Name:</label>
+                                <input type="text" ng-model="controller.registerUser.displayName" />
+                            </div>
+                            <div>
+                                <label>First Name:</label>
+                                <input type="text" ng-model="controller.registerUser.firstName" />
+                            </div>
+                            <div>
+                                <label>Last Name:</label>
+                                <input type="text" ng-model="controller.registerUser.lastName" />
+                            </div>
+                            <div>
+                                <label>Check this box if you want to rent out your car</label>
+                                <input type="checkbox" ng-model="controller.registerUser.isLoaner" value="true"/>
                             </div>
                             <input type="submit" value="Register" />
                         </form>
