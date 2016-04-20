@@ -1,5 +1,6 @@
 ﻿using CoderCamps;
 using GroupProjectStart.Models;
+using GroupProjectStart.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,25 @@ namespace GroupProjectStart.Services
             return users;   
         }
 
-        public List<Loaner> getLoaners()
-        {
-            var loaners = _repo.Query<Loaner>().Include(l => l.CarsToLoan).ToList();
-            return loaners;
-        }
+        //public List<LoanerViewModel> getLoaners()
+        //{
+        //    var loaners = _repo.Query<Loaner>().Include(l => l.CarsToLoan).Select(
+        //        l => new LoanerViewModel
+        //        {
+        //            //DisplayName = l.DisplayName,
+        //            //FirstName = l.FirstName,
+        //            //HasDamageInsurance = l.HasDamageInsurance,
+        //            //LastName = l.LastName,
+        //            //HasLicense = l.HasLicense,
+        //            ////HasTheftInsurance = l.HasTheftInsurance,
+        //            //Email = l.Email,
+        //            CarsToLoan = l.CarsToLoan,
+        //            //IsLoaner = l.IsLoaner,
+        //            //Id = l.Id
+        //        }).ToList();
+            
+        //    return loaners;
+        //}
 
         public ApplicationUser getUser(string id)
         {
@@ -33,8 +48,8 @@ namespace GroupProjectStart.Services
 
         }
 
-        public Loaner getLoaner(string id) {
-            return _repo.Query<Loaner>().Where(l => l.Id == id).Include(l => l.CarsToLoan).FirstOrDefault();
-        }
+        //public Loaner getLoaner(string id) {
+        //    return _repo.Query<Loaner>().Where(l => l.Id == id).Include(l => l.CarsToLoan).FirstOrDefault();
+        //}
     }
 }

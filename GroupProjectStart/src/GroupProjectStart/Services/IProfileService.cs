@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GroupProjectStart.Models;
+using GroupProjectStart.ViewModels;
 
 namespace GroupProjectStart.Services
 {
@@ -7,7 +8,7 @@ namespace GroupProjectStart.Services
     {
         ApplicationUser getUser(string id);
         List<ApplicationUser> getUsers();
-        List<Loaner> getLoaners();
-        List<Loaner> GetSpecifics();
+        //List<LoanerViewModel> getLoaners();
+        //List<Loaner> GetSpecifics();
     }
 }
