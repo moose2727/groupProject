@@ -77,7 +77,8 @@ namespace GroupProjectStart
             services.AddTransient<ISmsSender, AuthMessageSender>();
 
             // convert Pascal to Camel
-            services.AddMvc().AddJsonOptions(options => {
+            services.AddMvc().AddJsonOptions(options =>
+            {
                 options.SerializerSettings.ContractResolver =
                     new CamelCasePropertyNamesContractResolver();
             });
@@ -87,7 +88,9 @@ namespace GroupProjectStart
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("AdminOnly", policy => policy.RequireClaim("IsAdmin"));
+                options.AddPolicy("Loaner", policy => policy.RequireClaim("IsLoaner"));
             });
+
 
 
         }

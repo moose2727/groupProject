@@ -169,6 +169,8 @@ namespace GroupProjectStart.Models
                 };
                 await userManager.CreateAsync(Caleb, "Secret123!");
 
+                await userManager.AddClaimAsync(Caleb, new Claim("IsLoaner", "true"));
+
             }
 
             var John = await userManager.FindByNameAsync("John@Something.com");
