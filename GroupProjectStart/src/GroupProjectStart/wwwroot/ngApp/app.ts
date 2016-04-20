@@ -43,6 +43,13 @@ namespace GroupProjectStart {
                 controller: GroupProjectStart.Controllers.AboutController,
                 controllerAs: 'controller'
             })
+            .state('contact', {
+                url: '/contact',
+                templateUrl: '/ngApp/views/contact.html',
+                controller: GroupProjectStart.Controllers.ContactController,
+                controllerAs: 'controller'
+            })
+
             .state('edit', {
                 url: '/edit/:id',
                 templateUrl: '/ngApp/views/carEdit.html',
