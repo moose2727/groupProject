@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using GroupProjectStart.Services;
 using GroupProjectStart.Models;
+using GroupProjectStart.ViewModels;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -25,12 +26,12 @@ namespace GroupProjectStart.API
             return _repo.getUsers();
         }
 
-        [HttpGet("GetLoaners")]
-        //[Route("GetLoaners")]
-        public IEnumerable<Loaner> GetLoaners()
-        {
-            return _repo.getLoaners();
-        }
+        //[HttpGet("GetLoaners")]
+        ////[Route("GetLoaners")]
+        //public IEnumerable<LoanerViewModel> GetLoaners()
+        //{
+        //    return _repo.getLoaners();
+        //}
 
         //[HttpGet]
         //[Route("isLoaner")]
