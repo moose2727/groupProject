@@ -25,6 +25,20 @@ namespace GroupProjectStart.API
             return _repo.getUsers();
         }
 
+        [HttpGet("GetLoaners")]
+        //[Route("GetLoaners")]
+        public IEnumerable<Loaner> GetLoaners()
+        {
+            return _repo.getLoaners();
+        }
+
+        [HttpGet]
+        [Route("isLoaner")]
+        public IEnumerable<Loaner> GetIsLoaners()
+        {
+            return _repo.GetSpecifics();
+        }
+
         // GET api/values/5
         [HttpGet("{id}")]
         public IActionResult Get(string id)

@@ -32,5 +32,11 @@ namespace GroupProjectStart.Services
             return _repo.Query<ApplicationUser>().Where(u => u.Id == id).FirstOrDefault();
 
         }
+
+        public List<Loaner> GetSpecifics()
+        {
+            var someLoaners = _repo.Query<Loaner>().Where(l => l.IsLoaner == true).Include(l => l.CarsToLoan).ToList();
+            return someLoaners;
+        }
     }
 }

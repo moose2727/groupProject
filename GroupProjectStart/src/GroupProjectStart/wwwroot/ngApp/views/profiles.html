@@ -14,5 +14,8 @@
                 <td>{{user.email}}</td>
             </tr>
         </table>
+        <ul ng-repeat="loaner in controller.loaners">
+            <li>{{loaner.userName}}</li>
+        </ul>
     </div>
 </div>
