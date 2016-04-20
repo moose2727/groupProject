@@ -33,10 +33,8 @@ namespace GroupProjectStart.Services
 
         }
 
-        public List<Loaner> GetSpecifics()
-        {
-            var someLoaners = _repo.Query<Loaner>().Where(l => l.IsLoaner == true).Include(l => l.CarsToLoan).ToList();
-            return someLoaners;
+        public Loaner getLoaner(string id) {
+            return _repo.Query<Loaner>().Where(l => l.Id == id).Include(l => l.CarsToLoan).FirstOrDefault();
         }
     }
 }
