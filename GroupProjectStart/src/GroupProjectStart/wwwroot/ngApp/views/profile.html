@@ -3,7 +3,7 @@
         <h3>{{controller.user.displayName}}</h3>
         <h3>{{controller.user.firstName}}</h3>
         <h3>{{controller.user.lastName}}</h3>
-        <h3>{{controller.user.email}}</h3>
+        <h3 ng-show="account.getClaim('isLoaner')">{{controller.user.email}}</h3>
         
     </div>
 </div>

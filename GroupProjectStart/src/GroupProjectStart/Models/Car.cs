@@ -15,7 +15,7 @@ namespace GroupProjectStart.Models
         public string Image { get; set; }
         public int Door { get; set; }
         public int UserId { get; set; }
-        public Loaner Loaner { get; set; }
+        //public Loaner Loaner { get; set; }
         public bool IsActive { get; set; }
 
 

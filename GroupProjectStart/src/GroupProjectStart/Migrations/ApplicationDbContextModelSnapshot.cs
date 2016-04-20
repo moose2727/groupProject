@@ -25,9 +25,6 @@ namespace GroupProjectStart.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired();
-
                     b.Property<string>("DisplayName");
 
                     b.Property<string>("Email")
@@ -40,6 +37,8 @@ namespace GroupProjectStart.Migrations
                     b.Property<bool>("HasDamageInsurance");
 
                     b.Property<bool>("HasLicense");
+
+                    b.Property<bool>("HasTheftInsurance");
 
                     b.Property<string>("Image");
 
@@ -78,10 +77,6 @@ namespace GroupProjectStart.Migrations
                     b.HasIndex("NormalizedUserName")
                         .HasAnnotation("Relational:Name", "UserNameIndex");
 
-                    b.HasAnnotation("Relational:DiscriminatorProperty", "Discriminator");
-
-                    b.HasAnnotation("Relational:DiscriminatorValue", "ApplicationUser");
-
                     b.HasAnnotation("Relational:TableName", "AspNetUsers");
                 });
 
@@ -90,13 +85,13 @@ namespace GroupProjectStart.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("ApplicationUserId");
+
                     b.Property<int>("Door");
 
                     b.Property<string>("Image");
 
                     b.Property<bool>("IsActive");
-
-                    b.Property<string>("LoanerId");
 
                     b.Property<string>("Make");
 
@@ -193,20 +188,11 @@ namespace GroupProjectStart.Migrations
                     b.HasAnnotation("Relational:TableName", "AspNetUserRoles");
                 });
 
-            modelBuilder.Entity("GroupProjectStart.Models.Loaner", b =>
-                {
-                    b.HasBaseType("GroupProjectStart.Models.ApplicationUser");
-
-                    b.Property<bool>("HasTheftInsurance");
-
-                    b.HasAnnotation("Relational:DiscriminatorValue", "Loaner");
-                });
-
             modelBuilder.Entity("GroupProjectStart.Models.Car", b =>
                 {
-                    b.HasOne("GroupProjectStart.Models.Loaner")
+                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("LoanerId");
+                        .HasForeignKey("ApplicationUserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>

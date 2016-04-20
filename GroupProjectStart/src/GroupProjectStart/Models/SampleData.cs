@@ -14,6 +14,8 @@ namespace GroupProjectStart.Models
 
     public class SampleData
     {
+
+
         public async static Task Initialize(IServiceProvider serviceProvider)
         {
             var db = serviceProvider.GetService<ApplicationDbContext>();
@@ -76,7 +78,10 @@ namespace GroupProjectStart.Models
                 stephen = new ApplicationUser
                 {
                     UserName = "Stephen.Walther@CoderCamps.com",
-                    Email = "Stephen.Walther@CoderCamps.com"
+                    Email = "Stephen.Walther@CoderCamps.com",
+                    DisplayName ="SWalther",
+                    FirstName = "Stephen",
+                    LastName = "Walther"
                 };
                 await userManager.CreateAsync(stephen, "Secret123!");
 
@@ -92,7 +97,10 @@ namespace GroupProjectStart.Models
                 mike = new ApplicationUser
                 {
                     UserName = "Mike@CoderCamps.com",
-                    Email = "Mike@CoderCamps.com"
+                    Email = "Mike@CoderCamps.com",
+                    DisplayName = "MM",
+                    FirstName = "Mike",
+                    LastName = "MIller"
                 };
                 await userManager.CreateAsync(mike, "Secret123!");
             }
@@ -138,7 +146,7 @@ namespace GroupProjectStart.Models
             if (Caleb == null)
             {
                 // create user
-                Caleb = new Loaner
+                Caleb = new ApplicationUser
                 {
                     UserName = "Caleb@Something.com",
                     Email = "Caleb@Something.com",
@@ -163,13 +171,15 @@ namespace GroupProjectStart.Models
                 };
                 await userManager.CreateAsync(Caleb, "Secret123!");
 
+                await userManager.AddClaimAsync(Caleb, new Claim("IsLoaner", "true"));
+
             }
 
             var John = await userManager.FindByNameAsync("John@Something.com");
             if (John == null)
             {
                 // create user
-                John = new Loaner
+                John = new ApplicationUser
                 {
                     UserName = "John@Something.com",
                     Email = "John@Something.com",
