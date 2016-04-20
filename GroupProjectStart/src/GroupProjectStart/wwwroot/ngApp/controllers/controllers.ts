@@ -14,6 +14,12 @@ namespace GroupProjectStart.Controllers {
             });
         }
     }
+    export class ContactController {
+        public contact;
+
+      
+    }
+
 
 
     export class AboutController {

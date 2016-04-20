@@ -43,6 +43,13 @@ namespace GroupProjectStart {
                 controller: GroupProjectStart.Controllers.AboutController,
                 controllerAs: 'controller'
             })
+            .state('contact', {
+                url: '/contact',
+                templateUrl: '/ngApp/views/contact.html',
+                controller: GroupProjectStart.Controllers.ContactController,
+                controllerAs: 'controller'
+            })
+
             .state('edit', {
                 url: '/edit/:id',
                 templateUrl: '/ngApp/views/carEdit.html',
@@ -83,6 +90,12 @@ namespace GroupProjectStart {
                 url: '/profile/:id',
                 templateUrl: 'ngApp/views/profile.html',
                 controller: GroupProjectStart.Controllers.ProfileController,
+                controllerAs: 'controller'
+            })
+            .state('ratings', {
+                url: '/ratings',
+                templateUrl: 'ngApp/views/ratings.html',
+                controller: GroupProjectStart.Controllers.RatingController,
                 controllerAs: 'controller'
             })
             .state('notFound', {
