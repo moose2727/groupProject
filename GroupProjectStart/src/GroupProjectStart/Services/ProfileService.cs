@@ -32,5 +32,9 @@ namespace GroupProjectStart.Services
             return _repo.Query<ApplicationUser>().Where(u => u.Id == id).FirstOrDefault();
 
         }
+
+        public Loaner getLoaner(string id) {
+            return _repo.Query<Loaner>().Where(l => l.Id == id).Include(l => l.CarsToLoan).FirstOrDefault();
+        }
     }
 }
