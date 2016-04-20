@@ -36,7 +36,7 @@ namespace GroupProjectStart {
                 templateUrl: '/ngApp/views/externalRegister.html',
                 controller: GroupProjectStart.Controllers.ExternalRegisterController,
                 controllerAs: 'controller'
-            }) 
+            })
             .state('about', {
                 url: '/about',
                 templateUrl: '/ngApp/views/about.html',
@@ -54,6 +54,48 @@ namespace GroupProjectStart {
                 url: '/edit/:id',
                 templateUrl: '/ngApp/views/carEdit.html',
                 controller: GroupProjectStart.Controllers.CarsEditController,
+                controllerAs: 'controller'
+            })
+            .state('cars', {
+                url: '/cars',
+                templateUrl: '/ngApp/views/car.html',
+                controller: GroupProjectStart.Controllers.CarsController,
+                controllerAs: 'controller'
+            })
+            .state('carDetail', {
+                url: '/car/:id',
+                templateUrl: '/ngApp/views/carForm.html',
+                controller: GroupProjectStart.Controllers.CarDetailController,
+                controllerAs: 'controller'
+            })
+            .state('carAdd', {
+                url: '/carAdd',
+                templateUrl: '/ngApp/views/carAdd.html',
+                controller: GroupProjectStart.Controllers.CarFormController,
+                controllerAs: 'controller'
+            })
+            .state('carDelete', {
+                url: '/deleteCar/:id',
+                templateUrl: '/ngApp/views/deleteCar.html',
+                controller: GroupProjectStart.Controllers.DeleteCarController,
+                controllerAs: 'controller'
+            })
+            .state('profiles', {
+                url: '/profiles',
+                templateUrl: 'ngApp/views/profiles.html',
+                controller: GroupProjectStart.Controllers.ProfilesController,
+                controllerAs: 'controller'
+            })
+            .state('profile', {
+                url: '/profile/:id',
+                templateUrl: 'ngApp/views/profile.html',
+                controller: GroupProjectStart.Controllers.ProfileController,
+                controllerAs: 'controller'
+            })
+            .state('ratings', {
+                url: '/ratings',
+                templateUrl: 'ngApp/views/ratings.html',
+                controller: GroupProjectStart.Controllers.RatingController,
                 controllerAs: 'controller'
             })
             .state('notFound', {

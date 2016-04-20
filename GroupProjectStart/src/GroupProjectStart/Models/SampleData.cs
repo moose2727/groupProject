@@ -101,7 +101,7 @@ namespace GroupProjectStart.Models
             if (scott == null)
             {
                 // create user
-                scott = new Renter
+                scott = new ApplicationUser
                 {
                     UserName = "Scott@Something.com",
                     Email = "Scott@Something.com",
@@ -119,7 +119,7 @@ namespace GroupProjectStart.Models
             if (ryan == null)
             {
                 // create user
-                ryan = new Renter
+                ryan = new ApplicationUser
                 {
                     UserName = "Ryan@Something.com",
                     Email = "Ryan@Something.com",
@@ -127,7 +127,8 @@ namespace GroupProjectStart.Models
                     LastName = "Richardson",
                     DisplayName = "RyanR27",
                     HasLicense = true,
-                    HasDamageInsurance = false
+                    HasDamageInsurance = false,
+                    
                 };
                 await userManager.CreateAsync(ryan, "Secret123!");
 
@@ -145,6 +146,9 @@ namespace GroupProjectStart.Models
                     LastName = "Schwarzmiller",
                     DisplayName = "CSchwarz",
                     HasTheftInsurance = true,
+                    HasDamageInsurance = true,
+                    HasLicense = true,
+                    IsLoaner = true,
                     CarsToLoan = new List<Car>
                     {
                         new Car {
@@ -173,6 +177,9 @@ namespace GroupProjectStart.Models
                     LastName = "Doe",
                     DisplayName = "JDoe",
                     HasTheftInsurance = false,
+                    HasDamageInsurance = false,
+                    HasLicense = false,
+                    IsLoaner = false,
                     CarsToLoan = new List<Car>
                     {
                         new Car

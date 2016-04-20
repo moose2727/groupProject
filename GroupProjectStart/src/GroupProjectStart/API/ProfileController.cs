@@ -3,51 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
-using GroupProjectStart.Models;
 using GroupProjectStart.Services;
+using GroupProjectStart.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-//hi cory
 
 namespace GroupProjectStart.API
 {
     [Route("api/[controller]")]
-    public class CarsController : Controller
+    public class ProfileController : Controller
     {
-        ICarService _repo;
-
-        public CarsController(ICarService repo)
+        IProfileService _repo;
+        public ProfileController(IProfileService repo)
         {
             this._repo = repo;
         }
-
         // GET: api/values
         [HttpGet]
-        public IActionResult Get()
+        public IEnumerable<ApplicationUser> Get()
         {
-            return Ok(_repo.GetCars());
+            return _repo.getUsers();
         }
 
+        [HttpGet("GetLoaners")]
+        //[Route("GetLoaners")]
+        public IEnumerable<Loaner> GetLoaners()
+        {
+            var results = _repo.getLoaners().ToList();
+            return results;        }
+
+        
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(string id)
         {
-            return Ok(_repo.GetCar(id));
+            return Ok(_repo.getUser(id));
         }
 
         // POST api/values
         [HttpPost]
-        public IActionResult Post([FromBody]Car car)
+        public void Post([FromBody]string value)
         {
-            if(car.Id == 0)
-            {
-                _repo.AddCar(car);
-            } else
-            {
-                _repo.UpdateCar(car);
-            }
-            return Ok(car);
         }
 
         // PUT api/values/5
@@ -60,7 +57,6 @@ namespace GroupProjectStart.API
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _repo.DeleteCar(id);
         }
     }
 }

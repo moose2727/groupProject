@@ -1,13 +1,13 @@
-﻿using Microsoft.Data.Entity;
-using GroupProjectStart.Models;
+﻿using GroupProjectStart.Models;
+using Microsoft.Data.Entity;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-
+using System.Threading.Tasks;
 
 namespace CoderCamps
 {
-
     public class GenericRepository : IGenericRepository
     {
         private ApplicationDbContext _db;
@@ -15,8 +15,6 @@ namespace CoderCamps
         public GenericRepository(ApplicationDbContext db)
         {
             this._db = db;
-            // a change in the code
-            //ADD a change in the code for branch 1
         }
 
         /// <summary>
@@ -81,8 +79,6 @@ namespace CoderCamps
             _db.Dispose();
         }
     }
-
-
     /// <summary>
     /// This class promotes the Include() method from the entity framework so it
     /// can be used at a higher layer. You might not want to reference in the Entity Framework
@@ -106,5 +102,4 @@ namespace CoderCamps
         IQueryable<T> SqlQuery<T>(string sql, params object[] parameters) where T : class;
         void Update<T>(T entityToUpdate) where T : class;
     }
-
 }

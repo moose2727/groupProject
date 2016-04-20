@@ -37,7 +37,13 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<string>("FirstName");
 
+                    b.Property<bool>("HasDamageInsurance");
+
+                    b.Property<bool>("HasLicense");
+
                     b.Property<string>("Image");
+
+                    b.Property<bool>("IsLoaner");
 
                     b.Property<string>("LastName");
 
@@ -88,6 +94,8 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<string>("Image");
 
+                    b.Property<bool>("IsActive");
+
                     b.Property<string>("LoanerId");
 
                     b.Property<string>("Make");
@@ -95,6 +103,8 @@ namespace GroupProjectStart.Migrations
                     b.Property<string>("Model");
 
                     b.Property<decimal>("Price");
+
+                    b.Property<int>("UserId");
 
                     b.Property<int>("Year");
 
@@ -190,17 +200,6 @@ namespace GroupProjectStart.Migrations
                     b.Property<bool>("HasTheftInsurance");
 
                     b.HasAnnotation("Relational:DiscriminatorValue", "Loaner");
-                });
-
-            modelBuilder.Entity("GroupProjectStart.Models.Renter", b =>
-                {
-                    b.HasBaseType("GroupProjectStart.Models.ApplicationUser");
-
-                    b.Property<bool>("HasDamageInsurance");
-
-                    b.Property<bool>("HasLicense");
-
-                    b.HasAnnotation("Relational:DiscriminatorValue", "Renter");
                 });
 
             modelBuilder.Entity("GroupProjectStart.Models.Car", b =>

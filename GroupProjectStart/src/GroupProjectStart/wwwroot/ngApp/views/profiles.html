@@ -1,0 +1,21 @@
+﻿<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>User Name</th>
+                <th>Full Name</th>
+                <th>Email</th>
+            </tr>
+            <tr ng-repeat="user in controller.users">
+                <td>{{user.id}}</td>
+                <td><a href="/profile/{{user.id}}">{{user.displayName}}</a></td>
+                <td>{{user.firstName}} {{user.lastName}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+        </table>
+        <ul ng-repeat="loaner in controller.loaners">
+            <li>{{loaner.userName}}</li>
+        </ul>
+    </div>
+</div>
