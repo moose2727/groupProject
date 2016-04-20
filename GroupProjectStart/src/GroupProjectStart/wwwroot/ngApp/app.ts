@@ -85,6 +85,12 @@ namespace GroupProjectStart {
                 controller: GroupProjectStart.Controllers.ProfileController,
                 controllerAs: 'controller'
             })
+            .state('ratings', {
+                url: '/ratings',
+                templateUrl: 'ngApp/views/ratings.html',
+                controller: GroupProjectStart.Controllers.RatingController,
+                controllerAs: 'controller'
+            })
             .state('notFound', {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'

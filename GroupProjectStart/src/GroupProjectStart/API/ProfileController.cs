@@ -29,15 +29,10 @@ namespace GroupProjectStart.API
         //[Route("GetLoaners")]
         public IEnumerable<Loaner> GetLoaners()
         {
-            return _repo.getLoaners();
-        }
+            var results = _repo.getLoaners().ToList();
+            return results;        }
 
-        [HttpGet]
-        [Route("isLoaner")]
-        public IEnumerable<Loaner> GetIsLoaners()
-        {
-            return _repo.GetSpecifics();
-        }
+        
 
         // GET api/values/5
         [HttpGet("{id}")]
