@@ -14,6 +14,8 @@ namespace GroupProjectStart.Models
 
     public class SampleData
     {
+
+
         public async static Task Initialize(IServiceProvider serviceProvider)
         {
             var db = serviceProvider.GetService<ApplicationDbContext>();

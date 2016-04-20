@@ -10,7 +10,10 @@ namespace GroupProjectStart.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Car> Cars { get; set; }
-        //public DbSet<Loaner> Loaners { get; set; }
+        public DbSet<Loaner> Loaners { get; set; }
+        public DbSet<RatingCar> RatingCars { get; set; }
+        public DbSet<RatingDriver> RatingDrivers { get; set; }
+
         //public DbSet<Renter> Renters { get; set; }
         //public DbSet<RenterLoaner> RenterLoaners { get; set; }
 
