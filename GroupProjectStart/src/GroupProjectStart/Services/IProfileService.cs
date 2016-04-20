@@ -8,6 +8,6 @@ namespace GroupProjectStart.Services
         ApplicationUser getUser(string id);
         List<ApplicationUser> getUsers();
         List<Loaner> getLoaners();
-        List<Loaner> GetSpecifics();
+        //List<Loaner> GetSpecifics();
     }
 }

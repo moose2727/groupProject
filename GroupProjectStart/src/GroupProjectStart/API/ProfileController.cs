@@ -32,12 +32,12 @@ namespace GroupProjectStart.API
             return _repo.getLoaners();
         }
 
-        [HttpGet]
-        [Route("isLoaner")]
-        public IEnumerable<Loaner> GetIsLoaners()
-        {
-            return _repo.GetSpecifics();
-        }
+        //[HttpGet]
+        //[Route("isLoaner")]
+        //public IEnumerable<Loaner> GetIsLoaners()
+        //{
+        //    return _repo.GetSpecifics();
+        //}
 
         // GET api/values/5
         [HttpGet("{id}")]
