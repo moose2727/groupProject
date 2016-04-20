@@ -73,6 +73,18 @@ namespace GroupProjectStart {
                 controller: GroupProjectStart.Controllers.DeleteCarController,
                 controllerAs: 'controller'
             })
+            .state('profiles', {
+                url: '/profiles',
+                templateUrl: 'ngApp/views/profiles.html',
+                controller: GroupProjectStart.Controllers.ProfilesController,
+                controllerAs: 'controller'
+            })
+            .state('profile', {
+                url: '/profile/:id',
+                templateUrl: 'ngApp/views/profile.html',
+                controller: GroupProjectStart.Controllers.ProfileController,
+                controllerAs: 'controller'
+            })
             .state('notFound', {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'
