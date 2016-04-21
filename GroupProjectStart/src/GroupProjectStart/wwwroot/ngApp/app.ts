@@ -1,10 +1,13 @@
 namespace GroupProjectStart {
 
-    angular.module('GroupProjectStart', ['ui.router', 'ngResource', 'ui.bootstrap']).config((
+    angular.module('GroupProjectStart', ['ui.router', 'ngResource', 'ui.bootstrap', 'angular-filepicker']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
-        $locationProvider: ng.ILocationProvider
+        $locationProvider: ng.ILocationProvider,
+        filepickerProvider: any
     ) => {
+        //filepicker api key
+        filepickerProvider.setKey('Ay0qe4wR6efe0Ua2XZC5wz');
         // Define routes
         $stateProvider
             .state('home', {
