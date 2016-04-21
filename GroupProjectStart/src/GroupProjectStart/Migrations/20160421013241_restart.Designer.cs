@@ -8,7 +8,7 @@ using GroupProjectStart.Models;
 namespace GroupProjectStart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160421005535_restart")]
+    [Migration("20160421013241_restart")]
     partial class restart
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -105,6 +105,58 @@ namespace GroupProjectStart.Migrations
                     b.Property<string>("UserId");
 
                     b.Property<int>("Year");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.RatingCar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("DeliveryExperience");
+
+                    b.Property<int>("ElectricalFunctions");
+
+                    b.Property<int>("EngineOperation");
+
+                    b.Property<int>("IndoorAirQuality");
+
+                    b.Property<int>("InsideCleanliness");
+
+                    b.Property<int>("OutsideCleanliness");
+
+                    b.Property<int>("OverallRating");
+
+                    b.Property<int>("ProfessionalismOfOwner");
+
+                    b.Property<int>("SafetyFeatures");
+
+                    b.Property<int>("TireQuality");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.RatingDriver", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ConditionOfReturnedCar");
+
+                    b.Property<int>("DeliveryExperience");
+
+                    b.Property<int>("OverallRating");
+
+                    b.Property<int>("PaymentExperience");
+
+                    b.Property<int>("ProfessionalismOfDriver");
+
+                    b.Property<int>("PromptReplies");
+
+                    b.Property<int>("SchedulingExperience");
+
+                    b.Property<int>("Trustworthiness");
 
                     b.HasKey("Id");
                 });

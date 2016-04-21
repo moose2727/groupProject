@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 
 namespace GroupProjectStart.Migrations
 {
-    public partial class restarting : Migration
+    public partial class restart : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,6 +41,46 @@ namespace GroupProjectStart.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ApplicationUser", x => x.Id);
+                });
+            migrationBuilder.CreateTable(
+                name: "RatingCar",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DeliveryExperience = table.Column<int>(nullable: false),
+                    ElectricalFunctions = table.Column<int>(nullable: false),
+                    EngineOperation = table.Column<int>(nullable: false),
+                    IndoorAirQuality = table.Column<int>(nullable: false),
+                    InsideCleanliness = table.Column<int>(nullable: false),
+                    OutsideCleanliness = table.Column<int>(nullable: false),
+                    OverallRating = table.Column<int>(nullable: false),
+                    ProfessionalismOfOwner = table.Column<int>(nullable: false),
+                    SafetyFeatures = table.Column<int>(nullable: false),
+                    TireQuality = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RatingCar", x => x.Id);
+                });
+            migrationBuilder.CreateTable(
+                name: "RatingDriver",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ConditionOfReturnedCar = table.Column<int>(nullable: false),
+                    DeliveryExperience = table.Column<int>(nullable: false),
+                    OverallRating = table.Column<int>(nullable: false),
+                    PaymentExperience = table.Column<int>(nullable: false),
+                    ProfessionalismOfDriver = table.Column<int>(nullable: false),
+                    PromptReplies = table.Column<int>(nullable: false),
+                    SchedulingExperience = table.Column<int>(nullable: false),
+                    Trustworthiness = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RatingDriver", x => x.Id);
                 });
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
@@ -180,6 +220,8 @@ namespace GroupProjectStart.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable("Car");
+            migrationBuilder.DropTable("RatingCar");
+            migrationBuilder.DropTable("RatingDriver");
             migrationBuilder.DropTable("AspNetRoleClaims");
             migrationBuilder.DropTable("AspNetUserClaims");
             migrationBuilder.DropTable("AspNetUserLogins");
