@@ -8,7 +8,7 @@ using GroupProjectStart.Models;
 namespace GroupProjectStart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160421013241_restart")]
+    [Migration("20160421042331_restart")]
     partial class restart
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -90,7 +90,17 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<string>("ApplicationUserId");
 
+                    b.Property<string>("Condition");
+
+                    b.Property<int>("CtyMpg");
+
+                    b.Property<DateTime>("DateAdded");
+
+                    b.Property<string>("Description");
+
                     b.Property<int>("Door");
+
+                    b.Property<int>("HwyMpg");
 
                     b.Property<string>("Image");
 
@@ -98,9 +108,15 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<string>("Make");
 
+                    b.Property<int>("Miles");
+
                     b.Property<string>("Model");
 
                     b.Property<decimal>("Price");
+
+                    b.Property<int>("Seats");
+
+                    b.Property<string>("Transmission");
 
                     b.Property<string>("UserId");
 
@@ -113,6 +129,8 @@ namespace GroupProjectStart.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("CarId");
 
                     b.Property<int>("DeliveryExperience");
 
@@ -141,6 +159,8 @@ namespace GroupProjectStart.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApplicationUserId");
 
                     b.Property<int>("ConditionOfReturnedCar");
 
@@ -244,6 +264,20 @@ namespace GroupProjectStart.Migrations
                 });
 
             modelBuilder.Entity("GroupProjectStart.Models.Car", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.RatingCar", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.Car")
+                        .WithMany()
+                        .HasForeignKey("CarId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.RatingDriver", b =>
                 {
                     b.HasOne("GroupProjectStart.Models.ApplicationUser")
                         .WithMany()

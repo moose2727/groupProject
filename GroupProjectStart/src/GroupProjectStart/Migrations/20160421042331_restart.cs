@@ -43,46 +43,6 @@ namespace GroupProjectStart.Migrations
                     table.PrimaryKey("PK_ApplicationUser", x => x.Id);
                 });
             migrationBuilder.CreateTable(
-                name: "RatingCar",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    DeliveryExperience = table.Column<int>(nullable: false),
-                    ElectricalFunctions = table.Column<int>(nullable: false),
-                    EngineOperation = table.Column<int>(nullable: false),
-                    IndoorAirQuality = table.Column<int>(nullable: false),
-                    InsideCleanliness = table.Column<int>(nullable: false),
-                    OutsideCleanliness = table.Column<int>(nullable: false),
-                    OverallRating = table.Column<int>(nullable: false),
-                    ProfessionalismOfOwner = table.Column<int>(nullable: false),
-                    SafetyFeatures = table.Column<int>(nullable: false),
-                    TireQuality = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_RatingCar", x => x.Id);
-                });
-            migrationBuilder.CreateTable(
-                name: "RatingDriver",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ConditionOfReturnedCar = table.Column<int>(nullable: false),
-                    DeliveryExperience = table.Column<int>(nullable: false),
-                    OverallRating = table.Column<int>(nullable: false),
-                    PaymentExperience = table.Column<int>(nullable: false),
-                    ProfessionalismOfDriver = table.Column<int>(nullable: false),
-                    PromptReplies = table.Column<int>(nullable: false),
-                    SchedulingExperience = table.Column<int>(nullable: false),
-                    Trustworthiness = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_RatingDriver", x => x.Id);
-                });
-            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -102,12 +62,20 @@ namespace GroupProjectStart.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ApplicationUserId = table.Column<string>(nullable: true),
+                    Condition = table.Column<string>(nullable: true),
+                    CtyMpg = table.Column<int>(nullable: false),
+                    DateAdded = table.Column<DateTime>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
                     Door = table.Column<int>(nullable: false),
+                    HwyMpg = table.Column<int>(nullable: false),
                     Image = table.Column<string>(nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
                     Make = table.Column<string>(nullable: true),
+                    Miles = table.Column<int>(nullable: false),
                     Model = table.Column<string>(nullable: true),
                     Price = table.Column<decimal>(nullable: false),
+                    Seats = table.Column<int>(nullable: false),
+                    Transmission = table.Column<string>(nullable: true),
                     UserId = table.Column<string>(nullable: true),
                     Year = table.Column<int>(nullable: false)
                 },
@@ -116,6 +84,32 @@ namespace GroupProjectStart.Migrations
                     table.PrimaryKey("PK_Car", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Car_ApplicationUser_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+            migrationBuilder.CreateTable(
+                name: "RatingDriver",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ApplicationUserId = table.Column<string>(nullable: true),
+                    ConditionOfReturnedCar = table.Column<int>(nullable: false),
+                    DeliveryExperience = table.Column<int>(nullable: false),
+                    OverallRating = table.Column<int>(nullable: false),
+                    PaymentExperience = table.Column<int>(nullable: false),
+                    ProfessionalismOfDriver = table.Column<int>(nullable: false),
+                    PromptReplies = table.Column<int>(nullable: false),
+                    SchedulingExperience = table.Column<int>(nullable: false),
+                    Trustworthiness = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RatingDriver", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RatingDriver_ApplicationUser_ApplicationUserId",
                         column: x => x.ApplicationUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -203,6 +197,34 @@ namespace GroupProjectStart.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+            migrationBuilder.CreateTable(
+                name: "RatingCar",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CarId = table.Column<int>(nullable: true),
+                    DeliveryExperience = table.Column<int>(nullable: false),
+                    ElectricalFunctions = table.Column<int>(nullable: false),
+                    EngineOperation = table.Column<int>(nullable: false),
+                    IndoorAirQuality = table.Column<int>(nullable: false),
+                    InsideCleanliness = table.Column<int>(nullable: false),
+                    OutsideCleanliness = table.Column<int>(nullable: false),
+                    OverallRating = table.Column<int>(nullable: false),
+                    ProfessionalismOfOwner = table.Column<int>(nullable: false),
+                    SafetyFeatures = table.Column<int>(nullable: false),
+                    TireQuality = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RatingCar", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RatingCar_Car_CarId",
+                        column: x => x.CarId,
+                        principalTable: "Car",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "AspNetUsers",
@@ -219,13 +241,13 @@ namespace GroupProjectStart.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable("Car");
             migrationBuilder.DropTable("RatingCar");
             migrationBuilder.DropTable("RatingDriver");
             migrationBuilder.DropTable("AspNetRoleClaims");
             migrationBuilder.DropTable("AspNetUserClaims");
             migrationBuilder.DropTable("AspNetUserLogins");
             migrationBuilder.DropTable("AspNetUserRoles");
+            migrationBuilder.DropTable("Car");
             migrationBuilder.DropTable("AspNetRoles");
             migrationBuilder.DropTable("AspNetUsers");
         }

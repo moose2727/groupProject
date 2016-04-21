@@ -31,7 +31,7 @@ namespace GroupProjectStart.Models
                         Door = 4,
                         Price = 132m,
                         IsActive = false,
-                        
+
                     },
 
                     new Car
@@ -42,7 +42,15 @@ namespace GroupProjectStart.Models
                         Image = "http://2.bp.blogspot.com/-lndOWG_WqsE/Ug3fiHidR8I/AAAAAAAAH3o/-LOSoELV-6w/s1600/2015-MG-Roadster-52.jpg",
                         Door = 2,
                         Price = 124m,
-                        IsActive = true
+                        IsActive = true,
+                        Condition = "Perfect",
+                        CtyMpg = 27,
+                        HwyMpg = 36,
+                        DateAdded = DateTime.Now,
+                        Miles = 18120,
+                        Seats = 2,
+                        Transmission = "Automatic",
+                        Description = "Lorem ipsum dolor sit amet, ei eam tempor eripuit, no nihil nonumy honestatis sit, eam at utroque luptatum reprehendunt. Te appareat consequat eum. Iisque facilisis eos an, te elitr cetero tacimates ius. Ut modus patrioque scribentur per, ei has erat populo essent, suas inimicus cum ut. Ad vocent audire phaedrum mea. Eos case doctus cudicam epicuri eum id.Vix scriptorem cotidieque inqui at dolore definitionem,facete voluptatum dissentiunt ad vel.Impedit officiis intellegam sea neet atqui aliquid fierent eos.Cu pri molestie definitionescu nec augue epicurei graeci principes pri ex.Doctus aeterno vim nesit an purto nullamea mel tollit sanctus."
 
                     },
 
@@ -166,6 +174,7 @@ namespace GroupProjectStart.Models
                     HasDamageInsurance = true,
                     HasLicense = true,
                     IsLoaner = true,
+                    Image = "C:\\Users\\User\\Source\\Repos\\GroupProject1\\GroupProjectStart\\src\\GroupProjectStart\\Images\\36629_10151582345891363_1720362342_n.jpg",
                     CarsToLoan = new List<Car>
                     {
                        db.Cars.FirstOrDefault( c => c.Make == "Mazda")
