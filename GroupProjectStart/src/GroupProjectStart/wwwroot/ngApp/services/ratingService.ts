@@ -18,15 +18,15 @@
 
             // Method that will let you save a Rating - sends the data to the serverside action method which will actually save the rating to the database
             save(data) {
-                return this.RatingsResource.save(data).$promise;
+                 return this.RatingsResource.save(data).$promise;
             }
 
-            // Method that will get a single movie
+            // Method that will get a single rating
             getRating(id) {
                 return this.RatingsResource.get({ id: id });
             }
 
-            // Method that will delete a movie
+            // Method that will delete a rating
             deleteRating(id) {
                 return this.RatingsResource.delete({ id: id }).$promise;
             }
