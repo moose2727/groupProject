@@ -26,6 +26,7 @@ namespace GroupProjectStart.Models
         public string Transmission { get; set; }
         public string Description { get; set; }
         public ICollection<RatingCar> CarRatings { get; set; }
+        public decimal AverageRating { get; set; }
 
 
     }

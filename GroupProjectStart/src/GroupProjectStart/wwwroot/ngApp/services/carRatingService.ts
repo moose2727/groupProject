@@ -17,8 +17,9 @@
             }
 
             // Method that will let you save a Rating - sends the data to the serverside action method which will actually save the rating to the database
-            saveCarRating(ratingToSave) {
-                return this.carRatingsResource.save(ratingToSave).$promise;
+            saveCarRating(id, ratingToSave) {
+                debugger;
+                return this.carRatingsResource.save({ id: id }, ratingToSave).$promise;
             }
 
             // Method that will get a single movie

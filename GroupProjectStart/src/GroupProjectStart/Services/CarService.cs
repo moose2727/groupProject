@@ -18,7 +18,8 @@ namespace GroupProjectStart.Services
 
         public List<Car> GetCars()
         {
-            var cars = _repo.Query<Car>().ToList();
+            var cars = _repo.Query<Car>().Include(c => c.CarRatings).ToList();
+            
             return cars;
         }
 
