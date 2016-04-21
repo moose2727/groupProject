@@ -95,7 +95,19 @@ namespace GroupProjectStart {
             .state('ratings', {
                 url: '/ratings',
                 templateUrl: 'ngApp/views/ratings.html',
-                controller: GroupProjectStart.Controllers.RatingController,
+                controller: GroupProjectStart.Controllers.CarRatingController,
+                controllerAs: 'controller'
+            })
+            .state('driverRatings', {
+                url: '/driverRatings',
+                templateUrl: 'ngApp/views/driverRatings.html',
+                controller: GroupProjectStart.Controllers.DriverRatingController,
+                controllerAs: 'controller'
+            })
+            .state('deleteRating', {
+                url: '/delete/:id',
+                templateUrl: 'ngApp/views/deleteRating.html',
+                controller: GroupProjectStart.Controllers.DeleteDriverRatingController,
                 controllerAs: 'controller'
             })
             .state('notFound', {
