@@ -17,6 +17,8 @@ namespace GroupProjectStart.Models
         public int UserId { get; set; }
         //public Loaner Loaner { get; set; }
         public bool IsActive { get; set; }
+        public ICollection<RatingCar> CarRatings { get; set; }
+
 
 
     }
