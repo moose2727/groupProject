@@ -42,6 +42,8 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<string>("Image");
 
+                    b.Property<bool>("IsAdmin");
+
                     b.Property<bool>("IsLoaner");
 
                     b.Property<string>("LastName");
@@ -99,7 +101,7 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<decimal>("Price");
 
-                    b.Property<int>("UserId");
+                    b.Property<string>("UserId");
 
                     b.Property<int>("Year");
 

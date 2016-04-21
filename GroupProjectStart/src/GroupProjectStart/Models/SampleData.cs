@@ -24,7 +24,7 @@ namespace GroupProjectStart.Models
                 db.Cars.AddRange(
                     new Car
                     {
-                        Make = " Volvo",
+                        Make = "Volvo",
                         Model = "XC90",
                         Year = 2015,
                         Image = "http://topcarsreleasedates.com/wp-content/uploads/2015/08/2016-volvo-xc90-.jpg",
@@ -34,7 +34,7 @@ namespace GroupProjectStart.Models
 
                     new Car
                     {
-                        Make = " Mazda",
+                        Make = "Mazda",
                         Model = " MX-5 Miata",
                         Year = 2016,
                         Image = "http://2.bp.blogspot.com/-lndOWG_WqsE/Ug3fiHidR8I/AAAAAAAAH3o/-LOSoELV-6w/s1600/2015-MG-Roadster-52.jpg",
@@ -79,9 +79,10 @@ namespace GroupProjectStart.Models
                 {
                     UserName = "Stephen.Walther@CoderCamps.com",
                     Email = "Stephen.Walther@CoderCamps.com",
-                    DisplayName ="SWalther",
+                    DisplayName = "SWalther",
                     FirstName = "Stephen",
-                    LastName = "Walther"
+                    LastName = "Walther",
+                    IsAdmin = true
                 };
                 await userManager.CreateAsync(stephen, "Secret123!");
 
@@ -100,7 +101,8 @@ namespace GroupProjectStart.Models
                     Email = "Mike@CoderCamps.com",
                     DisplayName = "MM",
                     FirstName = "Mike",
-                    LastName = "MIller"
+                    LastName = "Miller",
+                    Image = "http://static.eharmony.com/blog/wp-content/uploads/2010/04/eHarmony-Blog-profile-picture.jpg"
                 };
                 await userManager.CreateAsync(mike, "Secret123!");
             }
@@ -136,6 +138,7 @@ namespace GroupProjectStart.Models
                     DisplayName = "RyanR27",
                     HasLicense = true,
                     HasDamageInsurance = false,
+                    Image = "http://e2ua.com/WDF-1048495.html"
                     
                 };
                 await userManager.CreateAsync(ryan, "Secret123!");
@@ -159,14 +162,16 @@ namespace GroupProjectStart.Models
                     IsLoaner = true,
                     CarsToLoan = new List<Car>
                     {
-                        new Car {
-                            Year = 2009,
-                            Make = "Hyundai",
-                            Model = "Santa Fe",
-                            Price = 125m,
-                            Door = 4,
-                            Image = "http://static.cargurus.com/images/site/2008/09/03/14/38/2009_hyundai_santa_fe-pic-1544-640x480.jpeg"
-                        }
+                       db.Cars.FirstOrDefault( c => c.Make == "Mazda")
+                        //new Car {
+                        //    UserId = Caleb.Id,
+                        //    Year = 2009,
+                        //    Make = "Hyundai",
+                        //    Model = "Santa Fe",
+                        //    Price = 125m,
+                        //    Door = 4,
+                        //    Image = "http://static.cargurus.com/images/site/2008/09/03/14/38/2009_hyundai_santa_fe-pic-1544-640x480.jpeg"
+                        //}
                     }
                 };
                 await userManager.CreateAsync(Caleb, "Secret123!");
@@ -175,36 +180,40 @@ namespace GroupProjectStart.Models
 
             }
 
-            var John = await userManager.FindByNameAsync("John@Something.com");
-            if (John == null)
+
+            var Jason = await userManager.FindByNameAsync("moose2727@hotmail.com");
+            if (Jason == null)
             {
                 // create user
-                John = new ApplicationUser
+                Jason = new ApplicationUser
                 {
-                    UserName = "John@Something.com",
-                    Email = "John@Something.com",
-                    FirstName = "John",
-                    LastName = "Doe",
-                    DisplayName = "JDoe",
-                    HasTheftInsurance = false,
-                    HasDamageInsurance = false,
-                    HasLicense = false,
-                    IsLoaner = false,
+                    UserName = "moose2727@hotmail.com",
+                    Email = "moose2727@hotmail.com",
+                    FirstName = "Jason",
+                    LastName = "deNevers",
+                    DisplayName = "Moose2727",
+                    HasTheftInsurance = true,
+                    HasDamageInsurance = true,
+                    HasLicense = true,
+                    IsLoaner = true,
+                    IsAdmin = true,
                     CarsToLoan = new List<Car>
                     {
-                        new Car
-                        {
-                            Year = 2005,
-                            Make = "Honda",
-                            Model = "Accord",
-                            Price = 110m,
-                            Door = 4,
-                            Image = "http://s1.cdn.autoevolution.com/images/gallery/HONDAAccordSedanUS-4220_10.jpg"
-                        }
-
+                        //new Car
+                        //{
+                        //    UserId = Jason.Id,
+                        //    Year = 2005,
+                        //    Make = "Honda",
+                        //    Model = "Accord",
+                        //    Price = 110m,
+                        //    Door = 4,
+                        //    Image = "http://s1.cdn.autoevolution.com/images/gallery/HONDAAccordSedanUS-4220_10.jpg"
+                        //}
                     }
                 };
-                await userManager.CreateAsync(John, "Secret123!");
+                await userManager.CreateAsync(Jason, "Secret123!");
+                await userManager.AddClaimAsync(Jason, new Claim("IsAdmin", "true"));
+                await userManager.AddClaimAsync(Jason, new Claim("IsLoaner", "true"));
 
             }
 
