@@ -29,7 +29,9 @@ namespace GroupProjectStart.Models
                         Year = 2015,
                         Image = "http://topcarsreleasedates.com/wp-content/uploads/2015/08/2016-volvo-xc90-.jpg",
                         Door = 4,
-                        Price = 132m
+                        Price = 132m,
+                        IsActive = false,
+                        
                     },
 
                     new Car
@@ -39,7 +41,9 @@ namespace GroupProjectStart.Models
                         Year = 2016,
                         Image = "http://2.bp.blogspot.com/-lndOWG_WqsE/Ug3fiHidR8I/AAAAAAAAH3o/-LOSoELV-6w/s1600/2015-MG-Roadster-52.jpg",
                         Door = 2,
-                        Price = 124m
+                        Price = 124m,
+                        IsActive = true
+
                     },
 
                     new Car
@@ -49,7 +53,8 @@ namespace GroupProjectStart.Models
                         Year = 2014,
                         Image = "http://s3.amazonaws.com/fzautomotive/dealers/55b6d6e755b30.png",
                         Door = 2,
-                        Price = 155m
+                        Price = 155m,
+                        IsActive = false
                     },
 
                     new Car
@@ -59,7 +64,8 @@ namespace GroupProjectStart.Models
                         Year = 2014,
                         Image = "http://static4.consumerreportscdn.org/content/dam/cro/magazine-articles/2015/December/CR122K15-Honda_Pilot_16_2917_Right.jpg",
                         Door = 4,
-                        Price = 130
+                        Price = 130,
+                        IsActive = true
                     }
                 );
                 db.SaveChanges();
