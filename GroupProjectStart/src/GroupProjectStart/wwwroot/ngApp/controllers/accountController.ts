@@ -53,7 +53,7 @@ namespace GroupProjectStart.Controllers {
 
         }
 
-
+      
 
         constructor(private accountService: GroupProjectStart.Services.AccountService, private $location: ng.ILocationService, private $uibModal: ng.ui.bootstrap.IModalService, private $state: ng.ui.IStateService, private $stateParams: ng.ui.IStateParamsService) {
             this.getExternalLogins().then((results) => {

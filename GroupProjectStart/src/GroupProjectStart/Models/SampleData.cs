@@ -254,22 +254,23 @@ namespace GroupProjectStart.Models
 
                 }
 
-                var Caleb = await userManager.FindByNameAsync("Caleb@Something.com");
-                if (Caleb == null)
-                {
-                    // create user
-                    Caleb = new ApplicationUser
-                    {
-                        UserName = "Caleb@Something.com",
-                        Email = "Caleb@Something.com",
-                        FirstName = "Caleb",
-                        LastName = "Schwarzmiller",
-                        DisplayName = "CSchwarz",
-                        HasTheftInsurance = true,
-                        HasDamageInsurance = true,
-                        HasLicense = true,
-                        IsLoaner = true,
-                        CarsToLoan = new List<Car>
+                //var Caleb = await userManager.FindByNameAsync("Caleb@Something.com");
+                //if (Caleb == null)
+                //{
+                //    // create user
+                //    Caleb = new ApplicationUser
+                //    {
+                //        UserName = "Caleb@Something.com",
+                //        Email = "Caleb@Something.com",
+                //        FirstName = "Caleb",
+                //        LastName = "Schwarzmiller",
+                //        DisplayName = "CSchwarz",
+                //        HasTheftInsurance = true,
+                //        HasDamageInsurance = true,
+                //        HasLicense = true,
+                //        IsLoaner = true,
+                //        CarsToLoan = new List<Car>
+                //        }
             var Caleb = await userManager.FindByNameAsync("Caleb@Something.com");
             if (Caleb == null)
             {

@@ -60,7 +60,17 @@
             <h2>Recent Listings</h2>
              <div class="col-md-5"  ng-repeat="car in controller.cars">
                  <a href="/car/{{car.id}}"><img id="carPosts" src="{{car.image}}" /></a>
-                 <p>{{car.year}} {{car.make}} {{car.model}} <span>Price per day: {{car.price}}</span></p>
+                 <div class="col-md-6">
+                     <p>{{car.year}} {{car.make}} {{car.model}}<br />Price per day: {{car.price}}</p>
+                 </div>
+                 <div class="col-md-6">
+                     <div class="col-sm-8">
+                       {{car.averageRating}}
+                     </div>
+                     <div class="col-sm-4 carRateButton">
+                         <div class="btn btn-block btn-danger" ng-click="controller.carRateModal(car.id)">RATE</div>
+                     </div>
+                 </div>
              </div>
         </div>
         <div class="col-md-2 pull-right">

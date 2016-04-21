@@ -25,7 +25,8 @@ namespace GroupProjectStart.API
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_repo.GetCars());
+            var data = _repo.GetCars();
+            return Ok(data);
         }
 
 

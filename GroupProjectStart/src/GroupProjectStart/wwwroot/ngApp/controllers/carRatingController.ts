@@ -29,28 +29,38 @@
 
     export class CreateCarRatingController {
         public ratingToCreate;
-        public userId;
+        public carId;
 
         constructor(
-            private carRatingService: GroupProjectStart.Services.DriverRatingService,
+            private carRatingService: GroupProjectStart.Services.CarRatingService,
             private accountService: GroupProjectStart.Services.AccountService,
             private $state: ng.ui.IStateService,
-            private $stateParams: ng.ui.IStateParamsService
+            private $stateParams: ng.ui.IStateParamsService,
+            private $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance,
+            private id
         ) {
+            this.carId = this.$stateParams['id'];
+        }
+        public ok() {
+
+            this.$uibModalInstance.close();
 
         }
 
-        saveRating() {
-            this.carRatingService.saveDriverRating(this.ratingToCreate);
+        saveCarRating() {
+            debugger;
+            this.carRatingService.saveCarRating(this.id, this.ratingToCreate).then(() => {
+                this.ok();
+            });                
         }
     }
 
     export class EditCarRatingController {
         public ratingToEdit;
-        public userId;
+        public carId;
 
         constructor(
-            private carRatingService: GroupProjectStart.Services.DriverRatingService,
+            private carRatingService: GroupProjectStart.Services.CarRatingService,
             private accountService: GroupProjectStart.Services.AccountService,
             private $state: ng.ui.IStateService,
             private $stateParams: ng.ui.IStateParamsService
@@ -59,7 +69,7 @@
         }
 
         editRating() {
-            this.carRatingService.saveDriverRating(this.ratingToEdit);
+            this.carRatingService.saveCarRating(this.carId, this.ratingToEdit);
         }
     }
 }
