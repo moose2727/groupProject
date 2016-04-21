@@ -95,23 +95,49 @@ namespace GroupProjectStart.Controllers {
     export class RegisterController {
         public registerUser;
         public validationMessages;
+        public file;
+        public image;
 
         public register() {
+            debugger;
+            this.registerUser.image = "https://process.filepicker.io/Ay0qe4wR6efe0Ua2XZC5wz/resize=width:400,height:200/" + this.image;
             this.accountService.register(this.registerUser).then(() => {
+                //this.registerUser.image = this.image;
                 this.$location.path('/');
-                this.ok();
+                //this.ok();
             }).catch((results) => {
                 this.validationMessages = results;
             });
         }
 
-        public ok() {
+        //public ok() {
 
-            this.$uibModalInstance.close();
+        //    this.$uibModalInstance.close();
 
+        //}
+
+        public pickFile() {
+            this.filepickerService.pick({
+                mimetype: 'image/*',
+                cropRatio: 4/4,
+            }, this.fileUploaded.bind(this));
         }
 
-        constructor(private accountService: GroupProjectStart.Services.AccountService, private $location: ng.ILocationService, private $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance, private x, private $state: ng.ui.IStateService, private $stateParams: ng.ui.IStateParamsService) { }
+        private fileUploaded(file) {
+            this.file = file;
+            this.$scope.$apply();
+            this.image = file.url;
+        }
+
+        constructor(
+            private accountService: GroupProjectStart.Services.AccountService,
+            private $location: ng.ILocationService,
+            //private $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance,
+            //private x,
+            private $state: ng.ui.IStateService,
+            private $stateParams: ng.ui.IStateParamsService,
+            private filepickerService: any,
+            private $scope: ng.IScope) { }
     }
 
 
