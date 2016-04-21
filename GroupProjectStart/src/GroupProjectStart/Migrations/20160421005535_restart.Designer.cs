@@ -109,6 +109,58 @@ namespace GroupProjectStart.Migrations
                     b.HasKey("Id");
                 });
 
+            modelBuilder.Entity("GroupProjectStart.Models.RatingCar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("DeliveryExperience");
+
+                    b.Property<int>("ElectricalFunctions");
+
+                    b.Property<int>("EngineOperation");
+
+                    b.Property<int>("IndoorAirQuality");
+
+                    b.Property<int>("InsideCleanliness");
+
+                    b.Property<int>("OutsideCleanliness");
+
+                    b.Property<int>("OverallRating");
+
+                    b.Property<int>("ProfessionalismOfOwner");
+
+                    b.Property<int>("SafetyFeatures");
+
+                    b.Property<int>("TireQuality");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.RatingDriver", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ConditionOfReturnedCar");
+
+                    b.Property<int>("DeliveryExperience");
+
+                    b.Property<int>("OverallRating");
+
+                    b.Property<int>("PaymentExperience");
+
+                    b.Property<int>("ProfessionalismOfDriver");
+
+                    b.Property<int>("PromptReplies");
+
+                    b.Property<int>("SchedulingExperience");
+
+                    b.Property<int>("Trustworthiness");
+
+                    b.HasKey("Id");
+                });
+
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRole", b =>
                 {
                     b.Property<string>("Id");
