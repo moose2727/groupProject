@@ -16,14 +16,14 @@
     </tr>
     <tr ng-repeat="rating in controller.ratings">
         <td>{{rating.id}}</td>
-        <td>{{rating.SchedulingExperience}}</td>
-        <td>{{rating.PaymentExperience}}</td>
-        <td>{{rating.PromptReplies}}</td>
-        <td>{{rating.DeliveryExperience}}</td>
-        <td>{{rating.ConditionOfReturnedCar}}</td>
-        <td>{{rating.}}</td>
-        </td
-            <a href="/edit/{{rating.id}}">Edit</a> /
+        <td>{{rating.tireQuality}}</td>
+        <td>{{rating.insideCleanliness}}</td>
+        <td>{{rating.safetyFeatures}}</td>
+        <td>{{rating.deliveryExperience}}</td>
+        <td>{{rating.conditionOfReturnedCar}}</td>
+       
+       
+           <td> <a href="/edit/{{rating.id}}">Edit</a> /
             <a href="/delete/{{rating.id}}">Delete</a>
         </td>
     </tr>
