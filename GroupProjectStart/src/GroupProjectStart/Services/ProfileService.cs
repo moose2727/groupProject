@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace GroupProjectStart.Services
 {
     public class ProfileService : IProfileService
@@ -44,8 +45,7 @@ namespace GroupProjectStart.Services
 
         public ApplicationUser getUser(string id)
         {
-            return _repo.Query<ApplicationUser>().Where(u => u.Id == id).FirstOrDefault();
-
+            return _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Where(u => u.Id == id).FirstOrDefault();
         }
 
         //public Loaner getLoaner(string id) {

@@ -24,6 +24,7 @@ namespace GroupProjectStart.Migrations
                     HasLicense = table.Column<bool>(nullable: false),
                     HasTheftInsurance = table.Column<bool>(nullable: false),
                     Image = table.Column<string>(nullable: true),
+                    IsAdmin = table.Column<bool>(nullable: false),
                     IsLoaner = table.Column<bool>(nullable: false),
                     LastName = table.Column<string>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
@@ -67,7 +68,7 @@ namespace GroupProjectStart.Migrations
                     Make = table.Column<string>(nullable: true),
                     Model = table.Column<string>(nullable: true),
                     Price = table.Column<decimal>(nullable: false),
-                    UserId = table.Column<int>(nullable: false),
+                    UserId = table.Column<string>(nullable: true),
                     Year = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

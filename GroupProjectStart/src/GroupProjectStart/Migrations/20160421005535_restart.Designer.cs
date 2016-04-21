@@ -8,7 +8,7 @@ using GroupProjectStart.Models;
 namespace GroupProjectStart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160420201036_restart")]
+    [Migration("20160421005535_restart")]
     partial class restart
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,6 +42,8 @@ namespace GroupProjectStart.Migrations
                     b.Property<bool>("HasTheftInsurance");
 
                     b.Property<string>("Image");
+
+                    b.Property<bool>("IsAdmin");
 
                     b.Property<bool>("IsLoaner");
 
@@ -100,7 +102,7 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<decimal>("Price");
 
-                    b.Property<int>("UserId");
+                    b.Property<string>("UserId");
 
                     b.Property<int>("Year");
 
