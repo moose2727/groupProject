@@ -66,7 +66,7 @@
                                 </ul>
                             </li>
                             <li><a href="#" ng-show="!account.isLoggedIn()" ng-click="account.showSignInModal()">Login</a></li>
-                            <li><a href="#" ng-show="!account.isLoggedIn()" ng-click="account.showSignUpModal()">Sign Up</a></li>
+                            <li><a href="/register" ng-show="!account.isLoggedIn()"> <!--ng-click="account.showSignUpModal()">-->Sign Up</a></li>
                             <li><a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -81,6 +81,8 @@
     <script src="~/lib/angular/angular.js"></script>
     <script src="~/lib/angular-resource/angular-resource.js"></script>
     <script src="~/lib/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+    <script src="~/lib/angular-filepicker/angular-filepicker.js"></script>
     <script src="~/lib/angular-touch/angular-touch.js"></script>
     <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>

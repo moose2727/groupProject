@@ -169,6 +169,25 @@ namespace GroupProjectStart.Models
                         Door = 4,
                         Price = 130,
                         IsActive = true
+                    },
+
+                    new Car
+                    {
+                        Make = "Dodge",
+                        Model = "Ram",
+                        Year = 1992,
+                        Image = "https://c2.staticflickr.com/4/3824/13573311565_ff976967b5_b.jpg",
+                        Door = 2,
+                        Price = 40m,
+                        IsActive = true,
+                        Condition = "Okay",
+                        CtyMpg = 19,
+                        HwyMpg = 26,
+                        DateAdded = DateTime.Now,
+                        Miles = 215108,
+                        Seats = 3,
+                        Transmission = "Manual",
+                        Description = "Lorem ipsum dolor sit amet, ei eam tempor eripuit, no nihil nonumy honestatis sit, eam at utroque luptatum reprehendunt. Te appareat consequat eum. Iisque facilisis eos an, te elitr cetero tacimates ius. Ut modus patrioque scribentur per, ei has erat populo essent, suas inimicus cum ut. Ad vocent audire phaedrum mea. Eos case doctus cudicam epicuri eum id.Vix scriptorem cotidieque inqui at dolore definitionem,facete voluptatum dissentiunt ad vel.Impedit officiis intellegam sea neet atqui aliquid fierent eos.Cu pri molestie definitionescu nec augue epicurei graeci principes pri ex.Doctus aeterno vim nesit an purto nullamea mel tollit sanctus."
                     }
                 );
                 db.SaveChanges();
@@ -270,7 +289,6 @@ namespace GroupProjectStart.Models
                 //        HasLicense = true,
                 //        IsLoaner = true,
                 //        CarsToLoan = new List<Car>
-                //        }
             var Caleb = await userManager.FindByNameAsync("Caleb@Something.com");
             if (Caleb == null)
             {
@@ -286,10 +304,10 @@ namespace GroupProjectStart.Models
                     HasDamageInsurance = true,
                     HasLicense = true,
                     IsLoaner = true,
-                    Image = "C:\\Users\\User\\Source\\Repos\\GroupProject1\\GroupProjectStart\\src\\GroupProjectStart\\Images\\36629_10151582345891363_1720362342_n.jpg",
+                    Image = "https://www.filestackapi.com/api/file/RuTYywXlQughPk4vPpF9",
                     CarsToLoan = new List<Car>
                     {
-                       db.Cars.FirstOrDefault( c => c.Make == "Mazda")
+                       db.Cars.FirstOrDefault( c => c.Make == "Dodge")
                         //new Car {
                         //    UserId = Caleb.Id,
                         //    Year = 2009,
