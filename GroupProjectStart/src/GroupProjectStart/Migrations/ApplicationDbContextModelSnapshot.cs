@@ -25,9 +25,6 @@ namespace GroupProjectStart.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired();
-
                     b.Property<string>("DisplayName");
 
                     b.Property<string>("Email")
@@ -41,7 +38,11 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<bool>("HasLicense");
 
+                    b.Property<bool>("HasTheftInsurance");
+
                     b.Property<string>("Image");
+
+                    b.Property<bool>("IsAdmin");
 
                     b.Property<bool>("IsLoaner");
 
@@ -78,10 +79,6 @@ namespace GroupProjectStart.Migrations
                     b.HasIndex("NormalizedUserName")
                         .HasAnnotation("Relational:Name", "UserNameIndex");
 
-                    b.HasAnnotation("Relational:DiscriminatorProperty", "Discriminator");
-
-                    b.HasAnnotation("Relational:DiscriminatorValue", "ApplicationUser");
-
                     b.HasAnnotation("Relational:TableName", "AspNetUsers");
                 });
 
@@ -90,13 +87,13 @@ namespace GroupProjectStart.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("ApplicationUserId");
+
                     b.Property<int>("Door");
 
                     b.Property<string>("Image");
 
                     b.Property<bool>("IsActive");
-
-                    b.Property<string>("LoanerId");
 
                     b.Property<string>("Make");
 
@@ -104,9 +101,61 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<decimal>("Price");
 
-                    b.Property<int>("UserId");
+                    b.Property<string>("UserId");
 
                     b.Property<int>("Year");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.RatingCar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("DeliveryExperience");
+
+                    b.Property<int>("ElectricalFunctions");
+
+                    b.Property<int>("EngineOperation");
+
+                    b.Property<int>("IndoorAirQuality");
+
+                    b.Property<int>("InsideCleanliness");
+
+                    b.Property<int>("OutsideCleanliness");
+
+                    b.Property<int>("OverallRating");
+
+                    b.Property<int>("ProfessionalismOfOwner");
+
+                    b.Property<int>("SafetyFeatures");
+
+                    b.Property<int>("TireQuality");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.RatingDriver", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ConditionOfReturnedCar");
+
+                    b.Property<int>("DeliveryExperience");
+
+                    b.Property<int>("OverallRating");
+
+                    b.Property<int>("PaymentExperience");
+
+                    b.Property<int>("ProfessionalismOfDriver");
+
+                    b.Property<int>("PromptReplies");
+
+                    b.Property<int>("SchedulingExperience");
+
+                    b.Property<int>("Trustworthiness");
 
                     b.HasKey("Id");
                 });
@@ -193,20 +242,11 @@ namespace GroupProjectStart.Migrations
                     b.HasAnnotation("Relational:TableName", "AspNetUserRoles");
                 });
 
-            modelBuilder.Entity("GroupProjectStart.Models.Loaner", b =>
-                {
-                    b.HasBaseType("GroupProjectStart.Models.ApplicationUser");
-
-                    b.Property<bool>("HasTheftInsurance");
-
-                    b.HasAnnotation("Relational:DiscriminatorValue", "Loaner");
-                });
-
             modelBuilder.Entity("GroupProjectStart.Models.Car", b =>
                 {
-                    b.HasOne("GroupProjectStart.Models.Loaner")
+                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("LoanerId");
+                        .HasForeignKey("ApplicationUserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>

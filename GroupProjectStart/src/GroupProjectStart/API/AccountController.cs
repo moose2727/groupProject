@@ -103,8 +103,8 @@ namespace GroupProjectStart.Controllers
 
             if (ModelState.IsValid && model.IsLoaner == true)
             {
-                var loaner = new Loaner { UserName = model.Email, Email = model.Email, DisplayName = model.DisplayName, FirstName = model.FirstName, LastName = model.LastName, Image = model.Image, CarsToLoan = model.CarsToLoan, HasTheftInsurance = model.HasTheftInsurance, HasDamageInsurance = model.HasDamageInsurance, HasLicense = model.HasLicense };
-                var result = await _userManager.CreateAsync(loaner, model.Password);
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, DisplayName = model.DisplayName, FirstName = model.FirstName, LastName = model.LastName, Image = model.Image, CarsToLoan = model.CarsToLoan, HasTheftInsurance = model.HasTheftInsurance, HasDamageInsurance = model.HasDamageInsurance, HasLicense = model.HasLicense };
+                var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
@@ -113,17 +113,18 @@ namespace GroupProjectStart.Controllers
                     //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
                     //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
                     //    "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
-                    await _signInManager.SignInAsync(loaner, isPersistent: false);
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    await _userManager.AddClaimAsync(user, new Claim("IsLoaner", "true"));
                     _logger.LogInformation(3, "User created a new account with password.");
-                    var userViewModel = await GetUser(loaner.UserName);
+                    var userViewModel = await GetUser(user.UserName);
                     return Ok(userViewModel);
                 }
                 AddErrors(result);
             }
 
-            else if (ModelState.IsValid && model.IsLoaner == false)
+            else if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, DisplayName = model.DisplayName, FirstName = model.FirstName, LastName = model.LastName, Image = model.Image, HasDamageInsurance = model.HasDamageInsurance, HasLicense = model.HasLicense};
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, DisplayName = model.DisplayName, FirstName = model.FirstName, LastName = model.LastName, Image = model.Image, HasDamageInsurance = model.HasDamageInsurance, HasLicense = model.HasLicense };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

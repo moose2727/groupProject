@@ -1,0 +1,35 @@
+﻿<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+        <h2>{{controller.user.displayName}} <span ng-if="controller.user.isLoaner == true">(Loaner)</span> <span ng-if="controller.user.isAdmin == true">(Admin)</span></h2>
+        <h3>{{controller.user.firstName}} {{controller.user.lastName}}</h3>
+        <hr />
+        <h3 ng-show="account.getClaim('isLoaner')">{{controller.user.email}}</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 col-md-offset-2">
+        <img ng-if="controller.user.image == null" src="https://s3.amazonaws.com/FringeBucket/default-user.png" />
+        <img ng-if="controller.user.image != null" src="{{controller.user.image}}" />
+    </div>
+    <div class="col-md-4">
+
+        <h4>Licensed: <span ng-if="controller.user.hasLicense == true">Yes</span><span ng-if="controller.user.hasLicense == false">No</span></h4>
+
+        <h4>Theft protection: <span ng-if="controller.user.hasTheftInsurance == true">Yes</span><span ng-if="controller.user.hasTheftInsurance == false">No</span></h4>
+
+        <h4>Damage protection: <span ng-if="controller.user.hasDamageInsurance == true">Yes</span><span ng-if="controller.user.hasDamageInsurance == false">No</span></h4>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div ng-if="controller.user.isLoaner == true">
+            <div ng-repeat="car in controller.user.carsToLoan">
+                <img src="{{car.image}}"/>
+                <h4>{{car.year}} {{car.make}} {{car.model}} test</h4>
+            </div>
+        </div>
+    </div>
+</div>
