@@ -19,5 +19,6 @@ namespace GroupProjectStart.Models
         public bool HasLicense { get; set; }
         public ICollection<Car> CarsToLoan { get; set; }
         public bool HasTheftInsurance { get; set; }
+        public ICollection<RatingDriver> MyProperty { get; set; }
     }
 }
