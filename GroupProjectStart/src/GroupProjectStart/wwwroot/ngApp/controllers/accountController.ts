@@ -100,7 +100,7 @@ namespace GroupProjectStart.Controllers {
 
         public register() {
             debugger;
-            this.registerUser.image = "https://process.filepicker.io/Ay0qe4wR6efe0Ua2XZC5wz/resize=width:400,height:200/" + this.image;
+            this.registerUser.image = this.image;
             this.accountService.register(this.registerUser).then(() => {
                 //this.registerUser.image = this.image;
                 this.$location.path('/');

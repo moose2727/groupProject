@@ -304,7 +304,7 @@ namespace GroupProjectStart.Models
                     HasDamageInsurance = true,
                     HasLicense = true,
                     IsLoaner = true,
-                    Image = "https://www.filestackapi.com/api/file/K5bydpvxShy5QMVgKsP7",
+                    Image = "https://www.filestackapi.com/api/file/RuTYywXlQughPk4vPpF9",
                     CarsToLoan = new List<Car>
                     {
                        db.Cars.FirstOrDefault( c => c.Make == "Dodge")
