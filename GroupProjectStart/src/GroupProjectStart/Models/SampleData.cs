@@ -129,38 +129,50 @@ namespace GroupProjectStart.Models
                             Price = 132m
                         },
 
-                        new Car
-                        {
-                            Make = "Mazda",
-                            Model = " MX-5 Miata",
-                            Year = 2016,
-                            Image = "http://2.bp.blogspot.com/-lndOWG_WqsE/Ug3fiHidR8I/AAAAAAAAH3o/-LOSoELV-6w/s1600/2015-MG-Roadster-52.jpg",
-                            Door = 2,
-                            Price = 124m
-                        },
+                    new Car
+                    {
+                        Make = "Mazda",
+                        Model = " MX-5 Miata",
+                        Year = 2016,
+                        Image = "http://2.bp.blogspot.com/-lndOWG_WqsE/Ug3fiHidR8I/AAAAAAAAH3o/-LOSoELV-6w/s1600/2015-MG-Roadster-52.jpg",
+                        Door = 2,
+                        Price = 124m,
+                        IsActive = true,
+                        Condition = "Perfect",
+                        CtyMpg = 27,
+                        HwyMpg = 36,
+                        DateAdded = DateTime.Now,
+                        Miles = 18120,
+                        Seats = 2,
+                        Transmission = "Automatic",
+                        Description = "Lorem ipsum dolor sit amet, ei eam tempor eripuit, no nihil nonumy honestatis sit, eam at utroque luptatum reprehendunt. Te appareat consequat eum. Iisque facilisis eos an, te elitr cetero tacimates ius. Ut modus patrioque scribentur per, ei has erat populo essent, suas inimicus cum ut. Ad vocent audire phaedrum mea. Eos case doctus cudicam epicuri eum id.Vix scriptorem cotidieque inqui at dolore definitionem,facete voluptatum dissentiunt ad vel.Impedit officiis intellegam sea neet atqui aliquid fierent eos.Cu pri molestie definitionescu nec augue epicurei graeci principes pri ex.Doctus aeterno vim nesit an purto nullamea mel tollit sanctus."
 
-                        new Car
-                        {
-                            Make = "Chevrolet ",
-                            Model = "Corvette",
-                            Year = 2014,
-                            Image = "http://s3.amazonaws.com/fzautomotive/dealers/55b6d6e755b30.png",
-                            Door = 2,
-                            Price = 155m
-                        },
+                    },
 
-                        new Car
-                        {
-                            Make = "Honda ",
-                            Model = "Pilot",
-                            Year = 2014,
-                            Image = "http://static4.consumerreportscdn.org/content/dam/cro/magazine-articles/2015/December/CR122K15-Honda_Pilot_16_2917_Right.jpg",
-                            Door = 4,
-                            Price = 130
-                        }
-                    );
-                    db.SaveChanges();
-                }
+                    new Car
+                    {
+                        Make = "Chevrolet ",
+                        Model = "Corvette",
+                        Year = 2014,
+                        Image = "http://s3.amazonaws.com/fzautomotive/dealers/55b6d6e755b30.png",
+                        Door = 2,
+                        Price = 155m,
+                        IsActive = false
+                    },
+
+                    new Car
+                    {
+                        Make = "Honda ",
+                        Model = "Pilot",
+                        Year = 2014,
+                        Image = "http://static4.consumerreportscdn.org/content/dam/cro/magazine-articles/2015/December/CR122K15-Honda_Pilot_16_2917_Right.jpg",
+                        Door = 4,
+                        Price = 130,
+                        IsActive = true
+                    }
+                );
+                db.SaveChanges();
+            }
 
                 //USERS
                 var context = serviceProvider.GetService<ApplicationDbContext>();
@@ -258,6 +270,23 @@ namespace GroupProjectStart.Models
                         HasLicense = true,
                         IsLoaner = true,
                         CarsToLoan = new List<Car>
+            var Caleb = await userManager.FindByNameAsync("Caleb@Something.com");
+            if (Caleb == null)
+            {
+                // create user
+                Caleb = new ApplicationUser
+                {
+                    UserName = "Caleb@Something.com",
+                    Email = "Caleb@Something.com",
+                    FirstName = "Caleb",
+                    LastName = "Schwarzmiller",
+                    DisplayName = "CSchwarz",
+                    HasTheftInsurance = true,
+                    HasDamageInsurance = true,
+                    HasLicense = true,
+                    IsLoaner = true,
+                    Image = "C:\\Users\\User\\Source\\Repos\\GroupProject1\\GroupProjectStart\\src\\GroupProjectStart\\Images\\36629_10151582345891363_1720362342_n.jpg",
+                    CarsToLoan = new List<Car>
                     {
                        db.Cars.FirstOrDefault( c => c.Make == "Mazda")
                         //new Car {

@@ -27,8 +27,13 @@
     <div class="col-md-8 col-md-offset-2">
         <div ng-if="controller.user.isLoaner == true">
             <div ng-repeat="car in controller.user.carsToLoan">
-                <img src="{{car.image}}"/>
-                <h4>{{car.year}} {{car.make}} {{car.model}} test</h4>
+                <img src="{{car.image}}" />
+                <h4>{{car.year}} {{car.make}} {{car.model}}</h4>
+                <h5>{{car.price|currency}} per day</h5>
+
+                <button ng-if="car.isActive == true" class="btn btn-primary" ng-click="car.isActive = false">Deactivate</button>
+                <button ng-if="car.isActive == false" class="btn btn-primary" ng-click="car.isActive = true">Activate</button>
+
             </div>
         </div>
     </div>
