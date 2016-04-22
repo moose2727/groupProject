@@ -1,0 +1,34 @@
+﻿<h1>Testing the Ratings</h1>
+<a href="/add">Create a new Ratings</a>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>SchedulingExperience</th>
+        <th>PaymentExperience</th>
+        <th>PromptReplies</th>
+        <th>DeliveryExperience</th>
+        <th> ConditionOfReturnedCar</th>
+        <th>Trustworthiness</th>
+        <th>ProfessionalismOfDriver</th>
+        <th>OverallRating</th>
+
+    </tr>
+    <tr ng-repeat="r in controller.driverRatings">
+        <td>{{r.schedulingExperience}}</td>
+        <td>{{r.paymentExperience}}</td>
+        <td>{{r.promptReplies}}</td>
+        <td>{{r.deliveryExperience}}</td>
+        <td>{{r.conditionOfReturnedCar}}</td>
+        <td>{{r.trustworthiness}}</td>
+        <td>{{r.professionalismOfDriver}}</td>
+        <td>{{r.overallRating}}</td>
+
+
+
+        <td>
+            <a href="/edit/{{rating.id}}">Edit</a> /
+            <a href="/delete/{{r.id}}">Delete</a>
+        </td>
+    </tr>
+</table>

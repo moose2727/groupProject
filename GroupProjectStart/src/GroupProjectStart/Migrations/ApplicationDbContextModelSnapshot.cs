@@ -89,7 +89,19 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<string>("ApplicationUserId");
 
+                    b.Property<decimal>("AverageRating");
+
+                    b.Property<string>("Condition");
+
+                    b.Property<int>("CtyMpg");
+
+                    b.Property<DateTime>("DateAdded");
+
+                    b.Property<string>("Description");
+
                     b.Property<int>("Door");
+
+                    b.Property<int>("HwyMpg");
 
                     b.Property<string>("Image");
 
@@ -97,9 +109,15 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<string>("Make");
 
+                    b.Property<int>("Miles");
+
                     b.Property<string>("Model");
 
                     b.Property<decimal>("Price");
+
+                    b.Property<int>("Seats");
+
+                    b.Property<string>("Transmission");
 
                     b.Property<string>("UserId");
 

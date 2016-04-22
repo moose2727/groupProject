@@ -18,7 +18,8 @@ namespace GroupProjectStart.Services
 
         public List<Car> GetCars()
         {
-            var cars = _repo.Query<Car>().ToList();
+            var cars = _repo.Query<Car>().Include(c => c.CarRatings).ToList();
+            
             return cars;
         }
 
@@ -49,6 +50,15 @@ namespace GroupProjectStart.Services
             originalCar.Model = car.Model;
             originalCar.Price = car.Price;
             originalCar.Year = car.Year;
+            originalCar.Condition = car.Condition;
+            originalCar.CtyMpg = car.CtyMpg;
+            originalCar.Description = car.Description;
+            originalCar.HwyMpg = car.HwyMpg;
+            originalCar.CtyMpg = car.CtyMpg;
+            originalCar.Seats = car.Seats;
+            originalCar.Transmission = car.Transmission;
+            originalCar.Miles = car.Miles;
+
             _repo.Update<Car>(originalCar);
 
         }
