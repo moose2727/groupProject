@@ -20,6 +20,8 @@ namespace GroupProjectStart.Models
         public bool HasLicense { get; set; }
         public bool HasTheftInsurance { get; set; }
         public ICollection<RatingDriver> DriverRating { get; set; }
+        public decimal AverageRating { get; set; }
+
 
     }
 }

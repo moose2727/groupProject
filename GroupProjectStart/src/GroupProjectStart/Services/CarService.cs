@@ -58,6 +58,7 @@ namespace GroupProjectStart.Services
             originalCar.Seats = car.Seats;
             originalCar.Transmission = car.Transmission;
             originalCar.Miles = car.Miles;
+            originalCar.IsActive = car.IsActive;
 
             _repo.Update<Car>(originalCar);
 

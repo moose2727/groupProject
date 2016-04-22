@@ -8,7 +8,7 @@ using GroupProjectStart.Models;
 namespace GroupProjectStart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160421234126_restart")]
+    [Migration("20160422051211_restart")]
     partial class restart
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,6 +22,8 @@ namespace GroupProjectStart.Migrations
                     b.Property<string>("Id");
 
                     b.Property<int>("AccessFailedCount");
+
+                    b.Property<decimal>("AverageRating");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
