@@ -113,6 +113,8 @@ namespace GroupProjectStart.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("CarId");
+
                     b.Property<int>("DeliveryExperience");
 
                     b.Property<int>("ElectricalFunctions");
@@ -140,6 +142,8 @@ namespace GroupProjectStart.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApplicationUserId");
 
                     b.Property<int>("ConditionOfReturnedCar");
 
@@ -243,6 +247,20 @@ namespace GroupProjectStart.Migrations
                 });
 
             modelBuilder.Entity("GroupProjectStart.Models.Car", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.RatingCar", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.Car")
+                        .WithMany()
+                        .HasForeignKey("CarId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.RatingDriver", b =>
                 {
                     b.HasOne("GroupProjectStart.Models.ApplicationUser")
                         .WithMany()
