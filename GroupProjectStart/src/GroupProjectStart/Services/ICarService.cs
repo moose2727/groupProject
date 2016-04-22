@@ -8,7 +8,7 @@ namespace GroupProjectStart.Services
         void AddCar(Car car);
         void DeleteCar(int id);
         Car GetCar(int id);
-        List<Car> GetCars();
+        List<ApplicationUser> GetCars();
         void UpdateCar(Car car);
     }
 }
