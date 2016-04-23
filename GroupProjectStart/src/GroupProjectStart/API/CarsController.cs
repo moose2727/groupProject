@@ -44,7 +44,8 @@ namespace GroupProjectStart.API
             if(car.Id == 0)
             {
                 _repo.AddCar(car);
-            } else
+            }
+            else
             {
                 _repo.UpdateCar(car);
             }

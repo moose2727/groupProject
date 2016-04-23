@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 
 namespace GroupProjectStart.Migrations
 {
-    public partial class wtf : Migration
+    public partial class start : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,6 +15,7 @@ namespace GroupProjectStart.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
+                    AverageRating = table.Column<decimal>(nullable: false),
                     ConcurrencyStamp = table.Column<string>(nullable: true),
                     DisplayName = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),

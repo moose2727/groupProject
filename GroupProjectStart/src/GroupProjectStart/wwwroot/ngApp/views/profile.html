@@ -19,29 +19,43 @@
         <h4>Theft protection: <span ng-if="controller.user.hasTheftInsurance == true">Yes</span><span ng-if="controller.user.hasTheftInsurance == false">No</span></h4>
 
         <h4>Damage protection: <span ng-if="controller.user.hasDamageInsurance == true">Yes</span><span ng-if="controller.user.hasDamageInsurance == false">No</span></h4>
+        <div class="edit-user">
+            
+        </div>
     </div>
 </div>
 
+<br />
 
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <div ng-if="controller.user.isLoaner == true">
             <div ng-repeat="car in controller.user.carsToLoan">
-                <img src="{{car.image}}" />
-                <h4>{{car.year}} {{car.make}} {{car.model}}</h4>
-                <h5>{{car.price|currency}} per day</h5>
-                <h5>{{car.dateAdded}}</h5>
-                <ul>
-                    <li>Seats: {{car.seats}}</li>
-                    <li>Miles: {{car.miles}}</li>
-                    <li>Fuel efficiency: City {{car.ctyMpg}}/ Highway{{car.hwyMpg}}</li>
-                    <li>Transmission: {{car.transmission}}</li>
-                </ul>
-                <label>Owners description</label>
-                <p>{{car.description}}</p>
-                <button ng-if="car.isActive == true" class="btn btn-primary" ng-click="car.isActive = false">Deactivate</button>
-                <button ng-if="car.isActive == false" class="btn btn-primary" ng-click="car.isActive = true">Activate</button>
-
+                <div class="row car-detail">
+                    <div class="col-md-6">
+                        <img ng-if="car.isActive == true" class="car-img" src="{{car.image}}" />
+                        <img ng-if="car.isActive == false" class="car-img inactive-car" src="{{car.image}}" />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="car-type">
+                            <h4>{{car.year}} {{car.make}} {{car.model}}</h4>
+                        </div>
+                        <div class="active-toggle">
+                            <button ng-if="car.isActive == true" class="btn btn-danger" ng-click="controller.deactivateCar(car.id)">Deactivate</button>
+                            <button ng-if="car.isActive == false" class="btn btn-success" ng-click="controller.activateCar(car.id)">Activate</button>
+                        </div>
+                        <h5>{{car.price|currency}} per day</h5>
+                        <h5>{{car.dateAdded}}</h5>
+                        <ul>
+                            <li>Seats: {{car.seats}}</li>
+                            <li>Miles: {{car.miles}}</li>
+                            <li>Fuel efficiency: City {{car.ctyMpg}}/ Highway{{car.hwyMpg}}</li>
+                            <li>Transmission: {{car.transmission}}</li>
+                        </ul>
+                        <label>Owners description</label>
+                        <p>{{car.description}}</p>  
+                    </div>
+                </div>
             </div>
         </div>
     </div>
