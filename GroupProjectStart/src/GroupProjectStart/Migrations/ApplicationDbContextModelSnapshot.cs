@@ -22,6 +22,8 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
+                    b.Property<decimal>("AverageRating");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
