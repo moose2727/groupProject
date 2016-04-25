@@ -28,9 +28,17 @@ namespace GroupProjectStart.Services
             return driverRating;
         }
 
-        public void AddDriverRating(RatingDriver driverRating)
+        public void AddDriverRating(string id, RatingDriver driverRating)
         {
-            _repo.Add(driverRating);
+            var user = _repo.Query<ApplicationUser>().Where(u => u.Id == id).Include(c => c.DriverRatings).FirstOrDefault();
+            user.DriverRatings.Add(driverRating);
+            _repo.SaveChanges();
+            var total = ((driverRating.PaymentExperience) + (driverRating.ProfessionalismOfDriver) + (driverRating.PromptReplies) + (driverRating.SchedulingExperience) + (driverRating.Trustworthiness)) / 5;
+            driverRating.OverallRating = total;
+
+            user.AverageRating = (user.AverageRating * user.DriverRatings.Count + total) / user.DriverRatings.Count;
+
+            _repo.SaveChanges();
         }
 
         public void DeleteDriverRating(int id)

@@ -18,12 +18,7 @@ namespace GroupProjectStart.Services
 
         public List<ApplicationUser> GetCars()
         {
-            //var cars = _repo.Query<Car>().Include(c => c.CarRatings).ToList();
-            var cars = _repo.Query<ApplicationUser>().Include(c => c.CarsToLoan).ToList();
-
-           
-            
-            return cars;
+            return _repo.Query<ApplicationUser>().ToList();
         }
 
         public Car GetCar(int id)

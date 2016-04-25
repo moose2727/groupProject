@@ -21,21 +21,40 @@
             });
 
         }
+
+        public driverRateModal(id) {
+
+            this.$uibModal.open({
+                templateUrl: '/ngApp/views/modalViews/rateDriver.html',
+                controller: GroupProjectStart.Controllers.CreateDriverRatingController,
+                controllerAs: 'controller',
+                resolve: {
+                    id: () => id,
+
+                },
+                size: 'lg'
+            });
+
+        }
     }
 
     export class UserCarController {
         public user;
+        public car;
 
         constructor(
             private userCarsService: GroupProjectStart.Services.UserCarsService,
+            private carService: GroupProjectStart.Services.CarService,
             private $stateParams: ng.ui.IStateParamsService,
             private $state: ng.ui.IStateService) {
             this.getUser();
         }
 
         public getUser() {
-            let userId = this.$stateParams['id']
+            let userId = this.$stateParams['user'];
+            let carId = this.$stateParams['car'];
             this.user = this.userCarsService.getUser(userId);
+            this.car = this.carService.getCar(carId);
         }
     }
 }

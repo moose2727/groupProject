@@ -64,6 +64,7 @@ namespace GroupProjectStart
             services.AddScoped<ICarRatingService, CarRatingService>();
             services.AddScoped<IDriverRatingService, DriverRatingService>();
             services.AddScoped<IUserCarsService, UserCarsService>();
+            services.AddScoped<IReviewService, ReviewService>();
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<ApplicationDbContext>(options =>
