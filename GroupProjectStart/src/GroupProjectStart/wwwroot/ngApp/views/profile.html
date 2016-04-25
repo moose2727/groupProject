@@ -13,7 +13,9 @@
         <img class="profile-img" ng-if="controller.user.image != null" src="{{controller.user.image}}" />
     </div>
     <div class="col-md-4">
-
+        <div class="rating">
+            ratings placeholder
+        </div>
         <h4>Licensed: <span ng-if="controller.user.hasLicense == true">Yes</span><span ng-if="controller.user.hasLicense == false">No</span></h4>
 
         <h4>Theft protection: <span ng-if="controller.user.hasTheftInsurance == true">Yes</span><span ng-if="controller.user.hasTheftInsurance == false">No</span></h4>
@@ -22,6 +24,9 @@
         <div class="edit-user">
             
         </div>
+
+        <button ng-if="controller.user.isLoaner == true" class="btn btn-default btn-block">Rent out a car</button>
+        <button ng-if="controller.user.isLoaner == false" class="btn btn-default btn-block">Rent out your own car</button>
     </div>
 </div>
 
@@ -39,6 +44,9 @@
                     <div class="col-md-6">
                         <div class="car-type">
                             <h4>{{car.year}} {{car.make}} {{car.model}}</h4>
+                        </div>
+                        <div class="profileCarRating">
+                            car rating placeholder
                         </div>
                         <div class="active-toggle">
                             <button ng-if="car.isActive == true" class="btn btn-danger" ng-click="controller.deactivateCar(car.id)">Deactivate</button>

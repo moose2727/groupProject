@@ -27,14 +27,14 @@
             this.user = this.profileService.getUser(userId);
         }
 
-        public getCar(id) {
-            this.car = this.carService.getCar(id);
+        //public getCar(id) {
+        //    this.car = this.carService.getCar(id);
             
-        }
+        //}
 
         public activateCar(id) {
             this.carService.getCar(id).then((car) => {
-                debugger;
+                //debugger;
                 car.isActive = true;
                 this.carService.saveCar(car).then((data) => {
                     this.$state.reload();
@@ -47,7 +47,7 @@
             //let car = this.carService.getCar(id);
             //console.log(car);
             this.carService.getCar(id).then((car) => {
-                debugger;
+                //debugger;
                 car.isActive = false;
                 this.carService.saveCar(car).then((data) => {
                     this.$state.reload();
