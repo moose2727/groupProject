@@ -4,18 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using GroupProjectStart.Services;
-using GroupProjectStart.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GroupProjectStart.API
 {
     [Route("api/[controller]")]
-    public class DriverRatingsController : Controller
+    public class UserCarsController : Controller
     {
-        IDriverRatingService _repo;
+        IUserCarsService _repo;
 
-        public DriverRatingsController(IDriverRatingService repo)
+        public UserCarsController(IUserCarsService repo)
         {
             this._repo = repo;
         }
@@ -24,29 +23,21 @@ namespace GroupProjectStart.API
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_repo.GetDriverRatings());
+            var data = _repo.GetUserCars();
+            return Ok(data);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(string id)
         {
-            return Ok(_repo.GetDriverRating(id));
+            return Ok(_repo.getUserCar(id));
         }
 
         // POST api/values
-        [HttpPost("{id}")]
-        public IActionResult Post(string id, [FromBody]RatingDriver driverRating)
+        [HttpPost]
+        public void Post([FromBody]string value)
         {
-            if(driverRating.Id == 0)
-            {
-                _repo.AddDriverRating(id, driverRating);
-            }
-            else
-            {
-                _repo.UpdateDriverRating(driverRating);
-            }
-            return Ok(driverRating);
         }
 
         // PUT api/values/5
@@ -59,7 +50,6 @@ namespace GroupProjectStart.API
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _repo.DeleteDriverRating(id);
         }
     }
 }

@@ -11,11 +11,11 @@ using GroupProjectStart.Models;
 namespace GroupProjectStart.API
 {
     [Route("api/[controller]")]
-    public class DriverRatingsController : Controller
+    public class ReviewsController : Controller
     {
-        IDriverRatingService _repo;
+        IReviewService _repo;
 
-        public DriverRatingsController(IDriverRatingService repo)
+        public ReviewsController(IReviewService repo)
         {
             this._repo = repo;
         }
@@ -24,29 +24,46 @@ namespace GroupProjectStart.API
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_repo.GetDriverRatings());
+            return Ok(_repo.GetReviews());
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_repo.GetDriverRating(id));
+            return Ok(_repo.GetReview(id));
         }
 
         // POST api/values
         [HttpPost("{id}")]
-        public IActionResult Post(string id, [FromBody]RatingDriver driverRating)
+        //ADD CAR REVIEW
+        public IActionResult Post(int id, [FromBody]Review review)
         {
-            if(driverRating.Id == 0)
+            if(review.Id == 0)
             {
-                _repo.AddDriverRating(id, driverRating);
+                _repo.AddCarReview(id, review);
             }
             else
             {
-                _repo.UpdateDriverRating(driverRating);
+                _repo.UpdateMsg(review);
             }
-            return Ok(driverRating);
+            return Ok(review);
+        }
+
+        // POST api/values
+        [HttpPost("{user}")]
+        //ADD CAR REVIEW
+        public IActionResult Post(string id, [FromBody]Review review)
+        {
+            if (review.Id == 0)
+            {
+                _repo.AddDriverReview(id, review);
+            }
+            else
+            {
+                _repo.UpdateMsg(review);
+            }
+            return Ok(review);
         }
 
         // PUT api/values/5
@@ -59,7 +76,6 @@ namespace GroupProjectStart.API
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _repo.DeleteDriverRating(id);
         }
     }
 }

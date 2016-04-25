@@ -58,28 +58,37 @@
     <div class="row">
         <div class="col-md-10">
             <h2>Recent Listings</h2>
-             <div class="col-md-5"  ng-repeat="car in controller.cars">
-                 <a href="/car/{{car.id}}"><img id="carPosts" src="{{car.image}}" /></a>
-                 <div class="col-md-6">
-                     <p>{{car.year}} {{car.make}} {{car.model}}<br />Price per day: {{car.price}}</p>
-                 </div>
-                 <div class="col-md-6">
-                     <div class="col-sm-8">
-                       {{car.averageRating}}
-                     </div>
-                     <div class="col-sm-4 carRateButton">
-                         <div class="btn btn-block btn-danger" ng-click="controller.carRateModal(car.id)">RATE</div>
-                     </div>
-                 </div>
-             </div>
+            <div class="col-md-5" ng-repeat="user in controller.cars">
+               
+                <div class="" ng-repeat="c in user.carsToLoan">
+                    <a href="/car/{{c.id}}"><img id="carPosts" src="{{c.image}}" /></a>
+                    <div class="col-md-6">
+                        <p>{{c.year}} {{c.make}} {{c.model}}<br />Price per day: {{c.price}}</p>
+                    </div>
+                    <div>
+                        <img src="{{user.image}}" style="height: 50px; width: 50px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-sm-8">
+                            {{c.averageRating}}
+                        </div>
+                        <div class="col-sm-4 carRateButton">
+                            <div class="btn btn-block btn-danger" ng-click="controller.carRateModal(c.id)">RATE</div>
+                        </div>
+                    </div>
+         
+            </div>
+            </div>
         </div>
         <div class="col-md-2 pull-right">
             <!--THIS WILL BE A CUSTOM METHOD THAT RETURNS A CERTAIN LIST OF CARS BASED ON A METHOD-->
             <div class="list-group glyphicon-list-alt">
                 
-                <div class="popular-car" ng-repeat="car in controller.cars">
-                    <a href="/car/{{car.id}}"><img id="popCarPosts" src="{{car.image}}" /></a>
-                    <p>{{car.year}} {{car.make}} {{car.model}}</p>
+                <div class="popular-car" ng-repeat="user in controller.cars">
+                    <div ng-repeat="car in user.carsToLoan">
+                        <a href="/car/{{car.id}}"><img id="popCarPosts" src="{{car.image}}" /></a>
+                        <p>{{car.year}} {{car.make}} {{car.model}}</p>
+                    </div>
                 </div>
             </div>
         </div>
