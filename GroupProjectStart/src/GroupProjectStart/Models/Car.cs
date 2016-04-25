@@ -27,6 +27,7 @@ namespace GroupProjectStart.Models
         public string Description { get; set; }
         public ICollection<RatingCar> CarRatings { get; set; }
         public decimal AverageRating { get; set; }
+        public ICollection<Review> Reviews { get; set; }
 
 
     }
