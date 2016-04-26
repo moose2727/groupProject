@@ -128,6 +128,46 @@ namespace GroupProjectStart.Migrations
                     b.HasKey("Id");
                 });
 
+            modelBuilder.Entity("GroupProjectStart.Models.CarReview", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("CarId");
+
+                    b.Property<bool>("IsViewable");
+
+                    b.Property<string>("Message");
+
+                    b.Property<decimal>("Sentiment");
+
+                    b.Property<DateTime>("TimeCreated");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.DriverReview", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApplicationUserId");
+
+                    b.Property<bool>("IsViewable");
+
+                    b.Property<string>("Message");
+
+                    b.Property<decimal>("Sentiment");
+
+                    b.Property<DateTime>("TimeCreated");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+                });
+
             modelBuilder.Entity("GroupProjectStart.Models.RatingCar", b =>
                 {
                     b.Property<int>("Id")
@@ -287,6 +327,20 @@ namespace GroupProjectStart.Migrations
                 });
 
             modelBuilder.Entity("GroupProjectStart.Models.Car", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.CarReview", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.Car")
+                        .WithMany()
+                        .HasForeignKey("CarId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.DriverReview", b =>
                 {
                     b.HasOne("GroupProjectStart.Models.ApplicationUser")
                         .WithMany()

@@ -66,9 +66,8 @@ namespace GroupProjectStart {
                 controllerAs: 'controller'
             })
             .state('userCar', {
-                url: '/userCar/:id',
-                templateUrl: '/ngApp/views/userCarDetails.html',
-               
+                url: '/userCar/:user/:car',             
+                templateUrl: '/ngApp/views/userCarDetails.html', 
                 controller: GroupProjectStart.Controllers.UserCarController,
                 controllerAs: 'controller'
             })

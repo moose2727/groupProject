@@ -21,7 +21,7 @@ namespace GroupProjectStart.Models
         public bool HasTheftInsurance { get; set; }
         public ICollection<RatingDriver> DriverRatings { get; set; }
         public decimal AverageRating { get; set; }
-        public ICollection<Review> Reviews { get; set; }
+        public ICollection<DriverReview> Reviews { get; set; }
 
 
     }
