@@ -1,6 +1,6 @@
 ﻿
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-4 col-md-offset-2">
         <div class="form-group">
             <form ng-submit="controller.saveCar()">
                 Make: <input type="text" name="make" ng-model="controller.carToAdd.make" class="form-control"/><br />
@@ -8,10 +8,14 @@
                 Year: <input type="text" name="year"  ng-model="controller.carToAdd.year" class="form-control"/><br />
                 Price Per Day: <input type="text" name="price"  ng-model="controller.carToAdd.price" class="form-control"/><br />
                 Number of Doors: <input type="text" name="doors"  ng-model="controller.carToAdd.door" class="form-control"/><br />
-                Image of Car: <input type="text" name="image"  ng-model="controller.carToAdd.image" class="form-control"/><br /> <br />
 
-                <input type="submit" value="submit" class="btn btn-default" />
+                <input type="button" name="image" value="Upload image" ng-click="controller.pickFile()" class="btn btn-default"/><br /> <br />
+
+                <input type="button" value="submit" class="btn btn-default" ng-click="controller.saveCar()"/>
             </form>
         </div>
+    </div>
+    <div class="col-md-4">
+        <img src="{{controller.file.url}}" class="img-responsive" />
     </div>
 </div>

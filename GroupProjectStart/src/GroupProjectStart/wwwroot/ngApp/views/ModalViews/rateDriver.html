@@ -1,0 +1,98 @@
+﻿<div class="container">
+    <h1>Rate This Driver</h1>
+
+    <div class="span6">
+        <h2>
+            <i class="glyphicon glyphicon-ok-circle"></i>Many Categories<small>(Fill out accurately)</small>
+        </h2>
+        <p>
+            Fill out a rating 1-5
+        </p>
+        <blockquote>
+            <p>
+                You may leave items unchecked
+            </p>
+        </blockquote>
+
+        <div class="alert alert-info" style="width: 600px">
+            <form role="form" ng-submit="controller.saveDriverRating()">
+                <div class="form-inline">
+                    <label class="control-label">
+                        Scheduling Experience:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating1" value="1" ng-model="controller.ratingToCreate.schedulingExperience">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating1" ng-model="controller.ratingToCreate.schedulingExperience">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating1" ng-model="controller.ratingToCreate.schedulingExperience">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating1" ng-model="controller.ratingToCreate.schedulingExperience">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating1" value="5" ng-model="controller.ratingToCreate.schedulingExperience">5</label>
+                </div><br />
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate your payment experience:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating2" value="1" ng-model="controller.ratingToCreate.paymentExperience">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating2" ng-model="controller.ratingToCreate.paymentExperience">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating2" ng-model="controller.ratingToCreate.paymentExperience">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating2" ng-model="controller.ratingToCreate.paymentExperience">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating2" value="5" ng-model="controller.ratingToCreate.paymentExperience">5</label>
+                </div><br />
+                <div class="form-inline">
+                    <label class="control-label">
+                        Did the owner reply in a timely manner:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating3" value="1" ng-model="controller.ratingToCreate.promptReplies">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating3" ng-model="controller.ratingToCreate.promptReplies">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating3" ng-model="controller.ratingToCreate.promptReplies">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating3" ng-model="controller.ratingToCreate.promptReplies">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating3" value="5" ng-model="controller.ratingToCreate.promptReplies">5</label>
+                </div><br />
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate the delivery experience:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating4" value="1" ng-model="controller.ratingToCreate.deliveryExperience">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating4" ng-model="controller.ratingToCreate.deliveryExperience">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating4" ng-model="controller.ratingToCreate.deliveryExperience">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating4" ng-model="controller.ratingToCreate.deliveryExperience">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating4" value="5" ng-model="controller.ratingToCreate.deliveryExperience">5</label>
+                </div><br />
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate the condition of the car:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating5" value="1" ng-model="controller.ratingToCreate.conditionOfReturnedCar">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating5" ng-model="controller.ratingToCreate.conditionOfReturnedCar">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating5" ng-model="controller.ratingToCreate.conditionOfReturnedCar">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating5" ng-model="controller.ratingToCreate.conditionOfReturnedCar">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating5" value="5" ng-model="controller.ratingToCreate.conditionOfReturnedCar">5</label>
+                </div><br />
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate the trustworthiness of the owner:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating6" value="1" ng-model="controller.ratingToCreate.trustworthiness">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating6" ng-model="controller.ratingToCreate.trustworthiness">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating6" ng-model="controller.ratingToCreate.trustworthiness">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating6" ng-model="controller.ratingToCreate.trustworthiness">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating6" value="5" ng-model="controller.ratingToCreate.trustworthiness">5</label>
+                </div><br />
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate the owners professionalism:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating7" value="1" ng-model="controller.ratingToCreate.professionalismOfDriver">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating7" ng-model="controller.ratingToCreate.professionalismOfDriver">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating7" ng-model="controller.ratingToCreate.professionalismOfDriver">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating7" ng-model="controller.ratingToCreate.professionalismOfDriver">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating7" value="5" ng-model="controller.ratingToCreate.professionalismOfDriver">5</label>
+                </div><br />
+              
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

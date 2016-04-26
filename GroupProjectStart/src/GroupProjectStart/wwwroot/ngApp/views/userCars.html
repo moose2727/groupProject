@@ -1,0 +1,104 @@
+﻿<div class="container">
+    <div class="row searchCars" >
+        <form class="col-sm-12" >
+            <div class="col-md-2 col-md-offset-1">
+                <div class="form-group">
+                    <label for="carMake">
+                        <strong>Car Brand:</strong>
+                    </label>
+                
+                        <select class="form-control dropdown" id="carMake"  ng-repeat="user in controller.users">
+
+                            <option>sdklfja</option>
+
+                        </select>
+                   
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="carModel">
+                        <strong>Car Model:</strong>
+                    </label>
+                    <select class="form-control" id="carModel" ng-repeat="user in controller.users">
+                        <option ng-repeat="option in user.carsToLoan" value="{{option.id}}">{{option.model}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="carYear">
+                        <strong>Car Year:</strong>
+                    </label>
+                    <select class="form-control" id="carYear" ng-repeat="user in controller.users">
+                        <option ng-repeat="option in user.carsToLoan" value="{{option.id}}">{{option.year}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="carPrice">
+                        <strong>Car Price a Day:</strong>
+                    </label>
+                    <select class="form-control" id="carPrice" ng-repeat="user in controller.users">
+                        <option ng-repeat="option in user.carsToLoan" value="{{option.id}}">{{option.price}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+
+                <label for="submit">
+                    <strong class="advanced" ng- data-ng-mousemove="">Search</strong>
+                </label>
+                <button type="submit" class="src btn btn-sm red">Search<i class="glyphicon-search"></i></button>
+
+            </div>
+        </form>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-10">
+            <h2>Recent Listings</h2>
+            <div class="col-md-10" ng-repeat="user in controller.users">
+
+                <div class="col-lg-6" ng-repeat="car in user.carsToLoan">
+                    <a href="/userCar/{{user.id}}/{{car.id}}"><img id="carPosts" ng-src="{{car.image}}" /></a>
+                    <div class="col-md-6 pull-left">
+                        <p>{{car.year}} {{car.make}} {{car.model}}<br />Price per day: {{car.price}}</p>
+                      
+                    </div>
+                    <div>
+                        
+                    </div>
+                    <div class="col-md-6 pull-left">
+                        <div class="col-sm-8">
+                            {{c.averageRating}}
+
+                            {{user.averageRating}}
+                        </div>
+                        <div class="col-sm-4 carRateButton">
+                            <div class="btn btn-block btn-danger" ng-click="controller.carRateModal(c.id)">RATE Car</div>
+                            <div class="btn btn-block btn-success" ng-click="controller.driverRateModal(user.id)">RATE Driver</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 pull-right">
+            THIS WILL BE A CUSTOM METHOD THAT RETURNS A CERTAIN LIST OF CARS BASED ON A METHOD
+            <div class="list-group glyphicon-list-alt">
+
+                <div class="popular-car" ng-repeat="user in controller.users">
+                    <div ng-repeat="car in user.carsToLoan">
+                        <a href="/car/{{car.id}}"><img id="popCarPosts" ng-src="{{car.image}}" /></a>
+                        <p>{{car.year}} {{car.make}} {{car.model}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -8,7 +8,7 @@ using GroupProjectStart.Models;
 namespace GroupProjectStart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160421015340_start")]
+    [Migration("20160426180146_start")]
     partial class start
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,6 +22,8 @@ namespace GroupProjectStart.Migrations
                     b.Property<string>("Id");
 
                     b.Property<int>("AccessFailedCount");
+
+                    b.Property<decimal>("AverageRating");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
@@ -90,7 +92,19 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<string>("ApplicationUserId");
 
+                    b.Property<decimal>("AverageRating");
+
+                    b.Property<string>("Condition");
+
+                    b.Property<int>("CtyMpg");
+
+                    b.Property<DateTime>("DateAdded");
+
+                    b.Property<string>("Description");
+
                     b.Property<int>("Door");
+
+                    b.Property<int>("HwyMpg");
 
                     b.Property<string>("Image");
 
@@ -98,13 +112,59 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<string>("Make");
 
+                    b.Property<int>("Miles");
+
                     b.Property<string>("Model");
 
                     b.Property<decimal>("Price");
 
+                    b.Property<int>("Seats");
+
+                    b.Property<string>("Transmission");
+
                     b.Property<string>("UserId");
 
                     b.Property<int>("Year");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.CarReview", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("CarId");
+
+                    b.Property<bool>("IsViewable");
+
+                    b.Property<string>("Message");
+
+                    b.Property<decimal>("Sentiment");
+
+                    b.Property<DateTime>("TimeCreated");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.DriverReview", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApplicationUserId");
+
+                    b.Property<bool>("IsViewable");
+
+                    b.Property<string>("Message");
+
+                    b.Property<decimal>("Sentiment");
+
+                    b.Property<DateTime>("TimeCreated");
+
+                    b.Property<string>("Title");
 
                     b.HasKey("Id");
                 });
@@ -161,6 +221,26 @@ namespace GroupProjectStart.Migrations
                     b.Property<int>("SchedulingExperience");
 
                     b.Property<int>("Trustworthiness");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApplicationUserId");
+
+                    b.Property<int?>("CarId");
+
+                    b.Property<bool>("IsViewable");
+
+                    b.Property<string>("Message");
+
+                    b.Property<decimal>("Sentiment");
+
+                    b.Property<DateTime>("TimeCreated");
 
                     b.HasKey("Id");
                 });
@@ -248,20 +328,6 @@ namespace GroupProjectStart.Migrations
                 });
 
             modelBuilder.Entity("GroupProjectStart.Models.Car", b =>
-                {
-                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId");
-                });
-
-            modelBuilder.Entity("GroupProjectStart.Models.RatingCar", b =>
-                {
-                    b.HasOne("GroupProjectStart.Models.Car")
-                        .WithMany()
-                        .HasForeignKey("CarId");
-                });
-
-            modelBuilder.Entity("GroupProjectStart.Models.RatingDriver", b =>
                 {
                     b.HasOne("GroupProjectStart.Models.ApplicationUser")
                         .WithMany()

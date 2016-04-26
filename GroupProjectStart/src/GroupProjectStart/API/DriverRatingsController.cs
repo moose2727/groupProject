@@ -35,12 +35,12 @@ namespace GroupProjectStart.API
         }
 
         // POST api/values
-        [HttpPost]
-        public IActionResult Post([FromBody]RatingDriver driverRating)
+        [HttpPost("{id}")]
+        public IActionResult Post(string id, [FromBody]RatingDriver driverRating)
         {
             if(driverRating.Id == 0)
             {
-                _repo.AddDriverRating(driverRating);
+                _repo.AddDriverRating(id, driverRating);
             }
             else
             {

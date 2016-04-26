@@ -1,17 +1,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="GroupProjectStart">
 <head>
-    <title>GroupProjectStart</title>
+    <title></title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
     <link href="~/css/carpagestyles.css" rel="stylesheet" />
+    <link href="~/css/profilepagestyles.css" rel="stylesheet" />
     <base href="/" />
 </head>
 <body ng-controller="AccountController as account">
     <div class="container">
-        <h1>GroupProjectStart</h1>
+        <!-- logo -->
         <div>
+
+            <!-- NAV -->
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,7 +31,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="/about">About <span class="sr-only">(current)</span></a></li>
+                            <li><a href="/about">About <span class="sr-only">(current)</span></a></li>
                             
                             <li><a href="/secret">Secret</a></li>
                             
@@ -66,7 +69,7 @@
                                 </ul>
                             </li>
                             <li><a href="#" ng-show="!account.isLoggedIn()" ng-click="account.showSignInModal()">Login</a></li>
-                            <li><a href="#" ng-show="!account.isLoggedIn()" ng-click="account.showSignUpModal()">Sign Up</a></li>
+                            <li><a href="/register" ng-show="!account.isLoggedIn()"> <!--ng-click="account.showSignUpModal()">-->Sign Up</a></li>
                             <li><a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -81,6 +84,8 @@
     <script src="~/lib/angular/angular.js"></script>
     <script src="~/lib/angular-resource/angular-resource.js"></script>
     <script src="~/lib/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+    <script src="~/lib/angular-filepicker/angular-filepicker.js"></script>
     <script src="~/lib/angular-touch/angular-touch.js"></script>
     <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>

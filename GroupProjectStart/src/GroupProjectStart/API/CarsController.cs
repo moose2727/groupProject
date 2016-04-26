@@ -25,7 +25,8 @@ namespace GroupProjectStart.API
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_repo.GetCars());
+            var data = _repo.GetCars();
+            return Ok(data);
         }
 
 
@@ -37,13 +38,14 @@ namespace GroupProjectStart.API
         }
 
         // POST api/values
-        [HttpPost]
-        public IActionResult Post([FromBody]Car car)
+        [HttpPost("{id}")]
+        public IActionResult Post(string id, [FromBody]Car car)
         {
             if(car.Id == 0)
             {
-                _repo.AddCar(car);
-            } else
+                _repo.AddCar(id, car);
+            }
+            else
             {
                 _repo.UpdateCar(car);
             }
