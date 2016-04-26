@@ -1,7 +1,27 @@
 namespace GroupProjectStart.Controllers {
 
     export class HomeController {
-        public message = 'Hello from the home page!';
+        public registerUser;
+        public validationMessages;
+        public file;
+        public image;
+
+        public register() {
+            debugger;
+            this.registerUser.image = this.image;
+            this.accountService.register(this.registerUser).then(() => {
+                //this.registerUser.image = this.image;
+                this.$location.path('/');
+                //this.ok();
+            }).catch((results) => {
+                this.validationMessages = results;
+            });
+        }
+        constructor(private accountService: GroupProjectStart.Services.AccountService,
+            private $location: ng.ILocationService) {
+
+        }
+
     }
 
 
