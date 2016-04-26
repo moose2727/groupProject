@@ -334,45 +334,6 @@ namespace GroupProjectStart.Migrations
                         .HasForeignKey("ApplicationUserId");
                 });
 
-            modelBuilder.Entity("GroupProjectStart.Models.CarReview", b =>
-                {
-                    b.HasOne("GroupProjectStart.Models.Car")
-                        .WithMany()
-                        .HasForeignKey("CarId");
-                });
-
-            modelBuilder.Entity("GroupProjectStart.Models.DriverReview", b =>
-                {
-                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId");
-                });
-
-            modelBuilder.Entity("GroupProjectStart.Models.RatingCar", b =>
-                {
-                    b.HasOne("GroupProjectStart.Models.Car")
-                        .WithMany()
-                        .HasForeignKey("CarId");
-                });
-
-            modelBuilder.Entity("GroupProjectStart.Models.RatingDriver", b =>
-                {
-                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId");
-                });
-
-            modelBuilder.Entity("GroupProjectStart.Models.Review", b =>
-                {
-                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId");
-
-                    b.HasOne("GroupProjectStart.Models.Car")
-                        .WithMany()
-                        .HasForeignKey("CarId");
-                });
-
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNet.Identity.EntityFramework.IdentityRole")
