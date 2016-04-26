@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
-using GroupProjectStart.Services;
 using GroupProjectStart.Models;
+using GroupProjectStart.Services;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GroupProjectStart.API
 {
+ 
     [Route("api/[controller]")]
-    public class ReviewsController : Controller
+    public class DriverReviewsController : Controller
     {
-        IReviewService _repo;
+        IDriverReviewService _repo;
 
-        public ReviewsController(IReviewService repo)
+        public DriverReviewsController(IDriverReviewService repo)
         {
             this._repo = repo;
         }
-
         // GET: api/values
         [HttpGet]
         public IActionResult Get()
@@ -36,34 +36,17 @@ namespace GroupProjectStart.API
 
         // POST api/values
         [HttpPost("{id}")]
-        //ADD CAR REVIEW
-        public IActionResult Post(int id, [FromBody]Review review)
+        public IActionResult Post(string id, [FromBody]DriverReview driverReview)
         {
-            if(review.Id == 0)
+            if(driverReview.Id == 0)
             {
-                _repo.AddCarReview(id, review);
+                _repo.AddDriverReview(id, driverReview);
             }
             else
             {
-                _repo.UpdateMsg(review);
+                _repo.UpdateReview(driverReview);
             }
-            return Ok(review);
-        }
-
-        // POST api/values
-        [HttpPost("{user}")]
-        //ADD CAR REVIEW
-        public IActionResult Post(string id, [FromBody]Review review)
-        {
-            if (review.Id == 0)
-            {
-                _repo.AddDriverReview(id, review);
-            }
-            else
-            {
-                _repo.UpdateMsg(review);
-            }
-            return Ok(review);
+            return Ok(driverReview);
         }
 
         // PUT api/values/5
@@ -76,6 +59,7 @@ namespace GroupProjectStart.API
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+
         }
     }
 }

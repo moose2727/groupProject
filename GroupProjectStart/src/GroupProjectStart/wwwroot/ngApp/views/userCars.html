@@ -63,10 +63,10 @@
             <h2>Recent Listings</h2>
             <div class="col-md-10" ng-repeat="user in controller.users">
 
-                <div class="col-lg-6" ng-repeat="c in user.carsToLoan">
-                    <a href="/userCar/{{user.id}}"><img id="carPosts" src="{{c.image}})" /></a>
+                <div class="col-lg-6" ng-repeat="car in user.carsToLoan">
+                    <a href="/userCar/{{user.id}}/{{car.id}}"><img id="carPosts" ng-src="{{car.image}}" /></a>
                     <div class="col-md-6 pull-left">
-                        <p>{{c.year}} {{c.make}} {{c.model}}<br />Price per day: {{c.price}}</p>
+                        <p>{{car.year}} {{car.make}} {{car.model}}<br />Price per day: {{car.price}}</p>
                       
                     </div>
                     <div>
@@ -93,7 +93,7 @@
 
                 <div class="popular-car" ng-repeat="user in controller.users">
                     <div ng-repeat="car in user.carsToLoan">
-                        <a href="/car/{{car.id}}"><img id="popCarPosts" src="{{car.image}}" /></a>
+                        <a href="/car/{{car.id}}"><img id="popCarPosts" ng-src="{{car.image}}" /></a>
                         <p>{{car.year}} {{car.make}} {{car.model}}</p>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ namespace GroupProjectStart.Services
 
         public List<ApplicationUser> GetUserCars()
         {
-            var users = _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).ToList();
+            var users = _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).ToList();
             return users;
         }
 
@@ -43,7 +43,7 @@ namespace GroupProjectStart.Services
 
         public ApplicationUser getUserCar(string id)
         {
-            var user =  _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Where(u => u.Id == id).FirstOrDefault();
+            var user =  _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).Where(u => u.Id == id).FirstOrDefault();
 
             return user;
         }
