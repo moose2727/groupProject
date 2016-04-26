@@ -5,7 +5,7 @@ namespace GroupProjectStart.Services
 {
     public interface ICarService
     {
-        void AddCar(Car car);
+        void AddCar(string id, Car car);
         void DeleteCar(int id);
         Car GetCar(int id);
         List<ApplicationUser> GetCars();

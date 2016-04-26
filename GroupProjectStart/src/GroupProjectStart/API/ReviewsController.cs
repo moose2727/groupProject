@@ -45,7 +45,7 @@ namespace GroupProjectStart.API
             }
             else
             {
-                _repo.UpdateMsg(review);
+                _repo.UpdateReview(review);
             }
             return Ok(review);
         }
@@ -61,7 +61,7 @@ namespace GroupProjectStart.API
             }
             else
             {
-                _repo.UpdateMsg(review);
+                _repo.UpdateReview(review);
             }
             return Ok(review);
         }

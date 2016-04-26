@@ -210,7 +210,12 @@ namespace GroupProjectStart.Models
                         DisplayName = "SWalther",
                         FirstName = "Stephen",
                         LastName = "Walther",
-                        IsAdmin = true
+                        IsAdmin = true,
+                        HasDamageInsurance = true,
+                        HasTheftInsurance = true,
+                        HasLicense = true,
+                        IsLoaner = false,
+                        Image = ""
                     };
                     await userManager.CreateAsync(stephen, "Secret123!");
 

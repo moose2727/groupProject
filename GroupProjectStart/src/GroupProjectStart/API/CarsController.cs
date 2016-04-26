@@ -38,12 +38,12 @@ namespace GroupProjectStart.API
         }
 
         // POST api/values
-        [HttpPost]
-        public IActionResult Post([FromBody]Car car)
+        [HttpPost("{id}")]
+        public IActionResult Post(string id, [FromBody]Car car)
         {
             if(car.Id == 0)
             {
-                _repo.AddCar(car);
+                _repo.AddCar(id, car);
             }
             else
             {

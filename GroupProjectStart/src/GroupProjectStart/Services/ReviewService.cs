@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GroupProjectStart.Services
 {
-    public class ReviewService
+    public class ReviewService : IReviewService
     {
         IGenericRepository _repo;
 
