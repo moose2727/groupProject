@@ -18,7 +18,7 @@
     filter: grayscale(100%);
 }
 
-.active-toggle{
+.profile-car-btn{
     display:inline-block;
     float:right;
 }
@@ -29,4 +29,15 @@
 
 .profileCarRating{
     display:inline-block;
+}
+
+.form-description{
+    resize:none;
+    width: 100% !important;
+    height: 500px;
+}
+
+.addCarForm{
+    border: solid 2px black;
+    padding: 10px;
 }

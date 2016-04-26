@@ -225,6 +225,26 @@ namespace GroupProjectStart.Migrations
                     b.HasKey("Id");
                 });
 
+            modelBuilder.Entity("GroupProjectStart.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApplicationUserId");
+
+                    b.Property<int?>("CarId");
+
+                    b.Property<bool>("IsViewable");
+
+                    b.Property<string>("Message");
+
+                    b.Property<decimal>("Sentiment");
+
+                    b.Property<DateTime>("TimeCreated");
+
+                    b.HasKey("Id");
+                });
+
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRole", b =>
                 {
                     b.Property<string>("Id");
@@ -340,6 +360,17 @@ namespace GroupProjectStart.Migrations
                     b.HasOne("GroupProjectStart.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.Review", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("GroupProjectStart.Models.Car")
+                        .WithMany()
+                        .HasForeignKey("CarId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>

@@ -10,18 +10,13 @@
                 <div class="col-md-6">
                     <h3>
                         Car To Rent
-                    </h3><img alt="Bootstrap Image Preview"  style="height: 400px; width: 500px" src="{{controller.car.image}}" />
-    
+                    </h3><img alt="Bootstrap Image Preview" class="carAndLoanerImg text-center" style="height: 400px; width: 500px" src="{{controller.user.carsToLoan.image}}" />
                     <div class="row">
                         <div class="col-md-4">
                             car details BLAH BLAH
                         </div>
                         <div class="col-md-4">
-                            <div class="btn btn-lg btn-default" ng-click="controller.carReviewModal(controller.car.id)"></div>
-                            MORE CAR 
-                            <div ng-repeat="review in controller.car.reviews">
-                                {{review.message}}
-                            </div>
+                            MORE CAR DETAILS
                         </div>
                         <div class="col-md-4">
                             GOOGLE LOCATION PLACE HOLDER
@@ -33,12 +28,11 @@
                         Car Owner
                     </h3><img alt="Bootstrap Image Preview" class="carAndLoanerImg pull-left" src="{{controller.user.image}}" style="height: 200px; width: 200px;" />
                     <div class="row">
-                        <div class="col-md-4" ng-repeat="review in controller.user.reviews">
+                        <div class="col-md-4">
                             USER DETAILS
-                           {{review.message}}
                         </div>
                         <div class="col-md-4">
-                            <div class="btn btn-lg btn-default" ng-click="controller.driverReviewModal(controller.user.id)"></div>
+
                         </div>
                         <div class="col-md-4">
                         </div>

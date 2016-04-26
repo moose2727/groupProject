@@ -27,9 +27,12 @@ namespace GroupProjectStart.Services
                        return car;
         }
 
-        public void AddCar(Car car)
+        public void AddCar(string id, Car car)
         {
-            _repo.Add(car);    
+            var user = _repo.Query<ApplicationUser>().Where(u => u.Id == id).Include(u => u.CarsToLoan).FirstOrDefault();
+            user.CarsToLoan.Add(car);
+            _repo.SaveChanges();
+            //_repo.Add(car);    
         }
 
         public void DeleteCar(int id)

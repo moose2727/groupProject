@@ -29,21 +29,40 @@
 
     export class CarFormController {
         public carToAdd;
+        public file;
+        public image;
+        public userId;
 
         constructor(
             private carService: GroupProjectStart.Services.CarService,
-            private $state: ng.ui.IStateService) {
+            private $state: ng.ui.IStateService,
+            private filepickerService: any,
+            private $scope: ng.IScope) {
             
         }
 
-        saveCar() {
-            this.carService.saveCar(this.carToAdd).then(() => {
+        saveCar(id, carToAdd) {
+            this.carToAdd.image = this.image
+            this.carService.saveCar(this.userId, this.carToAdd).then(() => {
                 this.$state.go('cars');
             });
         }
 
         cancel() {
             this.$state.go('cars');
+        }
+
+
+        public pickFile() {
+            this.filepickerService.pick({
+                mimetype: 'image/*',
+            }, this.fileUploaded.bind(this));
+        }
+
+        private fileUploaded(file) {
+            this.file = file;
+            this.$scope.$apply();
+            this.image = file.url;
         }
     }
 
