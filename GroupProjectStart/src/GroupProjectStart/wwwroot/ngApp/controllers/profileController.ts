@@ -29,24 +29,35 @@
             this.getUser();
         }
 
-        //public addCarModal(id) {
+        public removeCarModal(id) {
+            this.$uibModal.open({
+                templateUrl: 'ngApp/views/modalViews/deleteCar.html',
+                controller: GroupProjectStart.Controllers.DeleteCarController,
+                controllerAs: 'controller',
+                resolve: {
+                    id: () => id,
+                },
+                size: 'md'
+            });
+        }
 
-        //    this.$uibModal.open({
-        //        templateUrl: 'ngApp/views/modalViews/carAdd.html',
-        //        controller: GroupProjectStart.Controllers.CarFormController,
-        //        controllerAs: 'controller',
-        //        resolve: {
-        //            id: () => id,
-        //        },
-
-        //    });
-        //}
+        public editCarModal(id) {
+            this.$uibModal.open({
+                templateUrl: 'ngApp/views/modalViews/carEdit.html',
+                controller: GroupProjectStart.Controllers.CarsEditController,
+                controllerAs: 'controller',
+                resolve: {
+                    id: () => id,
+                },
+                size: 'lg'
+            });
+        }
 
         saveCar() {
             this.carToAdd.applicationUserId = this.user.id;
             this.carToAdd.image = this.image
             this.carService.saveCar(this.user.id, this.carToAdd).then(() => {
-                this.$state.go('cars');
+                this.$state.reload();
             });
         }
 

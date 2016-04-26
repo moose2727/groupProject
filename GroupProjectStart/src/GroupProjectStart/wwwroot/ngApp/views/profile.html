@@ -158,15 +158,15 @@
 
                         <br />
                         <div class="profile-car-btn">
-                            <button class="btn btn-primary">Edit details</button>
+                            <button class="btn btn-primary" ng-click="controller.editCarModal(car.id)">Edit details</button>
                         </div>
                         <br />
                         <br />
                         <div class="profile-car-btn">
-                            <button class="btn btn-danger">Remove Car</button>
+                            <button class="btn btn-danger" ng-click="controller.removeCarModal(car.id)">Remove Car</button>
                         </div>
                         <h5>{{car.price|currency}} per day</h5>
-                        <h5>{{car.dateAdded}}</h5>
+                        <h5>{{car.dateAdded|date}}</h5>
                         <ul>
                             <li>Seats: {{car.seats}}</li>
                             <li>Miles: {{car.miles}}</li>
