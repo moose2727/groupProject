@@ -21,7 +21,7 @@ namespace GroupProjectStart.API
             {
                 var values = new Dictionary<string, string>
                     {
-                       { "apikey", "/////////////////////////////" },
+                       { "apikey", "/////////////////////////////////////" },
                        { "text", sampletext },
                        { "outputMode", "json"},
                        { "sentiment", "1"},

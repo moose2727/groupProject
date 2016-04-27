@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace GroupProjectStart.Models
 {
@@ -24,7 +26,7 @@ namespace GroupProjectStart.Models
     }
 
     public class Entity
-    {
+    {       
         public string type { get; set; }
         public string relevance { get; set; }
         public Sentiment sentiment { get; set; }
@@ -32,4 +34,14 @@ namespace GroupProjectStart.Models
         public string text { get; set; }
     }
 
+    public class SentimentInfo
+    {
+        public int Id { get; set; }
+        public string EntityType { get; set; }
+        public string Relevance { get; set; }
+        public string SentimentType { get; set; }
+        public string SentimentScore { get; set; }
+        public string Count { get; set; }
+        public string Text { get; set; }
+    }
 }
