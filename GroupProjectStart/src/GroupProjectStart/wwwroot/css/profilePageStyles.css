@@ -5,12 +5,14 @@
 
 .car-img{
     width: 100%;
-    /*height: 30em;*/
+    height: 25em;
+    overflow:hidden;
 }
 
 .car-detail{
     border: solid 2px black;
-    padding-top: 10px;
+    padding: 10px;
+    margin: 10px;
 }
 
 .inactive-car{
@@ -40,4 +42,18 @@
 .addCarForm{
     border: solid 2px black;
     padding: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /*appearance: none;*/
+    margin: 0; 
+}
+
+.editCarButtons{
+    margin-top:10px;
+    margin-bottom:10px;
+    float: right;
 }

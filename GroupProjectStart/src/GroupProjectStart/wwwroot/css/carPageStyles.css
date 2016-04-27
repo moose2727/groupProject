@@ -1,8 +1,51 @@
 ﻿#popCarPosts {
-    width: 75%;
+    height: 100px;
+    width: auto;
+    border: 1px solid black;
+    max-width: 95%;
+    font-weight: 700;
+    font-size: 26px;
+    color: white;
+}
+
+.popular-car {
+    font-weight: 700;
+    font-size: 26px;
+    color: white;
+}
+
+#carPosts {
+    margin-top: 10px;
+    height: 300px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#userCarBody {
+    
+    background-color: #a52020;
    
 }
 
-.carRateButton {
-    background-color: red;
+#carRepeat {
+    background-color:  #2c2727;
+    color: white;
+    font-size: 14px;
+    font-weight:700;
 }
+
+#carProps {
+    background-color: #432727;
+  margin-bottom: 15px;
+}
+
+#rateCarBut {
+    margin-bottom: 10px;
+}
+
+#rateDriverBut {
+    margin-top: 5px;
+}
+
+/*something*/
+/*wtf*/

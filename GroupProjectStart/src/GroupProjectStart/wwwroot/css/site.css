@@ -1,6 +1,15 @@
 body {
+        background-image: url(https://images7.alphacoders.com/312/312528.jpg)!important;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
     padding-top: 50px;
     padding-bottom: 20px;
+    background-attachment: fixed;
+    
+}
+
+#pageContentContainer {
+    margin-top: 50px;
 }
 
 /* Wrapping element */
@@ -11,11 +20,11 @@ body {
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/
 
 /* Carousel */
 .carousel-caption {

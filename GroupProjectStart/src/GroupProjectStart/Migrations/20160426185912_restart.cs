@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 
 namespace GroupProjectStart.Migrations
 {
-    public partial class start : Migration
+    public partial class restart : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -222,6 +222,57 @@ namespace GroupProjectStart.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+            migrationBuilder.CreateTable(
+                name: "CarReview",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CarId = table.Column<int>(nullable: true),
+                    IsViewable = table.Column<bool>(nullable: false),
+                    Message = table.Column<string>(nullable: true),
+                    Sentiment = table.Column<decimal>(nullable: false),
+                    TimeCreated = table.Column<DateTime>(nullable: false),
+                    Title = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CarReview", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CarReview_Car_CarId",
+                        column: x => x.CarId,
+                        principalTable: "Car",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+            migrationBuilder.CreateTable(
+                name: "RatingCar",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CarId = table.Column<int>(nullable: true),
+                    DeliveryExperience = table.Column<int>(nullable: false),
+                    ElectricalFunctions = table.Column<int>(nullable: false),
+                    EngineOperation = table.Column<int>(nullable: false),
+                    IndoorAirQuality = table.Column<int>(nullable: false),
+                    InsideCleanliness = table.Column<int>(nullable: false),
+                    OutsideCleanliness = table.Column<int>(nullable: false),
+                    OverallRating = table.Column<int>(nullable: false),
+                    ProfessionalismOfOwner = table.Column<int>(nullable: false),
+                    SafetyFeatures = table.Column<int>(nullable: false),
+                    TireQuality = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RatingCar", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RatingCar_Car_CarId",
+                        column: x => x.CarId,
+                        principalTable: "Car",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "AspNetUsers",
@@ -238,9 +289,10 @@ namespace GroupProjectStart.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable("CarReview");
+            migrationBuilder.DropTable("DriverReview");
             migrationBuilder.DropTable("RatingCar");
             migrationBuilder.DropTable("RatingDriver");
-            migrationBuilder.DropTable("Review");
             migrationBuilder.DropTable("AspNetRoleClaims");
             migrationBuilder.DropTable("AspNetUserClaims");
             migrationBuilder.DropTable("AspNetUserLogins");

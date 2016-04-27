@@ -58,9 +58,9 @@
     <div class="row">
         <div class="col-md-10">
             <h2>Recent Listings</h2>
-            <div class="col-md-5" ng-repeat="user in controller.cars">
+            <div class="col-md-5">
                
-                <div class="" ng-repeat="c in user.carsToLoan">
+                <div class="" ng-repeat="c in controller.cars">
                     <a href="/car/{{c.id}}"><img id="carPosts" src="{{c.image}}" /></a>
                     <div class="col-md-6">
                         <p>{{c.year}} {{c.make}} {{c.model}}<br />Price per day: {{c.price}}</p>
