@@ -1,1 +1,70 @@
-﻿
+﻿#promo-1 {
+    background-image: url(http://s31.postimg.org/tt3jep7nv/free_forest_road_wallpaper_2.jpg);
+}
+
+.welcome {
+    color: #fff;
+    font-size: 32px;
+}
+  
+.welcome-paragraph {
+   color: #fff;   
+}
+    
+.btn.btn-success.btn-block {
+    color: #ffffff;
+    background-color: #ba2727;
+    background-image: linear-gradient(to bottom, #ba2727, #912222);
+    border-color: #ba2727 #ba2727 #ba2727;
+}
+.btn.btn-success.btn-block:hover {
+    color: #ffffff;
+    background-color: #912222;
+    background-image: linear-gradient(to bottom, #912222, #912222);
+    background-size: cover;
+    border-color: #ba2727 #ba2727 #ba2727;
+}
+
+  
+.content-2-2 {
+      background-color: #ba2727;
+  color: #fff;
+    }  
+  
+.feature-text, h3 {
+    font-size: 22px;
+    padding-top: 10px;
+  }
+
+  .feature-text, p {
+    font-size: 14px;
+    padding-bottom: 15px;
+  }
+
+.icon {
+    padding-top: 25px;
+  }
+  
+.copyright-bar {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+}
+
+.ng-invalid.ng-touched {
+    background-color: red;
+    opacity: .6;
+    border: 1px solid black;
+}
+
+#modelInput {
+    border: 1px solid black;
+}
+
+.ng-valid.ng-touched {
+    background-color: lawngreen;
+}
+
+.error {
+    background-color: red;
+}

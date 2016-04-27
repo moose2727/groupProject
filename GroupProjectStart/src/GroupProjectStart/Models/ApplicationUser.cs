@@ -14,7 +14,15 @@ namespace GroupProjectStart.Models
         public string LastName { get; set; }
         public string Image { get; set; }
         public bool IsLoaner { get; set; }
+        public bool IsAdmin { get; set; }
         public bool HasDamageInsurance { get; set; }
+        public ICollection<Car> CarsToLoan { get; set; }
         public bool HasLicense { get; set; }
+        public bool HasTheftInsurance { get; set; }
+        public ICollection<RatingDriver> DriverRatings { get; set; }
+        public decimal AverageRating { get; set; }
+        public ICollection<DriverReview> Reviews { get; set; }
+
+
     }
 }

@@ -1,10 +1,13 @@
 namespace GroupProjectStart {
 
-    angular.module('GroupProjectStart', ['ui.router', 'ngResource', 'ui.bootstrap']).config((
+    angular.module('GroupProjectStart', ['ui.router', 'ngResource', 'ui.bootstrap', 'angular-filepicker']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
-        $locationProvider: ng.ILocationProvider
+        $locationProvider: ng.ILocationProvider,
+        filepickerProvider: any
     ) => {
+        //filepicker api key
+        filepickerProvider.setKey('Ay0qe4wR6efe0Ua2XZC5wz');
         // Define routes
         $stateProvider
             .state('home', {
@@ -43,6 +46,13 @@ namespace GroupProjectStart {
                 controller: GroupProjectStart.Controllers.AboutController,
                 controllerAs: 'controller'
             })
+            .state('contact', {
+                url: '/contact',
+                templateUrl: '/ngApp/views/contact.html',
+                controller: GroupProjectStart.Controllers.ContactController,
+                controllerAs: 'controller'
+            })
+
             .state('edit', {
                 url: '/edit/:id',
                 templateUrl: '/ngApp/views/carEdit.html',
@@ -53,6 +63,18 @@ namespace GroupProjectStart {
                 url: '/cars',
                 templateUrl: '/ngApp/views/car.html',
                 controller: GroupProjectStart.Controllers.CarsController,
+                controllerAs: 'controller'
+            })
+            .state('userCar', {
+                url: '/userCar/:user/:car',             
+                templateUrl: '/ngApp/views/userCarDetails.html', 
+                controller: GroupProjectStart.Controllers.UserCarController,
+                controllerAs: 'controller'
+            })
+            .state('userCars', {
+                url: '/userCars',
+                templateUrl: '/ngApp/views/userCars.html',
+                controller: GroupProjectStart.Controllers.UserCarsController,
                 controllerAs: 'controller'
             })
             .state('carDetail', {
@@ -71,6 +93,42 @@ namespace GroupProjectStart {
                 url: '/deleteCar/:id',
                 templateUrl: '/ngApp/views/deleteCar.html',
                 controller: GroupProjectStart.Controllers.DeleteCarController,
+                controllerAs: 'controller'
+            })
+            .state('profiles', {
+                url: '/profiles',
+                templateUrl: 'ngApp/views/profiles.html',
+                controller: GroupProjectStart.Controllers.ProfilesController,
+                controllerAs: 'controller'
+            })
+            .state('profile', {
+                url: '/profile/:id',
+                templateUrl: 'ngApp/views/profile.html',
+                controller: GroupProjectStart.Controllers.ProfileController,
+                controllerAs: 'controller'
+            })
+            .state('sentiment', {
+                url: '/sentiment',
+                templateUrl: 'ngApp/views/usersentiment.html',
+                controller: GroupProjectStart.Controllers.UserSentimentController,
+                controllerAs: 'controller'
+            })
+            .state('ratings', {
+                url: '/ratings',
+                templateUrl: 'ngApp/views/ratings.html',
+                controller: GroupProjectStart.Controllers.CarRatingController,
+                controllerAs: 'controller'
+            })
+            .state('driverRatings', {
+                url: '/driverRatings',
+                templateUrl: 'ngApp/views/driverRatings.html',
+                controller: GroupProjectStart.Controllers.DriverRatingController,
+                controllerAs: 'controller'
+            })
+            .state('deleteRating', {
+                url: '/delete/:id',
+                templateUrl: 'ngApp/views/deleteRating.html',
+                controller: GroupProjectStart.Controllers.DeleteDriverRatingController,
                 controllerAs: 'controller'
             })
             .state('notFound', {

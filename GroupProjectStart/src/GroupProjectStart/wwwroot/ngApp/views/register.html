@@ -1,37 +1,48 @@
-<h1>Register</h1>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <ul>
+            <li ng-repeat="message in controller.validationMessages">
+                {{message}}
+            </li>
+        </ul>
 
-<fieldset>
-    <legend>Register with a Social Provider</legend>
-    <ul>
-        <li ng-repeat="externalLogin in account.externalLogins">
-            <a target="_self" href="{{externalLogin.url}}">{{externalLogin.name}}</a>
-        </li>
-    </ul>
+        <form ng-submit="controller.register()">
+            <div>
+                <label>Email:</label>
+                <input ng-model="controller.registerUser.email" />
+            </div>
+            <div>
+                <label>Password:</label>
+                <input ng-model="controller.registerUser.password" />
+            </div>
 
-</fieldset>
-
-<fieldset>
-    <legend>Local Registration</legend>
-    <ul>
-        <li ng-repeat="message in controller.validationMessages">
-            {{message}}
-        </li>
-    </ul>
-
-    <form ng-submit="controller.register()">
-        <div>
-            <label>Email:</label>
-            <input ng-model="controller.registerUser.email" />
-        </div>
-        <div>
-            <label>Password:</label>
-            <input ng-model="controller.registerUser.password" />
-        </div>
-        <div>
-            <label>Confirm Password:</label>
-            <input ng-model="controller.registerUser.confirmPassword" />
-        </div>
-        <input type="submit" value="Register" />
-    </form>
-
-</fieldset>
+            <div>
+                <label>Confirm Password:</label>
+                <input ng-model="controller.registerUser.confirmPassword" />
+            </div>
+            <div>
+                <label>User Name:</label>
+                <input type="text" ng-model="controller.registerUser.displayName" />
+            </div>
+            <div>
+                <label>First Name:</label>
+                <input type="text" ng-model="controller.registerUser.firstName" />
+            </div>
+            <div>
+                <label>Last Name:</label>
+                <input type="text" ng-model="controller.registerUser.lastName" />
+            </div>
+            <div>
+                <label>Check this box if you want to rent out your car</label>
+                <input type="checkbox" ng-model="controller.registerUser.isLoaner" value="true" />
+            </div>
+            <div>
+                <input type="button" value="Upload Image" ng-click="controller.pickFile()"/>
+            </div>
+            <div>
+                <img src="{{controller.file.url}}"/>
+            </div>
+            <input type="submit" value="Register" />
+        </form>
+    </div>
+</div>

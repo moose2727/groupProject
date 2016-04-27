@@ -1,0 +1,43 @@
+﻿.profile-img{
+    width: 25em;
+    height: 25em;
+}
+
+.car-img{
+    width: 100%;
+    /*height: 30em;*/
+}
+
+.car-detail{
+    border: solid 2px black;
+    padding-top: 10px;
+}
+
+.inactive-car{
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+
+.profile-car-btn{
+    display:inline-block;
+    float:right;
+}
+
+.car-type{
+    display:inline-block;
+}
+
+.profileCarRating{
+    display:inline-block;
+}
+
+.form-description{
+    resize:none;
+    width: 100% !important;
+    height: 500px;
+}
+
+.addCarForm{
+    border: solid 2px black;
+    padding: 10px;
+}

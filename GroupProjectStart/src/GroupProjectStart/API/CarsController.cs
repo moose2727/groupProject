@@ -7,6 +7,7 @@ using GroupProjectStart.Models;
 using GroupProjectStart.Services;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+//hi cory
 
 namespace GroupProjectStart.API
 {
@@ -24,7 +25,8 @@ namespace GroupProjectStart.API
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_repo.GetCars());
+            var data = _repo.GetCars();
+            return Ok(data);
         }
 
 
@@ -36,13 +38,14 @@ namespace GroupProjectStart.API
         }
 
         // POST api/values
-        [HttpPost]
-        public IActionResult Post([FromBody]Car car)
+        [HttpPost("{id}")]
+        public IActionResult Post(string id, [FromBody]Car car)
         {
             if(car.Id == 0)
             {
-                _repo.AddCar(car);
-            } else
+                _repo.AddCar(id, car);
+            }
+            else
             {
                 _repo.UpdateCar(car);
             }

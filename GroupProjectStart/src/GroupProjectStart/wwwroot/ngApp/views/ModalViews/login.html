@@ -21,10 +21,11 @@
                             </li>
                         </ul>
 
-                        <form ng-submit="controller.login()">
+                        <form novalidate ng-submit="controller.login()" name="loginForm">
                             <div>
                                 <label>Email:</label>
-                                <input ng-model="controller.loginUser.email" />
+                                <input ng-model="controller.loginUser.email" required />
+                                <span ng-show="loginForm.loginUser.email.$touched && loginForm.loginUser.email.$error.required" class="error">Email Is Required</span>
                             </div>
                             <div>
                                 <label>Password:</label>

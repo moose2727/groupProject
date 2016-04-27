@@ -14,56 +14,13 @@ namespace GroupProjectStart.Models
 
     public class SampleData
     {
+
+
         public async static Task Initialize(IServiceProvider serviceProvider)
         {
             var db = serviceProvider.GetService<ApplicationDbContext>();
-            if (!db.Cars.Any())
-            {
-                db.Cars.AddRange(
-                    new Car
-                    {
-                        Make = " Volvo",
-                        Model = "XC90",
-                        Year = 2015,
-                        Image = "http://topcarsreleasedates.com/wp-content/uploads/2015/08/2016-volvo-xc90-.jpg",
-                        Door = 4,
-                        Price = 132m
-                    },
 
-                    new Car
-                    {
-                        Make = " Mazda",
-                        Model = " MX-5 Miata",
-                        Year = 2016,
-                        Image = "http://2.bp.blogspot.com/-lndOWG_WqsE/Ug3fiHidR8I/AAAAAAAAH3o/-LOSoELV-6w/s1600/2015-MG-Roadster-52.jpg",
-                        Door = 2,
-                        Price = 124m
-                    },
-
-                    new Car
-                    {
-                        Make = "Chevrolet ",
-                        Model = "Corvette",
-                        Year = 2014,
-                        Image = "http://s3.amazonaws.com/fzautomotive/dealers/55b6d6e755b30.png",
-                        Door = 2,
-                        Price = 155m
-                    },
-
-                    new Car
-                    {
-                        Make = "Honda ",
-                        Model = "Pilot",
-                        Year = 2014,
-                        Image = "http://static4.consumerreportscdn.org/content/dam/cro/magazine-articles/2015/December/CR122K15-Honda_Pilot_16_2917_Right.jpg",
-                        Door = 4,
-                        Price = 130
-                    }
-                );
-                db.SaveChanges();
-            }
-
-
+            //USERS
             var context = serviceProvider.GetService<ApplicationDbContext>();
             var userManager = serviceProvider.GetService<UserManager<ApplicationUser>>();
             context.Database.Migrate();
@@ -76,7 +33,11 @@ namespace GroupProjectStart.Models
                 stephen = new ApplicationUser
                 {
                     UserName = "Stephen.Walther@CoderCamps.com",
-                    Email = "Stephen.Walther@CoderCamps.com"
+                    Email = "Stephen.Walther@CoderCamps.com",
+                    DisplayName = "SWalther",
+                    FirstName = "Stephen",
+                    LastName = "Walther",
+                    IsAdmin = true
                 };
                 await userManager.CreateAsync(stephen, "Secret123!");
 
@@ -92,113 +53,1792 @@ namespace GroupProjectStart.Models
                 mike = new ApplicationUser
                 {
                     UserName = "Mike@CoderCamps.com",
-                    Email = "Mike@CoderCamps.com"
+                    Email = "Mike@CoderCamps.com",
+                    DisplayName = "MM",
+                    FirstName = "Mike",
+                    LastName = "Miller",
+                    Image = "http://static.eharmony.com/blog/wp-content/uploads/2010/04/eHarmony-Blog-profile-picture.jpg"
                 };
                 await userManager.CreateAsync(mike, "Secret123!");
             }
 
-            var scott = await userManager.FindByNameAsync("Scott@Something.com");
-            if (scott == null)
-            {
-                // create user
-                scott = new ApplicationUser
+
+            var caleb = await userManager.FindByNameAsync("Caleb@Something.com");
+                if (caleb == null)
                 {
-                    UserName = "Scott@Something.com",
-                    Email = "Scott@Something.com",
-                    FirstName = "Scott",
-                    LastName = "Stewart",
-                    DisplayName = "ScottStew",
-                    HasLicense = true,
-                    HasDamageInsurance = true
-                };
-                await userManager.CreateAsync(scott, "Secret123!");
-
-            }
-
-            var ryan = await userManager.FindByNameAsync("Ryan@Something.com");
-            if (ryan == null)
-            {
-                // create user
-                ryan = new ApplicationUser
-                {
-                    UserName = "Ryan@Something.com",
-                    Email = "Ryan@Something.com",
-                    FirstName = "Ryan",
-                    LastName = "Richardson",
-                    DisplayName = "RyanR27",
-                    HasLicense = true,
-                    HasDamageInsurance = false,
-                    
-                };
-                await userManager.CreateAsync(ryan, "Secret123!");
-
-            }
-
-            var Caleb = await userManager.FindByNameAsync("Caleb@Something.com");
-            if (Caleb == null)
-            {
-                // create user
-                Caleb = new Loaner
-                {
-                    UserName = "Caleb@Something.com",
-                    Email = "Caleb@Something.com",
-                    FirstName = "Caleb",
-                    LastName = "Schwarzmiller",
-                    DisplayName = "CSchwarz",
-                    HasTheftInsurance = true,
-                    HasDamageInsurance = true,
-                    HasLicense = true,
-                    IsLoaner = true,
-                    CarsToLoan = new List<Car>
+                    // create user
+                    caleb = new ApplicationUser
                     {
+                        DriverRatings = new List<RatingDriver>
+                        {
+                            new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 4,
+                                 PaymentExperience = 4,
+                                 ProfessionalismOfDriver = 3,
+                                 PromptReplies = 2,
+                                 SchedulingExperience = 3,
+                                 Trustworthiness = 5,
+                                 DeliveryExperience = 2
+                            },
+                              new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 4,
+                                 PaymentExperience = 4,
+                                 ProfessionalismOfDriver = 3,
+                                 PromptReplies = 2,
+                                 SchedulingExperience = 3,
+                                 Trustworthiness = 5,
+                                 DeliveryExperience = 2
+                            },
+                                new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 4,
+                                 PaymentExperience = 3,
+                                 ProfessionalismOfDriver = 4,
+                                 PromptReplies = 3,
+                                 SchedulingExperience = 4,
+                                 Trustworthiness = 4,
+                                 DeliveryExperience = 4
+                            },
+                                  new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience = 4,
+                                 ProfessionalismOfDriver = 3,
+                                 PromptReplies = 2,
+                                 SchedulingExperience = 4,
+                                 Trustworthiness = 5,
+                                 DeliveryExperience = 3
+                            },
+                        },
+                        Reviews = new List<DriverReview>
+                        {
+                           new DriverReview
+                           {
+                                Title = "Syrup Is tasty",
+                                Message = "Someone I know recently combined Maple Syrup & buttered Popcorn thinking it would taste like caramel popcorn. It didn’t and they don’t recommend anyone else do it either.",
+                                TimeCreated = DateTime.Now
+                           },
+                           new DriverReview
+                           {
+                                Title = "Shmeagle",
+                                Message = " I was very proud of my nickname throughout high school but today- I couldn’t be any different to what my nickname was.",
+                                TimeCreated = DateTime.Now
+                           },
+                           new DriverReview
+                           {
+                                Title = "Easter is weird",
+                                Message = "If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?",
+                                TimeCreated = DateTime.Now
+                           },
+                        },
+                        UserName = "Caleb@Something.com",
+                        Email = "Caleb@Something.com",
+                        FirstName = "Caleb",
+                        LastName = "Schwarzmiller",
+                        DisplayName = "CSchwarz",
+                        HasTheftInsurance = true,
+                        HasDamageInsurance = true,
+                        HasLicense = true,
+                        IsLoaner = true,
+                        Image = "https://www.filestackapi.com/api/file/RuTYywXlQughPk4vPpF9",
+                        CarsToLoan = new List<Car>
+                    {
+
                         new Car {
+                          
                             Year = 2009,
                             Make = "Hyundai",
                             Model = "Santa Fe",
                             Price = 125m,
                             Door = 4,
-                            Image = "http://static.cargurus.com/images/site/2008/09/03/14/38/2009_hyundai_santa_fe-pic-1544-640x480.jpeg"
+                            Image = "http://static.cargurus.com/images/site/2008/09/03/14/38/2009_hyundai_santa_fe-pic-1544-640x480.jpeg",
+                            Miles = 65450,
+                            Seats = 5,
+                            HwyMpg = 31,
+                            CtyMpg = 26,
+                            Reviews = new List<CarReview>
+                            {
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "MORE",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                            },
+                            Condition = "Great",
+                            Transmission = "Automatic",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 2,
+                        OutsideCleanliness = 4,
+                        InsideCleanliness = 5,
+                        EngineOperation = 3,
+                        IndoorAirQuality = 3,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 5,
+                        DeliveryExperience = 1,
+                        ProfessionalismOfOwner = 4,
+                        OverallRating = 4
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 3,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 2,
+                    EngineOperation = 3,
+                    IndoorAirQuality = 2,
+                    SafetyFeatures = 4,
+                    ElectricalFunctions = 2,
+                    DeliveryExperience = 2,
+                    ProfessionalismOfOwner = 2,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 2,
+                    EngineOperation = 3,
+                    IndoorAirQuality = 3,
+                    SafetyFeatures = 3,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 3,
+                    ProfessionalismOfOwner = 3,
+
+                }
+                }
+                        },
+
+                          new Car {
+                          
+                            Year = 2016,
+                            Make = "Toyota",
+                            Model = "Corolla",
+                            Price = 89m,
+                            Door = 4,
+                            Image = "http://file.kelleybluebookimages.com/kbb/vehicleimage/evoxseo/cp/l/10677/2016-toyota-corolla-front_10677_032_640x480_040.png",
+                            Miles = 2000,
+                            Seats = 5,
+                            HwyMpg = 31,
+                            CtyMpg = 26,
+                             Reviews = new List<CarReview>
+                            {
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "MORE",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                            },
+                            Condition = "Excellent",
+                            Transmission = "Automatic",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 2,
+                        OutsideCleanliness = 3,
+                        InsideCleanliness = 3,
+                        EngineOperation = 2,
+                        IndoorAirQuality = 3,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 5,
+                        DeliveryExperience = 1,
+                        ProfessionalismOfOwner = 5,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 3,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 4,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 2,
+                    SafetyFeatures = 3,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 2,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 2,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 5,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 3,
+                    SafetyFeatures = 3,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 3,
+
+                }
+                }
+                        },
+                             new Car {
+                           
+                            Year = 2012,
+                            Make = "Hyundai",
+                            Model = "Tiburon",
+                            Price = 89m,
+                            Door = 2,
+                            Image = "http://dreamaticl.com/images/hyundai-tiburon-2012-4.jpg",
+                            Miles = 2000,
+                            Seats = 4,
+                            HwyMpg = 34,
+                            CtyMpg = 27,
+
+                            Condition = "Good",
+                            Transmission = "Manual",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            Reviews = new List<CarReview>
+                            {
+                                 new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                     new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                         new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                            },
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 2,
+                        OutsideCleanliness = 4,
+                        InsideCleanliness = 5,
+                        EngineOperation = 3,
+                        IndoorAirQuality = 3,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 5,
+                        DeliveryExperience = 1,
+                        ProfessionalismOfOwner = 4,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 3,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 2,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 2,
+                    SafetyFeatures = 4,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 2,
+                    ProfessionalismOfOwner = 2,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 1,
+                    EngineOperation = 3,
+                    IndoorAirQuality = 3,
+                    SafetyFeatures = 3,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 5,
+
+                }
+                }
                         }
-                    }
-                };
-                await userManager.CreateAsync(Caleb, "Secret123!");
 
-            }
 
-            var John = await userManager.FindByNameAsync("John@Something.com");
-            if (John == null)
+                    },
+
+                    };
+                    await userManager.CreateAsync(caleb, "Secret123!");
+
+                    await userManager.AddClaimAsync(caleb, new Claim("IsLoaner", "true"));
+
+                }
+
+            var Cory = await userManager.FindByNameAsync("Cory@us.com");
+            if (Cory == null)
             {
                 // create user
-                John = new Loaner
+                Cory = new ApplicationUser
                 {
-                    UserName = "John@Something.com",
-                    Email = "John@Something.com",
-                    FirstName = "John",
-                    LastName = "Doe",
-                    DisplayName = "JDoe",
+                    DriverRatings = new List<RatingDriver>
+                        {
+                            new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 1,
+                                 PaymentExperience = 1,
+                                 ProfessionalismOfDriver = 1,
+                                 PromptReplies = 1,
+                                 SchedulingExperience = 1,
+                                 Trustworthiness = 1,
+                                 DeliveryExperience = 1
+                            },
+                              new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 2,
+                                 PaymentExperience = 1,
+                                 ProfessionalismOfDriver =2,
+                                 PromptReplies = 1,
+                                 SchedulingExperience = 2,
+                                 Trustworthiness = 3,
+                                 DeliveryExperience = 2
+                            },
+                                new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 2,
+                                 PaymentExperience = 3,
+                                 ProfessionalismOfDriver = 2,
+                                 PromptReplies = 3,
+                                 SchedulingExperience = 2,
+                                 Trustworthiness = 3,
+                                 DeliveryExperience = 3
+                            },
+                                  new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 2,
+                                 PaymentExperience = 3,
+                                 ProfessionalismOfDriver = 2,
+                                 PromptReplies = 2,
+                                 SchedulingExperience = 2,
+                                 Trustworthiness = 3,
+                                 DeliveryExperience = 2
+                            },
+                        },
+                    Reviews = new List<DriverReview>
+                        {
+                           new DriverReview
+                           {
+                                Title = "Syrup Is tasty",
+                                Message = "Someone I know recently combined Maple Syrup & buttered Popcorn thinking it would taste like caramel popcorn. It didn’t and they don’t recommend anyone else do it either.",
+                                TimeCreated = DateTime.Now
+                           },
+                           new DriverReview
+                           {
+                                Title = "Shmeagle",
+                                Message = " I was very proud of my nickname throughout high school but today- I couldn’t be any different to what my nickname was.",
+                                TimeCreated = DateTime.Now
+                           },
+                           new DriverReview
+                           {
+                                Title = "Easter is weird",
+                                Message = "If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?",
+                                TimeCreated = DateTime.Now
+                           },
+                        },
+                    UserName = "cory@us.com",
+                    Email = "cory@us.com",
+                    FirstName = "Cory",
+                    LastName = "Couty",
+                    DisplayName = "Syncrose",
                     HasTheftInsurance = false,
                     HasDamageInsurance = false,
                     HasLicense = false,
-                    IsLoaner = false,
+                    IsLoaner = true,
+                    Image = "https://plus.google.com/101603345753650624311/about?pid=5852505067492066914&oid=101603345753650624311",
                     CarsToLoan = new List<Car>
                     {
-                        new Car
-                        {
+
+                        new Car {
+                      
                             Year = 2005,
-                            Make = "Honda",
-                            Model = "Accord",
-                            Price = 110m,
+                            Make = "Hyundai",
+                            Model = "Tiburon",
+                            Price = 45m,
+                            Door = 2,
+                            Image = "http://spidercars.net/wp-content/uploads/images/2005-Hyundai-Tiburon_14320.jpg",
+                            Miles = 100157,
+                            Seats = 4,
+                            HwyMpg = 31,
+                            CtyMpg = 25,
+                            Reviews = new List<CarReview>
+                            {
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "MORE",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                            },
+                            Condition = "Great",
+                            Transmission = "Automatic",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 5,
+                        OutsideCleanliness = 3,
+                        InsideCleanliness = 1,
+                        EngineOperation = 4,
+                        IndoorAirQuality = 2,
+                        SafetyFeatures = 4,
+                        ElectricalFunctions = 3,
+                        DeliveryExperience = 1,
+                        ProfessionalismOfOwner = 1,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 2,
+                    InsideCleanliness = 1,
+                    EngineOperation = 3,
+                    IndoorAirQuality = 2,
+                    SafetyFeatures = 4,
+                    ElectricalFunctions = 2,
+                    DeliveryExperience = 2,
+                    ProfessionalismOfOwner = 2,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 1,
+                    InsideCleanliness = 2,
+                    EngineOperation =4,
+                    IndoorAirQuality = 2,
+                    SafetyFeatures = 4,
+                    ElectricalFunctions = 2,
+                    DeliveryExperience = 1,
+                    ProfessionalismOfOwner = 1,
+
+                }
+                }
+                        },
+
+                          new Car {
+                      
+                            Year = 2014,
+                            Make = "Toyota",
+                            Model = "Corolla",
+                            Price = 75m,
                             Door = 4,
-                            Image = "http://s1.cdn.autoevolution.com/images/gallery/HONDAAccordSedanUS-4220_10.jpg"
+                            Image = "http://resources.carsguide.com.au/styles/cg_hero_low/s3/Toyota-Corolla-sedan-2010.jpg",
+                            Miles = 6800,
+                            Seats = 5,
+                            HwyMpg = 28,
+                            CtyMpg = 23,
+                             Reviews = new List<CarReview>
+                            {
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "MORE",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                            },
+                            Condition = "Excellent",
+                            Transmission = "Automatic",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 4,
+                        OutsideCleanliness = 3,
+                        InsideCleanliness = 3,
+                        EngineOperation = 2,
+                        IndoorAirQuality = 3,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 4,
+                        DeliveryExperience = 1,
+                        ProfessionalismOfOwner = 1,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 1,
+                    InsideCleanliness = 2,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 2,
+                    SafetyFeatures = 3,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 2,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 2,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 5,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 3,
+                    SafetyFeatures = 3,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 3,
+
+                }
+                }
+                        },
+                             new Car {
+                          
+                            Year = 2016,
+                            Make = "Chevrolet",
+                            Model = "Corvette",
+                            Price = 199.99m,
+                            Door = 2,
+                            Image = "https://i.ytimg.com/vi/Q1XloldnOSI/maxresdefault.jpg",
+                            Miles = 1300,
+                            Seats = 4,
+                            HwyMpg = 21,
+                            CtyMpg = 14,
+
+                            Condition = "Good",
+                            Transmission = "Manual",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            Reviews = new List<CarReview>
+                            {
+                                 new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                     new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                         new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                            },
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 5,
+                        OutsideCleanliness = 5,
+                        InsideCleanliness = 5,
+                        EngineOperation = 5,
+                        IndoorAirQuality = 5,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 5,
+                        DeliveryExperience = 1,
+                        ProfessionalismOfOwner = 2,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 5,
+                    EngineOperation = 5,
+                    IndoorAirQuality = 5,
+                    SafetyFeatures = 4,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 2,
+                    ProfessionalismOfOwner = 2,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 5,
+                    EngineOperation = 5,
+                    IndoorAirQuality = 3,
+                    SafetyFeatures = 2,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 2,
+                    ProfessionalismOfOwner = 1,
+
+                }
+                }
                         }
 
-                    }
-                };
-                await userManager.CreateAsync(John, "Secret123!");
 
+                    },
+
+                };
+                await userManager.CreateAsync(Cory, "Secret123!");
+
+                await userManager.AddClaimAsync(Cory, new Claim("IsLoaner", "true"));
+                await userManager.AddClaimAsync(Cory, new Claim("IsAdmin", "true"));
+            }
+
+
+            var Morgan = await userManager.FindByNameAsync("Morgan@us.com");
+            if (Morgan == null)
+            {
+                // create user
+                Morgan = new ApplicationUser
+                {
+                    DriverRatings = new List<RatingDriver>
+                        {
+                            new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience =4,
+                                 ProfessionalismOfDriver = 5,
+                                 PromptReplies = 5,
+                                 SchedulingExperience = 5,
+                                 Trustworthiness = 5,
+                                 DeliveryExperience = 4
+                            },
+                              new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience = 4,
+                                 ProfessionalismOfDriver =5,
+                                 PromptReplies = 5,
+                                 SchedulingExperience = 5,
+                                 Trustworthiness = 5,
+                                 DeliveryExperience = 4
+                            },
+                                new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience = 5,
+                                 ProfessionalismOfDriver = 5,
+                                 PromptReplies = 5,
+                                 SchedulingExperience = 5,
+                                 Trustworthiness = 4,
+                                 DeliveryExperience = 5
+                            },
+                                  new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience = 5,
+                                 ProfessionalismOfDriver = 5,
+                                 PromptReplies = 4,
+                                 SchedulingExperience = 4,
+                                 Trustworthiness = 4,
+                                 DeliveryExperience = 4
+                            },
+                        },
+                    Reviews = new List<DriverReview>
+                        {
+                           new DriverReview
+                           {
+                                Title = "Syrup Is tasty",
+                                Message = "Someone I know recently combined Maple Syrup & buttered Popcorn thinking it would taste like caramel popcorn. It didn’t and they don’t recommend anyone else do it either.",
+                                TimeCreated = DateTime.Now
+                           },
+                           new DriverReview
+                           {
+                                Title = "Shmeagle",
+                                Message = " I was very proud of my nickname throughout high school but today- I couldn’t be any different to what my nickname was.",
+                                TimeCreated = DateTime.Now
+                           },
+                           new DriverReview
+                           {
+                                Title = "Easter is weird",
+                                Message = "If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?",
+                                TimeCreated = DateTime.Now
+                           },
+                        },
+                    UserName = "morgan@us.com",
+                    Email = "morgan@us.com",
+                    FirstName = "Morgan",
+                    LastName = "Pylant",
+                    DisplayName = "MPylant",
+                    HasTheftInsurance = true,
+                    HasDamageInsurance = true,
+                    HasLicense = true,
+                    IsLoaner = true,
+                    Image = "https://pbs.twimg.com/profile_images/1777364406/profile.jpg",
+                    CarsToLoan = new List<Car>
+                    {
+                                  new Car
+                    {
+                        Make = "Chevrolet ",
+                        Model = "Corvette",
+                        Year = 2014,
+                        Image = "http://s3.amazonaws.com/fzautomotive/dealers/55b6d6e755b30.png",
+                        Door = 2,
+                        Price = 155m,
+                        IsActive = false
+                    },
+
+                    new Car
+                    {
+                        Make = "Honda ",
+                        Model = "Pilot",
+                        Year = 2014,
+                        Image = "http://static4.consumerreportscdn.org/content/dam/cro/magazine-articles/2015/December/CR122K15-Honda_Pilot_16_2917_Right.jpg",
+                        Door = 4,
+                        Price = 130,
+                        IsActive = true
+                    },
+
+                    new Car
+                    {
+                        Make = "Dodge",
+                        Model = "Ram",
+                        Year = 1992,
+                        Image = "https://c2.staticflickr.com/4/3824/13573311565_ff976967b5_b.jpg",
+                        Door = 2,
+                        Price = 40m,
+                        IsActive = true,
+                        Condition = "Okay",
+                        CtyMpg = 19,
+                        HwyMpg = 26,
+                        DateAdded = DateTime.Now,
+                        Miles = 215108,
+                        Seats = 3,
+                        Transmission = "Manual",
+                        Description = "Lorem ipsum dolor sit amet, ei eam tempor eripuit, no nihil nonumy honestatis sit, eam at utroque luptatum reprehendunt. Te appareat consequat eum. Iisque facilisis eos an, te elitr cetero tacimates ius. Ut modus patrioque scribentur per, ei has erat populo essent, suas inimicus cum ut. Ad vocent audire phaedrum mea. Eos case doctus cudicam epicuri eum id.Vix scriptorem cotidieque inqui at dolore definitionem,facete voluptatum dissentiunt ad vel.Impedit officiis intellegam sea neet atqui aliquid fierent eos.Cu pri molestie definitionescu nec augue epicurei graeci principes pri ex.Doctus aeterno vim nesit an purto nullamea mel tollit sanctus."
+                    },
+
+                        new Car {
+            
+                            Year = 2015,
+                            Make = "BMW",
+                            Model = "M5",
+                            Price = 165m,
+                            Door = 4,
+                            Image = "http://cdn.barrett-jackson.com/staging/carlist/items/Fullsize/Cars/182683/182683_Front_3-4_Web.jpg",
+                            Miles = 15000,
+                            Seats = 5,
+                            HwyMpg = 26,
+                            CtyMpg = 21,
+                            Reviews = new List<CarReview>
+                            {
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "MORE",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                            },
+                            Condition = "Great",
+                            Transmission = "Automatic",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 5,
+                        OutsideCleanliness = 5,
+                        InsideCleanliness = 4,
+                        EngineOperation = 5,
+                        IndoorAirQuality = 5,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 4,
+                        DeliveryExperience = 4,
+                        ProfessionalismOfOwner = 5,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 4,
+                    EngineOperation = 5,
+                    IndoorAirQuality = 4,
+                    SafetyFeatures = 5,
+                    ElectricalFunctions = 5,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 5,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 4,
+                    EngineOperation =4,
+                    IndoorAirQuality = 5,
+                    SafetyFeatures = 5,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 4,
+                    ProfessionalismOfOwner = 4,
+
+                }
+                }
+                        },
+
+                          new Car {
+                   
+                            Year = 2014,
+                            Make = "Mazda",
+                            Model = "6",
+                            Price = 95m,
+                            Door = 4,
+                            Image = "http://www.truedelta.com/images/mk_reviews/1360495497-2014-Mazda6-front-quarter-view.JPG",
+                            Miles = 7500,
+                            Seats = 5,
+                            HwyMpg = 32,
+                            CtyMpg = 28,
+                             Reviews = new List<CarReview>
+                            {
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "MORE",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                            },
+                            Condition = "Excellent",
+                            Transmission = "Automatic",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 4,
+                        OutsideCleanliness = 4,
+                        InsideCleanliness = 4,
+                        EngineOperation = 4,
+                        IndoorAirQuality = 4,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 3,
+                        DeliveryExperience = 4,
+                        ProfessionalismOfOwner = 5,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 4,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 3,
+                    SafetyFeatures = 5,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 4,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 5,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 4,
+                    SafetyFeatures = 4,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 5,
+
+                }
+                }
+                        },
+                             new Car {
+                         
+                            Year = 2016,
+                            Make = "Chevrolet",
+                            Model = "Corvette",
+                            Price = 199.99m,
+                            Door = 2,
+                            Image = "https://i.ytimg.com/vi/Q1XloldnOSI/maxresdefault.jpg",
+                            Miles = 1300,
+                            Seats = 4,
+                            HwyMpg = 21,
+                            CtyMpg = 14,
+
+                            Condition = "Good",
+                            Transmission = "Manual",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            Reviews = new List<CarReview>
+                            {
+                                 new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                     new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                         new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                            },
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 5,
+                        OutsideCleanliness = 5,
+                        InsideCleanliness = 5,
+                        EngineOperation = 5,
+                        IndoorAirQuality = 5,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 5,
+                        DeliveryExperience = 1,
+                        ProfessionalismOfOwner = 2,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 5,
+                    EngineOperation = 5,
+                    IndoorAirQuality = 5,
+                    SafetyFeatures = 4,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 4,
+                    ProfessionalismOfOwner = 5,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 5,
+                    EngineOperation = 5,
+                    IndoorAirQuality = 3,
+                    SafetyFeatures = 2,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 5,
+
+                }
+                }
+                        }
+
+
+                    },
+
+                };
+                await userManager.CreateAsync(Morgan, "Secret123!");
+
+                await userManager.AddClaimAsync(Morgan, new Claim("IsLoaner", "true"));
+                await userManager.AddClaimAsync(Morgan, new Claim("IsAdmin", "true"));
+            }
+
+
+            var Ayesha = await userManager.FindByNameAsync("Ayesha@us.com");
+            if (Ayesha == null)
+            {
+                // create user
+                Ayesha = new ApplicationUser
+                {
+                    DriverRatings = new List<RatingDriver>
+                        {
+                            new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience =4,
+                                 ProfessionalismOfDriver = 5,
+                                 PromptReplies = 5,
+                                 SchedulingExperience = 5,
+                                 Trustworthiness = 5,
+                                 DeliveryExperience = 4
+                            },
+                              new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience = 4,
+                                 ProfessionalismOfDriver =5,
+                                 PromptReplies = 5,
+                                 SchedulingExperience = 5,
+                                 Trustworthiness = 5,
+                                 DeliveryExperience = 4
+                            },
+                                new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience = 5,
+                                 ProfessionalismOfDriver = 5,
+                                 PromptReplies = 5,
+                                 SchedulingExperience = 5,
+                                 Trustworthiness = 4,
+                                 DeliveryExperience = 5
+                            },
+                                  new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience = 5,
+                                 ProfessionalismOfDriver = 5,
+                                 PromptReplies = 4,
+                                 SchedulingExperience = 4,
+                                 Trustworthiness = 4,
+                                 DeliveryExperience = 4
+                            },
+                        },
+                    Reviews = new List<DriverReview>
+                        {
+                           new DriverReview
+                           {
+                                Title = "Syrup Is tasty",
+                                Message = "Someone I know recently combined Maple Syrup & buttered Popcorn thinking it would taste like caramel popcorn. It didn’t and they don’t recommend anyone else do it either.",
+                                TimeCreated = DateTime.Now
+                           },
+                           new DriverReview
+                           {
+                                Title = "Shmeagle",
+                                Message = " I was very proud of my nickname throughout high school but today- I couldn’t be any different to what my nickname was.",
+                                TimeCreated = DateTime.Now
+                           },
+                           new DriverReview
+                           {
+                                Title = "Easter is weird",
+                                Message = "If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?",
+                                TimeCreated = DateTime.Now
+                           },
+                        },
+                    UserName = "ayesha@us.com",
+                    Email = "ayesha@us.com",
+                    FirstName = "Ayesha",
+                    LastName = "Shaikh",
+                    DisplayName = "AyeshaSH",
+                    HasTheftInsurance = true,
+                    HasDamageInsurance = true,
+                    HasLicense = true,
+                    IsLoaner = true,
+                    Image = "https://pbs.twimg.com/profile_images/1777364406/profile.jpg",
+                    CarsToLoan = new List<Car>
+                    {
+
+                        new Car {
+                  
+                            Year = 2015,
+                            Make = "BMW",
+                            Model = "335I",
+                            Price = 175m,
+                            Door = 4,
+                            Image = "http://cdn.bmwblog.com/wp-content/uploads/fire-orange-bmw-335i-01.jpg",
+                            Miles = 32000,
+                            Seats = 5,
+                            HwyMpg = 25,
+                            CtyMpg = 20,
+                            Reviews = new List<CarReview>
+                            {
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "MORE",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                            },
+                            Condition = "Great",
+                            Transmission = "Automatic",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 5,
+                        OutsideCleanliness = 5,
+                        InsideCleanliness = 4,
+                        EngineOperation = 5,
+                        IndoorAirQuality = 5,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 4,
+                        DeliveryExperience = 4,
+                        ProfessionalismOfOwner = 5,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 4,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 4,
+                    SafetyFeatures = 5,
+                    ElectricalFunctions = 5,
+                    DeliveryExperience = 4,
+                    ProfessionalismOfOwner = 5,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 4,
+                    EngineOperation =4,
+                    IndoorAirQuality = 5,
+                    SafetyFeatures = 5,
+                    ElectricalFunctions = 5,
+                    DeliveryExperience = 4,
+                    ProfessionalismOfOwner = 5,
+
+                }
+                }
+                        },
+
+                          new Car {
+                           
+                            Year = 2012,
+                            Make = "Maserati",
+                            Model = "Granturismo",
+                            Price = 95m,
+                            Door = 4,
+                            Image = "http://www.motortrend.com/uploads/sites/10/2015/09/2012-Maserati-GranTurismo-MC-front-three-quarters-in-motion.jpg",
+                            Miles = 47000,
+                            Seats = 4,
+                            HwyMpg = 22,
+                            CtyMpg = 18,
+                             Reviews = new List<CarReview>
+                            {
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "MORE",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                            },
+                            Condition = "Excellent",
+                            Transmission = "Automatic",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 4,
+                        OutsideCleanliness = 4,
+                        InsideCleanliness = 4,
+                        EngineOperation = 4,
+                        IndoorAirQuality = 4,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions =5,
+                        DeliveryExperience = 4,
+                        ProfessionalismOfOwner = 4,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 4,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 4,
+                    SafetyFeatures = 5,
+                    ElectricalFunctions = 5,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 4,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 3,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 4,
+                    SafetyFeatures = 4,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 4,
+                    ProfessionalismOfOwner = 5,
+
+                }
+                }
+                        },
+                             new Car {
+                           
+                            Year = 2016,
+                            Make = "Tesla",
+                            Model = "Model X",
+                            Price = 199.99m,
+                            Door = 2,
+                            Image = "https://i.ytimg.com/vi/BdzDPUpyla4/maxresdefault.jpg",
+                            Miles = 600,
+                            Seats = 7,
+                            HwyMpg = 0,
+                            CtyMpg = 0,
+
+                            Condition = "Good",
+                            Transmission = "Manual",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            Reviews = new List<CarReview>
+                            {
+                                 new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                     new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                         new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                            },
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 5,
+                        OutsideCleanliness = 5,
+                        InsideCleanliness = 5,
+                        EngineOperation = 5,
+                        IndoorAirQuality = 5,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 5,
+                        DeliveryExperience = 5,
+                        ProfessionalismOfOwner = 5,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 5,
+                    EngineOperation = 5,
+                    IndoorAirQuality = 5,
+                    SafetyFeatures = 4,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 4,
+                    ProfessionalismOfOwner = 5,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 5,
+                    EngineOperation = 5,
+                    IndoorAirQuality = 5,
+                    SafetyFeatures = 5,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 4,
+
+                }
+                }
+                        }
+
+
+                    },
+
+                };
+                await userManager.CreateAsync(Ayesha, "Secret123!");
+
+                await userManager.AddClaimAsync(Ayesha, new Claim("IsLoaner", "true"));
+                await userManager.AddClaimAsync(Ayesha, new Claim("IsAdmin", "true"));
+            }
+
+
+            //var Jason = await userManager.FindByNameAsync("moose2727@hotmail.com");
+            //if (Jason == null)
+            //{
+            //    // create user
+            //    Jason = new ApplicationUser
+            //    {
+            //        UserName = "moose2727@hotmail.com",
+            //        Email = "moose2727@hotmail.com",
+            //        FirstName = "Jason",
+            //        LastName = "deNevers",
+            //        DisplayName = "Moose2727",
+            //        HasTheftInsurance = true,
+            //        HasDamageInsurance = true,
+            //        HasLicense = true,
+            //        IsLoaner = true,
+            //        IsAdmin = true,
+            //        CarsToLoan = new List<Car>
+            //        {
+            //            new Car
+            //            {
+            //                UserId = Jason.Id,
+            //                Year = 2005,
+            //                Make = "Honda",
+            //                Model = "Accord",
+            //                Price = 110m,
+            //                Door = 4,
+            //                Image = "http://s1.cdn.autoevolution.com/images/gallery/HONDAAccordSedanUS-4220_10.jpg"
+            //            }
+            //        }
+            //    };
+            //    await userManager.CreateAsync(Jason, "Secret123!");
+            //    await userManager.AddClaimAsync(Jason, new Claim("IsAdmin", "true"));
+            //    await userManager.AddClaimAsync(Jason, new Claim("IsLoaner", "true"));
+
+            //},
+
+
+            var Jason = await userManager.FindByNameAsync("Moose2727@hotmail.com");
+            if (Jason == null)
+            {
+                // create user
+                Jason = new ApplicationUser
+                {
+                    DriverRatings = new List<RatingDriver>
+                        {
+                            new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience =4,
+                                 ProfessionalismOfDriver = 5,
+                                 PromptReplies = 5,
+                                 SchedulingExperience = 5,
+                                 Trustworthiness = 5,
+                                 DeliveryExperience = 4
+                            },
+                              new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience = 4,
+                                 ProfessionalismOfDriver =5,
+                                 PromptReplies = 5,
+                                 SchedulingExperience = 5,
+                                 Trustworthiness = 5,
+                                 DeliveryExperience = 4
+                            },
+                                new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience = 5,
+                                 ProfessionalismOfDriver = 5,
+                                 PromptReplies = 5,
+                                 SchedulingExperience = 5,
+                                 Trustworthiness = 4,
+                                 DeliveryExperience = 5
+                            },
+                                  new RatingDriver
+                            {
+                                 ConditionOfReturnedCar = 5,
+                                 PaymentExperience = 5,
+                                 ProfessionalismOfDriver = 5,
+                                 PromptReplies = 4,
+                                 SchedulingExperience = 4,
+                                 Trustworthiness = 4,
+                                 DeliveryExperience = 4
+                            },
+                        },
+                    Reviews = new List<DriverReview>
+                        {
+                           new DriverReview
+                           {
+                                Title = "Syrup Is tasty",
+                                Message = "Someone I know recently combined Maple Syrup & buttered Popcorn thinking it would taste like caramel popcorn. It didn’t and they don’t recommend anyone else do it either.",
+                                TimeCreated = DateTime.Now
+                           },
+                           new DriverReview
+                           {
+                                Title = "Shmeagle",
+                                Message = " I was very proud of my nickname throughout high school but today- I couldn’t be any different to what my nickname was.",
+                                TimeCreated = DateTime.Now
+                           },
+                           new DriverReview
+                           {
+                                Title = "Easter is weird",
+                                Message = "If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?",
+                                TimeCreated = DateTime.Now
+                           },
+                        },
+                    UserName = "moose2727@hotmail.com",
+                    Email = "moose2727@hotmail.com",
+                    FirstName = "Jason",
+                    LastName = "Denevers",
+                    DisplayName = "Moose2727",
+                    HasTheftInsurance = true,
+                    HasDamageInsurance = true,
+                    HasLicense = true,
+                    IsLoaner = true,
+                    Image = "https://pbs.twimg.com/profile_images/1777364406/profile.jpg",
+                    CarsToLoan = new List<Car>
+                    {
+
+                        new Car {
+                         
+                            Year = 2015,
+                            Make = "Jeep",
+                            Model = "Wrangler",
+                            Price = 113m,
+                            Door = 2,
+                            Image = "http://media.caranddriver.com/images/media/51/2014-jeep-wrangler-willys-inline1new-photo-608859-s-original.jpg",
+                            Miles = 46000,
+                            Seats = 4,
+                            HwyMpg = 21,
+                            CtyMpg = 19,
+                            Reviews = new List<CarReview>
+                            {
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "MORE",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                            },
+                            Condition = "Excellent",
+                            Transmission = "Manual",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 5,
+                        OutsideCleanliness = 5,
+                        InsideCleanliness = 4,
+                        EngineOperation = 5,
+                        IndoorAirQuality = 5,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 4,
+                        DeliveryExperience = 4,
+                        ProfessionalismOfOwner = 5,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 4,
+                    EngineOperation = 3,
+                    IndoorAirQuality = 4,
+                    SafetyFeatures = 2,
+                    ElectricalFunctions = 5,
+                    DeliveryExperience = 4,
+                    ProfessionalismOfOwner = 5,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 4,
+                    EngineOperation =4,
+                    IndoorAirQuality = 5,
+                    SafetyFeatures = 1,
+                    ElectricalFunctions = 5,
+                    DeliveryExperience = 4,
+                    ProfessionalismOfOwner = 5,
+
+                }
+                }
+                        },
+
+                          new Car {
+                        
+                            Year = 2013,
+                            Make = "Honda",
+                            Model = "Accord",
+                            Price = 95m,
+                            Door = 4,
+                            Image = "http://s1.cdn.autoevolution.com/images/gallery/HONDAAccordSedanUS-4220_10.jpg",
+                            Miles = 23000,
+                            Seats = 5,
+                            HwyMpg = 35,
+                            CtyMpg = 28,
+                             Reviews = new List<CarReview>
+                            {
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "MORE",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                                new CarReview
+                                {
+                                    Title = "RANDOM",
+                                    Message = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                                     TimeCreated = DateTime.Now
+                                },
+                            },
+                            Condition = "Excellent",
+                            Transmission = "Automatic",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 4,
+                        OutsideCleanliness = 4,
+                        InsideCleanliness = 4,
+                        EngineOperation = 4,
+                        IndoorAirQuality = 4,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions =5,
+                        DeliveryExperience = 4,
+                        ProfessionalismOfOwner = 4,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 4,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 4,
+                    SafetyFeatures = 5,
+                    ElectricalFunctions = 5,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 4,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 4,
+                    OutsideCleanliness = 4,
+                    InsideCleanliness = 3,
+                    EngineOperation = 4,
+                    IndoorAirQuality = 4,
+                    SafetyFeatures = 4,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 4,
+                    ProfessionalismOfOwner = 5,
+
+                }
+                }
+                        },
+                             new Car {
+                           
+                            Year = 2016,
+                            Make = "Mazda",
+                            Model = "MX-5 Miata",
+                            Price = 199.99m,
+                            Door = 2,
+                            Image = "http://2.bp.blogspot.com/-lndOWG_WqsE/Ug3fiHidR8I/AAAAAAAAH3o/-LOSoELV-6w/s1600/2015-MG-Roadster-52.jpg",
+                            Miles = 600,
+                            Seats = 7,
+                            HwyMpg = 25,
+                            CtyMpg = 22,
+
+                            Condition = "Good",
+                            Transmission = "Manual",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            Reviews = new List<CarReview>
+                            {
+                                 new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                     new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                         new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                            },
+                            CarRatings = new List<RatingCar>
+                            {
+                                    new RatingCar
+                    {
+                        TireQuality = 5,
+                        OutsideCleanliness = 5,
+                        InsideCleanliness = 5,
+                        EngineOperation = 5,
+                        IndoorAirQuality = 5,
+                        SafetyFeatures = 5,
+                        ElectricalFunctions = 5,
+                        DeliveryExperience = 5,
+                        ProfessionalismOfOwner = 5,
+
+                    },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 5,
+                    EngineOperation = 5,
+                    IndoorAirQuality = 5,
+                    SafetyFeatures = 4,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 4,
+                    ProfessionalismOfOwner = 5,
+
+                },
+
+                new RatingCar
+                {
+                    TireQuality = 5,
+                    OutsideCleanliness = 5,
+                    InsideCleanliness = 5,
+                    EngineOperation = 5,
+                    IndoorAirQuality = 5,
+                    SafetyFeatures = 5,
+                    ElectricalFunctions = 4,
+                    DeliveryExperience = 5,
+                    ProfessionalismOfOwner = 4,
+
+                }
+                }
+                        }
+
+
+                    },
+
+                };
+                await userManager.CreateAsync(Jason, "Secret123!");
+
+                await userManager.AddClaimAsync(Jason, new Claim("IsLoaner", "true"));
+                await userManager.AddClaimAsync(Jason, new Claim("IsAdmin", "true"));
             }
 
         }
 
-    }
-}
+        }
+    } 

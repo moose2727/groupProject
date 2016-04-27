@@ -59,7 +59,13 @@ namespace GroupProjectStart
 
             // Add framework services.
             services.AddScoped<IGenericRepository, GenericRepository>();
+            services.AddScoped<IProfileService, ProfileService>();
             services.AddScoped<ICarService, CarService>();
+            services.AddScoped<ICarRatingService, CarRatingService>();
+            services.AddScoped<IDriverRatingService, DriverRatingService>();
+            services.AddScoped<IUserCarsService, UserCarsService>();
+            services.AddScoped<ICarReviewService, CarReviewService>();
+            services.AddScoped<IDriverReviewService, DriverReviewService>();
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<ApplicationDbContext>(options =>
@@ -76,7 +82,8 @@ namespace GroupProjectStart
             services.AddTransient<ISmsSender, AuthMessageSender>();
 
             // convert Pascal to Camel
-            services.AddMvc().AddJsonOptions(options => {
+            services.AddMvc().AddJsonOptions(options =>
+            {
                 options.SerializerSettings.ContractResolver =
                     new CamelCasePropertyNamesContractResolver();
             });
@@ -86,7 +93,9 @@ namespace GroupProjectStart
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("AdminOnly", policy => policy.RequireClaim("IsAdmin"));
+                options.AddPolicy("Loaner", policy => policy.RequireClaim("IsLoaner"));
             });
+
 
 
         }
