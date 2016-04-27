@@ -4,7 +4,7 @@
 
 .welcome {
     color: #fff;
-    font-size: 32;
+    font-size: 32px;
 }
   
 .welcome-paragraph {
@@ -21,6 +21,7 @@
     color: #ffffff;
     background-color: #912222;
     background-image: linear-gradient(to bottom, #912222, #912222);
+    background-size: cover;
     border-color: #ba2727 #ba2727 #ba2727;
 }
 
