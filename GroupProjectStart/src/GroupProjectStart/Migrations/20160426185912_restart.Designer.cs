@@ -8,8 +8,8 @@ using GroupProjectStart.Models;
 namespace GroupProjectStart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160426180146_start")]
-    partial class start
+    [Migration("20160426185912_restart")]
+    partial class restart
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -225,26 +225,6 @@ namespace GroupProjectStart.Migrations
                     b.HasKey("Id");
                 });
 
-            modelBuilder.Entity("GroupProjectStart.Models.Review", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ApplicationUserId");
-
-                    b.Property<int?>("CarId");
-
-                    b.Property<bool>("IsViewable");
-
-                    b.Property<string>("Message");
-
-                    b.Property<decimal>("Sentiment");
-
-                    b.Property<DateTime>("TimeCreated");
-
-                    b.HasKey("Id");
-                });
-
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRole", b =>
                 {
                     b.Property<string>("Id");
@@ -328,6 +308,34 @@ namespace GroupProjectStart.Migrations
                 });
 
             modelBuilder.Entity("GroupProjectStart.Models.Car", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.CarReview", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.Car")
+                        .WithMany()
+                        .HasForeignKey("CarId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.DriverReview", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.RatingCar", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.Car")
+                        .WithMany()
+                        .HasForeignKey("CarId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.RatingDriver", b =>
                 {
                     b.HasOne("GroupProjectStart.Models.ApplicationUser")
                         .WithMany()

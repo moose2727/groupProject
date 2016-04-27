@@ -21,6 +21,7 @@
         constructor(
             private profileService: GroupProjectStart.Services.ProfileService,
             private carService: GroupProjectStart.Services.CarService,
+            private accountService: GroupProjectStart.Services.AccountService,
             private $stateParams: ng.ui.IStateParamsService,
             private $state: ng.ui.IStateService,
             private $uibModal: ng.ui.bootstrap.IModalService,
@@ -81,8 +82,8 @@
 
 
         public activateCar(id) {
-            this.carService.getCar(id).then((car) => {
-                //debugger;
+            debugger;
+            this.carService.getCar(id).$promise.then((car) => {
                 car.isActive = true;
                 this.carService.saveCar(this.user.id, car).then((data) => {
                     this.$state.reload();
@@ -94,8 +95,7 @@
             //debugger;
             //let car = this.carService.getCar(id);
             //console.log(car);
-            this.carService.getCar(id).then((car) => {
-                //debugger;
+            this.carService.getCar(id).$promise.then((car) => {
                 car.isActive = false;
                 this.carService.saveCar(this.user.id, car).then((data) => {
                     this.$state.reload();
@@ -110,6 +110,12 @@
             //this.carService.saveCar(this.car).then((data) => {
             //    this.$state.reload();
             //})
+        }
+
+        public upgradeUser(id) {
+            debugger;
+            let userToUpdate = this.profileService.getUser(id).$promise.then();
+            this.accountService.upgradeUser(userToUpdate);
         }
     }
 }

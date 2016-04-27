@@ -2,13 +2,17 @@
     <div class="col-md-8 col-md-offset-2">
         <table class="table">
             <tr>
-                <th>Id</th>
+                <th>Status</th>
                 <th>User Name</th>
                 <th>Full Name</th>
                 <th>Email</th>
             </tr>
             <tr ng-repeat="user in controller.users">
-                <td>{{user.id}}</td>
+                <td>
+                    <span ng-if="user.isLoaner == true">Loaner</span> 
+                    <span ng-if="user.isLoaner == false">Not loaner</span> 
+                    <span ng-if="user.isAdmin == true">(Admin)</span> 
+                </td>
                 <td><a href="/profile/{{user.id}}">{{user.displayName}}</a></td>
                 <td>{{user.firstName}} {{user.lastName}}</td>
                 <td>{{user.email}}</td>
