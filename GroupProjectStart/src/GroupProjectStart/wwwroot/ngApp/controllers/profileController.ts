@@ -81,8 +81,8 @@
 
 
         public activateCar(id) {
-            this.carService.getCar(id).then((car) => {
-                //debugger;
+            debugger;
+            this.carService.getCar(id).$promise.then((car) => {
                 car.isActive = true;
                 this.carService.saveCar(this.user.id, car).then((data) => {
                     this.$state.reload();
@@ -94,8 +94,7 @@
             //debugger;
             //let car = this.carService.getCar(id);
             //console.log(car);
-            this.carService.getCar(id).then((car) => {
-                //debugger;
+            this.carService.getCar(id).$promise.then((car) => {
                 car.isActive = false;
                 this.carService.saveCar(this.user.id, car).then((data) => {
                     this.$state.reload();

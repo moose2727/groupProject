@@ -1,17 +1,16 @@
-﻿<h1>Remove Car</h1>
-
-<div class="row">
-    <div class="col-md-12">
-
-        <h1>Are you sure you want to delete {{controller.carToDelete.make}} {{controller.carToDelete.model}}???</h1>
+﻿<div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>Are you sure you want to remove {{controller.carToDelete.make}} {{controller.carToDelete.model}}?</h3>
+        </div>
     </div>
-
-</div>
-<div class="row">
-
-    <div class="col-md-12">
-        <input type="button" value="YES" ng-click="controller.deleteCar()" class="btn btn-danger" />
-        <input type="button" value="NO" ng-click="controller.cancel()" class="btn btn-success" />
-
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="editCarButtons">
+                <input type="button" value="Yes" ng-click="controller.deleteCar()" class="btn btn-danger" />
+                <input type="button" value="No" ng-click="controller.cancel()" class="btn btn-success" />
+                <br />
+            </div>
+        </div>
     </div>
 </div>

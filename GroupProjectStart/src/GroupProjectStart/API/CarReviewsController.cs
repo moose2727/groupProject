@@ -51,21 +51,21 @@ namespace GroupProjectStart.API
             return Ok(review);
         }
 
-        // POST api/values
-        [HttpPost("{user}")]
-        //ADD CAR REVIEW
-        public IActionResult Post(string id, [FromBody]Review review)
-        {
-            if (review.Id == 0)
-            {
-                _repo.AddDriverReview(id, review);
-            }
-            else
-            {
-                _repo.UpdateReview(review);
-            }
-            return Ok(review);
-        }
+        //// POST api/values
+        //[HttpPost("{user}")]
+        ////ADD CAR REVIEW
+        //public IActionResult Post(string id, [FromBody]Review review)
+        //{
+        //    if (review.Id == 0)
+        //    {
+        //        _repo.AddDriverReview(id, review);
+        //    }
+        //    else
+        //    {
+        //        _repo.UpdateReview(review);
+        //    }
+        //    return Ok(review);
+        //}
 
         // PUT api/values/5
         [HttpPut("{id}")]

@@ -30,6 +30,7 @@ namespace GroupProjectStart.Services
         public void AddCar(string id, Car car)
         {
             var user = _repo.Query<ApplicationUser>().Where(u => u.Id == id).Include(u => u.CarsToLoan).FirstOrDefault();
+            car.DateAdded = DateTime.Now;
             user.CarsToLoan.Add(car);
             _repo.SaveChanges();
             //_repo.Add(car);    

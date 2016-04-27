@@ -10,7 +10,7 @@
             private $state: ng.ui.IStateService,
             private $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance,
             private id) {
-         
+            this.carToDelete = this.carService.getCar(this.id);
         }
 
         

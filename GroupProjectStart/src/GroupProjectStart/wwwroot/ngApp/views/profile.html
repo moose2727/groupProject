@@ -13,6 +13,10 @@
         <img class="profile-img" ng-if="controller.user.image != null" src="{{controller.user.image}}" />
     </div>
     <div class="col-md-4">
+        <div>
+            <label>Have a car to rent?</label>
+            <button class="btn btn-default" ng-click="controller.userUpgrade()">Become a renter</button>
+        </div>
         <div class="rating">
             ratings placeholder
         </div>
@@ -107,14 +111,19 @@
                     </div>
                     <div class="col-md-6">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="form-group">
-                                    <input type="number" placeholder="City Mileage" max="99" class="form-control" ng-model="controller.carToAdd.ctyMpg">
+                                    <input type="number" placeholder="CTY MPG" max="99" class="form-control" ng-model="controller.carToAdd.ctyMpg">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input type="number" placeholder="HWY MPG" max="99" class="form-control" ng-model="controller.carToAdd.hwyMpg" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="number" placeholder="Highway Mileage" max="99" class="form-control" ng-model="controller.carToAdd.hwyMpg" />
+                                    <input type="number" placeholder="Price per day" class="form-control" ng-model="controller.carToAdd.price"/>
                                 </div>
                             </div>
                         </div>
