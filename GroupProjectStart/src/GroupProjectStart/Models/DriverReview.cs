@@ -11,8 +11,7 @@ namespace GroupProjectStart.Models
         public string Title { get; set; }
         public string Message { get; set; }
         public DateTime TimeCreated { get; set; }
-        //Possibly going to use this to determine the reviews sentiment VIA Ayesha's API
-        public decimal Sentiment { get; set; }
+        public ICollection<SentimentInfo> SentimentEntities { get; set; }       
         public bool IsViewable { get; set; }
     }
 }

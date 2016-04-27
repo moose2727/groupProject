@@ -1,0 +1,21 @@
+﻿#mainNav {
+    height: 125px;
+}
+
+#logoImage {
+    margin-top:-60px;
+    height: 50px;
+    width: auto;
+}
+
+#navBut1 {
+     height: 100px;
+}
+
+.navbar-inverse .navbar-nav>.active>a
+ {
+
+  
+    width: 100px;
+}
+
