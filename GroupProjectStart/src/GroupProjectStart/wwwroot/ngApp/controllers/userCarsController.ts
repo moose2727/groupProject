@@ -45,6 +45,7 @@
         public car;
         public carReviews;
         public userReviews;
+        
 
         constructor(
             private userCarsService: GroupProjectStart.Services.UserCarsService,
@@ -63,6 +64,8 @@
             let carId = this.$stateParams['car'];
             this.user = this.userCarsService.getUser(userId);
             this.car = this.carService.getCar(carId);
+
+            
         }
 
         public carReviewModal(id) {
