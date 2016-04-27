@@ -13,14 +13,122 @@
         <img class="profile-img" ng-if="controller.user.image != null" src="{{controller.user.image}}" />
     </div>
     <div class="col-md-4">
-
+        <div class="rating">
+            ratings placeholder
+        </div>
         <h4>Licensed: <span ng-if="controller.user.hasLicense == true">Yes</span><span ng-if="controller.user.hasLicense == false">No</span></h4>
 
         <h4>Theft protection: <span ng-if="controller.user.hasTheftInsurance == true">Yes</span><span ng-if="controller.user.hasTheftInsurance == false">No</span></h4>
 
         <h4>Damage protection: <span ng-if="controller.user.hasDamageInsurance == true">Yes</span><span ng-if="controller.user.hasDamageInsurance == false">No</span></h4>
         <div class="edit-user">
-            
+
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="row addCarForm">
+            <h3>Have another car to rent?</h3>
+            <form>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input type="text" placeholder="Year" class="form-control" ng-model="controller.carToAdd.year" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input type="text" placeholder="Make" class="form-control" ng-model="controller.carToAdd.make" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input type="text" placeholder="Model" class="form-control" ng-model="controller.carToAdd.model" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input type="number" placeholder="Miles" class="form-control" ng-model="controller.carToAdd.miles" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select class="dropdown form-control" name="Doors" ng-model="controller.carToAdd.door">
+                                <option value="" disabled selected="selected">Doors</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select class="dropdown form-control" name="Seats" ng-model="controller.carToAdd.seats">
+                                <option value="" disabled selected="selected">Seats</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="More than 5">More</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select class="dropdown form-control" name="Condition" ng-model="controller.carToAdd.condition">
+                                <option value="" disabled selected="selected">Condition</option>
+                                <option value="Perfect">Perfect</option>
+                                <option value="Good">Good</option>
+                                <option value="Okay">Okay</option>
+                                <option value="Bad">Bad</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select class="dropdown form-control" name="Transmission" ng-model="controller.carToAdd.transmission">
+                                <option value="" disabled selected="selected">Transmission</option>
+                                <option value="Automatic">Automatic</option>
+                                <option value="Manual">Manual</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <textarea rows="4" cols="2000" placeholder="Description" class="form-control form-description" ng-model="controller.carToAdd.description"></textarea>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="number" placeholder="City Mileage" max="99" class="form-control" ng-model="controller.carToAdd.ctyMpg">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="number" placeholder="Highway Mileage" max="99" class="form-control" ng-model="controller.carToAdd.hwyMpg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-block btn-default" ng-click="controller.pickFile()">Upload Image</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-block btn-default" ng-click="controller.saveCar()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -40,12 +148,25 @@
                         <div class="car-type">
                             <h4>{{car.year}} {{car.make}} {{car.model}}</h4>
                         </div>
-                        <div class="active-toggle">
+                        <div class="profileCarRating">
+                            car rating placeholder
+                        </div>
+                        <div class="profile-car-btn">
                             <button ng-if="car.isActive == true" class="btn btn-danger" ng-click="controller.deactivateCar(car.id)">Deactivate</button>
                             <button ng-if="car.isActive == false" class="btn btn-success" ng-click="controller.activateCar(car.id)">Activate</button>
                         </div>
+
+                        <br />
+                        <div class="profile-car-btn">
+                            <button class="btn btn-primary" ng-click="controller.editCarModal(car.id)">Edit details</button>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="profile-car-btn">
+                            <button class="btn btn-danger" ng-click="controller.removeCarModal(car.id)">Remove Car</button>
+                        </div>
                         <h5>{{car.price|currency}} per day</h5>
-                        <h5>{{car.dateAdded}}</h5>
+                        <h5>{{car.dateAdded|date}}</h5>
                         <ul>
                             <li>Seats: {{car.seats}}</li>
                             <li>Miles: {{car.miles}}</li>
@@ -53,7 +174,7 @@
                             <li>Transmission: {{car.transmission}}</li>
                         </ul>
                         <label>Owners description</label>
-                        <p>{{car.description}}</p>  
+                        <p>{{car.description}}</p>
                     </div>
                 </div>
             </div>

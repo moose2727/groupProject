@@ -14,12 +14,12 @@
 
         // Method that will get a single car
         getCar(id) {
-            return this.carResource.get({ id: id }).$promise;
+            return this.carResource.get({ id: id });
         }
 
-        saveCar(carToSave) {
-            //debugger;
-            return this.carResource.save(carToSave).$promise;
+        saveCar(id, carToSave) {
+            
+            return this.carResource.save({ id: id }, carToSave).$promise;
 
         }
 

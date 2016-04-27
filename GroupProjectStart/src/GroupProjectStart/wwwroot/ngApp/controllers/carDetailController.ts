@@ -17,7 +17,7 @@
 
             let carId = this.$stateParams['id'];
             this.carDetail = this.carService.getCar(carId);
-            debugger;
+            
         }
 
     }

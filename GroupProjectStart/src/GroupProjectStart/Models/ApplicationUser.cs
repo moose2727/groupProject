@@ -19,8 +19,9 @@ namespace GroupProjectStart.Models
         public ICollection<Car> CarsToLoan { get; set; }
         public bool HasLicense { get; set; }
         public bool HasTheftInsurance { get; set; }
-        public ICollection<RatingDriver> DriverRating { get; set; }
+        public ICollection<RatingDriver> DriverRatings { get; set; }
         public decimal AverageRating { get; set; }
+        public ICollection<DriverReview> Reviews { get; set; }
 
 
     }

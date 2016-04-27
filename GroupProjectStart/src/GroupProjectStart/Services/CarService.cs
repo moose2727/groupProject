@@ -16,22 +16,23 @@ namespace GroupProjectStart.Services
             this._repo = repo;
         }
 
-        public List<Car> GetCars()
+        public List<ApplicationUser> GetCars()
         {
-            var cars = _repo.Query<Car>().Include(c => c.CarRatings).ToList();
-            
-            return cars;
+            return _repo.Query<ApplicationUser>().ToList();
         }
 
         public Car GetCar(int id)
         {
-            var car = _repo.Query<Car>().Where(c => c.Id == id).FirstOrDefault();
-            return car;
+            var car = _repo.Query<Car>().Where(c => c.Id == id).Include(c => c.Reviews).FirstOrDefault();
+                       return car;
         }
 
-        public void AddCar(Car car)
+        public void AddCar(string id, Car car)
         {
-            _repo.Add(car);    
+            var user = _repo.Query<ApplicationUser>().Where(u => u.Id == id).Include(u => u.CarsToLoan).FirstOrDefault();
+            user.CarsToLoan.Add(car);
+            _repo.SaveChanges();
+            //_repo.Add(car);    
         }
 
         public void DeleteCar(int id)

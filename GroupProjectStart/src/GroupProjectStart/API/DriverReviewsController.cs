@@ -3,50 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
-using GroupProjectStart.Services;
 using GroupProjectStart.Models;
+using GroupProjectStart.Services;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GroupProjectStart.API
 {
+ 
     [Route("api/[controller]")]
-    public class DriverRatingsController : Controller
+    public class DriverReviewsController : Controller
     {
-        IDriverRatingService _repo;
+        IDriverReviewService _repo;
 
-        public DriverRatingsController(IDriverRatingService repo)
+        public DriverReviewsController(IDriverReviewService repo)
         {
             this._repo = repo;
         }
-
         // GET: api/values
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_repo.GetDriverRatings());
+            return Ok(_repo.GetReviews());
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_repo.GetDriverRating(id));
+            return Ok(_repo.GetReview(id));
         }
 
         // POST api/values
         [HttpPost("{id}")]
-        public IActionResult Post(string id, [FromBody]RatingDriver driverRating)
+        public IActionResult Post(string id, [FromBody]DriverReview driverReview)
         {
-            if(driverRating.Id == 0)
+            if(driverReview.Id == 0)
             {
-                _repo.AddDriverRating(id, driverRating);
+                _repo.AddDriverReview(id, driverReview);
             }
             else
             {
-                _repo.UpdateDriverRating(driverRating);
+                _repo.UpdateReview(driverReview);
             }
-            return Ok(driverRating);
+            return Ok(driverReview);
         }
 
         // PUT api/values/5
@@ -59,7 +59,7 @@ namespace GroupProjectStart.API
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _repo.DeleteDriverRating(id);
+
         }
     }
 }

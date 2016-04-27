@@ -33,13 +33,22 @@
             private driverRatingService: GroupProjectStart.Services.DriverRatingService,
             private accountService: GroupProjectStart.Services.AccountService,
             private $state: ng.ui.IStateService,
-            private $stateParams: ng.ui.IStateParamsService
+            private $stateParams: ng.ui.IStateParamsService,
+            private $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance,
+            private id
         ) {
-
+            this.userId = this.$stateParams['id'];
         }
 
-        saveRating() {
-            this.driverRatingService.saveDriverRating(this.ratingToCreate);
+        public ok() {
+            this.$uibModalInstance.close();
+        }
+
+        saveDriverRating() {
+            debugger;
+            this.driverRatingService.saveDriverRating(this.id, this.ratingToCreate).then(() => {
+                this.ok();
+            });
         }
     }
 
@@ -57,7 +66,7 @@
         }
 
         editRating() {
-            this.driverRatingService.saveDriverRating(this.ratingToEdit);
+            this.driverRatingService.saveDriverRating(this.userId, this.ratingToEdit);
         }
     }
 

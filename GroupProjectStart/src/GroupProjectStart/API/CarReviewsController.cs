@@ -11,11 +11,12 @@ using GroupProjectStart.Models;
 namespace GroupProjectStart.API
 {
     [Route("api/[controller]")]
-    public class DriverRatingsController : Controller
+    public class CarReviewsController : Controller
     {
-        IDriverRatingService _repo;
+        ICarReviewService _repo;
 
-        public DriverRatingsController(IDriverRatingService repo)
+
+        public CarReviewsController(ICarReviewService repo)
         {
             this._repo = repo;
         }
@@ -24,30 +25,33 @@ namespace GroupProjectStart.API
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_repo.GetDriverRatings());
+            return Ok(_repo.GetReviews());
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_repo.GetDriverRating(id));
+            return Ok(_repo.GetReview(id));
         }
 
         // POST api/values
         [HttpPost("{id}")]
-        public IActionResult Post(string id, [FromBody]RatingDriver driverRating)
+        //ADD CAR REVIEW
+        public IActionResult Post(int id, [FromBody]CarReview review)
         {
-            if(driverRating.Id == 0)
+            if(review.Id == 0)
             {
-                _repo.AddDriverRating(id, driverRating);
+                _repo.AddCarReview(id, review);
             }
             else
             {
-                _repo.UpdateDriverRating(driverRating);
+                _repo.UpdateReview(review);
             }
-            return Ok(driverRating);
+            return Ok(review);
         }
+
+    
 
         // PUT api/values/5
         [HttpPut("{id}")]
@@ -59,7 +63,6 @@ namespace GroupProjectStart.API
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _repo.DeleteDriverRating(id);
         }
     }
 }

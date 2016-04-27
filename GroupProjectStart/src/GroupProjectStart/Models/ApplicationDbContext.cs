@@ -13,6 +13,8 @@ namespace GroupProjectStart.Models
         //public DbSet<Loaner> Loaners { get; set; }
         public DbSet<RatingCar> RatingCars { get; set; }
         public DbSet<RatingDriver> RatingDrivers { get; set; }
+        public DbSet<CarReview> CarReviews { get; set; }
+        public DbSet<DriverReview> DriverReviews { get; set; }
 
         //public DbSet<Renter> Renters { get; set; }
         //public DbSet<RenterLoaner> RenterLoaners { get; set; }

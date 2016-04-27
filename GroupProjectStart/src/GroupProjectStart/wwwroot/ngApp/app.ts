@@ -65,6 +65,18 @@ namespace GroupProjectStart {
                 controller: GroupProjectStart.Controllers.CarsController,
                 controllerAs: 'controller'
             })
+            .state('userCar', {
+                url: '/userCar/:user/:car',             
+                templateUrl: '/ngApp/views/userCarDetails.html', 
+                controller: GroupProjectStart.Controllers.UserCarController,
+                controllerAs: 'controller'
+            })
+            .state('userCars', {
+                url: '/userCars',
+                templateUrl: '/ngApp/views/userCars.html',
+                controller: GroupProjectStart.Controllers.UserCarsController,
+                controllerAs: 'controller'
+            })
             .state('carDetail', {
                 url: '/car/:id',
                 templateUrl: '/ngApp/views/carForm.html',
@@ -93,6 +105,12 @@ namespace GroupProjectStart {
                 url: '/profile/:id',
                 templateUrl: 'ngApp/views/profile.html',
                 controller: GroupProjectStart.Controllers.ProfileController,
+                controllerAs: 'controller'
+            })
+            .state('sentiment', {
+                url: '/sentiment',
+                templateUrl: 'ngApp/views/usersentiment.html',
+                controller: GroupProjectStart.Controllers.UserSentimentController,
                 controllerAs: 'controller'
             })
             .state('ratings', {
