@@ -1,37 +1,38 @@
 ﻿<div class="container-fluid" id="loginModal">
-
     <div class="container-fluid">
         <div class="modal-dialog">
             <div class="modal-content" id="loginModalContent">
                 <div class="modal-header">
-
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                         ×
                     </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        Modal title
-                    </h4>
+                    <div class="col-md-offset-4
+                                ">
+                        <h4 class="modal-title" id="myModalLabel">
+                            Welcome Back !
+                        </h4>
+                    </div>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body col-md-offset-2">
                     <fieldset>
-                        <legend>Login Locally</legend>
+                        <legend>Login Now</legend>
                         <ul>
-                            <li ng-repeat="error in controller.validationMessages">
-                                {{error}}
-                            </li>
+                            <!-- ngRepeat: error in controller.validationMessages -->
                         </ul>
 
-                        <form ng-submit="controller.login()">
-                            <div>
-                                <label>Email:</label>
-                                <input ng-model="controller.loginUser.email" />
+                        <form ng-submit="controller.login()" class="form-horizontal ng-pristine ng-valid">
+                            <div style="margin-bottom: 25px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input ng-model="controller.loginUser.email" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Email">
+                            </div>
+                            <div style="margin-bottom: 25px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input ng-model="controller.loginUser.password" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Password">
                             </div>
                             <div>
-                                <label>Password:</label>
-                                <input ng-model="controller.loginUser.password" />
+                                <input type="submit" value="Login" class="btn btn-primary col-md-4">
+                                <a href="/register" class="btn btn-default col-md-offset-1 col-md-3">Register</a>
                             </div>
-                            <input type="submit" value="Login" />
-                            <a href="/register">Register</a>
                         </form>
                     </fieldset>
                 </div>
@@ -45,8 +46,6 @@
                     </button>
                 </div>
             </div>
-
         </div>
     </div>
-
 </div>
