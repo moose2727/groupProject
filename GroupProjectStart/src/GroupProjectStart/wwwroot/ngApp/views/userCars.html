@@ -1,4 +1,4 @@
-﻿<div class="container">
+﻿<div class="container" id="userCarBody">
     <div class="row searchCars" >
         <form class="col-sm-12" >
             <div class="col-md-2 col-md-offset-1">
@@ -51,7 +51,7 @@
                 <label for="submit">
                     <strong class="advanced" ng- data-ng-mousemove="">Search</strong>
                 </label>
-                <button type="submit" class="src btn btn-sm red">Search<i class="glyphicon-search"></i></button>
+                <button type="submit" class="src btn btn-sm red">Search<i class="glyphicon glyphicon-search"></i></button>
 
             </div>
         </form>
@@ -61,29 +61,33 @@
     <div class="row">
         <div class="col-md-10">
             <h2>Recent Listings</h2>
-            <div class="col-md-10" ng-repeat="user in controller.users">
-
-                <div class="col-lg-6" ng-repeat="car in user.carsToLoan">
-                    <a href="/userCar/{{user.id}}/{{car.id}}"><img id="carPosts" ng-src="{{car.image}}" /></a>
-                    <div class="col-md-6 pull-left">
-                        <p>{{car.year}} {{car.make}} {{car.model}}<br />Price per day: {{car.price}}</p>
-                      
-                    </div>
-                    <div>
-                        
-                    </div>
-                    <div class="col-md-6 pull-left">
-                        <div class="col-sm-8">
-                            {{c.averageRating}}
-
-                            {{user.averageRating}}
+            <div class="col-md-12" >
+                <div ng-repeat="user in controller.users">
+                    <div class="col-lg-6" ng-repeat="car in user.carsToLoan" id="carRepeat">
+                        <a href="/userCar/{{user.id}}/{{car.id}}"><img id="carPosts" ng-src="{{car.image}}" class="img-responsive img-thumbnail" /></a>
+                        <div class="col-md-6 pull-left">
+                            <div id="carProps"><span>{{car.year}} {{car.make}} {{car.model}}</span><br />Price per day: {{car.price | currency}}<br />Car Rating: {{car.averageRating}}</div> 
+                            <div class="btn btn-block btn-danger" ng-click="controller.carRateModal(c.id)" id="rateCarBut">RATE CAR</div>
                         </div>
-                        <div class="col-sm-4 carRateButton">
-                            <div class="btn btn-block btn-danger" ng-click="controller.carRateModal(c.id)">RATE Car</div>
-                            <div class="btn btn-block btn-success" ng-click="controller.driverRateModal(user.id)">RATE Driver</div>
-                        </div>
-                    </div>
+                        <div>
 
+                        </div>
+                        <div class="col-md-6 pull-left">
+                           
+                                <img ng-src="{{user.image}}" style="height: 50px; width: 50px;" /><span>   Driver Rating: {{user.averageRating}}</span><br />
+                            Display Name: {{user.displayName}}
+
+                                <!--<img ng-if="{{user.image == null}}" src="http://www.realestatetaxgroup.com/wp-content/uploads/2013/03/empty-profile.png" style="height: 50px; width: 50px" />-->
+                              <img ng-if="{{user.image != null}}"  src="{{user.image}}" style="height: 50px; width: 50px" /> 
+                             
+                           
+                         
+                              
+                                <div class="btn btn-block btn-success" ng-click="controller.driverRateModal(user.id)" id="rateDriverBut">RATE DRIVER</div>
+                         
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,7 +97,7 @@
 
                 <div class="popular-car" ng-repeat="user in controller.users">
                     <div ng-repeat="car in user.carsToLoan">
-                        <a href="/car/{{car.id}}"><img id="popCarPosts" ng-src="{{car.image}}" /></a>
+                        <a href="/car/{{car.id}}"><img  id="popCarPosts" ng-src="{{car.image}}" class="img-responsive img-thumbnail" /></a>
                         <p>{{car.year}} {{car.make}} {{car.model}}</p>
                     </div>
                 </div>
