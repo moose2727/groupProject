@@ -112,10 +112,10 @@
             //})
         }
 
-        public upgradeUser(id) {
+        public upgradeUser() {
             debugger;
-            let userToUpdate = this.profileService.getUser(id).$promise.then();
-            this.accountService.upgradeUser(userToUpdate);
+            this.profileService.updateUser(this.user);
+            this.accountService.upgradeUser(this.user);
         }
     }
 }

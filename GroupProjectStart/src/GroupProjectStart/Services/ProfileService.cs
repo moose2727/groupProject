@@ -51,5 +51,24 @@ namespace GroupProjectStart.Services
         //public Loaner getLoaner(string id) {
         //    return _repo.Query<Loaner>().Where(l => l.Id == id).Include(l => l.CarsToLoan).FirstOrDefault();
         //}
+
+        public void UpdateUser(ApplicationUser user)
+        {
+            var originalUser = _repo.Query<ApplicationUser>().Where(u => u.Id == user.Id).FirstOrDefault();
+            originalUser.FirstName = user.FirstName;
+            originalUser.LastName = user.LastName;
+            originalUser.DisplayName = user.DisplayName;
+            originalUser.Email = user.Email;
+            originalUser.HasLicense = user.HasLicense;
+            originalUser.HasTheftInsurance = user.HasTheftInsurance;
+            originalUser.HasDamageInsurance = user.HasDamageInsurance;
+            originalUser.Image = user.Image;
+            originalUser.IsLoaner = user.IsLoaner;
+            originalUser.IsAdmin = user.IsAdmin;
+            
+
+            _repo.Update<ApplicationUser>(originalUser);
+
+        }
     }
 }

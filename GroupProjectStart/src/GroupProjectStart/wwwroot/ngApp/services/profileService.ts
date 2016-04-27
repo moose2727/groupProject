@@ -24,9 +24,10 @@
             return this.profileResource.getLoaners();
         }
 
-        public updateUser(carToUpdate) {
+        public updateUser(userToUpdate) {
             debugger;
-            return this.profileResource.save(carToUpdate);
+            userToUpdate.isLoaner = true;
+            return this.profileResource.save(userToUpdate);
         }
     }
     angular.module('GroupProjectStart').service('profileService', ProfileService);

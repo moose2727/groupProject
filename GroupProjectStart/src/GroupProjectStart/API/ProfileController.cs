@@ -49,8 +49,10 @@ namespace GroupProjectStart.API
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]ApplicationUser user)
         {
+            _repo.UpdateUser(user);
+            return Ok();
         }
 
         // PUT api/values/5
