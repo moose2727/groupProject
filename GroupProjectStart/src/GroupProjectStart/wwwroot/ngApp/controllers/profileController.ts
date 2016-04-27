@@ -21,6 +21,7 @@
         constructor(
             private profileService: GroupProjectStart.Services.ProfileService,
             private carService: GroupProjectStart.Services.CarService,
+            private accountService: GroupProjectStart.Services.AccountService,
             private $stateParams: ng.ui.IStateParamsService,
             private $state: ng.ui.IStateService,
             private $uibModal: ng.ui.bootstrap.IModalService,
@@ -109,6 +110,12 @@
             //this.carService.saveCar(this.car).then((data) => {
             //    this.$state.reload();
             //})
+        }
+
+        public upgradeUser(id) {
+            debugger;
+            let userToUpdate = this.profileService.getUser(id).$promise.then();
+            this.accountService.upgradeUser(userToUpdate);
         }
     }
 }

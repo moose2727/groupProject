@@ -126,13 +126,17 @@ namespace GroupProjectStart.Services {
             return results;
         }
 
-
         private flattenValidation(modelState) {
             let messages = [];
             for (let prop in modelState) {
                 messages = messages.concat(modelState[prop]);
             }
             return messages;
+        }
+
+        public upgradeUser(id) {
+            debugger;
+            this.$http.post('/api/account/upgradeUser', id)
         }
 
         constructor

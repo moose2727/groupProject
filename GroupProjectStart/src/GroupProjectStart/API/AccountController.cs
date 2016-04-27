@@ -47,9 +47,18 @@ namespace GroupProjectStart.Controllers
             var vm = new UserViewModel
             {
                 UserName = user.UserName,
-                Claims = claims.ToDictionary(c => c.Type, c => c.Value)
+                Claims = claims.ToDictionary(c => c.Type, c => c.Value),
+                DisplayName = user.DisplayName
             };
             return vm;
+        }
+
+        [HttpPost]
+        public async void UpgradeUser(string id)
+        {
+            var user = await _userManager.FindByNameAsync(id);
+            await _userManager.AddClaimAsync(user, new Claim("IsLoaner", "true"));
+            
         }
 
         //
