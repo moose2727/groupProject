@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 
 namespace GroupProjectStart.Migrations
 {
-    public partial class restart : Migration
+    public partial class start : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -100,7 +100,6 @@ namespace GroupProjectStart.Migrations
                     ApplicationUserId = table.Column<string>(nullable: true),
                     IsViewable = table.Column<bool>(nullable: false),
                     Message = table.Column<string>(nullable: true),
-                    Sentiment = table.Column<decimal>(nullable: false),
                     TimeCreated = table.Column<DateTime>(nullable: false),
                     Title = table.Column<string>(nullable: true)
                 },
@@ -231,7 +230,6 @@ namespace GroupProjectStart.Migrations
                     CarId = table.Column<int>(nullable: true),
                     IsViewable = table.Column<bool>(nullable: false),
                     Message = table.Column<string>(nullable: true),
-                    Sentiment = table.Column<decimal>(nullable: false),
                     TimeCreated = table.Column<DateTime>(nullable: false),
                     Title = table.Column<string>(nullable: true)
                 },
@@ -273,6 +271,37 @@ namespace GroupProjectStart.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
+            migrationBuilder.CreateTable(
+                name: "SentimentInfo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CarReviewId = table.Column<int>(nullable: true),
+                    Count = table.Column<string>(nullable: true),
+                    DriverReviewId = table.Column<int>(nullable: true),
+                    EntityType = table.Column<string>(nullable: true),
+                    Relevance = table.Column<string>(nullable: true),
+                    SentimentScore = table.Column<string>(nullable: true),
+                    SentimentType = table.Column<string>(nullable: true),
+                    Text = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SentimentInfo", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SentimentInfo_CarReview_CarReviewId",
+                        column: x => x.CarReviewId,
+                        principalTable: "CarReview",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_SentimentInfo_DriverReview_DriverReviewId",
+                        column: x => x.DriverReviewId,
+                        principalTable: "DriverReview",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "AspNetUsers",
@@ -289,16 +318,17 @@ namespace GroupProjectStart.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable("CarReview");
-            migrationBuilder.DropTable("DriverReview");
             migrationBuilder.DropTable("RatingCar");
             migrationBuilder.DropTable("RatingDriver");
+            migrationBuilder.DropTable("SentimentInfo");
             migrationBuilder.DropTable("AspNetRoleClaims");
             migrationBuilder.DropTable("AspNetUserClaims");
             migrationBuilder.DropTable("AspNetUserLogins");
             migrationBuilder.DropTable("AspNetUserRoles");
-            migrationBuilder.DropTable("Car");
+            migrationBuilder.DropTable("CarReview");
+            migrationBuilder.DropTable("DriverReview");
             migrationBuilder.DropTable("AspNetRoles");
+            migrationBuilder.DropTable("Car");
             migrationBuilder.DropTable("AspNetUsers");
         }
     }

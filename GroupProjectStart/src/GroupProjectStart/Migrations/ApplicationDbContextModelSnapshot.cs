@@ -139,8 +139,6 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<string>("Message");
 
-                    b.Property<decimal>("Sentiment");
-
                     b.Property<DateTime>("TimeCreated");
 
                     b.Property<string>("Title");
@@ -158,8 +156,6 @@ namespace GroupProjectStart.Migrations
                     b.Property<bool>("IsViewable");
 
                     b.Property<string>("Message");
-
-                    b.Property<decimal>("Sentiment");
 
                     b.Property<DateTime>("TimeCreated");
 
@@ -220,6 +216,30 @@ namespace GroupProjectStart.Migrations
                     b.Property<int>("SchedulingExperience");
 
                     b.Property<int>("Trustworthiness");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.SentimentInfo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("CarReviewId");
+
+                    b.Property<string>("Count");
+
+                    b.Property<int?>("DriverReviewId");
+
+                    b.Property<string>("EntityType");
+
+                    b.Property<string>("Relevance");
+
+                    b.Property<string>("SentimentScore");
+
+                    b.Property<string>("SentimentType");
+
+                    b.Property<string>("Text");
 
                     b.HasKey("Id");
                 });
@@ -339,6 +359,17 @@ namespace GroupProjectStart.Migrations
                     b.HasOne("GroupProjectStart.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("GroupProjectStart.Models.SentimentInfo", b =>
+                {
+                    b.HasOne("GroupProjectStart.Models.CarReview")
+                        .WithMany()
+                        .HasForeignKey("CarReviewId");
+
+                    b.HasOne("GroupProjectStart.Models.DriverReview")
+                        .WithMany()
+                        .HasForeignKey("DriverReviewId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>

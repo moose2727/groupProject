@@ -1,3 +1,12 @@
-﻿.carAndLoanerImg {
+﻿#carDetailBody {
+     background-color: #2c2727;
+     color: white;
+     font-size: 16px;
+}
+
+.list-group-item{
+  
+    background-color: #a52020;
     
 }
+
