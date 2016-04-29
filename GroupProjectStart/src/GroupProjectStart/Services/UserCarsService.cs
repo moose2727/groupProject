@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Data.Entity;
 
 namespace GroupProjectStart.Services
 {
@@ -17,8 +18,12 @@ namespace GroupProjectStart.Services
 
         public List<ApplicationUser> GetUserCars()
         {
-            var users = _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).ToList();
-            return users;
+            //var r1 = _repo.Query<SentimentInfo>().ToList();
+            //var users = _repo.Query<ApplicationUser>().
+            
+            var cars = _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).ToList();
+
+            return cars;
         }
 
         //public List<LoanerViewModel> getLoaners()
@@ -43,8 +48,10 @@ namespace GroupProjectStart.Services
 
         public ApplicationUser getUserCar(string id)
         {
-            var user =  _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).Where(u => u.Id == id).FirstOrDefault();
+            //    var user =  _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews.Select(r => r.SentimentEntities)).Where(u => u.Id == id).Select(r => new ApplicationUser() { Reviews = r.Reviews.Select(s => s.SentimentEntities) }).FirstOrDefault();
 
+            var user = _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).ThenInclude(r => r.SentimentEntities).Where(u => u.Id == id).FirstOrDefault();
+       
             return user;
         }
 

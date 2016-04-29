@@ -8,6 +8,7 @@ namespace GroupProjectStart.Services
     {
         ApplicationUser getUser(string id);
         List<ApplicationUser> getUsers();
+        void UpdateUser(ApplicationUser user);
         //List<LoanerViewModel> getLoaners();
         //List<Loaner> GetSpecifics();
     }

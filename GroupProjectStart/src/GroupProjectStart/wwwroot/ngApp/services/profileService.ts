@@ -23,6 +23,11 @@
             
             return this.profileResource.getLoaners();
         }
+
+        public updateUser(userToUpdate) {
+            debugger;
+            return this.profileResource.save(userToUpdate);
+        }
     }
     angular.module('GroupProjectStart').service('profileService', ProfileService);
 }

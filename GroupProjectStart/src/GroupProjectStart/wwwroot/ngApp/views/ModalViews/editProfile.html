@@ -1,0 +1,77 @@
+﻿<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="title">
+            <h3>Edit Profile details</h3>
+        </div>
+        <br />
+        <div>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Display Name</label>
+                            <input type="text" name="displayName" class="form-control" ng-model="controller.user.displayName"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" ng-model="controller.user.email"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" name="firstName" class="form-control" ng-model="controller.user.firstName"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="lastName" class="form-control" ng-model="controller.user.lastName"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Do you have theft insurance?</label>
+                            <select class="form-control" ng-model="controller.user.hasTheftInsurance">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Do you have damage insurance?</label>
+                            <select class="form-control" ng-model="controller.user.hasDamageInsurance">
+                                <option value="false" selected>No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Are you licensed</label>
+                            <select class="form-control" ng-model="controller.user.hasLicense">
+                                <option value="false">No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="form-group">
+                    <button class="btn btn-primary" ng-click="controller.editUser()">Edit</button>
+                    <button class="btn btn-default" ng-click="controller.close()">Cancel</button>
+                </div>
+            </form>
+        </div>
+       
+    </div>
+</div>

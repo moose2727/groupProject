@@ -23,6 +23,7 @@ namespace GroupProjectStart.Services {
 
 
         public login(loginUser) {
+            debugger;
             return this.$q((resolve, reject) => {
                 this.$http.post('/api/account/login', loginUser).then((result) => {
                         this.storeUserInfo(result.data);
@@ -126,13 +127,17 @@ namespace GroupProjectStart.Services {
             return results;
         }
 
-
         private flattenValidation(modelState) {
             let messages = [];
             for (let prop in modelState) {
                 messages = messages.concat(modelState[prop]);
             }
             return messages;
+        }
+
+        public upgradeUser(id) {
+            debugger;
+            this.$http.post('/api/account/upgradeUser/'+ id, id);
         }
 
         constructor

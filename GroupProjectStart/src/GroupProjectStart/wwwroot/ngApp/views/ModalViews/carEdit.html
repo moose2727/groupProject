@@ -1,57 +1,142 @@
 ﻿<h1>Edit Car Information</h1>
 
 <!-- ng-submit allows you to add event handler -->
-<form ng-submit="controller.editCar()">
+<form>
     <div class="row">
-        <div class="col-md-4 col-md-offset-2">
-            <!-- input field for Make -->
-            <div class="form-group">
-                <label>Make</label>
-                <input type="text" ng-model="controller.carToEdit.make" class="form-control" />
+        <div class="col-md-8 col-md-offset-2">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Year: </label>
+                        <input type="number" placeholder="Year" ng-model="controller.carToEdit.year" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Make: </label>
+                        <input type="text" placeholder="Make" ng-model="controller.carToEdit.make" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Model: </label>
+                        <input type="text" placeholder="Model" ng-model="controller.carToEdit.model" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Miles: </label>
+                        <input type="number" placeholder="Miles" ng-model="controller.carToEdit.miles" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>City MPG: </label>
+                        <input type="number" placeholder="CTY MPG" ng-model="controller.carToEdit.ctyMpg" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Highway MPG: </label>
+                        <input type="number" placeholder="HWY MPG" ng-model="controller.carToEdit.hwyMpg" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Doors: </label>
+                        <select class="dropdown form-control" name="Doors" ng-model="controller.carToEdit.door">
+                            <option value="" disabled selected="selected">Doors</option>
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Seats: </label>
+                        <select class="dropdown form-control" name="Seats" ng-model="controller.carToEdit.seats">
+                            <option value="" disabled selected="selected">Seats</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="More than 5">More</option>
+                        </select>
+                    </div>
+                </div>
+                <!--<div class="col-md-3">
+                    <div class="form-group">
+                        <select class="dropdown form-control" name="Condition" ng-model="controller.carToEdit.condition">
+                            <option value="" disabled selected="selected">Condition</option>
+                            <option value="Perfect">Perfect</option>
+                            <option value="Good">Good</option>
+                            <option value="Okay">Okay</option>
+                            <option value="Bad">Bad</option>
+                        </select>
+                    </div>
+                </div>-->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Transmission: </label>
+                        <select class="dropdown form-control" name="Transmission" ng-model="controller.carToEdit.transmission">
+                            <option value="" disabled selected="selected">Transmission</option>
+                            <option value="Automatic">Automatic</option>
+                            <option value="Manual">Manual</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Description: </label>
+                    <textarea rows="4" cols="2000" placeholder="Description" class="form-control form-description" ng-model="controller.carToEdit.description"></textarea>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Condition: </label>
+                                <select class="dropdown form-control" name="Condition" ng-model="controller.carToEdit.condition">
+                                    <option value="" disabled selected="selected">Condition</option>
+                                    <option value="Perfect">Perfect</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Okay">Okay</option>
+                                    <option value="Bad">Bad</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Price per day: </label>
+                            <input type="number" placeholder="Price per day" class="form-control" ng-model="controller.carToEdit.price" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row editCarButtons">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="submit" value="Edit" class="btn btn-primary" ng-click="controller.editCar()"/>
+                        <input type="button" value="Cancel" ng-click="controller.close()" class="btn btn-warning" />
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- input field for Model -->
-        <div class="col-md-4">
-            <div class="form-group">
-                <label>Model</label>
-                <input type="text" ng-model="controller.carToEdit.model" class="form-control" />
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <!-- input field for Year -->
-        <div class="col-md-4 col-md-offset-2">
-
-            <div class="form-group">
-                <label>Year</label>
-                <input type="text" ng-model="controller.carToEdit.year" class="form-control" />
-            </div>
-        </div>
-
-        <!-- input field for Price -->
-        <div class="col-md-4">
-            <div class="form-group">
-                <label>Price</label>
-                <input type="text" ng-model="controller.carToEdit.price" class="form-control" />
-            </div>
-        </div>
-    </div>
-    <!-- input field for Image -->
-    <!--<div class="form-group">
-        <label>Style</label>
-        <input type="text" ng-model="controller.carToEdit.Image" class="form-control" />
-    </div>-->
-    <!-- input field for Door -->
-    <div class="form-group">
-        <label>Door</label>
-        <input type="text" ng-model="controller.carToEdit.Door" class="form-control" />
     </div>
 
     <!-- submit button -->
-    <div class="form-group">
+    <!--<div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
         <input type="submit" value="Edit" class="btn btn-primary" />
         <input type="button" value="Cancel" ng-click="controller.cancel()" class="btn btn-warning" />
     </div>
-    </div>
-    </div>
+        </div>
+    </div>-->
+    
 </form>

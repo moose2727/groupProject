@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Data.Entity;
 
 
 namespace GroupProjectStart.Services
@@ -19,7 +20,7 @@ namespace GroupProjectStart.Services
 
         public List<ApplicationUser> getUsers()
         {
-            var users = _repo.Query<ApplicationUser>().ToList();
+            var users = _repo.Query<ApplicationUser>().Include(u => u.Reviews).ToList();
             return users;   
         }
 
@@ -45,11 +46,30 @@ namespace GroupProjectStart.Services
 
         public ApplicationUser getUser(string id)
         {
-            return _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Where(u => u.Id == id).FirstOrDefault();
+            return _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).Where(u => u.Id == id).FirstOrDefault();
         }
 
         //public Loaner getLoaner(string id) {
         //    return _repo.Query<Loaner>().Where(l => l.Id == id).Include(l => l.CarsToLoan).FirstOrDefault();
         //}
+
+        public void UpdateUser(ApplicationUser user)
+        {
+            var originalUser = _repo.Query<ApplicationUser>().Where(u => u.Id == user.Id).FirstOrDefault();
+            originalUser.FirstName = user.FirstName;
+            originalUser.LastName = user.LastName;
+            originalUser.DisplayName = user.DisplayName;
+            originalUser.Email = user.Email;
+            originalUser.HasLicense = user.HasLicense;
+            originalUser.HasTheftInsurance = user.HasTheftInsurance;
+            originalUser.HasDamageInsurance = user.HasDamageInsurance;
+            originalUser.Image = user.Image;
+            originalUser.IsLoaner = user.IsLoaner;
+            originalUser.IsAdmin = user.IsAdmin;
+            
+
+            _repo.Update<ApplicationUser>(originalUser);
+
+        }
     }
 }

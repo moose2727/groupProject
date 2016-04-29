@@ -1,5 +1,34 @@
 ﻿namespace GroupProjectStart.Controllers {
 
+
+    export class DriverReviewController {
+        public reviews;
+        public userId;
+
+        constructor(
+            private driverReviewService: GroupProjectStart.Services.DriverReviewService,
+            private accountService: GroupProjectStart.Services.AccountService,
+            private $state: ng.ui.IStateService,
+            private $stateParams: ng.ui.IStateParamsService,
+            private $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance,
+            private id
+        ) {
+          
+
+        }
+
+        public ok() {
+            this.$uibModalInstance.close();
+        }
+
+
+
+        getReviews() {
+
+            this.reviews = this.driverReviewService.getDriverReviews();
+        }
+    }
+
     export class CreateCarReviewController {
         public reviewToCreate;
         public carId;
@@ -52,6 +81,7 @@
         }
 
         saveDriverReview() {
+            debugger;
             this.driverReviewService.saveDriverReview(this.id, this.reviewToCreate).then(() => {
                 this.ok();
                 this.$state.reload();

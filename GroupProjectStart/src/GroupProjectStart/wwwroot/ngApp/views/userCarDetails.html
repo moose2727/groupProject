@@ -1,41 +1,81 @@
-﻿<div class="container-fluid">
+﻿<div class="container-fluid" id="carDetailBody">
     <div class="row">
         <div class="col-md-12">
             <div class="page-header">
                 <h1>
-                    LayoutIt! <small>Interface Builder for Bootstrap</small>
+                    Car Details  <small>User information attached</small>
                 </h1>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <h3>
-                        Car To Rent
-                    </h3><img alt="Bootstrap Image Preview" class="carAndLoanerImg text-center" style="height: 400px; width: 500px" src="{{controller.user.carsToLoan.image}}" />
-                    <div class="row">
-                        <div class="col-md-4">
-                            car details BLAH BLAH
-                        </div>
-                        <div class="col-md-4">
-                            MORE CAR DETAILS
-                        </div>
-                        <div class="col-md-4">
-                            GOOGLE LOCATION PLACE HOLDER
+                <div>
+                    <div class="col-md-7">
+                        <h3>
+                            Car To Rent
+                        </h3><img alt="Bootstrap Image Preview" class="carAndLoanerImg text-center img-responsive img-thumbnail" style="max-height: 500px;  max-width: 600px" src="{{controller.car.image}}" />
+                        <div class="row">
+                            <div class="col-md-4">
+                               Make: {{controller.car.make}} model: {{controller.car.model}}
+                                Year: {{controller.car.year}} Doors: {{controller.car.doors}}
+                                Condition: {{controller.car.condition}} Seats: {{controller.car.seats}}
+              
+                            </div>
+                            <div class="col-md-6">
+                                MPG: HWY = <span ng-show="{{controller.car.hwyMpg}}">{{controller.car.hwyMpg}} CITY = {{controller.car.ctyMpg}}</span>
+
+                                Description: {{controller.car.description}}
+                                Date Added: {{controller.car.dateAdded}}
+                            </div>
+                            <div class="col-md-6 img-responsive pull-right">
+                               <img ng-src="http://www.tech-recipes.com/wp-content/uploads/2012/05/map.jpg" style="width: 200px; height: auto;" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <h3>
-                        Car Owner
-                    </h3><img alt="Bootstrap Image Preview" class="carAndLoanerImg pull-left" src="{{controller.user.image}}" style="height: 200px; width: 200px;" />
-                    <div class="row">
-                        <div class="col-md-4">
-                            USER DETAILS
-                        </div>
-                        <div class="col-md-4">
+                    <div class="col-md-5">
+                        <h3>
+                            Car Owner
+                        </h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <img alt="Bootstrap Image Preview" class="carAndLoanerImg pull-left" src="{{controller.user.image}}" style="height: 200px; width: 200px;" />
+                            </div>
+                            <div class="col-lg-6">
+                                User Details
+                                <hr />
+                                <ul class="list-group table-responsive" id="userDetails">
+                                    <li class="list-group-item">User Name: {{controller.user.displayName}}</li>
+                                    <li class="list-group-item">Name: {{controller.user.firstName}} {{controller.user.lastName}}</li>
+                                    <li class="list-group-item">Rating:  {{controller.user.averageRating}}</li>
+                                   
+                                </ul>
+
+                                <div ng-repeat="review in controller.user.reviews">
+                                    {{review.title}}<br />
+                                    {{review.message}}
+                                    <div ng-repeat="s in review.sentimentEntities">
+                                        {{s.sentimentScore}}
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
-                        <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-6">
+                                    <!--<ul class="list-group" id="userDetails">
+                                        <li class="list-group-item">User Name:{{controller.user.displayName}}</li>
+                                        <li class="list-group-item">Name:{{controller.user.firstName}} {{controller.user.lastName}}</li>
+                                        <li class="list-group-item">Rating: {{controller.user.averageRating}}</li>
+
+                                    </ul>--><br />
+                                    <div class="btn btn-block btn-success" ng-click="controller.driverRateModal(user.id)" id="rateDriverBut">RATE OWNER</div>
+                                    <div class="btn btn-block btn-success" ng-click="controller.driverReviewModal(controller.user.id)" id="rateDriverBut">View Owner Reviews</div>
+
+                                </div>
+
+                            </div>
                         </div>
+                     
+
                     </div>
                 </div>
             </div>

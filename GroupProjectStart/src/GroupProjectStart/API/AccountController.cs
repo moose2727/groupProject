@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using GroupProjectStart.Models;
 using GroupProjectStart.Services;
 using GroupProjectStart.ViewModels.Account;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace GroupProjectStart.Controllers
 {
@@ -47,9 +48,19 @@ namespace GroupProjectStart.Controllers
             var vm = new UserViewModel
             {
                 UserName = user.UserName,
-                Claims = claims.ToDictionary(c => c.Type, c => c.Value)
+                Claims = claims.ToDictionary(c => c.Type, c => c.Value),
+                DisplayName = user.DisplayName
             };
             return vm;
+        }
+
+        [HttpPost("upgradeUser/{id}")]
+        public async Task<IActionResult> UpgradeUser(string id)
+        {
+
+            var user = await _userManager.FindByIdAsync(id);
+            await _userManager.AddClaimAsync(user, new Claim("IsLoaner", "true"));
+            return Ok();
         }
 
         //
