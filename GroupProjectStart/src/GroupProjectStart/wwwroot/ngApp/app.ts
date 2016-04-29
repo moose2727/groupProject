@@ -60,14 +60,14 @@ namespace GroupProjectStart {
                 controllerAs: 'controller'
             })
             .state('cars', {
-                url: '/cars',
+                url: '/cars/:page',
                 templateUrl: '/ngApp/views/car.html',
                 controller: GroupProjectStart.Controllers.CarsController,
                 controllerAs: 'controller'
             })
             .state('userCar', {
-                url: '/userCar/:user/:car',             
-                templateUrl: '/ngApp/views/userCarDetails.html', 
+                url: '/userCar/:user/:car',
+                templateUrl: '/ngApp/views/userCarDetails.html',
                 controller: GroupProjectStart.Controllers.UserCarController,
                 controllerAs: 'controller'
             })
@@ -130,16 +130,16 @@ namespace GroupProjectStart {
                 templateUrl: 'ngApp/views/deleteRating.html',
                 controller: GroupProjectStart.Controllers.DeleteDriverRatingController,
                 controllerAs: 'controller'
-            })
-            .state('notFound', {
-                url: '/notFound',
-                templateUrl: '/ngApp/views/notFound.html'
             });
+        ////    .state('notFound', {
+        ////        url: '/notFound',
+        ////        templateUrl: '/ngApp/views/notFound.html'
+        ////    });
 
-        // Handle request for non-existent route
-        $urlRouterProvider.otherwise('/notFound');
+        ////// Handle request for non-existent route
+        ////$urlRouterProvider.otherwise('/notFound');
 
-        // Enable HTML5 navigation
+        ////// Enable HTML5 navigation
         $locationProvider.html5Mode(true);
     });
 

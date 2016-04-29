@@ -1,5 +1,6 @@
 ﻿using CoderCamps;
 using GroupProjectStart.Models;
+using GroupProjectStart.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +17,29 @@ namespace GroupProjectStart.Services
             this._repo = repo;
         }
 
-        public List<ApplicationUser> GetCars()
+        public PagingVM GetCars(int page)
         {
-            return _repo.Query<ApplicationUser>().ToList();
+
+            const int ITEMS_PER_PAGE = 4;
+
+            var cars = _repo.Query<Car>()
+                .OrderBy(c => c.Id)
+                .Skip(page * ITEMS_PER_PAGE)
+                .Take(ITEMS_PER_PAGE)
+                .ToList();
+            var numCars = _repo.Query<Car>().Count();
+            var vm = new PagingVM
+            {
+                Cars = cars,
+                TotalCount = numCars
+            };
+            return vm;
         }
 
         public Car GetCar(int id)
         {
             var car = _repo.Query<Car>().Where(c => c.Id == id).Include(c => c.Reviews).FirstOrDefault();
-                       return car;
+            return car;
         }
 
         public void AddCar(string id, Car car)

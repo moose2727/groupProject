@@ -2,12 +2,18 @@
 
     export class CarsController {
         public cars;
-       
+        public totalItems;
+        public currentPage = this.$stateParams;
+        public maxSize = 3;
+        public itemsPerPage = 4;
 
         constructor(private carService: GroupProjectStart.Services.CarService,
-            private $uibModal: ng.ui.bootstrap.IModalService) {
-            this.cars = this.carService.getCars();
-           
+            private $uibModal: ng.ui.bootstrap.IModalService,
+            public $stateParams : ng.ui.IStateParamsService) {
+            this.carService.getCars(this.$stateParams['page']).then((data) => {
+                this.cars = data.cars;
+                this.totalItems = data.totalCount;
+            });
         }
 
         public carRateModal(id) {
@@ -64,6 +70,8 @@
             this.$scope.$apply();
             this.image = file.url;
         }
+
+        
     }
 
 
