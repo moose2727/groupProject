@@ -26,7 +26,6 @@
 
         public updateUser(userToUpdate) {
             debugger;
-            userToUpdate.isLoaner = true;
             return this.profileResource.save(userToUpdate);
         }
     }

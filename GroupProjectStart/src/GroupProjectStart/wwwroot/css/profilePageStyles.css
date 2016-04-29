@@ -12,7 +12,8 @@
 .car-detail{
     border: solid 2px black;
     padding: 10px;
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .inactive-car{
@@ -22,7 +23,9 @@
 
 .profile-car-btn{
     display:inline-block;
-    float:right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /*float:right;*/
 }
 
 .car-type{
@@ -30,11 +33,12 @@
 }
 
 .profileCarRating{
-    display:inline-block;
+    /*display:inline-block;*/
+    
 }
 
 .form-description{
-    resize:none;
+    resize: none;
     width: 100% !important;
     height: 500px;
 }
@@ -44,6 +48,7 @@
     padding: 10px;
 }
 
+/*removes arrows from number input*/
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none;
@@ -52,8 +57,33 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0; 
 }
 
+.edit-user{
+    float:right;
+    margin-top: 20px
+}
+
+.icon{
+    font-family: Arial;
+    margin-left: 5px;
+}
+
 .editCarButtons{
     margin-top:10px;
     margin-bottom:10px;
     float: right;
+}
+
+#profileBody{
+    background-color:  #2c2727;
+    color: whitesmoke
+}
+
+.profileBox{
+    background-color: #a52020;
+
+}
+
+.profileTitle{
+    margin-top: 5px;
+    padding-top: 5px;
 }

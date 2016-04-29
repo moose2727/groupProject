@@ -23,6 +23,7 @@ namespace GroupProjectStart.Services {
 
 
         public login(loginUser) {
+            debugger;
             return this.$q((resolve, reject) => {
                 this.$http.post('/api/account/login', loginUser).then((result) => {
                         this.storeUserInfo(result.data);
@@ -136,7 +137,7 @@ namespace GroupProjectStart.Services {
 
         public upgradeUser(id) {
             debugger;
-            this.$http.post('/api/account/upgradeUser', id)
+            this.$http.post('/api/account/upgradeUser/'+ id, id);
         }
 
         constructor

@@ -30,6 +30,18 @@
             this.getUser();
         }
 
+        public editProfileModal(id) {
+            this.$uibModal.open({
+                templateUrl: 'ngApp/views/modalViews/editProfile.html',
+                controller: GroupProjectStart.Controllers.EditProfileController,
+                controllerAs: 'controller',
+                resolve: {
+                    id: () => id,
+                },
+                size: 'lg'
+            });
+        }
+
         public removeCarModal(id) {
             this.$uibModal.open({
                 templateUrl: 'ngApp/views/modalViews/deleteCar.html',
@@ -82,7 +94,6 @@
 
 
         public activateCar(id) {
-            debugger;
             this.carService.getCar(id).$promise.then((car) => {
                 car.isActive = true;
                 this.carService.saveCar(this.user.id, car).then((data) => {
@@ -90,6 +101,8 @@
                 })
             });
         }
+
+        
 
         public deactivateCar(id) {
             //debugger;
@@ -112,10 +125,54 @@
             //})
         }
 
+        public deactivateLoaner() {
+            debugger;
+            this.user.isLoaner = false;
+            this.profileService.updateUser(this.user);
+        }
+
         public upgradeUser() {
             debugger;
-            this.profileService.updateUser(this.user);
-            this.accountService.upgradeUser(this.user);
+            if (!this.accountService.getClaim('isLoaner') && this.user.isLoaner == false){
+                this.user.isLoaner = true;
+                this.profileService.updateUser(this.user);
+                this.accountService.upgradeUser(this.user.id);
+            }
+            else if (this.accountService.getClaim('isLoaner') && this.user.isLoaner == false) {
+                this.user.isLoaner = true;
+                this.profileService.updateUser(this.user);
+            }
+            else if (!this.accountService.getClaim('isLoaner') && this.user.isLoaner == true){
+                this.accountService.upgradeUser(this.user.id);
+            }
+            
+        }
+    }
+
+    export class EditProfileController {
+
+        public userId
+        public user;
+
+        constructor(
+            private $stateParams: ng.ui.IStateParamsService,
+            private $state: ng.ui.IStateService,
+            private profileService: GroupProjectStart.Services.ProfileService,
+            private $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance,
+            private id) {
+            this.userId = this.id;
+            this.user = this.profileService.getUser(this.userId)
+
+        }
+
+        editUser() {
+            this.profileService.updateUser(this.user)
+            this.$state.reload();
+            this.close();
+        }
+
+        close() {
+            this.$uibModalInstance.close()
         }
     }
 }

@@ -74,6 +74,7 @@ namespace GroupProjectStart.Controllers {
         public validationMessages;
 
         public login() {
+            debugger;
             this.accountService.login(this.loginUser).then(() => {
                 this.$location.path('/');
                 this.ok();

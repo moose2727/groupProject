@@ -64,12 +64,12 @@ namespace GroupProjectStart.Models
 
 
             var caleb = await userManager.FindByNameAsync("Caleb@Something.com");
-                if (caleb == null)
+            if (caleb == null)
+            {
+                // create user
+                caleb = new ApplicationUser
                 {
-                    // create user
-                    caleb = new ApplicationUser
-                    {
-                        DriverRatings = new List<RatingDriver>
+                    DriverRatings = new List<RatingDriver>
                         {
                             new RatingDriver
                             {
@@ -112,7 +112,7 @@ namespace GroupProjectStart.Models
                                  DeliveryExperience = 3
                             },
                         },
-                        Reviews = new List<DriverReview>
+                    Reviews = new List<DriverReview>
                         {
                            new DriverReview
                            {
@@ -133,21 +133,41 @@ namespace GroupProjectStart.Models
                                 TimeCreated = DateTime.Now
                            },
                         },
-                        UserName = "Caleb@Something.com",
-                        Email = "Caleb@Something.com",
-                        FirstName = "Caleb",
-                        LastName = "Schwarzmiller",
-                        DisplayName = "CSchwarz",
-                        HasTheftInsurance = true,
-                        HasDamageInsurance = true,
-                        HasLicense = true,
-                        IsLoaner = true,
-                        Image = "https://www.filestackapi.com/api/file/RuTYywXlQughPk4vPpF9",
-                        CarsToLoan = new List<Car>
+                    UserName = "Caleb@Something.com",
+                    Email = "Caleb@Something.com",
+                    FirstName = "Caleb",
+                    LastName = "Schwarzmiller",
+                    DisplayName = "CSchwarz",
+                    HasTheftInsurance = true,
+                    HasDamageInsurance = true,
+                    HasLicense = true,
+                    IsLoaner = true,
+                    Image = "https://www.filestackapi.com/api/file/RuTYywXlQughPk4vPpF9",
+                    CarsToLoan = new List<Car>
                     {
 
+
+                    new Car
+                    {
+                        Make = "Dodge",
+                        Model = "Ram",
+                        Year = 1992,
+                        Image = "https://c2.staticflickr.com/4/3824/13573311565_ff976967b5_b.jpg",
+                        Door = 2,
+                        Price = 40m,
+                        IsActive = true,
+                        Condition = "Okay",
+                        CtyMpg = 19,
+                        HwyMpg = 26,
+                        DateAdded = DateTime.Now,
+                        Miles = 215108,
+                        Seats = 3,
+                        Transmission = "Manual",
+                        Description = "Lorem ipsum dolor sit amet, ei eam tempor eripuit, no nihil nonumy honestatis sit, eam at utroque luptatum reprehendunt. Te appareat consequat eum. Iisque facilisis eos an, te elitr cetero tacimates ius. Ut modus patrioque scribentur per, ei has erat populo essent, suas inimicus cum ut. Ad vocent audire phaedrum mea. Eos case doctus cudicam epicuri eum id.Vix scriptorem cotidieque inqui at dolore definitionem,facete voluptatum dissentiunt ad vel.Impedit officiis intellegam sea neet atqui aliquid fierent eos.Cu pri molestie definitionescu nec augue epicurei graeci principes pri ex.Doctus aeterno vim nesit an purto nullamea mel tollit sanctus."
+                    },
+
                         new Car {
-                          
+
                             Year = 2009,
                             Make = "Hyundai",
                             Model = "Santa Fe",
@@ -229,7 +249,7 @@ namespace GroupProjectStart.Models
                         },
 
                           new Car {
-                          
+
                             Year = 2016,
                             Make = "Toyota",
                             Model = "Corolla",
@@ -310,7 +330,7 @@ namespace GroupProjectStart.Models
                 }
                         },
                              new Car {
-                           
+
                             Year = 2012,
                             Make = "Hyundai",
                             Model = "Tiburon",
@@ -395,12 +415,12 @@ namespace GroupProjectStart.Models
 
                     },
 
-                    };
-                    await userManager.CreateAsync(caleb, "Secret123!");
+                };
+                await userManager.CreateAsync(caleb, "Secret123!");
 
-                    await userManager.AddClaimAsync(caleb, new Claim("IsLoaner", "true"));
+                await userManager.AddClaimAsync(caleb, new Claim("IsLoaner", "true"));
 
-                }
+            }
 
             var Cory = await userManager.FindByNameAsync("Cory@us.com");
             if (Cory == null)
@@ -486,7 +506,7 @@ namespace GroupProjectStart.Models
                     {
 
                         new Car {
-                      
+
                             Year = 2005,
                             Make = "Hyundai",
                             Model = "Tiburon",
@@ -568,7 +588,7 @@ namespace GroupProjectStart.Models
                         },
 
                           new Car {
-                      
+
                             Year = 2014,
                             Make = "Toyota",
                             Model = "Corolla",
@@ -649,7 +669,7 @@ namespace GroupProjectStart.Models
                 }
                         },
                              new Car {
-                          
+
                             Year = 2016,
                             Make = "Chevrolet",
                             Model = "Corvette",
@@ -846,27 +866,8 @@ namespace GroupProjectStart.Models
                         IsActive = true
                     },
 
-                    new Car
-                    {
-                        Make = "Dodge",
-                        Model = "Ram",
-                        Year = 1992,
-                        Image = "https://c2.staticflickr.com/4/3824/13573311565_ff976967b5_b.jpg",
-                        Door = 2,
-                        Price = 40m,
-                        IsActive = true,
-                        Condition = "Okay",
-                        CtyMpg = 19,
-                        HwyMpg = 26,
-                        DateAdded = DateTime.Now,
-                        Miles = 215108,
-                        Seats = 3,
-                        Transmission = "Manual",
-                        Description = "Lorem ipsum dolor sit amet, ei eam tempor eripuit, no nihil nonumy honestatis sit, eam at utroque luptatum reprehendunt. Te appareat consequat eum. Iisque facilisis eos an, te elitr cetero tacimates ius. Ut modus patrioque scribentur per, ei has erat populo essent, suas inimicus cum ut. Ad vocent audire phaedrum mea. Eos case doctus cudicam epicuri eum id.Vix scriptorem cotidieque inqui at dolore definitionem,facete voluptatum dissentiunt ad vel.Impedit officiis intellegam sea neet atqui aliquid fierent eos.Cu pri molestie definitionescu nec augue epicurei graeci principes pri ex.Doctus aeterno vim nesit an purto nullamea mel tollit sanctus."
-                    },
-
                         new Car {
-            
+
                             Year = 2015,
                             Make = "BMW",
                             Model = "M5",
@@ -948,7 +949,7 @@ namespace GroupProjectStart.Models
                         },
 
                           new Car {
-                   
+
                             Year = 2014,
                             Make = "Mazda",
                             Model = "6",
@@ -1029,7 +1030,7 @@ namespace GroupProjectStart.Models
                 }
                         },
                              new Car {
-                         
+
                             Year = 2016,
                             Make = "Chevrolet",
                             Model = "Corvette",
@@ -1206,7 +1207,7 @@ namespace GroupProjectStart.Models
                     {
 
                         new Car {
-                  
+
                             Year = 2015,
                             Make = "BMW",
                             Model = "335I",
@@ -1288,7 +1289,7 @@ namespace GroupProjectStart.Models
                         },
 
                           new Car {
-                           
+
                             Year = 2012,
                             Make = "Maserati",
                             Model = "Granturismo",
@@ -1369,7 +1370,7 @@ namespace GroupProjectStart.Models
                 }
                         },
                              new Car {
-                           
+
                             Year = 2016,
                             Make = "Tesla",
                             Model = "Model X",
@@ -1583,7 +1584,7 @@ namespace GroupProjectStart.Models
                     {
 
                         new Car {
-                         
+
                             Year = 2015,
                             Make = "Jeep",
                             Model = "Wrangler",
@@ -1665,7 +1666,7 @@ namespace GroupProjectStart.Models
                         },
 
                           new Car {
-                        
+
                             Year = 2013,
                             Make = "Honda",
                             Model = "Accord",
@@ -1746,7 +1747,7 @@ namespace GroupProjectStart.Models
                 }
                         },
                              new Car {
-                           
+
                             Year = 2016,
                             Make = "Mazda",
                             Model = "MX-5 Miata",
@@ -1840,5 +1841,5 @@ namespace GroupProjectStart.Models
 
         }
 
-        }
-    } 
+    }
+}
