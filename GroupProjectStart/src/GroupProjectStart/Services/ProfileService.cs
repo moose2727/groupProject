@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Data.Entity;
 
 
 namespace GroupProjectStart.Services
@@ -19,7 +20,7 @@ namespace GroupProjectStart.Services
 
         public List<ApplicationUser> getUsers()
         {
-            var users = _repo.Query<ApplicationUser>().ToList();
+            var users = _repo.Query<ApplicationUser>().Include(u => u.Reviews).ToList();
             return users;   
         }
 
@@ -45,7 +46,7 @@ namespace GroupProjectStart.Services
 
         public ApplicationUser getUser(string id)
         {
-            return _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Where(u => u.Id == id).FirstOrDefault();
+            return _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).Where(u => u.Id == id).FirstOrDefault();
         }
 
         //public Loaner getLoaner(string id) {

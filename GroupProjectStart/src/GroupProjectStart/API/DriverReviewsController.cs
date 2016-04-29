@@ -29,7 +29,6 @@ namespace GroupProjectStart.API
         [HttpGet]
         public IActionResult Get()
         {
-
                 return Ok(_repo.GetReviews());
            
             }

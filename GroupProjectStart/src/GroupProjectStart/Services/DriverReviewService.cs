@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Data.Entity;
 
 namespace GroupProjectStart.Services
 {
@@ -23,7 +24,7 @@ namespace GroupProjectStart.Services
 
         public List<DriverReview> GetReviews()
         {
-
+            
             var data = _repo.Query<DriverReview>().ToList();
             return data;
         }
