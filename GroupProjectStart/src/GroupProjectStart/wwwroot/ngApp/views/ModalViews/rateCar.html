@@ -1,120 +1,112 @@
-﻿<div class="container">
-    <h1>Rate This Car</h1>
- 
-        <div class="span6">
-            <h2>
-                <i class="glyphicon glyphicon-ok-circle"></i>Many Categories<small>(Fill out accurately)</small>
-            </h2>
-            <p>
-              Fill out a rating 1-5
-            </p>
-            <blockquote>
-                <p>
-                    You may leave items unchecked
-                </p>
-            </blockquote>
-         
-            <div class="alert alert-info" style="width: 600px">
-                <form role="form" ng-submit="controller.saveCarRating()">
-                    <div class="form-inline">
-                        <label class="control-label">
-                            Tire quality:
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="rating1" value="1" ng-model="controller.ratingToCreate.tireQuality">1</label>
-                        <label class="radio-inline"><input type="radio" value="2" name="rating1" ng-model="controller.ratingToCreate.tireQuality">2</label>
-                        <label class="radio-inline"><input type="radio" value="3" name="rating1" ng-model="controller.ratingToCreate.tireQuality">3</label>
-                        <label class="radio-inline"><input type="radio" value="4" name="rating1" ng-model="controller.ratingToCreate.tireQuality">4</label>
-                        <label class="radio-inline"><input type="radio" name="rating1" value="5" ng-model="controller.ratingToCreate.tireQuality">5</label>
-                    </div><br />
-                    <div class="form-inline">
-                        <label class="control-label">
-                            Rate the exterior cleanliness:
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="rating2" value="1" ng-model="controller.ratingToCreate.outsideCleanliness">1</label>
-                        <label class="radio-inline"><input type="radio" value="2" name="rating2" ng-model="controller.ratingToCreate.outsideCleanliness">2</label>
-                        <label class="radio-inline"><input type="radio" value="3" name="rating2" ng-model="controller.ratingToCreate.outsideCleanliness">3</label>
-                        <label class="radio-inline"><input type="radio" value="4" name="rating2" ng-model="controller.ratingToCreate.outsideCleanliness">4</label>
-                        <label class="radio-inline"><input type="radio" name="rating2" value="5" ng-model="controller.ratingToCreate.outsideCleanliness">5</label>
-                    </div><br />
-                    <div class="form-inline">
-                        <label class="control-label">
-                            Rate the interior cleanliness:
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="rating3" value="1" ng-model="controller.ratingToCreate.insideCleanliness">1</label>
-                        <label class="radio-inline"><input type="radio" value="2" name="rating3" ng-model="controller.ratingToCreate.insideCleanliness">2</label>
-                        <label class="radio-inline"><input type="radio" value="3" name="rating3" ng-model="controller.ratingToCreate.insideCleanliness">3</label>
-                        <label class="radio-inline"><input type="radio" value="4" name="rating3" ng-model="controller.ratingToCreate.insideCleanliness">4</label>
-                        <label class="radio-inline"><input type="radio" name="rating3" value="5" ng-model="controller.ratingToCreate.insideCleanliness">5</label>
-                    </div><br />
-                    <div class="form-inline">
-                        <label class="control-label">
-                            Rate engine operation:
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="rating4" value="1" ng-model="controller.ratingToCreate.EngineOperation">1</label>
-                        <label class="radio-inline"><input type="radio" value="2" name="rating4" ng-model="controller.ratingToCreate.EngineOperation">2</label>
-                        <label class="radio-inline"><input type="radio" value="3" name="rating4" ng-model="controller.ratingToCreate.EngineOperation">3</label>
-                        <label class="radio-inline"><input type="radio" value="4" name="rating4" ng-model="controller.ratingToCreate.EngineOperation">4</label>
-                        <label class="radio-inline"><input type="radio" name="rating4" value="5" ng-model="controller.ratingToCreate.EngineOperation">5</label>
-                    </div><br />
-                    <div class="form-inline">
-                        <label class="control-label">
-                            Rate indoor air quality:
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="rating5" value="1" ng-model="controller.ratingToCreate.IndoorAirQuality">1</label>
-                        <label class="radio-inline"><input type="radio" value="2" name="rating5" ng-model="controller.ratingToCreate.IndoorAirQuality">2</label>
-                        <label class="radio-inline"><input type="radio" value="3" name="rating5" ng-model="controller.ratingToCreate.IndoorAirQuality">3</label>
-                        <label class="radio-inline"><input type="radio" value="4" name="rating5" ng-model="controller.ratingToCreate.IndoorAirQuality">4</label>
-                        <label class="radio-inline"><input type="radio" name="rating5" value="5" ng-model="controller.ratingToCreate.IndoorAirQuality">5</label>
-                    </div><br />
-                    <div class="form-inline">
-                        <label class="control-label">
-                            Rate overall safety/satefy features:
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="rating6" value="1" ng-model="controller.ratingToCreate.SafetyFeatures">1</label>
-                        <label class="radio-inline"><input type="radio" value="2" name="rating6" ng-model="controller.ratingToCreate.SafetyFeatures">2</label>
-                        <label class="radio-inline"><input type="radio" value="3" name="rating6" ng-model="controller.ratingToCreate.SafetyFeatures">3</label>
-                        <label class="radio-inline"><input type="radio" value="4" name="rating6" ng-model="controller.ratingToCreate.SafetyFeatures">4</label>
-                        <label class="radio-inline"><input type="radio" name="rating6" value="5" ng-model="controller.ratingToCreate.SafetyFeatures">5</label>
-                    </div><br />
-                    <div class="form-inline">
-                        <label class="control-label">
-                            Rate electronics:
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="rating7" value="1" ng-model="controller.ratingToCreate.ElectricalFunctions">1</label>
-                        <label class="radio-inline"><input type="radio" value="2" name="rating7" ng-model="controller.ratingToCreate.ElectricalFunctions">2</label>
-                        <label class="radio-inline"><input type="radio" value="3" name="rating7" ng-model="controller.ratingToCreate.ElectricalFunctions">3</label>
-                        <label class="radio-inline"><input type="radio" value="4" name="rating7" ng-model="controller.ratingToCreate.ElectricalFunctions">4</label>
-                        <label class="radio-inline"><input type="radio" name="rating7" value="5" ng-model="controller.ratingToCreate.ElectricalFunctions">5</label>
-                    </div><br />
-                    <div class="form-inline">
-                        <label class="control-label">
-                            Rate the exchange/delivery of the vehicle:
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="rating8" value="1" ng-model="controller.ratingToCreate.DeliveryExperience">1</label>
-                        <label class="radio-inline"><input type="radio" value="2" name="rating8" ng-model="controller.ratingToCreate.DeliveryExperience">2</label>
-                        <label class="radio-inline"><input type="radio" value="3" name="rating8" ng-model="controller.ratingToCreate.DeliveryExperience">3</label>
-                        <label class="radio-inline"><input type="radio" value="4" name="rating8" ng-model="controller.ratingToCreate.DeliveryExperience">4</label>
-                        <label class="radio-inline"><input type="radio" name="rating8" value="5" ng-model="controller.ratingToCreate.DeliveryExperience">5</label>
-                    </div><br />
-                    <div class="form-inline">
-                        <label class="control-label">
-                            Rate the experience with the owner of this vehicle:
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="rating9" value="1" ng-model="controller.ratingToCreate.ProfessionalismOfOwner">1</label>
-                        <label class="radio-inline"><input type="radio" value="2" name="rating9" ng-model="controller.ratingToCreate.ProfessionalismOfOwner">2</label>
-                        <label class="radio-inline"><input type="radio" value="3" name="rating9" ng-model="controller.ratingToCreate.ProfessionalismOfOwner">3</label>
-                        <label class="radio-inline"><input type="radio" value="4" name="rating9" ng-model="controller.ratingToCreate.ProfessionalismOfOwner">4</label>
-                        <label class="radio-inline"><input type="radio" name="rating9" value="5" ng-model="controller.ratingToCreate.ProfessionalismOfOwner">5</label>
-                    </div><br />
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-success">
-                            Submit
-                        </button>
-                    </div>
-                </form>
-            </div>
-            </div>
+﻿<div class="container ng-scope">
+    <h1>We would love to have your feedback...</h1>
+
+    <div class="col-md-9" style="background-color: aliceblue">
+        <p class="col-md-offset-1">
+            <strong>Please Fill out accurately, You may leave items unchecked.</strong>
+        </p>
+
+        <div class="alert alert-info col-md-offset-1" style="width: 600px">
+            <form role="form" ng-submit="controller.saveCarRating()" class="ng-pristine ng-valid">
+                <div class="form-inline">
+                    <label class="control-label">
+                        Tire quality:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating1" value="1" ng-model="controller.ratingToCreate.tireQuality" class="ng-pristine ng-untouched ng-valid ng-empty">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating1" ng-model="controller.ratingToCreate.tireQuality" class="ng-pristine ng-untouched ng-valid ng-empty">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating1" ng-model="controller.ratingToCreate.tireQuality" class="ng-pristine ng-untouched ng-valid ng-empty">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating1" ng-model="controller.ratingToCreate.tireQuality" class="ng-pristine ng-untouched ng-valid ng-empty">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating1" value="5" ng-model="controller.ratingToCreate.tireQuality" class="ng-pristine ng-untouched ng-valid ng-empty">5</label>
+                </div><br>
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate the exterior cleanliness:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating2" value="1" ng-model="controller.ratingToCreate.outsideCleanliness" class="ng-pristine ng-untouched ng-valid ng-empty">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating2" ng-model="controller.ratingToCreate.outsideCleanliness" class="ng-pristine ng-untouched ng-valid ng-empty">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating2" ng-model="controller.ratingToCreate.outsideCleanliness" class="ng-pristine ng-untouched ng-valid ng-empty">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating2" ng-model="controller.ratingToCreate.outsideCleanliness" class="ng-pristine ng-untouched ng-valid ng-empty">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating2" value="5" ng-model="controller.ratingToCreate.outsideCleanliness" class="ng-pristine ng-untouched ng-valid ng-empty">5</label>
+                </div><br>
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate the interior cleanliness:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating3" value="1" ng-model="controller.ratingToCreate.insideCleanliness" class="ng-pristine ng-untouched ng-valid ng-empty">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating3" ng-model="controller.ratingToCreate.insideCleanliness" class="ng-pristine ng-untouched ng-valid ng-empty">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating3" ng-model="controller.ratingToCreate.insideCleanliness" class="ng-pristine ng-untouched ng-valid ng-empty">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating3" ng-model="controller.ratingToCreate.insideCleanliness" class="ng-pristine ng-untouched ng-valid ng-empty">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating3" value="5" ng-model="controller.ratingToCreate.insideCleanliness" class="ng-pristine ng-untouched ng-valid ng-empty">5</label>
+                </div><br>
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate engine operation:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating4" value="1" ng-model="controller.ratingToCreate.EngineOperation" class="ng-pristine ng-untouched ng-valid ng-empty">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating4" ng-model="controller.ratingToCreate.EngineOperation" class="ng-pristine ng-untouched ng-valid ng-empty">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating4" ng-model="controller.ratingToCreate.EngineOperation" class="ng-pristine ng-untouched ng-valid ng-empty">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating4" ng-model="controller.ratingToCreate.EngineOperation" class="ng-pristine ng-untouched ng-valid ng-empty">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating4" value="5" ng-model="controller.ratingToCreate.EngineOperation" class="ng-pristine ng-untouched ng-valid ng-empty">5</label>
+                </div><br>
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate indoor air quality:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating5" value="1" ng-model="controller.ratingToCreate.IndoorAirQuality" class="ng-pristine ng-untouched ng-valid ng-empty">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating5" ng-model="controller.ratingToCreate.IndoorAirQuality" class="ng-pristine ng-untouched ng-valid ng-empty">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating5" ng-model="controller.ratingToCreate.IndoorAirQuality" class="ng-pristine ng-untouched ng-valid ng-empty">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating5" ng-model="controller.ratingToCreate.IndoorAirQuality" class="ng-pristine ng-untouched ng-valid ng-empty">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating5" value="5" ng-model="controller.ratingToCreate.IndoorAirQuality" class="ng-pristine ng-untouched ng-valid ng-empty">5</label>
+                </div><br>
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate overall safety/satefy features:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating6" value="1" ng-model="controller.ratingToCreate.SafetyFeatures" class="ng-pristine ng-untouched ng-valid ng-empty">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating6" ng-model="controller.ratingToCreate.SafetyFeatures" class="ng-pristine ng-untouched ng-valid ng-empty">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating6" ng-model="controller.ratingToCreate.SafetyFeatures" class="ng-pristine ng-untouched ng-valid ng-empty">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating6" ng-model="controller.ratingToCreate.SafetyFeatures" class="ng-pristine ng-untouched ng-valid ng-empty">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating6" value="5" ng-model="controller.ratingToCreate.SafetyFeatures" class="ng-pristine ng-untouched ng-valid ng-empty">5</label>
+                </div><br>
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate electronics:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating7" value="1" ng-model="controller.ratingToCreate.ElectricalFunctions" class="ng-pristine ng-untouched ng-valid ng-empty">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating7" ng-model="controller.ratingToCreate.ElectricalFunctions" class="ng-pristine ng-untouched ng-valid ng-empty">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating7" ng-model="controller.ratingToCreate.ElectricalFunctions" class="ng-pristine ng-untouched ng-valid ng-empty">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating7" ng-model="controller.ratingToCreate.ElectricalFunctions" class="ng-pristine ng-untouched ng-valid ng-empty">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating7" value="5" ng-model="controller.ratingToCreate.ElectricalFunctions" class="ng-pristine ng-untouched ng-valid ng-empty">5</label>
+                </div><br>
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate the exchange/delivery of the vehicle:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating8" value="1" ng-model="controller.ratingToCreate.DeliveryExperience" class="ng-pristine ng-untouched ng-valid ng-empty">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating8" ng-model="controller.ratingToCreate.DeliveryExperience" class="ng-pristine ng-untouched ng-valid ng-empty">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating8" ng-model="controller.ratingToCreate.DeliveryExperience" class="ng-pristine ng-untouched ng-valid ng-empty">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating8" ng-model="controller.ratingToCreate.DeliveryExperience" class="ng-pristine ng-untouched ng-valid ng-empty">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating8" value="5" ng-model="controller.ratingToCreate.DeliveryExperience" class="ng-pristine ng-untouched ng-valid ng-empty">5</label>
+                </div><br>
+                <div class="form-inline">
+                    <label class="control-label">
+                        Rate the experience with the owner of this vehicle:
+                    </label>
+                    <label class="radio-inline"><input type="radio" name="rating9" value="1" ng-model="controller.ratingToCreate.ProfessionalismOfOwner" class="ng-pristine ng-untouched ng-valid ng-empty">1</label>
+                    <label class="radio-inline"><input type="radio" value="2" name="rating9" ng-model="controller.ratingToCreate.ProfessionalismOfOwner" class="ng-pristine ng-untouched ng-valid ng-empty">2</label>
+                    <label class="radio-inline"><input type="radio" value="3" name="rating9" ng-model="controller.ratingToCreate.ProfessionalismOfOwner" class="ng-pristine ng-untouched ng-valid ng-empty">3</label>
+                    <label class="radio-inline"><input type="radio" value="4" name="rating9" ng-model="controller.ratingToCreate.ProfessionalismOfOwner" class="ng-pristine ng-untouched ng-valid ng-empty">4</label>
+                    <label class="radio-inline"><input type="radio" name="rating9" value="5" ng-model="controller.ratingToCreate.ProfessionalismOfOwner" class="ng-pristine ng-untouched ng-valid ng-empty">5</label>
+                </div><br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success col-md-offset-4 col-md-4">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
     
         <!--<div class="span6">
             <h2>

@@ -1,34 +1,34 @@
 ﻿#promo-1 {
-    background-image: url(http://s31.postimg.org/tt3jep7nv/free_forest_road_wallpaper_2.jpg);
+    background-image: url("http://s31.postimg.org/tt3jep7nv/free_forest_road_wallpaper_2.jpg");
 }
 
 .welcome {
-    color: #fff;
+    color: #E7B25E;
     font-size: 32px;
 }
   
 .welcome-paragraph {
-   color: #fff;   
+   color: #ff6a00;   
 }
     
 .btn.btn-success.btn-block {
-    color: #ffffff;
-    background-color: #ba2727;
-    background-image: linear-gradient(to bottom, #ba2727, #912222);
-    border-color: #ba2727 #ba2727 #ba2727;
+    color: #ff6a00;
+    background-color:#000;
+    background-image: linear-gradient(to bottom, #000, #000);
+    border-color: #000 #000 #000;
 }
 .btn.btn-success.btn-block:hover {
-    color: #ffffff;
-    background-color: #912222;
-    background-image: linear-gradient(to bottom, #912222, #912222);
+    color: #ff6a00;
+    background-color: #000;
+    background-image: linear-gradient(to bottom, black ,black;
     background-size: cover;
-    border-color: #ba2727 #ba2727 #ba2727;
+    border-color: red red red;
 }
 
   
 .content-2-2 {
-      background-color: #ba2727;
-  color: #fff;
+      background-color: #000;
+  color: #f00;
     }  
   
 .feature-text, h3 {
