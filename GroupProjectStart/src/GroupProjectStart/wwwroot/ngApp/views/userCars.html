@@ -79,7 +79,7 @@
                         <a href="/userCar/{{user.id}}/{{car.id}}"><img id="carPosts" ng-src="{{car.image}}" class="img-responsive img-thumbnail" /></a>
                         <div class="col-md-6 pull-left">
                             <div id="carProps"><span>{{car.year}} {{car.make}} {{car.model}}</span><br />Price per day: {{car.price | currency}}<br />Car Rating: {{car.averageRating}}</div> 
-                            <div class="btn btn-block btn-danger" ng-click="controller.carRateModal(c.id)" id="rateCarBut">RATE CAR</div>
+                            <div class="btn btn-block btn-danger" ng-click="controller.carRateModal(car.id)" id="rateCarBut">RATE CAR</div>
                         </div>
                         <div>
 
@@ -95,7 +95,7 @@
                            
                          
                               
-                                <div class="btn btn-block btn-success" ng-click="controller.driverRateModal(user.id)" id="rateDriverBut">RATE DRIVER</div>
+                                <div class="btn btn-block btn-success" ng-click="controller.driverRateModal(user.id)" id="rateDriverBut">RATE OWNER</div>
                          
                         </div>
 
@@ -105,7 +105,7 @@
         </div>
         <div class="col-md-2 pull-right">
             THIS WILL BE A CUSTOM METHOD THAT RETURNS A CERTAIN LIST OF CARS BASED ON A METHOD
-            <div class="list-group glyphicon-list-alt">
+            <div class="list-group glyphicon glyphicon-list-alt ">
 
                 <div class="popular-car" ng-repeat="user in controller.users">
                     <div ng-repeat="car in user.carsToLoan">
