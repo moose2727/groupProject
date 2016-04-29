@@ -60,7 +60,7 @@
         }
 
         public getUser() {
-            
+            debugger
             let userId = this.$stateParams['user'];
             let carId = this.$stateParams['car'];
             this.user = this.userCarsService.getUser(userId);

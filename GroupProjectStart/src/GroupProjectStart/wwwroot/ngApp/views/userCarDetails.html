@@ -51,8 +51,9 @@
                                 <div ng-repeat="review in controller.user.reviews">
                                     {{review.title}}<br />
                                     {{review.message}}
-
-                                    {{review.sentimentEntities.sentimentScore}}
+                                    <div ng-repeat="s in review.sentimentEntities">
+                                        {{s.sentimentScore}}
+                                    </div>
                                 </div>
                             </div>
 
