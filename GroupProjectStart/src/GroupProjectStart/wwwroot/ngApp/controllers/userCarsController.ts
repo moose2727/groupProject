@@ -45,12 +45,13 @@
         public car;
         public carReviews;
         public userReviews;
-        
+        //test
 
         constructor(
             private userCarsService: GroupProjectStart.Services.UserCarsService,
             private carReviewService: GroupProjectStart.Services.CarReviewService,
             private carService: GroupProjectStart.Services.CarService,
+            private driverReviewService: GroupProjectStart.Services.DriverReviewService,
             private $stateParams: ng.ui.IStateParamsService,
             private $state: ng.ui.IStateService,
             private $uibModal: ng.ui.bootstrap.IModalService
@@ -66,6 +67,11 @@
             this.car = this.carService.getCar(carId);
 
             
+        }
+
+        public getOwnerReviews(id) {
+            
+            this.userReviews = this.driverReviewService.getDriverReview(id);
         }
 
         public carReviewModal(id) {
@@ -87,6 +93,21 @@
 
             this.$uibModal.open({
                 templateUrl: '/ngApp/views/modalViews/driverReviewAdd.html',
+                controller: GroupProjectStart.Controllers.CreateDriverReviewController,
+                controllerAs: 'controller',
+                resolve: {
+                    id: () => id,
+
+                },
+                size: 'lg'
+            });
+
+        }
+
+        public viewDriverReviews(id) {
+
+            this.$uibModal.open({
+                templateUrl: '/ngApp/views/modalViews/driverReviews.html',
                 controller: GroupProjectStart.Controllers.CreateDriverReviewController,
                 controllerAs: 'controller',
                 resolve: {

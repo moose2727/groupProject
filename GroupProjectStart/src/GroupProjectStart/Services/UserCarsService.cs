@@ -44,7 +44,7 @@ namespace GroupProjectStart.Services
         public ApplicationUser getUserCar(string id)
         {
             var user =  _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).Where(u => u.Id == id).FirstOrDefault();
-
+          
             return user;
         }
 

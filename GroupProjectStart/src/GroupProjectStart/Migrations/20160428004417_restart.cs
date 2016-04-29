@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 
 namespace GroupProjectStart.Migrations
 {
-    public partial class restart : Migration
+    public partial class start : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -268,6 +268,37 @@ namespace GroupProjectStart.Migrations
                         name: "FK_RatingCar_Car_CarId",
                         column: x => x.CarId,
                         principalTable: "Car",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+            migrationBuilder.CreateTable(
+                name: "SentimentInfo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CarReviewId = table.Column<int>(nullable: true),
+                    Count = table.Column<string>(nullable: true),
+                    DriverReviewId = table.Column<int>(nullable: true),
+                    EntityType = table.Column<string>(nullable: true),
+                    Relevance = table.Column<string>(nullable: true),
+                    SentimentScore = table.Column<string>(nullable: true),
+                    SentimentType = table.Column<string>(nullable: true),
+                    Text = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SentimentInfo", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SentimentInfo_CarReview_CarReviewId",
+                        column: x => x.CarReviewId,
+                        principalTable: "CarReview",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_SentimentInfo_DriverReview_DriverReviewId",
+                        column: x => x.DriverReviewId,
+                        principalTable: "DriverReview",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
