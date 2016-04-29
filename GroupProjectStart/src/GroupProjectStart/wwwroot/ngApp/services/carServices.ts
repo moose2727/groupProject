@@ -4,12 +4,14 @@
         private carResource;
 
         constructor(private $resource: angular.resource.IResourceService) {
-            this.carResource = this.$resource("/api/cars/:id");
+            this.carResource = this.$resource("/api/cars/:id", null, {
+                pagination: {url : "/api/cars/pagination/:page", isArray: false}
+            });
 
            
         }
-        getCars() {
-            return this.carResource.query()
+        getCars(page) {
+            return this.carResource.pagination({ page: page }).$promise;
         }
 
         // Method that will get a single car
