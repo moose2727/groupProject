@@ -52,7 +52,7 @@ namespace GroupProjectStart.Services
 
         public Car GetCar(int id)
         {
-            var car = _repo.Query<Car>().Where(c => c.Id == id).Include(c => c.Reviews).FirstOrDefault();
+            var car = _repo.Query<Car>().Where(c => c.Id == id).Include(c => c.Reviews).ThenInclude(r => r.SentimentEntities).FirstOrDefault();
             return car;
         }
 

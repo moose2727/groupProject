@@ -66,6 +66,7 @@ namespace GroupProjectStart.Services
                 var sent = new SentimentInfo()
                 {
                     SentimentScore = r.sentiment.score,
+                    SentimentType = r.sentiment.type
 
                 };
                 review.SentimentEntities.Add(sent);

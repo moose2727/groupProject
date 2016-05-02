@@ -1,0 +1,30 @@
+﻿<div class="row">
+    <div class="col-lg-12">
+        <div class="col-lg-12">
+            <div class="col-lg-3">
+                <img class="img-responsive" ng-src="{{controller.car.image}}" style="height: 150px; width: 150px;" />
+            </div>
+            <div class="col-lg-4">
+              Make:  {{controller.car.make}}  Model: {{controller.car.model}}
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div ng-repeat="review in controller.car.reviews">
+                <div class="col-lg-12 list-group">
+                    <div class="col-lg-8 list-group-item-info pull-left">
+                        {{review.title}} <br />
+                        {{review.message}}
+                        <div class="col-lg-4 pull-right" ng-repeat="sent in review.sentimentEntities">
+                            {{sent.sentimentScore}}
+                            {{sent.type}}
+                        </div>
+                    </div>
+                </div>
+                <hr />
+            </div>
+        </div>
+    </div>
+</div>

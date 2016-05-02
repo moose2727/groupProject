@@ -10,7 +10,7 @@
 <body>
 
     <!-- Start Promo -->
-    <section id="promo-1" class="content-block promo-1 min-height-600px bg-offwhite">
+    <section id="promo-1" class="content-block promo-1 min-height-100px bg-offwhite">
         <div class="container">
 
             <div class="row">
@@ -28,15 +28,60 @@
                                 <input type="text" placeholder="First name" class="form-control">
                             </div>
                         </div>
+                        
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" placeholder="Last name" class="form-control">
                             </div>
                         </div>
-                    </div>
+                        <div>
+                            <div class="form-group col-md-6">
+                                <input type="text" placeholder="User name" class="form-control">
+                            </div>
 
-                    <div class="form-group">
-                        <input type="text" placeholder="Email address" class="form-control">
+                            <div class="form-group col-md-6">
+                                <input type="text" placeholder="Email address" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+                   
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" placeholder="Password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" placeholder="Confirm Password" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-11" style="margin-left:1em">
+                                <div class="input-group form-group">
+                                    <span class="input-group-addon">
+                                        <input type="checkbox" aria-label="...">
+                                    </span>
+
+                                    <label class="form-control">Check this checkbox</label> 
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    
+                                        <input type="button" class="form-control" value="Upload Image" ng-click="controller.pickFile()" />
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        
+
+
                     </div>
 
                     <center><a class="btn btn-success btn-lg btn-block">Register Now!</a></center>

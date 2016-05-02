@@ -63,6 +63,14 @@ namespace GroupProjectStart.Controllers
             return Ok();
         }
 
+        //[HttpPost("downgradeUser/{id}")]
+        //public async Task<IActionResult> DowngradeUser(string id)
+        //{
+        //    var user = await _userManager.FindByIdAsync(id);
+        //    await _userManager.RemoveClaimAsync(user, isLoaner);
+        //    return Ok();
+        //}
+
         //
         // POST: /Account/Login
         [HttpPost("login")]
