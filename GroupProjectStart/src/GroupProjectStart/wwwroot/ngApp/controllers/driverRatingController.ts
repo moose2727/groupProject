@@ -45,9 +45,9 @@
         }
 
         saveDriverRating() {
-            debugger;
             this.driverRatingService.saveDriverRating(this.id, this.ratingToCreate).then(() => {
                 this.ok();
+                this.$state.reload();
             });
         }
     }
