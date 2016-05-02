@@ -7,15 +7,17 @@
     <link href="~/css/site.css" rel="stylesheet" />
     <link href="~/css/carpagestyles.css" rel="stylesheet" />
     <link href="~/css/profilepagestyles.css" rel="stylesheet" />
+    <link href="~/css/cardetailstyles.css" rel="stylesheet" />
     <base href="/" />
 </head>
-<body id="pageBody" ng-controller="AccountController as account" >
+<body id="pageBody" ng-controller="AccountController as account">
     <div class="navbar navbar-fixed-top navbar-inverse" id="mainNav" style="height: 100px">
 
         <a class="navbar-brand" href="/">
-<img src="~/images/drawing.png" alt="Your Logo" style="height: 55px; width: auto; margin-top: -15px;" id="logoImage"  class="img-responsive"/></a>
+            <img src="~/images/drawing.png" alt="Your Logo" style="height: 55px; width: auto; margin-top: -15px;" id="logoImage" class="img-responsive" />
+        </a>
         <div class="">
-            <ul class="nav navbar-nav navButtons" id="navButtons" >
+            <ul class="nav navbar-nav navButtons" id="navButtons">
                 <li class="active" id="navBut1">
                     <a id="navBut2" href="/">Home</a>
                 </li>
@@ -28,8 +30,8 @@
                 <li class="active">
                     <a href="/profiles">Profiles</a>
                 </li>
-               
-              
+
+
             </ul>
             <ul class="nav navbar-nav pull-right">
                 <li>
@@ -44,24 +46,25 @@
 
     </div>
 
-        <div id="pageContentContainer" class="container">
-            <ui-view></ui-view>
-        </div>
+    <div id="pageContentContainer" class="container">
+        <ui-view></ui-view>
+    </div>
 
 
-        <!-- Library Files -->
-        <script src="~/lib/angular/angular.js"></script>
-        <script src="~/lib/angular-resource/angular-resource.js"></script>
-        <script src="~/lib/angular-animate/angular-animate.js"></script>
-        <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
-        <script src="~/lib/angular-filepicker/angular-filepicker.js"></script>
-        <script src="~/lib/angular-touch/angular-touch.js"></script>
-        <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-        <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- Library Files -->
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/lib/angular-resource/angular-resource.js"></script>
+    <script src="~/lib/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+    <script src="~/lib/angular-filepicker/angular-filepicker.js"></script>
+    <script src="~/lib/angular-touch/angular-touch.js"></script>
+    <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="~/lib/lodash/dist/lodash.js"></script>
+    <script src="~/lib/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <!-- App Files-->
 
-        <!-- App Files-->
-
-        <script src="~/all.js"></script>
+    <script src="~/all.js"></script>
 
 </body>
 </html>
