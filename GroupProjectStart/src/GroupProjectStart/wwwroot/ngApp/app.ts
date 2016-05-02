@@ -1,6 +1,6 @@
 namespace GroupProjectStart {
 
-    angular.module('GroupProjectStart', ['ui.router', 'ngResource', 'ui.bootstrap', 'angular-filepicker', /*'uiGmapgoogle-maps'*/]).config((
+    angular.module('GroupProjectStart', ['ui.router', 'ngResource', 'ui.bootstrap', 'angular-filepicker', 'uiGmapgoogle-maps']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider,

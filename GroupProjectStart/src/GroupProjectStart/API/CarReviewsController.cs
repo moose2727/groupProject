@@ -13,11 +13,13 @@ namespace GroupProjectStart.API
     [Route("api/[controller]")]
     public class CarReviewsController : Controller
     {
+        ApplicationDbContext _db;
         ICarReviewService _repo;
 
 
-        public CarReviewsController(ICarReviewService repo)
+        public CarReviewsController(ICarReviewService repo, ApplicationDbContext db)
         {
+            this._db = db;
             this._repo = repo;
         }
 
@@ -42,7 +44,7 @@ namespace GroupProjectStart.API
         {
             if(review.Id == 0)
             {
-                _repo.AddCarReview(id, review);
+                _repo.AddCarReview(id, review, HttpContext.ApplicationServices);
             }
             else
             {
