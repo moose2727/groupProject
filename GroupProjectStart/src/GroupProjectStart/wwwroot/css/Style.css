@@ -2,6 +2,7 @@
     background-image: url("http://s31.postimg.org/tt3jep7nv/free_forest_road_wallpaper_2.jpg");
 }
 
+
 .welcome {
     color: #E7B25E;
     font-size: 32px;
@@ -67,4 +68,41 @@
 
 .error {
     background-color: red;
+}
+
+ /* css for logout view*/
+
+ul#user_spot li {
+    float:left;
+    position:relative;
+    padding: 5px;
+    background-color: #ccc;
+}
+ul#user_spot_links {
+    position:absolute;
+    top:28px;
+    display:none;
+}
+ul#user_spot_links li {
+    float:none;
+    clear:both;
+    padding: 5px;
+    background-color: #aaa;
+    border: 1px solid #999;
+    white-space: nowrap;
+}
+ul#user_spot:hover ul#user_spot_links {
+    display:block;
+}
+
+#iconimage
+{
+  height:80%;
+   width: 80%;
+    margin: 0 auto;
+  border-style: solid;
+ 
+  border-radius:50%;
+  overflow:hidden;
+  
 }

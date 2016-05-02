@@ -131,6 +131,11 @@ namespace GroupProjectStart {
                 controller: GroupProjectStart.Controllers.DeleteDriverRatingController,
                 controllerAs: 'controller'
             })
+            .state('logout', {
+               
+                templateUrl: 'ngApp/views/logout.html'
+               
+            })
             .state('notFound', {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'
