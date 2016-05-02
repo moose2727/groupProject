@@ -318,8 +318,6 @@ namespace GroupProjectStart.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable("CarReview");
-            migrationBuilder.DropTable("DriverReview");
             migrationBuilder.DropTable("RatingCar");
             migrationBuilder.DropTable("RatingDriver");
             migrationBuilder.DropTable("SentimentInfo");

@@ -3,17 +3,52 @@
     export class CarsController {
         public cars;
         public totalItems;
-        public currentPage = this.$stateParams;
+        public currentPage = 1;
         public maxSize = 3;
         public itemsPerPage = 4;
 
         constructor(private carService: GroupProjectStart.Services.CarService,
             private $uibModal: ng.ui.bootstrap.IModalService,
-            public $stateParams : ng.ui.IStateParamsService) {
-            this.carService.getCars(this.$stateParams['page']).then((data) => {
-                this.cars = data.cars;
-                this.totalItems = data.totalCount;
+            public $stateParams: ng.ui.IStateParamsService) {
+
+            console.log(this.currentPage);
+
+            //this.carService.getCarsShortList(this.currentPage).$promise.then((data) => {
+
+            //    //this.totalItems = this.cars.length;
+            //    this.cars = data;
+            //    console.log(this.totalItems);
+            //});
+
+            this.totalItems = 0;
+            this.getCars();
+
+
+
+            //this.carService.getCars(this.currentPage).then((data) => {
+            //    this.cars = data.cars;
+            //    this.totalItems = data.totalCount;
+            //});
+        }
+
+        getCars() {
+            this.carService.getCarsAmount().then((data) => {
+                this.totalItems = data.length;
+                console.log(data.length);
             });
+            this.carService.getCarsShortList(this.currentPage).then((data) => {
+                this.cars = data;
+                console.log(data);
+            });
+        }
+
+        setPage(pageNo) {
+
+            this.currentPage = pageNo;
+        }
+
+        public nextpage() {
+            this.getCars();
         }
 
         public carRateModal(id) {
