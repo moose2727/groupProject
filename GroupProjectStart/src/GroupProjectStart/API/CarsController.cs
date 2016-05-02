@@ -22,10 +22,11 @@ namespace GroupProjectStart.API
         }
 
         // GET: api/values
-        [HttpGet]
-        public IActionResult Get()
+       
+        [HttpGet("pagination/{page}")]
+        public IActionResult GetPage(int page)
         {
-            var data = _repo.GetCars();
+            var data = _repo.GetCars(page);
             return Ok(data);
         }
 
