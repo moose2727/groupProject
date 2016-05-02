@@ -48,9 +48,10 @@
         }
 
         saveCarRating() {
-            debugger;
+            
             this.carRatingService.saveCarRating(this.id, this.ratingToCreate).then(() => {
                 this.ok();
+                this.$state.reload();
             });                
         }
     }

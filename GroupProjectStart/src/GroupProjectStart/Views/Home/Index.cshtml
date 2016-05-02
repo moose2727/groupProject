@@ -7,6 +7,7 @@
     <link href="~/css/site.css" rel="stylesheet" />
     <link href="~/css/cardetailstyles.css" rel="stylesheet" />
     <link href="~/css/carpagestyles.css" rel="stylesheet" />
+    <link href="~/css/indexstyle.css" rel="stylesheet" />
     <link href="~/css/profilepagestyles.css" rel="stylesheet" />
     <base href="/" />
 </head>
@@ -26,23 +27,26 @@
                 <li class="active">
                     <a href="/userCars">Cars</a>
                 </li>
+                <li class="active">
+                    <a href="/profiles">Profiles</a>
+                </li>
+               
               
             </ul>
             <ul class="nav navbar-nav pull-right">
                 <li>
-                    <button class="btn btn-lg btn-danger" ng-click="account.showSignInModal()">Log In</button>
+                    <button class="btn btn-lg btn-success" ng-click="account.showSignInModal()">Log In</button>
                 </li>
                 <li>
                     <button class="btn btn-lg btn-default" ng-click="account.showSignUpModal()">Sign Up</button>
                 </li>
             </ul>
-            <div ui-view="logout"></div>
         </div>
 
 
     </div>
 
-    <div id="pageContentContainer" class="container">
+        <div id="pageContentContainer" class="container">
             <ui-view></ui-view>
         </div>
 
@@ -56,8 +60,10 @@
         <script src="~/lib/angular-touch/angular-touch.js"></script>
         <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
         <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/lodash/lodash.js"></script>
+    <script src="~/lib/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="~/lib/angular-google-maps/dist/angular-google-maps.js"></script>
+
         <!-- App Files-->
 
         <script src="~/all.js"></script>

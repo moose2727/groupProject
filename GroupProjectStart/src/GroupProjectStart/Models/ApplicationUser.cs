@@ -22,7 +22,5 @@ namespace GroupProjectStart.Models
         public ICollection<RatingDriver> DriverRatings { get; set; }
         public decimal AverageRating { get; set; }
         public ICollection<DriverReview> Reviews { get; set; }
-
-
     }
 }

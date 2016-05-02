@@ -71,22 +71,22 @@
 
 
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-10 col-sm-12">
             <h2>Recent Listings</h2>
-            <div class="col-md-12" >
+            <div class="col-md-12 col-sm-12" >
                 <div ng-repeat="user in controller.users">
-                    <div class="col-lg-6" ng-repeat="car in user.carsToLoan" id="carRepeat">
+                    <div class="col-lg-6 col-sm-12" ng-repeat="car in user.carsToLoan" id="carRepeat">
                         <a href="/userCar/{{user.id}}/{{car.id}}"><img id="carPosts" ng-src="{{car.image}}" class="img-responsive img-thumbnail" /></a>
-                        <div class="col-md-6 pull-left">
+                        <div class="col-md-6 col-sm-12 pull-left">
                             <div id="carProps"><span>{{car.year}} {{car.make}} {{car.model}}</span><br />Price per day: {{car.price | currency}}<br />Car Rating: {{car.averageRating}}</div> 
                             <div class="btn btn-block btn-danger" ng-click="controller.carRateModal(car.id)" id="rateCarBut">RATE CAR</div>
                         </div>
                         <div>
 
                         </div>
-                        <div class="col-md-6 pull-left">
+                        <div class="col-md-6 pull-left col-sm-12">
                            
-                                <img ng-src="{{user.image}}" style="height: 50px; width: 50px;" /><span>   Driver Rating: {{user.averageRating}}</span><br />
+                                <img ng-src="{{user.image}}" style="height: 50px; width: 50px" class="img-responsive" /><span>   Driver Rating: {{user.averageRating}}</span><br />
                             Display Name: {{user.displayName}}
 
                                 <!--<img ng-if="{{user.image == null}}" src="http://www.realestatetaxgroup.com/wp-content/uploads/2013/03/empty-profile.png" style="height: 50px; width: 50px" />-->

@@ -60,7 +60,7 @@
         }
 
         public getUser() {
-            
+            debugger
             let userId = this.$stateParams['user'];
             let carId = this.$stateParams['car'];
             this.user = this.userCarsService.getUser(userId);
@@ -118,5 +118,66 @@
             });
 
         }
+
+        public carRateModal(id) {
+
+            this.$uibModal.open({
+                templateUrl: '/ngApp/views/modalViews/rateCar.html',
+                controller: GroupProjectStart.Controllers.CreateCarRatingController,
+                controllerAs: 'controller',
+                resolve: {
+                    id: () => id,
+
+                },
+                size: 'lg'
+            });
+
+        }
+
+        public driverRateModal(id) {
+
+            this.$uibModal.open({
+                templateUrl: '/ngApp/views/modalViews/rateDriver.html',
+                controller: GroupProjectStart.Controllers.CreateDriverRatingController,
+                controllerAs: 'controller',
+                resolve: {
+                    id: () => id,
+
+                },
+                size: 'lg'
+            });
+
+        }
+
+        public ownerReviewDetails(id) {
+
+            this.$uibModal.open({
+                templateUrl: '/ngApp/views/modalViews/driverReviewDetails.html',
+                controller: GroupProjectStart.Controllers.UserCarController,
+                controllerAs: 'controller',
+                resolve: {
+                    id: () => id,
+
+                },
+                size: 'lg'
+            });
+
+        }
+
+        public carReviewDetails(id) {
+
+            this.$uibModal.open({
+                templateUrl: '/ngApp/views/modalViews/carReviewDetails.html',
+                controller: GroupProjectStart.Controllers.UserCarController,
+                controllerAs: 'controller',
+                resolve: {
+                    id: () => id,
+
+                },
+                size: 'lg'
+            });
+
+        }
+
     }
 }

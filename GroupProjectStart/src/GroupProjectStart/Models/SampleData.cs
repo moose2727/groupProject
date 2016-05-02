@@ -64,12 +64,12 @@ namespace GroupProjectStart.Models
 
 
             var caleb = await userManager.FindByNameAsync("Caleb@Something.com");
-                if (caleb == null)
+            if (caleb == null)
+            {
+                // create user
+                caleb = new ApplicationUser
                 {
-                    // create user
-                    caleb = new ApplicationUser
-                    {
-                        DriverRatings = new List<RatingDriver>
+                    DriverRatings = new List<RatingDriver>
                         {
                             new RatingDriver
                             {
@@ -112,7 +112,7 @@ namespace GroupProjectStart.Models
                                  DeliveryExperience = 3
                             },
                         },
-                        Reviews = new List<DriverReview>
+                    Reviews = new List<DriverReview>
                         {
                            new DriverReview
                            {
@@ -133,27 +133,47 @@ namespace GroupProjectStart.Models
                                 TimeCreated = DateTime.Now
                            },
                         },
-                        UserName = "Caleb@Something.com",
-                        Email = "Caleb@Something.com",
-                        FirstName = "Caleb",
-                        LastName = "Schwarzmiller",
-                        DisplayName = "CSchwarz",
-                        HasTheftInsurance = true,
-                        HasDamageInsurance = true,
-                        HasLicense = true,
-                        IsLoaner = true,
-                        Image = "https://www.filestackapi.com/api/file/RuTYywXlQughPk4vPpF9",
-                        CarsToLoan = new List<Car>
+                    UserName = "Caleb@Something.com",
+                    Email = "Caleb@Something.com",
+                    FirstName = "Caleb",
+                    LastName = "Schwarzmiller",
+                    DisplayName = "CSchwarz",
+                    HasTheftInsurance = true,
+                    HasDamageInsurance = true,
+                    HasLicense = true,
+                    IsLoaner = true,
+                    Image = "https://www.filestackapi.com/api/file/RuTYywXlQughPk4vPpF9",
+                    CarsToLoan = new List<Car>
                     {
 
+
+                    new Car
+                    {
+                        Make = "Dodge",
+                        Model = "Ram",
+                        Year = 1992,
+                        Image = "https://www.filestackapi.com/api/file/Ef6HlFyRMWHFSp7vccAe",
+                        Door = 2,
+                        Price = 40m,
+                        IsActive = true,
+                        Condition = "Okay",
+                        CtyMpg = 19,
+                        HwyMpg = 26,
+                        DateAdded = DateTime.Now,
+                        Miles = 215108,
+                        Seats = 3,
+                        Transmission = "Manual",
+                        Description = "Lorem ipsum dolor sit amet, ei eam tempor eripuit, no nihil nonumy honestatis sit, eam at utroque luptatum reprehendunt. Te appareat consequat eum. Iisque facilisis eos an, te elitr cetero tacimates ius. Ut modus patrioque scribentur per, ei has erat populo essent, suas inimicus cum ut. Ad vocent audire phaedrum mea. Eos case doctus cudicam epicuri eum id.Vix scriptorem cotidieque inqui at dolore definitionem,facete voluptatum dissentiunt ad vel.Impedit officiis intellegam sea neet atqui aliquid fierent eos.Cu pri molestie definitionescu nec augue epicurei graeci principes pri ex.Doctus aeterno vim nesit an purto nullamea mel tollit sanctus."
+                    },
+
                         new Car {
-                          
+
                             Year = 2009,
                             Make = "Hyundai",
                             Model = "Santa Fe",
                             Price = 125m,
                             Door = 4,
-                            Image = "http://static.cargurus.com/images/site/2008/09/03/14/38/2009_hyundai_santa_fe-pic-1544-640x480.jpeg",
+                            Image = "https://www.filestackapi.com/api/file/lngLZKwATVGc4nyN4MFV",
                             Miles = 65450,
                             Seats = 5,
                             HwyMpg = 31,
@@ -229,13 +249,13 @@ namespace GroupProjectStart.Models
                         },
 
                           new Car {
-                          
+
                             Year = 2016,
                             Make = "Toyota",
                             Model = "Corolla",
                             Price = 89m,
                             Door = 4,
-                            Image = "http://file.kelleybluebookimages.com/kbb/vehicleimage/evoxseo/cp/l/10677/2016-toyota-corolla-front_10677_032_640x480_040.png",
+                            Image = "https://www.filestackapi.com/api/file/j2hVGKZqQJvCdf0XqtfQ",
                             Miles = 2000,
                             Seats = 5,
                             HwyMpg = 31,
@@ -310,13 +330,13 @@ namespace GroupProjectStart.Models
                 }
                         },
                              new Car {
-                           
+
                             Year = 2012,
                             Make = "Hyundai",
                             Model = "Tiburon",
                             Price = 89m,
                             Door = 2,
-                            Image = "http://dreamaticl.com/images/hyundai-tiburon-2012-4.jpg",
+                            Image = "https://www.filestackapi.com/api/file/BxLLo1oSM6QPZ0PpgrFQ",
                             Miles = 2000,
                             Seats = 4,
                             HwyMpg = 34,
@@ -395,12 +415,12 @@ namespace GroupProjectStart.Models
 
                     },
 
-                    };
-                    await userManager.CreateAsync(caleb, "Secret123!");
+                };
+                await userManager.CreateAsync(caleb, "Secret123!");
 
-                    await userManager.AddClaimAsync(caleb, new Claim("IsLoaner", "true"));
+                await userManager.AddClaimAsync(caleb, new Claim("IsLoaner", "true"));
 
-                }
+            }
 
             var Cory = await userManager.FindByNameAsync("Cory@us.com");
             if (Cory == null)
@@ -486,13 +506,13 @@ namespace GroupProjectStart.Models
                     {
 
                         new Car {
-                      
+
                             Year = 2005,
                             Make = "Hyundai",
                             Model = "Tiburon",
                             Price = 45m,
                             Door = 2,
-                            Image = "http://spidercars.net/wp-content/uploads/images/2005-Hyundai-Tiburon_14320.jpg",
+                            Image = "https://www.filestackapi.com/api/file/kOE3yg4nRsCuf8Qn0gAo",
                             Miles = 100157,
                             Seats = 4,
                             HwyMpg = 31,
@@ -568,13 +588,13 @@ namespace GroupProjectStart.Models
                         },
 
                           new Car {
-                      
+
                             Year = 2014,
                             Make = "Toyota",
                             Model = "Corolla",
                             Price = 75m,
                             Door = 4,
-                            Image = "http://resources.carsguide.com.au/styles/cg_hero_low/s3/Toyota-Corolla-sedan-2010.jpg",
+                            Image = "https://www.filestackapi.com/api/file/agjE1iYzS5CrJN8ujCsG",
                             Miles = 6800,
                             Seats = 5,
                             HwyMpg = 28,
@@ -649,13 +669,13 @@ namespace GroupProjectStart.Models
                 }
                         },
                              new Car {
-                          
+
                             Year = 2016,
                             Make = "Chevrolet",
                             Model = "Corvette",
                             Price = 199.99m,
                             Door = 2,
-                            Image = "https://i.ytimg.com/vi/Q1XloldnOSI/maxresdefault.jpg",
+                            Image = "https://www.filestackapi.com/api/file/0CqcMy0GTiu0u7Qw7u2N",
                             Miles = 1300,
                             Seats = 4,
                             HwyMpg = 21,
@@ -829,7 +849,7 @@ namespace GroupProjectStart.Models
                         Make = "Chevrolet ",
                         Model = "Corvette",
                         Year = 2014,
-                        Image = "http://s3.amazonaws.com/fzautomotive/dealers/55b6d6e755b30.png",
+                        Image = "https://www.filestackapi.com/api/file/EdU1kfMaRhGz0OEs0RFT",
                         Door = 2,
                         Price = 155m,
                         IsActive = false
@@ -840,39 +860,20 @@ namespace GroupProjectStart.Models
                         Make = "Honda ",
                         Model = "Pilot",
                         Year = 2014,
-                        Image = "http://static4.consumerreportscdn.org/content/dam/cro/magazine-articles/2015/December/CR122K15-Honda_Pilot_16_2917_Right.jpg",
+                        Image = "https://www.filestackapi.com/api/file/xJ8KjImR22slLbvyMlFw",
                         Door = 4,
                         Price = 130,
                         IsActive = true
                     },
 
-                    new Car
-                    {
-                        Make = "Dodge",
-                        Model = "Ram",
-                        Year = 1992,
-                        Image = "https://c2.staticflickr.com/4/3824/13573311565_ff976967b5_b.jpg",
-                        Door = 2,
-                        Price = 40m,
-                        IsActive = true,
-                        Condition = "Okay",
-                        CtyMpg = 19,
-                        HwyMpg = 26,
-                        DateAdded = DateTime.Now,
-                        Miles = 215108,
-                        Seats = 3,
-                        Transmission = "Manual",
-                        Description = "Lorem ipsum dolor sit amet, ei eam tempor eripuit, no nihil nonumy honestatis sit, eam at utroque luptatum reprehendunt. Te appareat consequat eum. Iisque facilisis eos an, te elitr cetero tacimates ius. Ut modus patrioque scribentur per, ei has erat populo essent, suas inimicus cum ut. Ad vocent audire phaedrum mea. Eos case doctus cudicam epicuri eum id.Vix scriptorem cotidieque inqui at dolore definitionem,facete voluptatum dissentiunt ad vel.Impedit officiis intellegam sea neet atqui aliquid fierent eos.Cu pri molestie definitionescu nec augue epicurei graeci principes pri ex.Doctus aeterno vim nesit an purto nullamea mel tollit sanctus."
-                    },
-
                         new Car {
-            
+
                             Year = 2015,
                             Make = "BMW",
                             Model = "M5",
                             Price = 165m,
                             Door = 4,
-                            Image = "http://cdn.barrett-jackson.com/staging/carlist/items/Fullsize/Cars/182683/182683_Front_3-4_Web.jpg",
+                            Image = "https://www.filestackapi.com/api/file/ilpklikMT5ilPp26ysjI",
                             Miles = 15000,
                             Seats = 5,
                             HwyMpg = 26,
@@ -948,13 +949,13 @@ namespace GroupProjectStart.Models
                         },
 
                           new Car {
-                   
+
                             Year = 2014,
                             Make = "Mazda",
                             Model = "6",
                             Price = 95m,
                             Door = 4,
-                            Image = "http://www.truedelta.com/images/mk_reviews/1360495497-2014-Mazda6-front-quarter-view.JPG",
+                            Image = "https://www.filestackapi.com/api/file/m3lUlQQTS4GcfVl4Bfvc",
                             Miles = 7500,
                             Seats = 5,
                             HwyMpg = 32,
@@ -1029,13 +1030,13 @@ namespace GroupProjectStart.Models
                 }
                         },
                              new Car {
-                         
+
                             Year = 2016,
                             Make = "Chevrolet",
                             Model = "Corvette",
                             Price = 199.99m,
                             Door = 2,
-                            Image = "https://i.ytimg.com/vi/Q1XloldnOSI/maxresdefault.jpg",
+                            Image = "https://www.filestackapi.com/api/file/13qN0NoARJSKIOGzdZV8",
                             Miles = 1300,
                             Seats = 4,
                             HwyMpg = 21,
@@ -1206,13 +1207,13 @@ namespace GroupProjectStart.Models
                     {
 
                         new Car {
-                  
+
                             Year = 2015,
                             Make = "BMW",
                             Model = "335I",
                             Price = 175m,
                             Door = 4,
-                            Image = "http://cdn.bmwblog.com/wp-content/uploads/fire-orange-bmw-335i-01.jpg",
+                            Image = "https://www.filestackapi.com/api/file/lwkSy8JHTNyf9D5QgXsL",
                             Miles = 32000,
                             Seats = 5,
                             HwyMpg = 25,
@@ -1288,13 +1289,13 @@ namespace GroupProjectStart.Models
                         },
 
                           new Car {
-                           
+
                             Year = 2012,
                             Make = "Maserati",
                             Model = "Granturismo",
                             Price = 95m,
                             Door = 4,
-                            Image = "http://www.motortrend.com/uploads/sites/10/2015/09/2012-Maserati-GranTurismo-MC-front-three-quarters-in-motion.jpg",
+                            Image = "https://www.filestackapi.com/api/file/jXpehPlzQrKzcISOJkTi",
                             Miles = 47000,
                             Seats = 4,
                             HwyMpg = 22,
@@ -1369,13 +1370,13 @@ namespace GroupProjectStart.Models
                 }
                         },
                              new Car {
-                           
+
                             Year = 2016,
                             Make = "Tesla",
                             Model = "Model X",
                             Price = 199.99m,
                             Door = 2,
-                            Image = "https://i.ytimg.com/vi/BdzDPUpyla4/maxresdefault.jpg",
+                            Image = "https://www.filestackapi.com/api/file/zwbJN4URb2nznKSy9EWR",
                             Miles = 600,
                             Seats = 7,
                             HwyMpg = 0,
@@ -1583,13 +1584,13 @@ namespace GroupProjectStart.Models
                     {
 
                         new Car {
-                         
+
                             Year = 2015,
                             Make = "Jeep",
                             Model = "Wrangler",
                             Price = 113m,
                             Door = 2,
-                            Image = "http://media.caranddriver.com/images/media/51/2014-jeep-wrangler-willys-inline1new-photo-608859-s-original.jpg",
+                            Image = "https://www.filestackapi.com/api/file/u2TCZtdwQaGNTZrAD9Mo",
                             Miles = 46000,
                             Seats = 4,
                             HwyMpg = 21,
@@ -1665,13 +1666,13 @@ namespace GroupProjectStart.Models
                         },
 
                           new Car {
-                        
+
                             Year = 2013,
                             Make = "Honda",
                             Model = "Accord",
                             Price = 95m,
                             Door = 4,
-                            Image = "http://s1.cdn.autoevolution.com/images/gallery/HONDAAccordSedanUS-4220_10.jpg",
+                            Image = "https://www.filestackapi.com/api/file/jWKp4ClSYWpV6S2Ula56",
                             Miles = 23000,
                             Seats = 5,
                             HwyMpg = 35,
@@ -1746,13 +1747,13 @@ namespace GroupProjectStart.Models
                 }
                         },
                              new Car {
-                           
+
                             Year = 2016,
                             Make = "Mazda",
                             Model = "MX-5 Miata",
                             Price = 199.99m,
                             Door = 2,
-                            Image = "http://2.bp.blogspot.com/-lndOWG_WqsE/Ug3fiHidR8I/AAAAAAAAH3o/-LOSoELV-6w/s1600/2015-MG-Roadster-52.jpg",
+                            Image = "https://www.filestackapi.com/api/file/7oWVVomgRIqhjTVpBD3u",
                             Miles = 600,
                             Seats = 7,
                             HwyMpg = 25,
@@ -1840,5 +1841,5 @@ namespace GroupProjectStart.Models
 
         }
 
-        }
-    } 
+    }
+}

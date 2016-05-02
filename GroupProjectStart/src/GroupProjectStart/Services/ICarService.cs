@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GroupProjectStart.Models;
+using GroupProjectStart.ViewModels;
 
 namespace GroupProjectStart.Services
 {
@@ -8,7 +9,7 @@ namespace GroupProjectStart.Services
         void AddCar(string id, Car car);
         void DeleteCar(int id);
         Car GetCar(int id);
-        List<ApplicationUser> GetCars();
+        PagingVM GetCars(int page);
         void UpdateCar(Car car);
     }
 }

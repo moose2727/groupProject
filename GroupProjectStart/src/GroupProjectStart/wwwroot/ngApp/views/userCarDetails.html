@@ -13,20 +13,23 @@
                             Car To Rent
                         </h3><img alt="Bootstrap Image Preview" class="carAndLoanerImg text-center img-responsive img-thumbnail" style="max-height: 500px;  max-width: 600px" src="{{controller.car.image}}" />
                         <div class="row">
-                            <div class="col-md-4">
-                               Make: {{controller.car.make}} model: {{controller.car.model}}
-                                Year: {{controller.car.year}} Doors: {{controller.car.doors}}
-                                Condition: {{controller.car.condition}} Seats: {{controller.car.seats}}
-              
+                            <div class="col-md-12">
+                                <p>Make: {{controller.car.make}} model: {{controller.car.model}}</p>
+                                <p>Year: {{controller.car.year}} Doors: {{controller.car.doors}} </p>
+                                <p>Condition: {{controller.car.condition}} Seats: {{controller.car.seats}}</p>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 MPG: HWY = <span ng-show="{{controller.car.hwyMpg}}">{{controller.car.hwyMpg}} CITY = {{controller.car.ctyMpg}}</span>
 
                                 Description: {{controller.car.description}}
                                 Date Added: {{controller.car.dateAdded}}
                             </div>
-                            <div class="col-md-6 img-responsive pull-right">
-                               <img ng-src="http://www.tech-recipes.com/wp-content/uploads/2012/05/map.jpg" style="width: 200px; height: auto;" />
+                        
+                            <div class="col-lg-6">
+                               
+                                <div class="btn btn-block btn-success" ng-click="controller.carReviewModal(controller.car.id)" id="rateDriverBut">REVIEW CAR</div>
+                                <div class="btn btn-block btn-success" ng-click="controller.carRateModal(controller.car.id)" id="rateDriverBut">RATE CAR</div>
+                                <div class="btn btn-block btn-success" ng-click="controller.carReviewDetails(controller.car.id)" id="rateDriverBut">VIEW CAR REVIEWS</div><br />
                             </div>
                         </div>
                     </div>
@@ -48,12 +51,7 @@
                                    
                                 </ul>
 
-                                <div ng-repeat="review in controller.user.reviews">
-                                    {{review.title}}<br />
-                                    {{review.message}}
-
-                                    {{review.sentimentEntities.sentimentScore}}
-                                </div>
+                          
                             </div>
 
                         </div>
@@ -66,11 +64,12 @@
                                         <li class="list-group-item">Rating: {{controller.user.averageRating}}</li>
 
                                     </ul>--><br />
-                                    <div class="btn btn-block btn-success" ng-click="controller.driverRateModal(user.id)" id="rateDriverBut">RATE OWNER</div>
-                                    <div class="btn btn-block btn-success" ng-click="controller.driverReviewModal(controller.user.id)" id="rateDriverBut">View Owner Reviews</div>
+                                    <div class="btn btn-block btn-success" ng-click="controller.driverRateModal(controller.user.id)" id="rateDriverBut">RATE OWNER</div>
+                                    <div class="btn btn-block btn-success" ng-click="controller.driverReviewModal(controller.user.id)" id="rateDriverBut">REVIEW OWNER</div>
+                                    <div class="btn btn-block btn-success" ng-click="controller.ownerReviewDetails(controller.user.id)" id="rateDriverBut">VIEW OWNER REVIEWS</div>
 
                                 </div>
-
+                     
                             </div>
                         </div>
                      

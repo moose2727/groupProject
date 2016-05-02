@@ -1,11 +1,14 @@
 namespace GroupProjectStart {
 
-    angular.module('GroupProjectStart', ['ui.router', 'ngResource', 'ui.bootstrap', 'angular-filepicker']).config((
+    angular.module('GroupProjectStart', ['ui.router', 'ngResource', 'ui.bootstrap', 'angular-filepicker', 'uiGmapgoogle-maps']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider,
+        //uiGmapGoogleMapApiProvider: any,
         filepickerProvider: any
     ) => {
+        //google maps key would go here but we shouldn't need one for this project
+
         //filepicker api key
         filepickerProvider.setKey('Ay0qe4wR6efe0Ua2XZC5wz');
         // Define routes
@@ -60,14 +63,14 @@ namespace GroupProjectStart {
                 controllerAs: 'controller'
             })
             .state('cars', {
-                url: '/cars',
+                url: '/cars/:page',
                 templateUrl: '/ngApp/views/car.html',
                 controller: GroupProjectStart.Controllers.CarsController,
                 controllerAs: 'controller'
             })
             .state('userCar', {
-                url: '/userCar/:user/:car',             
-                templateUrl: '/ngApp/views/userCarDetails.html', 
+                url: '/userCar/:user/:car',
+                templateUrl: '/ngApp/views/userCarDetails.html',
                 controller: GroupProjectStart.Controllers.UserCarController,
                 controllerAs: 'controller'
             })
@@ -130,21 +133,16 @@ namespace GroupProjectStart {
                 templateUrl: 'ngApp/views/deleteRating.html',
                 controller: GroupProjectStart.Controllers.DeleteDriverRatingController,
                 controllerAs: 'controller'
-            })
-            .state('logout', {
-               
-                templateUrl: 'ngApp/views/logout.html'
-               
-            })
-            .state('notFound', {
-                url: '/notFound',
-                templateUrl: '/ngApp/views/notFound.html'
             });
+        ////    .state('notFound', {
+        ////        url: '/notFound',
+        ////        templateUrl: '/ngApp/views/notFound.html'
+        ////    });
 
-        // Handle request for non-existent route
-        $urlRouterProvider.otherwise('/notFound');
+        ////// Handle request for non-existent route
+        ////$urlRouterProvider.otherwise('/notFound');
 
-        // Enable HTML5 navigation
+        ////// Enable HTML5 navigation
         $locationProvider.html5Mode(true);
     });
 
