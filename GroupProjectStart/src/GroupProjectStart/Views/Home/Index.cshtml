@@ -30,9 +30,18 @@
                 <li class="active">
                     <a href="/profiles">Profiles</a>
                 </li>
-               
-              
-            </ul>
+               </ul>
+
+            <form action="" method="get">
+                <fieldset>
+                    <input type="text" id="searchbar" />
+                    <input type="submit" value="Search" id="searchbtn" />
+                </fieldset>
+            </form>
+
+
+
+
             <ul class="nav navbar-nav pull-right">
                 <li>
                     <button class="btn btn-lg btn-success" ng-click="account.showSignInModal()">Log In</button>
@@ -45,10 +54,12 @@
 
 
     </div>
+  
 
         <div id="pageContentContainer" class="container">
             <ui-view></ui-view>
         </div>
+
 
 
         <!-- Library Files -->
