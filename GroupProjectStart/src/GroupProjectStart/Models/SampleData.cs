@@ -71,46 +71,46 @@ namespace GroupProjectStart.Models
                 {
                     DriverRatings = new List<RatingDriver>
                         {
-                            new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 4,
-                                 PaymentExperience = 4,
-                                 ProfessionalismOfDriver = 3,
-                                 PromptReplies = 2,
-                                 SchedulingExperience = 3,
-                                 Trustworthiness = 5,
-                                 DeliveryExperience = 2
-                            },
-                              new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 4,
-                                 PaymentExperience = 4,
-                                 ProfessionalismOfDriver = 3,
-                                 PromptReplies = 2,
-                                 SchedulingExperience = 3,
-                                 Trustworthiness = 5,
-                                 DeliveryExperience = 2
-                            },
-                                new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 4,
-                                 PaymentExperience = 3,
-                                 ProfessionalismOfDriver = 4,
-                                 PromptReplies = 3,
-                                 SchedulingExperience = 4,
-                                 Trustworthiness = 4,
-                                 DeliveryExperience = 4
-                            },
-                                  new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience = 4,
-                                 ProfessionalismOfDriver = 3,
-                                 PromptReplies = 2,
-                                 SchedulingExperience = 4,
-                                 Trustworthiness = 5,
-                                 DeliveryExperience = 3
-                            },
+                            //new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 4,
+                            //     PaymentExperience = 4,
+                            //     ProfessionalismOfDriver = 3,
+                            //     PromptReplies = 2,
+                            //     SchedulingExperience = 3,
+                            //     Trustworthiness = 5,
+                            //     DeliveryExperience = 2
+                            //},
+                            //  new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 4,
+                            //     PaymentExperience = 4,
+                            //     ProfessionalismOfDriver = 3,
+                            //     PromptReplies = 2,
+                            //     SchedulingExperience = 3,
+                            //     Trustworthiness = 5,
+                            //     DeliveryExperience = 2
+                            //},
+                            //    new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 4,
+                            //     PaymentExperience = 3,
+                            //     ProfessionalismOfDriver = 4,
+                            //     PromptReplies = 3,
+                            //     SchedulingExperience = 4,
+                            //     Trustworthiness = 4,
+                            //     DeliveryExperience = 4
+                            //},
+                            //      new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience = 4,
+                            //     ProfessionalismOfDriver = 3,
+                            //     PromptReplies = 2,
+                            //     SchedulingExperience = 4,
+                            //     Trustworthiness = 5,
+                            //     DeliveryExperience = 3
+                            //},
                         },
                     Reviews = new List<DriverReview>
                         {
@@ -204,47 +204,47 @@ namespace GroupProjectStart.Models
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 2,
-                        OutsideCleanliness = 4,
-                        InsideCleanliness = 5,
-                        EngineOperation = 3,
-                        IndoorAirQuality = 3,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 5,
-                        DeliveryExperience = 1,
-                        ProfessionalismOfOwner = 4,
-                        OverallRating = 4
-                    },
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 2,
+                //        OutsideCleanliness = 4,
+                //        InsideCleanliness = 5,
+                //        EngineOperation = 3,
+                //        IndoorAirQuality = 3,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 5,
+                //        DeliveryExperience = 1,
+                //        ProfessionalismOfOwner = 4,
+                //        OverallRating = 4
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 3,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 2,
-                    EngineOperation = 3,
-                    IndoorAirQuality = 2,
-                    SafetyFeatures = 4,
-                    ElectricalFunctions = 2,
-                    DeliveryExperience = 2,
-                    ProfessionalismOfOwner = 2,
+                //new RatingCar
+                //{
+                //    TireQuality = 3,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 2,
+                //    EngineOperation = 3,
+                //    IndoorAirQuality = 2,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 2,
+                //    DeliveryExperience = 2,
+                //    ProfessionalismOfOwner = 2,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 2,
-                    EngineOperation = 3,
-                    IndoorAirQuality = 3,
-                    SafetyFeatures = 3,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 3,
-                    ProfessionalismOfOwner = 3,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 2,
+                //    EngineOperation = 3,
+                //    IndoorAirQuality = 3,
+                //    SafetyFeatures = 3,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 3,
+                //    ProfessionalismOfOwner = 3,
 
-                }
+                //}
                 }
                         },
 
@@ -286,47 +286,47 @@ namespace GroupProjectStart.Models
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 2,
-                        OutsideCleanliness = 3,
-                        InsideCleanliness = 3,
-                        EngineOperation = 2,
-                        IndoorAirQuality = 3,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 5,
-                        DeliveryExperience = 1,
-                        ProfessionalismOfOwner = 5,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 2,
+                //        OutsideCleanliness = 3,
+                //        InsideCleanliness = 3,
+                //        EngineOperation = 2,
+                //        IndoorAirQuality = 3,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 5,
+                //        DeliveryExperience = 1,
+                //        ProfessionalismOfOwner = 5,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 3,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 4,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 2,
-                    SafetyFeatures = 3,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 2,
+                //new RatingCar
+                //{
+                //    TireQuality = 3,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 4,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 2,
+                //    SafetyFeatures = 3,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 2,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 2,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 5,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 3,
-                    SafetyFeatures = 3,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 3,
+                //new RatingCar
+                //{
+                //    TireQuality = 2,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 3,
+                //    SafetyFeatures = 3,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 3,
 
-                }
+                //}
                 }
                         },
                              new Car {
@@ -368,47 +368,47 @@ namespace GroupProjectStart.Models
                             },
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 2,
-                        OutsideCleanliness = 4,
-                        InsideCleanliness = 5,
-                        EngineOperation = 3,
-                        IndoorAirQuality = 3,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 5,
-                        DeliveryExperience = 1,
-                        ProfessionalismOfOwner = 4,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 2,
+                //        OutsideCleanliness = 4,
+                //        InsideCleanliness = 5,
+                //        EngineOperation = 3,
+                //        IndoorAirQuality = 3,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 5,
+                //        DeliveryExperience = 1,
+                //        ProfessionalismOfOwner = 4,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 3,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 2,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 2,
-                    SafetyFeatures = 4,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 2,
-                    ProfessionalismOfOwner = 2,
+                //new RatingCar
+                //{
+                //    TireQuality = 3,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 2,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 2,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 2,
+                //    ProfessionalismOfOwner = 2,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 1,
-                    EngineOperation = 3,
-                    IndoorAirQuality = 3,
-                    SafetyFeatures = 3,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 1,
+                //    EngineOperation = 3,
+                //    IndoorAirQuality = 3,
+                //    SafetyFeatures = 3,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 5,
 
-                }
+                //}
                 }
                         }
 
@@ -430,46 +430,46 @@ namespace GroupProjectStart.Models
                 {
                     DriverRatings = new List<RatingDriver>
                         {
-                            new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 1,
-                                 PaymentExperience = 1,
-                                 ProfessionalismOfDriver = 1,
-                                 PromptReplies = 1,
-                                 SchedulingExperience = 1,
-                                 Trustworthiness = 1,
-                                 DeliveryExperience = 1
-                            },
-                              new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 2,
-                                 PaymentExperience = 1,
-                                 ProfessionalismOfDriver =2,
-                                 PromptReplies = 1,
-                                 SchedulingExperience = 2,
-                                 Trustworthiness = 3,
-                                 DeliveryExperience = 2
-                            },
-                                new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 2,
-                                 PaymentExperience = 3,
-                                 ProfessionalismOfDriver = 2,
-                                 PromptReplies = 3,
-                                 SchedulingExperience = 2,
-                                 Trustworthiness = 3,
-                                 DeliveryExperience = 3
-                            },
-                                  new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 2,
-                                 PaymentExperience = 3,
-                                 ProfessionalismOfDriver = 2,
-                                 PromptReplies = 2,
-                                 SchedulingExperience = 2,
-                                 Trustworthiness = 3,
-                                 DeliveryExperience = 2
-                            },
+                            //new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 1,
+                            //     PaymentExperience = 1,
+                            //     ProfessionalismOfDriver = 1,
+                            //     PromptReplies = 1,
+                            //     SchedulingExperience = 1,
+                            //     Trustworthiness = 1,
+                            //     DeliveryExperience = 1
+                            //},
+                            //  new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 2,
+                            //     PaymentExperience = 1,
+                            //     ProfessionalismOfDriver =2,
+                            //     PromptReplies = 1,
+                            //     SchedulingExperience = 2,
+                            //     Trustworthiness = 3,
+                            //     DeliveryExperience = 2
+                            //},
+                            //    new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 2,
+                            //     PaymentExperience = 3,
+                            //     ProfessionalismOfDriver = 2,
+                            //     PromptReplies = 3,
+                            //     SchedulingExperience = 2,
+                            //     Trustworthiness = 3,
+                            //     DeliveryExperience = 3
+                            //},
+                            //      new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 2,
+                            //     PaymentExperience = 3,
+                            //     ProfessionalismOfDriver = 2,
+                            //     PromptReplies = 2,
+                            //     SchedulingExperience = 2,
+                            //     Trustworthiness = 3,
+                            //     DeliveryExperience = 2
+                            //},
                         },
                     Reviews = new List<DriverReview>
                         {
@@ -543,47 +543,47 @@ namespace GroupProjectStart.Models
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 5,
-                        OutsideCleanliness = 3,
-                        InsideCleanliness = 1,
-                        EngineOperation = 4,
-                        IndoorAirQuality = 2,
-                        SafetyFeatures = 4,
-                        ElectricalFunctions = 3,
-                        DeliveryExperience = 1,
-                        ProfessionalismOfOwner = 1,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 5,
+                //        OutsideCleanliness = 3,
+                //        InsideCleanliness = 1,
+                //        EngineOperation = 4,
+                //        IndoorAirQuality = 2,
+                //        SafetyFeatures = 4,
+                //        ElectricalFunctions = 3,
+                //        DeliveryExperience = 1,
+                //        ProfessionalismOfOwner = 1,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 2,
-                    InsideCleanliness = 1,
-                    EngineOperation = 3,
-                    IndoorAirQuality = 2,
-                    SafetyFeatures = 4,
-                    ElectricalFunctions = 2,
-                    DeliveryExperience = 2,
-                    ProfessionalismOfOwner = 2,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 2,
+                //    InsideCleanliness = 1,
+                //    EngineOperation = 3,
+                //    IndoorAirQuality = 2,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 2,
+                //    DeliveryExperience = 2,
+                //    ProfessionalismOfOwner = 2,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 1,
-                    InsideCleanliness = 2,
-                    EngineOperation =4,
-                    IndoorAirQuality = 2,
-                    SafetyFeatures = 4,
-                    ElectricalFunctions = 2,
-                    DeliveryExperience = 1,
-                    ProfessionalismOfOwner = 1,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 1,
+                //    InsideCleanliness = 2,
+                //    EngineOperation =4,
+                //    IndoorAirQuality = 2,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 2,
+                //    DeliveryExperience = 1,
+                //    ProfessionalismOfOwner = 1,
 
-                }
+                //}
                 }
                         },
 
@@ -625,47 +625,47 @@ namespace GroupProjectStart.Models
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 4,
-                        OutsideCleanliness = 3,
-                        InsideCleanliness = 3,
-                        EngineOperation = 2,
-                        IndoorAirQuality = 3,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 4,
-                        DeliveryExperience = 1,
-                        ProfessionalismOfOwner = 1,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 4,
+                //        OutsideCleanliness = 3,
+                //        InsideCleanliness = 3,
+                //        EngineOperation = 2,
+                //        IndoorAirQuality = 3,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 4,
+                //        DeliveryExperience = 1,
+                //        ProfessionalismOfOwner = 1,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 1,
-                    InsideCleanliness = 2,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 2,
-                    SafetyFeatures = 3,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 2,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 1,
+                //    InsideCleanliness = 2,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 2,
+                //    SafetyFeatures = 3,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 2,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 2,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 5,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 3,
-                    SafetyFeatures = 3,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 3,
+                //new RatingCar
+                //{
+                //    TireQuality = 2,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 3,
+                //    SafetyFeatures = 3,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 3,
 
-                }
+                //}
                 }
                         },
                              new Car {
@@ -707,47 +707,47 @@ namespace GroupProjectStart.Models
                             },
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 5,
-                        OutsideCleanliness = 5,
-                        InsideCleanliness = 5,
-                        EngineOperation = 5,
-                        IndoorAirQuality = 5,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 5,
-                        DeliveryExperience = 1,
-                        ProfessionalismOfOwner = 2,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 5,
+                //        OutsideCleanliness = 5,
+                //        InsideCleanliness = 5,
+                //        EngineOperation = 5,
+                //        IndoorAirQuality = 5,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 5,
+                //        DeliveryExperience = 1,
+                //        ProfessionalismOfOwner = 2,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 5,
-                    EngineOperation = 5,
-                    IndoorAirQuality = 5,
-                    SafetyFeatures = 4,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 2,
-                    ProfessionalismOfOwner = 2,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 5,
+                //    IndoorAirQuality = 5,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 2,
+                //    ProfessionalismOfOwner = 2,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 5,
-                    EngineOperation = 5,
-                    IndoorAirQuality = 3,
-                    SafetyFeatures = 2,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 2,
-                    ProfessionalismOfOwner = 1,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 5,
+                //    IndoorAirQuality = 3,
+                //    SafetyFeatures = 2,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 2,
+                //    ProfessionalismOfOwner = 1,
 
-                }
+                //}
                 }
                         }
 
@@ -770,46 +770,46 @@ namespace GroupProjectStart.Models
                 {
                     DriverRatings = new List<RatingDriver>
                         {
-                            new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience =4,
-                                 ProfessionalismOfDriver = 5,
-                                 PromptReplies = 5,
-                                 SchedulingExperience = 5,
-                                 Trustworthiness = 5,
-                                 DeliveryExperience = 4
-                            },
-                              new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience = 4,
-                                 ProfessionalismOfDriver =5,
-                                 PromptReplies = 5,
-                                 SchedulingExperience = 5,
-                                 Trustworthiness = 5,
-                                 DeliveryExperience = 4
-                            },
-                                new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience = 5,
-                                 ProfessionalismOfDriver = 5,
-                                 PromptReplies = 5,
-                                 SchedulingExperience = 5,
-                                 Trustworthiness = 4,
-                                 DeliveryExperience = 5
-                            },
-                                  new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience = 5,
-                                 ProfessionalismOfDriver = 5,
-                                 PromptReplies = 4,
-                                 SchedulingExperience = 4,
-                                 Trustworthiness = 4,
-                                 DeliveryExperience = 4
-                            },
+                            //new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience =4,
+                            //     ProfessionalismOfDriver = 5,
+                            //     PromptReplies = 5,
+                            //     SchedulingExperience = 5,
+                            //     Trustworthiness = 5,
+                            //     DeliveryExperience = 4
+                            //},
+                            //  new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience = 4,
+                            //     ProfessionalismOfDriver =5,
+                            //     PromptReplies = 5,
+                            //     SchedulingExperience = 5,
+                            //     Trustworthiness = 5,
+                            //     DeliveryExperience = 4
+                            //},
+                            //    new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience = 5,
+                            //     ProfessionalismOfDriver = 5,
+                            //     PromptReplies = 5,
+                            //     SchedulingExperience = 5,
+                            //     Trustworthiness = 4,
+                            //     DeliveryExperience = 5
+                            //},
+                            //      new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience = 5,
+                            //     ProfessionalismOfDriver = 5,
+                            //     PromptReplies = 4,
+                            //     SchedulingExperience = 4,
+                            //     Trustworthiness = 4,
+                            //     DeliveryExperience = 4
+                            //},
                         },
                     Reviews = new List<DriverReview>
                         {
@@ -904,47 +904,47 @@ namespace GroupProjectStart.Models
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 5,
-                        OutsideCleanliness = 5,
-                        InsideCleanliness = 4,
-                        EngineOperation = 5,
-                        IndoorAirQuality = 5,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 4,
-                        DeliveryExperience = 4,
-                        ProfessionalismOfOwner = 5,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 5,
+                //        OutsideCleanliness = 5,
+                //        InsideCleanliness = 4,
+                //        EngineOperation = 5,
+                //        IndoorAirQuality = 5,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 4,
+                //        DeliveryExperience = 4,
+                //        ProfessionalismOfOwner = 5,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 4,
-                    EngineOperation = 5,
-                    IndoorAirQuality = 4,
-                    SafetyFeatures = 5,
-                    ElectricalFunctions = 5,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 4,
+                //    EngineOperation = 5,
+                //    IndoorAirQuality = 4,
+                //    SafetyFeatures = 5,
+                //    ElectricalFunctions = 5,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 5,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 4,
-                    EngineOperation =4,
-                    IndoorAirQuality = 5,
-                    SafetyFeatures = 5,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 4,
-                    ProfessionalismOfOwner = 4,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 4,
+                //    EngineOperation =4,
+                //    IndoorAirQuality = 5,
+                //    SafetyFeatures = 5,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 4,
+                //    ProfessionalismOfOwner = 4,
 
-                }
+                //}
                 }
                         },
 
@@ -986,47 +986,47 @@ namespace GroupProjectStart.Models
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 4,
-                        OutsideCleanliness = 4,
-                        InsideCleanliness = 4,
-                        EngineOperation = 4,
-                        IndoorAirQuality = 4,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 3,
-                        DeliveryExperience = 4,
-                        ProfessionalismOfOwner = 5,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 4,
+                //        OutsideCleanliness = 4,
+                //        InsideCleanliness = 4,
+                //        EngineOperation = 4,
+                //        IndoorAirQuality = 4,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 3,
+                //        DeliveryExperience = 4,
+                //        ProfessionalismOfOwner = 5,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 4,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 3,
-                    SafetyFeatures = 5,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 4,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 4,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 3,
+                //    SafetyFeatures = 5,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 4,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 5,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 4,
-                    SafetyFeatures = 4,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 4,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 5,
 
-                }
+                //}
                 }
                         },
                              new Car {
@@ -1068,47 +1068,47 @@ namespace GroupProjectStart.Models
                             },
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 5,
-                        OutsideCleanliness = 5,
-                        InsideCleanliness = 5,
-                        EngineOperation = 5,
-                        IndoorAirQuality = 5,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 5,
-                        DeliveryExperience = 1,
-                        ProfessionalismOfOwner = 2,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 5,
+                //        OutsideCleanliness = 5,
+                //        InsideCleanliness = 5,
+                //        EngineOperation = 5,
+                //        IndoorAirQuality = 5,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 5,
+                //        DeliveryExperience = 1,
+                //        ProfessionalismOfOwner = 2,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 5,
-                    EngineOperation = 5,
-                    IndoorAirQuality = 5,
-                    SafetyFeatures = 4,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 4,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 5,
+                //    IndoorAirQuality = 5,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 4,
+                //    ProfessionalismOfOwner = 5,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 5,
-                    EngineOperation = 5,
-                    IndoorAirQuality = 3,
-                    SafetyFeatures = 2,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 5,
+                //    IndoorAirQuality = 3,
+                //    SafetyFeatures = 2,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 5,
 
-                }
+                //}
                 }
                         }
 
@@ -1131,46 +1131,46 @@ namespace GroupProjectStart.Models
                 {
                     DriverRatings = new List<RatingDriver>
                         {
-                            new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience =4,
-                                 ProfessionalismOfDriver = 5,
-                                 PromptReplies = 5,
-                                 SchedulingExperience = 5,
-                                 Trustworthiness = 5,
-                                 DeliveryExperience = 4
-                            },
-                              new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience = 4,
-                                 ProfessionalismOfDriver =5,
-                                 PromptReplies = 5,
-                                 SchedulingExperience = 5,
-                                 Trustworthiness = 5,
-                                 DeliveryExperience = 4
-                            },
-                                new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience = 5,
-                                 ProfessionalismOfDriver = 5,
-                                 PromptReplies = 5,
-                                 SchedulingExperience = 5,
-                                 Trustworthiness = 4,
-                                 DeliveryExperience = 5
-                            },
-                                  new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience = 5,
-                                 ProfessionalismOfDriver = 5,
-                                 PromptReplies = 4,
-                                 SchedulingExperience = 4,
-                                 Trustworthiness = 4,
-                                 DeliveryExperience = 4
-                            },
+                            //new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience =4,
+                            //     ProfessionalismOfDriver = 5,
+                            //     PromptReplies = 5,
+                            //     SchedulingExperience = 5,
+                            //     Trustworthiness = 5,
+                            //     DeliveryExperience = 4
+                            //},
+                            //  new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience = 4,
+                            //     ProfessionalismOfDriver =5,
+                            //     PromptReplies = 5,
+                            //     SchedulingExperience = 5,
+                            //     Trustworthiness = 5,
+                            //     DeliveryExperience = 4
+                            //},
+                            //    new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience = 5,
+                            //     ProfessionalismOfDriver = 5,
+                            //     PromptReplies = 5,
+                            //     SchedulingExperience = 5,
+                            //     Trustworthiness = 4,
+                            //     DeliveryExperience = 5
+                            //},
+                            //      new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience = 5,
+                            //     ProfessionalismOfDriver = 5,
+                            //     PromptReplies = 4,
+                            //     SchedulingExperience = 4,
+                            //     Trustworthiness = 4,
+                            //     DeliveryExperience = 4
+                            //},
                         },
                     Reviews = new List<DriverReview>
                         {
@@ -1244,47 +1244,47 @@ namespace GroupProjectStart.Models
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 5,
-                        OutsideCleanliness = 5,
-                        InsideCleanliness = 4,
-                        EngineOperation = 5,
-                        IndoorAirQuality = 5,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 4,
-                        DeliveryExperience = 4,
-                        ProfessionalismOfOwner = 5,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 5,
+                //        OutsideCleanliness = 5,
+                //        InsideCleanliness = 4,
+                //        EngineOperation = 5,
+                //        IndoorAirQuality = 5,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 4,
+                //        DeliveryExperience = 4,
+                //        ProfessionalismOfOwner = 5,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 4,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 4,
-                    SafetyFeatures = 5,
-                    ElectricalFunctions = 5,
-                    DeliveryExperience = 4,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 4,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 4,
+                //    SafetyFeatures = 5,
+                //    ElectricalFunctions = 5,
+                //    DeliveryExperience = 4,
+                //    ProfessionalismOfOwner = 5,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 4,
-                    EngineOperation =4,
-                    IndoorAirQuality = 5,
-                    SafetyFeatures = 5,
-                    ElectricalFunctions = 5,
-                    DeliveryExperience = 4,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 4,
+                //    EngineOperation =4,
+                //    IndoorAirQuality = 5,
+                //    SafetyFeatures = 5,
+                //    ElectricalFunctions = 5,
+                //    DeliveryExperience = 4,
+                //    ProfessionalismOfOwner = 5,
 
-                }
+                //}
                 }
                         },
 
@@ -1326,47 +1326,47 @@ namespace GroupProjectStart.Models
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 4,
-                        OutsideCleanliness = 4,
-                        InsideCleanliness = 4,
-                        EngineOperation = 4,
-                        IndoorAirQuality = 4,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions =5,
-                        DeliveryExperience = 4,
-                        ProfessionalismOfOwner = 4,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 4,
+                //        OutsideCleanliness = 4,
+                //        InsideCleanliness = 4,
+                //        EngineOperation = 4,
+                //        IndoorAirQuality = 4,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions =5,
+                //        DeliveryExperience = 4,
+                //        ProfessionalismOfOwner = 4,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 4,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 4,
-                    SafetyFeatures = 5,
-                    ElectricalFunctions = 5,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 4,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 4,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 4,
+                //    SafetyFeatures = 5,
+                //    ElectricalFunctions = 5,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 4,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 3,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 4,
-                    SafetyFeatures = 4,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 4,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 3,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 4,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 4,
+                //    ProfessionalismOfOwner = 5,
 
-                }
+                //}
                 }
                         },
                              new Car {
@@ -1408,47 +1408,47 @@ namespace GroupProjectStart.Models
                             },
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 5,
-                        OutsideCleanliness = 5,
-                        InsideCleanliness = 5,
-                        EngineOperation = 5,
-                        IndoorAirQuality = 5,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 5,
-                        DeliveryExperience = 5,
-                        ProfessionalismOfOwner = 5,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 5,
+                //        OutsideCleanliness = 5,
+                //        InsideCleanliness = 5,
+                //        EngineOperation = 5,
+                //        IndoorAirQuality = 5,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 5,
+                //        DeliveryExperience = 5,
+                //        ProfessionalismOfOwner = 5,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 5,
-                    EngineOperation = 5,
-                    IndoorAirQuality = 5,
-                    SafetyFeatures = 4,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 4,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 5,
+                //    IndoorAirQuality = 5,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 4,
+                //    ProfessionalismOfOwner = 5,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 5,
-                    EngineOperation = 5,
-                    IndoorAirQuality = 5,
-                    SafetyFeatures = 5,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 4,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 5,
+                //    IndoorAirQuality = 5,
+                //    SafetyFeatures = 5,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 4,
 
-                }
+                //}
                 }
                         }
 
@@ -1508,46 +1508,46 @@ namespace GroupProjectStart.Models
                 {
                     DriverRatings = new List<RatingDriver>
                         {
-                            new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience =4,
-                                 ProfessionalismOfDriver = 5,
-                                 PromptReplies = 5,
-                                 SchedulingExperience = 5,
-                                 Trustworthiness = 5,
-                                 DeliveryExperience = 4
-                            },
-                              new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience = 4,
-                                 ProfessionalismOfDriver =5,
-                                 PromptReplies = 5,
-                                 SchedulingExperience = 5,
-                                 Trustworthiness = 5,
-                                 DeliveryExperience = 4
-                            },
-                                new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience = 5,
-                                 ProfessionalismOfDriver = 5,
-                                 PromptReplies = 5,
-                                 SchedulingExperience = 5,
-                                 Trustworthiness = 4,
-                                 DeliveryExperience = 5
-                            },
-                                  new RatingDriver
-                            {
-                                 ConditionOfReturnedCar = 5,
-                                 PaymentExperience = 5,
-                                 ProfessionalismOfDriver = 5,
-                                 PromptReplies = 4,
-                                 SchedulingExperience = 4,
-                                 Trustworthiness = 4,
-                                 DeliveryExperience = 4
-                            },
+                            //new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience =4,
+                            //     ProfessionalismOfDriver = 5,
+                            //     PromptReplies = 5,
+                            //     SchedulingExperience = 5,
+                            //     Trustworthiness = 5,
+                            //     DeliveryExperience = 4
+                            //},
+                            //  new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience = 4,
+                            //     ProfessionalismOfDriver =5,
+                            //     PromptReplies = 5,
+                            //     SchedulingExperience = 5,
+                            //     Trustworthiness = 5,
+                            //     DeliveryExperience = 4
+                            //},
+                            //    new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience = 5,
+                            //     ProfessionalismOfDriver = 5,
+                            //     PromptReplies = 5,
+                            //     SchedulingExperience = 5,
+                            //     Trustworthiness = 4,
+                            //     DeliveryExperience = 5
+                            //},
+                            //      new RatingDriver
+                            //{
+                            //     ConditionOfReturnedCar = 5,
+                            //     PaymentExperience = 5,
+                            //     ProfessionalismOfDriver = 5,
+                            //     PromptReplies = 4,
+                            //     SchedulingExperience = 4,
+                            //     Trustworthiness = 4,
+                            //     DeliveryExperience = 4
+                            //},
                         },
                     Reviews = new List<DriverReview>
                         {
@@ -1621,47 +1621,47 @@ namespace GroupProjectStart.Models
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 5,
-                        OutsideCleanliness = 5,
-                        InsideCleanliness = 4,
-                        EngineOperation = 5,
-                        IndoorAirQuality = 5,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 4,
-                        DeliveryExperience = 4,
-                        ProfessionalismOfOwner = 5,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 5,
+                //        OutsideCleanliness = 5,
+                //        InsideCleanliness = 4,
+                //        EngineOperation = 5,
+                //        IndoorAirQuality = 5,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 4,
+                //        DeliveryExperience = 4,
+                //        ProfessionalismOfOwner = 5,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 4,
-                    EngineOperation = 3,
-                    IndoorAirQuality = 4,
-                    SafetyFeatures = 2,
-                    ElectricalFunctions = 5,
-                    DeliveryExperience = 4,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 4,
+                //    EngineOperation = 3,
+                //    IndoorAirQuality = 4,
+                //    SafetyFeatures = 2,
+                //    ElectricalFunctions = 5,
+                //    DeliveryExperience = 4,
+                //    ProfessionalismOfOwner = 5,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 4,
-                    EngineOperation =4,
-                    IndoorAirQuality = 5,
-                    SafetyFeatures = 1,
-                    ElectricalFunctions = 5,
-                    DeliveryExperience = 4,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 4,
+                //    EngineOperation =4,
+                //    IndoorAirQuality = 5,
+                //    SafetyFeatures = 1,
+                //    ElectricalFunctions = 5,
+                //    DeliveryExperience = 4,
+                //    ProfessionalismOfOwner = 5,
 
-                }
+                //}
                 }
                         },
 
@@ -1703,47 +1703,47 @@ namespace GroupProjectStart.Models
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 4,
-                        OutsideCleanliness = 4,
-                        InsideCleanliness = 4,
-                        EngineOperation = 4,
-                        IndoorAirQuality = 4,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions =5,
-                        DeliveryExperience = 4,
-                        ProfessionalismOfOwner = 4,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 4,
+                //        OutsideCleanliness = 4,
+                //        InsideCleanliness = 4,
+                //        EngineOperation = 4,
+                //        IndoorAirQuality = 4,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions =5,
+                //        DeliveryExperience = 4,
+                //        ProfessionalismOfOwner = 4,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 4,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 4,
-                    SafetyFeatures = 5,
-                    ElectricalFunctions = 5,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 4,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 4,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 4,
+                //    SafetyFeatures = 5,
+                //    ElectricalFunctions = 5,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 4,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 4,
-                    OutsideCleanliness = 4,
-                    InsideCleanliness = 3,
-                    EngineOperation = 4,
-                    IndoorAirQuality = 4,
-                    SafetyFeatures = 4,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 4,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 4,
+                //    OutsideCleanliness = 4,
+                //    InsideCleanliness = 3,
+                //    EngineOperation = 4,
+                //    IndoorAirQuality = 4,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 4,
+                //    ProfessionalismOfOwner = 5,
 
-                }
+                //}
                 }
                         },
                              new Car {
@@ -1785,47 +1785,47 @@ namespace GroupProjectStart.Models
                             },
                             CarRatings = new List<RatingCar>
                             {
-                                    new RatingCar
-                    {
-                        TireQuality = 5,
-                        OutsideCleanliness = 5,
-                        InsideCleanliness = 5,
-                        EngineOperation = 5,
-                        IndoorAirQuality = 5,
-                        SafetyFeatures = 5,
-                        ElectricalFunctions = 5,
-                        DeliveryExperience = 5,
-                        ProfessionalismOfOwner = 5,
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 5,
+                //        OutsideCleanliness = 5,
+                //        InsideCleanliness = 5,
+                //        EngineOperation = 5,
+                //        IndoorAirQuality = 5,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 5,
+                //        DeliveryExperience = 5,
+                //        ProfessionalismOfOwner = 5,
 
-                    },
+                //    },
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 5,
-                    EngineOperation = 5,
-                    IndoorAirQuality = 5,
-                    SafetyFeatures = 4,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 4,
-                    ProfessionalismOfOwner = 5,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 5,
+                //    IndoorAirQuality = 5,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 4,
+                //    ProfessionalismOfOwner = 5,
 
-                },
+                //},
 
-                new RatingCar
-                {
-                    TireQuality = 5,
-                    OutsideCleanliness = 5,
-                    InsideCleanliness = 5,
-                    EngineOperation = 5,
-                    IndoorAirQuality = 5,
-                    SafetyFeatures = 5,
-                    ElectricalFunctions = 4,
-                    DeliveryExperience = 5,
-                    ProfessionalismOfOwner = 4,
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 5,
+                //    IndoorAirQuality = 5,
+                //    SafetyFeatures = 5,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 5,
+                //    ProfessionalismOfOwner = 4,
 
-                }
+                //}
                 }
                         }
 

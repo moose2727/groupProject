@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,8 +9,11 @@ namespace GroupProjectStart.Models
     public class Car
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "Make is required")]
         public string Make { get; set; }
+        [Required(ErrorMessage = "Model is required")]
         public string Model { get; set; }
+        [Range(1900, 2018, ErrorMessage = "Year is required or out of bounds")]
         public int Year { get; set; }
         public decimal Price { get; set; }
         public string Image { get; set; }

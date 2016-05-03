@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 
 namespace GroupProjectStart.Migrations
 {
-    public partial class restart : Migration
+    public partial class start : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -318,8 +318,6 @@ namespace GroupProjectStart.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable("CarReview");
-            migrationBuilder.DropTable("DriverReview");
             migrationBuilder.DropTable("RatingCar");
             migrationBuilder.DropTable("RatingDriver");
             migrationBuilder.DropTable("SentimentInfo");

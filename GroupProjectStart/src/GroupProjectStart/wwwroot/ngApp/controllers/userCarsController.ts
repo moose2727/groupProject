@@ -2,11 +2,16 @@
 
     export class UserCarsController {
         public users;
+        public ratingPercent;
+
+
 
         constructor(
             private userCarsService: GroupProjectStart.Services.UserCarsService, private $uibModal: ng.ui.bootstrap.IModalService) {
             this.users = this.userCarsService.getUserCars();
         }
+
+
         public carRateModal(id) {
 
             this.$uibModal.open({

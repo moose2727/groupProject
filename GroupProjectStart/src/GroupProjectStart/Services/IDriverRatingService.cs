@@ -5,7 +5,7 @@ namespace GroupProjectStart.Services
 {
     public interface IDriverRatingService
     {
-        void AddDriverRating(string id, RatingDriver driverRating);
+        decimal AddDriverRating(string id, RatingDriver driverRating);
         void DeleteDriverRating(int id);
         RatingDriver GetDriverRating(int id);
         List<RatingDriver> GetDriverRatings();

@@ -22,7 +22,7 @@ namespace GroupProjectStart.API
         }
 
         // GET: api/values
-       
+
         [HttpGet("pagination/{page}")]
         public IActionResult GetPage(int page)
         {
@@ -42,7 +42,9 @@ namespace GroupProjectStart.API
         [HttpPost("{id}")]
         public IActionResult Post(string id, [FromBody]Car car)
         {
-            if(car.Id == 0)
+            if (ModelState.IsValid)
+            { 
+            if (car.Id == 0)
             {
                 _repo.AddCar(id, car);
             }
@@ -52,6 +54,8 @@ namespace GroupProjectStart.API
             }
             return Ok(car);
         }
+        return HttpBadRequest(ModelState);
+    }
 
         // PUT api/values/5
         [HttpPut("{id}")]

@@ -5,8 +5,23 @@
 }
 
 .list-group-item{
-  
+ color: white;
+ font-size: 20px;
     background-color: #a52020;
     
 }
 
+.driverReviews {
+     background-color: #2c2727;
+}
+
+.reviewRepeat {
+     color: white;
+ font-size: 20px;
+    background-color: #a52020;
+}
+
+#reviewHr {
+    padding-top: -5px;
+    padding-bottom: -5px;
+}
