@@ -9,12 +9,17 @@ namespace GroupProjectStart.Services {
 
             // store claims
             this.$window.sessionStorage.setItem('claims', JSON.stringify(userInfo.claims));
+
+            this.$window.sessionStorage.setItem('id', userInfo.userId);
         }
 
         public getUserName() {
             return this.$window.sessionStorage.getItem('userName');
         }
 
+        public getUserId() {
+            return this.$window.sessionStorage.getItem('id');
+        }
 
         public getClaim(type) {
             var allClaims = JSON.parse(this.$window.sessionStorage.getItem('claims'));
@@ -138,6 +143,11 @@ namespace GroupProjectStart.Services {
         public upgradeUser(id) {
             debugger;
             this.$http.post('/api/account/upgradeUser/'+ id, id);
+        }
+
+        public downgradeUser(id) {
+            debugger;
+            this.$http.post('/api/account/downgradeUser/' + id, id);
         }
 
         constructor
