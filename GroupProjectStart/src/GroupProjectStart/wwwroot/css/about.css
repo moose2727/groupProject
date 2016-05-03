@@ -12,11 +12,13 @@ padding: 20px;
   
 .hello-team {
     padding-top: 50px;
+    background-color: burlywood;
+    
   }
   
 .copyright-bar {
     padding: 10px;
-    background-color: #000;
+    background-color: burlywood;
     color: #fff;
 }
 
