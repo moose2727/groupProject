@@ -21,15 +21,39 @@ namespace GroupProjectStart.API
             this._repo = repo;
         }
 
+        //private ApplicationDbContext _db;
+
+        //public CarsController(ApplicationDbContext db)
+        //{
+        //    this._db = db;
+        //}
+
         // GET: api/values
-       
-        [HttpGet("pagination/{page}")]
-        public IActionResult GetPage(int page)
+
+        //[HttpGet("pagination/{page}")]
+        //public IActionResult GetPage(int page)
+        //{
+        //    var data = _repo.GetCars(page);
+        //    return Ok(data);
+        //}
+
+        [HttpGet]
+        [Route("browse")]
+        public IEnumerable<Car> getpage(int num)
         {
-            var data = _repo.GetCars(page);
-            return Ok(data);
+            //var cars = _db.Cars.Skip(4 * (num - 1)).Take(4).ToList();
+            var cars = _repo.GetCarShortList(num);
+            return cars;
         }
 
+        [HttpGet]
+        [Route("totalcount")]
+        public IActionResult getpage()
+        {
+            //var cars = _db.Cars.Skip(4 * (num - 1)).Take(4).ToList();
+            var cars = _repo.GetAllCars();
+            return Ok(cars);
+        }
 
         // GET api/values/5
         [HttpGet("{id}")]

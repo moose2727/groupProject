@@ -13,29 +13,42 @@ namespace GroupProjectStart.Services
     {
         IGenericRepository _repo;
 
+        public object Cars
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public CarService(IGenericRepository repo)
         {
             this._repo = repo;
         }
 
-        public PagingVM GetCars(int page)
-        {
+        //public PagingVM GetCars(int page)
+        //{
 
-            const int ITEMS_PER_PAGE = 4;
+        //    const int ITEMS_PER_PAGE = 4;
 
-            var cars = _repo.Query<Car>()
-                .OrderBy(c => c.Id)
-                .Skip(page * ITEMS_PER_PAGE)
-                .Take(ITEMS_PER_PAGE)
-                .ToList();
-            var numCars = _repo.Query<Car>().Count();
-            var vm = new PagingVM
-            {
-                Cars = cars,
-                TotalCount = numCars
-            };
-            return vm;
-        }
+        //    var cars = _repo.Query<Car>()
+        //        .OrderBy(c => c.Id)
+        //        .Skip(page * ITEMS_PER_PAGE)
+        //        .Take(ITEMS_PER_PAGE)
+        //        .ToList();
+        //    var numCars = _repo.Query<Car>().Count();
+        //    var vm = new PagingVM
+        //    {
+        //        Cars = cars,
+        //        TotalCount = numCars
+        //    };
+        //    return vm;
+        //}
 
         public Car GetCar(int id)
         {
@@ -80,6 +93,25 @@ namespace GroupProjectStart.Services
 
             _repo.Update<Car>(originalCar);
 
+        }
+
+        public List<Car> GetCarShortList(int pagenum)
+        {
+            var cars = _repo.Query<Car>().Skip(4 * (pagenum - 1)).Take(4).ToList();
+            return cars;
+        }
+
+        public List<Car> GetAllCars()
+        {
+            var cars = _repo.Query<Car>().ToList();
+            return cars;
+        }
+
+        public int GetCarNumber()
+        {
+            var list = _repo.Query<Car>().ToList();
+            var num = list.Count;
+            return num;
         }
     }
 }

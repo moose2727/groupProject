@@ -3,6 +3,10 @@ namespace GroupProjectStart.Controllers {
     export class AccountController {
         public externalLogins;
 
+        public getUserId() {
+            return this.accountService.getUserId();
+        }
+
         public getUserName() {
             return this.accountService.getUserName();
         }
@@ -53,7 +57,7 @@ namespace GroupProjectStart.Controllers {
 
         }
 
-      
+      //TESTING
 
         constructor(private accountService: GroupProjectStart.Services.AccountService, private $location: ng.ILocationService, private $uibModal: ng.ui.bootstrap.IModalService, private $state: ng.ui.IStateService, private $stateParams: ng.ui.IStateParamsService) {
             this.getExternalLogins().then((results) => {

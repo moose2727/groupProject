@@ -18,5 +18,7 @@ namespace GroupProjectStart.ViewModels.Account
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        public string UserId { get; set; }
     }
 }

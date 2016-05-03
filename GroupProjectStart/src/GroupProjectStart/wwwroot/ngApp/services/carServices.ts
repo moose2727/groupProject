@@ -3,16 +3,33 @@
     export class CarService {
         private carResource;
 
-        constructor(private $resource: angular.resource.IResourceService) {
-            this.carResource = this.$resource("/api/cars/:id", null, {
-                pagination: {url : "/api/cars/pagination/:page", isArray: false}
-            });
+        constructor(private $resource: angular.resource.IResourceService)
+
+        {
+            this.carResource = $resource('/api/cars/:id');
+        }
+
+        getCarsShortList(num) {
+            console.log(num);
+            let randomResource = this.$resource('/api/cars/browse');
+            return randomResource.query({ num: num }).$promise;
+        }
+
+        getCarsAmount() {
+            let carResouce = this.$resource('/api/cars/totalcount');
+            return carResouce.query().$promise;
+        }
+
+        //{
+        //    this.carResource = this.$resource("/api/cars/:id", null, {
+        //        pagination: {url : "/api/cars/pagination/:page", isArray: false}
+        //    });
 
            
-        }
-        getCars(page) {
-            return this.carResource.pagination({ page: page }).$promise;
-        }
+        //}
+        //getCars(page) {
+        //    return this.carResource.pagination({ page: page }).$promise;
+        //}
 
         // Method that will get a single car
       
