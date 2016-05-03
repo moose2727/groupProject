@@ -1,4 +1,6 @@
-﻿#promo-1 {
+﻿
+
+#promo-1 {
     background-image: url("http://s31.postimg.org/tt3jep7nv/free_forest_road_wallpaper_2.jpg");
 }
 #HomeCircles {
@@ -15,14 +17,14 @@
 }
     
 .btn.btn-success.btn-block {
-    color: #ff6a00;
-    background-color:#000;
-    background-image: linear-gradient(to bottom, #000, #000);
-    border-color: #000 #000 #000;
+    /*color: #ff6a00;*/
+    /*background-color:#000;*/
+    /*background-image: linear-gradient(to bottom, #000, #000);
+    border-color: #000 #000 #000;*/
 }
 .btn.btn-success.btn-block:hover {
     color: #ff6a00;
-    background-color: #000;
+    /*background-color: #000;*/
     background-image: linear-gradient(to bottom, black ,black;
     background-size: cover;
     border-color: red red red;
@@ -107,4 +109,8 @@ ul#user_spot:hover ul#user_spot_links {
   border-radius:50%;
   overflow:hidden;
   
+}
+
+.progressbar {
+    width: 160px;
 }

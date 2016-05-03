@@ -1,14 +1,16 @@
-﻿<form id="contact_form" method="POST" enctype="multipart/form-data" ng-submit="controller.saveDriverReview()">
-    <div class="row">
-        <label for="name">Review Title</label><br />
-        <input id="name" class="input" name="name" type="text" value="" size="30" ng-model="controller.reviewToCreate.title" /><br />
-    </div>
+﻿<div class="rewivemodel">
+    <form id="contact_form" method="POST" enctype="multipart/form-data" ng-submit="controller.saveDriverReview()">
+        <div class="row">
+            <label for="name">Review Title</label>
+            <input id="name" class="input" name="name" type="text" value="" size="30" ng-model="controller.reviewToCreate.title" />
 
-    <div class="row">
-        <label for="message">Your Review:</label><br />
-        <textarea id="message" class="input" name="message" rows="7" cols="30" ng-model="controller.reviewToCreate.message"></textarea><br />
-    </div>
-    <button type="submit" class="btn btn-success">
-        Submit
-    </button>
-</form>			
+        </div>
+        <div class="row" style="margin-top: 2em">
+            <label for="message">Your Review:</label>
+            <textarea id="message" class="input" name="message" rows="7" cols="30" ng-model="controller.reviewToCreate.message" style="vertical-align:middle"></textarea><br />
+        </div>
+        <button type="submit" class="btn btn-success" style="margin-top: 2em; margin-left:8em">
+            Submit
+        </button>
+    </form>
+</div>

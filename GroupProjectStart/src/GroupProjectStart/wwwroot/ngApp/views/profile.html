@@ -1,4 +1,4 @@
-﻿<div class="container profileBody">
+﻿<div class="profileBody">
 
     <div class="row">
         <div class="col-md-5 col-md-offset-1">
@@ -17,7 +17,7 @@
                 <br />
                 <div>
                     <!-- only admins will be able to see this button -->
-                    <button class="btn btn-default" ng-show="account.getClaim('isAdmin') && controller.user.isLoaner == true" ng-click="controller.deactivateLoaner()"><span>Deactivate loaner status</span></button>
+                    <button class="btn btn-default" ng-show="account.getClaim('isAdmin') || account.getUserName() == controller.user.userName && controller.user.isLoaner == true" ng-click="controller.downgradeUser()"><span>Deactivate loaner status</span></button>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
         <div class="col-md-5">
 
             <div ng-if="account.getUserName() == controller.user.userName">
-                <div ng-show="!account.getClaim('isLoaner')|| controller.user.isLoaner == false">
+                <div ng-show="!account.getClaim('isLoaner') || controller.user.isLoaner == false">
                     <label>Have a car to rent?</label>
                     <button class="btn btn-default" ng-click="controller.upgradeUser(controller.user.id)">Become a renter</button>
                 </div>
@@ -50,7 +50,7 @@
 
     <br />
 
-    <div class="row" ng-if="account.getUserName() == controller.user.userName">
+    <div class="row" ng-if="account.getUserName() == controller.user.userName" ng-show="account.getClaim('isLoaner') && controller.user.isLoaner == true">
         <div class="col-md-10 col-md-offset-1">
             <div class="row addCarForm profileBox">
                 <h3 class="profileTitle">Add a car: </h3>
@@ -58,17 +58,17 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" placeholder="Year" name="year" class="form-control" autocomplete="off" ng-model="controller.carToAdd.year" required /> <span ng-show="carAddForm.year.$touched && carAddForm.year.$error.required" class="error"></span>
+                                <input type="text" placeholder="Year" name="year" class="form-control" autocomplete="off" ng-model="controller.carToAdd.year" required /> <span ng-show="carAddForm.year.$touched && carAddForm.year.$error.required" class="error"></span><p>{{controller.errorMessages.year[0]}}</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" name="make" placeholder="Make" class="form-control" autocomplete="off" ng-model="controller.carToAdd.make" required /><span ng-show="carAddForm.make.$touched && carAddForm.make.$error.required" class="error"></span>
+                                <input type="text" name="make" placeholder="Make" class="form-control" autocomplete="off" ng-model="controller.carToAdd.make" required /><span ng-show="carAddForm.make.$touched && carAddForm.make.$error.required" class="error"></span><p>{{controller.errorMessages.make[0]}}</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" name="model" placeholder="Model" class="form-control" autocomplete="off" ng-model="controller.carToAdd.model" required /><span ng-show="carAddForm.model.$touched && carAddForm.model.$error.required" class="error"></span>
+                                <input type="text" name="model" placeholder="Model" class="form-control" autocomplete="off" ng-model="controller.carToAdd.model" required /><span ng-show="carAddForm.model.$touched && carAddForm.model.$error.required" class="error"></span><p>{{controller.errorMessages.model[0]}}</p>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -168,8 +168,11 @@
                     <div class="row car-detail profileBox">
                         <div class="col-md-6">
                             <a href="/userCar/{{controller.user.id}}/{{car.id}}">
-                                <img ng-if="car.isActive == true" class="car-img img-responsive img-thumbnail" src="{{car.image}}" />
-                                <img ng-if="car.isActive == false" class="car-img inactive-car img-responsive img-thumbnail" src="{{car.image}}" />
+                                <div class="car-img">
+                                    <img ng-if="car.isActive == true" class="img-responsive img-thumbnail" src="{{car.image}}" />
+                                    <img ng-if="car.isActive == false" class="inactive-car img-responsive img-thumbnail" src="{{car.image}}" />
+                                </div>
+
                             </a>
                         </div>
                         <div class="col-md-6">

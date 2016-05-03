@@ -3,6 +3,10 @@ namespace GroupProjectStart.Controllers {
     export class AccountController {
         public externalLogins;
 
+        public getUserId() {
+            return this.accountService.getUserId();
+        }
+
         public getUserName() {
             return this.accountService.getUserName();
         }

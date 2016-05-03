@@ -73,6 +73,7 @@
         public file;
         public image;
         public userId;
+        public errorMessages;
 
         constructor(
             private carService: GroupProjectStart.Services.CarService,
@@ -83,9 +84,14 @@
         }
 
         saveCar(id, carToAdd) {
+            debugger;
             this.carToAdd.image = this.image
             this.carService.saveCar(this.userId, this.carToAdd).then(() => {
+                debugger;
                 this.$state.go('cars');
+            }).catch((err) => {
+                debugger;
+                console.log(err);
             });
         }
 
