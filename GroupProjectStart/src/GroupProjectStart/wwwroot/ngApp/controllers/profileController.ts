@@ -17,6 +17,7 @@
         public image;
         public file;
         public carToAdd;
+        public errorMessages;
 
         constructor(
             private profileService: GroupProjectStart.Services.ProfileService,
@@ -71,7 +72,9 @@
             this.carToAdd.image = this.image
             this.carService.saveCar(this.user.id, this.carToAdd).then(() => {
                 this.$state.reload();
-            });
+            }).catch((err) => {
+                this.errorMessages = err.data;
+            });              
         }
 
         public pickFile() {
