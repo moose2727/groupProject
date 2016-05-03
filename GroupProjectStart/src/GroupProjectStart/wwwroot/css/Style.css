@@ -3,7 +3,9 @@
 #promo-1 {
     background-image: url("http://s31.postimg.org/tt3jep7nv/free_forest_road_wallpaper_2.jpg");
 }
-
+#HomeCircles {
+    color: white;
+}
 
 .welcome {
     color: #E7B25E;
@@ -29,9 +31,9 @@
 }
 
   
-.content-2-2 {
-      background-color: #000;
-  color: #f00;
+#content-2-2 {
+      background-color: gray;
+  color: orange;
     }  
   
 .feature-text, h3 {
