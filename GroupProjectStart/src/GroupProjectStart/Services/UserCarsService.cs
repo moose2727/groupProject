@@ -21,7 +21,7 @@ namespace GroupProjectStart.Services
             //var r1 = _repo.Query<SentimentInfo>().ToList();
             //var users = _repo.Query<ApplicationUser>().
             
-            var cars = _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).ToList();
+            var cars = _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).ToList();
 
             return cars;
         }

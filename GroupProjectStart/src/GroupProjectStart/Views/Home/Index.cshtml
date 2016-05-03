@@ -9,17 +9,17 @@
     <link href="~/css/carpagestyles.css" rel="stylesheet" />
     <link href="~/css/indexstyle.css" rel="stylesheet" />
     <link href="~/css/profilepagestyles.css" rel="stylesheet" />
-    <link href="http://www.bebzcozzy.com/css/ResponsiveElement.css" rel="stylesheet">
     <base href="/" />
 </head>
-<body id="pageBody" ng-controller="AccountController as account" >
-    <div class="navbar navbar-fixed-top navbar-inverse" id="mainNav" style="height: 100px">
+<body id="pageBody" ng-controller="AccountController as account" ng-cloak>
+    <div class="navbar navbar-fixed-top navbar-inverse">
 
         <a class="navbar-brand" href="/">
-<img src="~/images/drawing.png" alt="Your Logo" style="height: 55px; width: auto; margin-top: -15px;" id="logoImage"  class="img-responsive"/></a>
-        <div class="">
-            <ul class="nav navbar-nav navButtons" id="navButtons" >
-                <li class="active" id="navBut1">
+            <img src="~/images/drawing.png" alt="Your Logo" style="height: 55px; width: auto; margin-top: -15px;" id="logoImage" class="img-responsive" />
+        </a>
+        <div>
+            <ul class="nav navbar-nav navButtons">
+                <li class="active">
                     <a id="navBut2" href="/">Home</a>
                 </li>
                 <li class="active">
@@ -29,17 +29,21 @@
                     <a href="/userCars">Cars</a>
                 </li>
                 <li class="active">
-                    <a href="/profiles">Profiles</a>
+                    <a ng-if="account.getClaim('isAdmin')" href="/profiles">Profiles</a>
                 </li>
-               
-              
+                <li class="active">
+                    <a ng-show="account.isLoggedIn()" href="/profile/{{account.getUserId()}}">My Profile</a>
+                </li>
             </ul>
-            <ul class="nav navbar-nav pull-right">
-                <li>
-                    <button class="btn btn-lg btn-success" ng-click="account.showSignInModal()">Log In</button>
+            <ul class="nav navbar-nav navButtons pull-right">
+                <li class="active" ng-hide="account.isLoggedIn()">
+                    <a ng-click="account.showSignInModal()">Log In</a>
                 </li>
-                <li>
-                    <button class="btn btn-lg btn-default" ng-click="account.showSignUpModal()">Sign Up</button>
+                <li class="active" ng-hide="account.isLoggedIn()">
+                    <a ng-click="account.showSignUpModal()">Sign Up</a>
+                </li>
+                <li class="active" ng-show="account.isLoggedIn()">
+                    <a ng-click="account.logout()">Logout</a>
                 </li>
             </ul>
         </div>
@@ -47,27 +51,27 @@
 
     </div>
 
-        <div id="pageContentContainer" class="container" >
-            <ui-view></ui-view>
-        </div>
+    <div id="pageContentContainer" class="container">
+        <ui-view></ui-view>
+    </div>
 
 
-        <!-- Library Files -->
-        <script src="~/lib/angular/angular.js"></script>
-        <script src="~/lib/angular-resource/angular-resource.js"></script>
-        <script src="~/lib/angular-animate/angular-animate.js"></script>
-        <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
-        <script src="~/lib/angular-filepicker/angular-filepicker.js"></script>
-        <script src="~/lib/angular-touch/angular-touch.js"></script>
-        <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-        <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- Library Files -->
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/lib/angular-resource/angular-resource.js"></script>
+    <script src="~/lib/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+    <script src="~/lib/angular-filepicker/angular-filepicker.js"></script>
+    <script src="~/lib/angular-touch/angular-touch.js"></script>
+    <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/lib/lodash/lodash.js"></script>
     <script src="~/lib/angular-simple-logger/dist/angular-simple-logger.js"></script>
     <script src="~/lib/angular-google-maps/dist/angular-google-maps.js"></script>
 
-        <!-- App Files-->
+    <!-- App Files-->
 
-        <script src="~/all.js"></script>
+    <script src="~/all.js"></script>
 
 </body>
 </html>

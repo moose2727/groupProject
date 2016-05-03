@@ -48,6 +48,7 @@ namespace GroupProjectStart.Controllers
             var vm = new UserViewModel
             {
                 UserName = user.UserName,
+                UserId = user.Id,
                 Claims = claims.ToDictionary(c => c.Type, c => c.Value),
                 DisplayName = user.DisplayName
             };
@@ -57,19 +58,21 @@ namespace GroupProjectStart.Controllers
         [HttpPost("upgradeUser/{id}")]
         public async Task<IActionResult> UpgradeUser(string id)
         {
-
+            
             var user = await _userManager.FindByIdAsync(id);
             await _userManager.AddClaimAsync(user, new Claim("IsLoaner", "true"));
             return Ok();
         }
 
-        //[HttpPost("downgradeUser/{id}")]
-        //public async Task<IActionResult> DowngradeUser(string id)
-        //{
-        //    var user = await _userManager.FindByIdAsync(id);
-        //    await _userManager.RemoveClaimAsync(user, isLoaner);
-        //    return Ok();
-        //}
+        [HttpPost("downgradeUser/{id}")]
+        public async Task<IActionResult> DowngradeUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            await _userManager.RemoveClaimAsync(user, new Claim("IsLoaner", "true"));
+            return Ok();
+        }
+
+        
 
         //
         // POST: /Account/Login

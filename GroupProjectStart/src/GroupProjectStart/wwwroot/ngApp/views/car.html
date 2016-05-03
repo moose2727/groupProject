@@ -58,7 +58,7 @@
     <div class="row">
         <div class="col-md-12">
             <h2>Recent Listings</h2>
-            <uib-pagination total-items="vm.totalItems" ng-model="vm.currentPage" max-size="vm.maxSize" class="pagination-sm" items-per-page="vm.itemsPerPage"></uib-pagination><br />
+            <uib-pagination total-items="controller.totalItems" ng-model="controller.currentPage" max-size="controller.maxSize" class="pagination-sm" boundary-link-numbers="true" ng-change="controller.getCars()" items-per-page="controller.itemsPerPage"> <!--items-per-page="vm.itemsPerPage"--></uib-pagination><br />
             <div class="col-md-5" ng-repeat="c in controller.cars">
                
                 <div class="">

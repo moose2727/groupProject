@@ -136,19 +136,36 @@
 
         public upgradeUser() {
             debugger;
-            if (!this.accountService.getClaim('isLoaner') && this.user.isLoaner == false){
-                this.user.isLoaner = true;
-                this.profileService.updateUser(this.user);
-                this.accountService.upgradeUser(this.user.id);
-            }
-            else if (this.accountService.getClaim('isLoaner') && this.user.isLoaner == false) {
-                this.user.isLoaner = true;
-                this.profileService.updateUser(this.user);
-            }
-            else if (!this.accountService.getClaim('isLoaner') && this.user.isLoaner == true){
-                this.accountService.upgradeUser(this.user.id);
-            }
             
+            this.user.isLoaner = true;
+            this.profileService.updateUser(this.user);
+            if (!this.accountService.getClaim('isLoaner')) {
+                this.accountService.upgradeUser(this.user.id);
+            }
+
+            //if (!this.accountService.getClaim('isLoaner') && this.user.isLoaner == false){
+            //    this.user.isLoaner = true;
+            //    this.accountService.upgradeUser(this.user.id);
+            //    this.profileService.updateUser(this.user).$promise.then(() => {
+            //        this.$state.reload();
+            //    });
+            //}
+            //else if (this.accountService.getClaim('isLoaner') && this.user.isLoaner == false) {
+            //    this.user.isLoaner = true;
+            //    this.profileService.updateUser(this.user).$promise.then(() => {
+            //        this.$state.reload();
+            //    });
+            //}
+            //else if (!this.accountService.getClaim('isLoaner') && this.user.isLoaner == true){
+            //    this.accountService.upgradeUser(this.user.id);
+            //}
+        }
+
+        public downgradeUser() {
+            debugger;
+            this.user.isLoaner = false;
+            this.profileService.updateUser(this.user);
+            this.accountService.downgradeUser(this.user.id);
         }
     }
 

@@ -89,7 +89,7 @@
                     id: () => id,
 
                 },
-                size: 'lg'
+                size: 'md'
             });
 
         }
@@ -104,7 +104,7 @@
                     id: () => id,
 
                 },
-                size: 'lg'
+                size: 'md'
             });
 
         }
