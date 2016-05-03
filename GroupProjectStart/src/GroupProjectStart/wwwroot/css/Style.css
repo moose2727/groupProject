@@ -1,7 +1,11 @@
 ﻿#promo-1 {
     background-image: url("http://s31.postimg.org/tt3jep7nv/free_forest_road_wallpaper_2.jpg");
 }
-
+.rewivemodel{
+    margin-left:100px;
+    margin-top:50px;
+    
+}
 
 .welcome {
     color: #E7B25E;
@@ -106,3 +110,4 @@ ul#user_spot:hover ul#user_spot_links {
   overflow:hidden;
   
 }
+
