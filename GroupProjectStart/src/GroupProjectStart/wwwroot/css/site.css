@@ -42,5 +42,7 @@ textarea {
     }
 }
 
-
+.navbar-right-btn{
+    cursor:pointer;
+}
 

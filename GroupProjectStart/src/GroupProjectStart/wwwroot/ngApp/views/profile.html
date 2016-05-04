@@ -16,8 +16,7 @@
                 </div>
                 <br />
                 <div>
-                    <!-- only admins will be able to see this button -->
-                    <button class="btn btn-default" ng-show="account.getClaim('isAdmin') || account.getUserName() == controller.user.userName && controller.user.isLoaner == true" ng-click="controller.downgradeUser()"><span>Deactivate loaner status</span></button>
+                    <button class="btn btn-default" ng-show="controller.user.isLoaner == true && account.getClaim('isAdmin')" ng-click="controller.removeLoanerModal(controller.user.id)"><span>Deactivate loaner status</span></button>
                 </div>
             </div>
         </div>
@@ -30,11 +29,10 @@
             <img class="profile-img img-responsive img-thumbnail" ng-if="controller.user.image != null" src="{{controller.user.image}}" />
         </div>
         <div class="col-md-5">
-
             <div ng-if="account.getUserName() == controller.user.userName">
                 <div ng-show="!account.getClaim('isLoaner') || controller.user.isLoaner == false">
                     <label>Have a car to rent?</label>
-                    <button class="btn btn-default" ng-click="controller.upgradeUser(controller.user.id)">Become a renter</button>
+                    <button class="btn btn-default" ng-click="controller.becomeLoanerModal(controller.user.id)">Become a renter</button>
                 </div>
             </div>
             <div class="rating">

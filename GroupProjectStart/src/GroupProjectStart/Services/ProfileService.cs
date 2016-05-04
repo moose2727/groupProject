@@ -18,42 +18,66 @@ namespace GroupProjectStart.Services
             this._repo = repo;
         }
 
-        public List<ApplicationUser> getUsers()
+        public List<UserVM> getUsers()
         {
             var users = _repo.Query<ApplicationUser>().Include(u => u.Reviews).ToList();
-            return users;   
+            var usersVM = new List<UserVM>();
+            foreach (var user in users)
+            {
+                usersVM.Add(
+                    new UserVM
+                    {
+                        Id = user.Id,
+                        AverageRating = user.AverageRating,
+                        CarsToLoan = user.CarsToLoan,
+                        DisplayName = user.DisplayName,
+                        DriverRatings = user.DriverRatings,
+                        Email = user.Email,
+                        FirstName = user.FirstName,
+                        HasDamageInsurance = user.HasDamageInsurance,
+                        HasLicense = user.HasLicense,
+                        HasTheftInsurance = user.HasTheftInsurance,
+                        Image = user.Image,
+                        IsAdmin = user.IsAdmin,
+                        IsLoaner = user.IsLoaner,
+                        LastName = user.LastName,
+                        Reviews = user.Reviews,
+                        UserName = user.UserName
+                    });
+                
+            }
+
+            return usersVM;
         }
 
-        //public List<LoanerViewModel> getLoaners()
-        //{
-        //    var loaners = _repo.Query<Loaner>().Include(l => l.CarsToLoan).Select(
-        //        l => new LoanerViewModel
-        //        {
-        //            //DisplayName = l.DisplayName,
-        //            //FirstName = l.FirstName,
-        //            //HasDamageInsurance = l.HasDamageInsurance,
-        //            //LastName = l.LastName,
-        //            //HasLicense = l.HasLicense,
-        //            ////HasTheftInsurance = l.HasTheftInsurance,
-        //            //Email = l.Email,
-        //            CarsToLoan = l.CarsToLoan,
-        //            //IsLoaner = l.IsLoaner,
-        //            //Id = l.Id
-        //        }).ToList();
-            
-        //    return loaners;
-        //}
 
-        public ApplicationUser getUser(string id)
+
+        public UserVM getUser(string id)
         {
-            return _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).Where(u => u.Id == id).FirstOrDefault();
+            var user = _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).Where(u => u.Id == id).FirstOrDefault();
+            var vm = new UserVM
+            {
+                Id = user.Id,
+                AverageRating = user.AverageRating,
+                CarsToLoan = user.CarsToLoan,
+                DisplayName = user.DisplayName,
+                DriverRatings = user.DriverRatings,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                HasDamageInsurance = user.HasDamageInsurance,
+                HasLicense = user.HasLicense,
+                HasTheftInsurance = user.HasTheftInsurance,
+                Image = user.Image,
+                IsAdmin = user.IsAdmin,
+                IsLoaner = user.IsLoaner,
+                LastName = user.LastName,
+                Reviews = user.Reviews,
+                UserName = user.UserName
+            };
+            return vm;
         }
 
-        //public Loaner getLoaner(string id) {
-        //    return _repo.Query<Loaner>().Where(l => l.Id == id).Include(l => l.CarsToLoan).FirstOrDefault();
-        //}
-
-        public void UpdateUser(ApplicationUser user)
+        public void UpdateUser(UserVM user)
         {
             var originalUser = _repo.Query<ApplicationUser>().Where(u => u.Id == user.Id).FirstOrDefault();
             originalUser.FirstName = user.FirstName;
@@ -66,10 +90,31 @@ namespace GroupProjectStart.Services
             originalUser.Image = user.Image;
             originalUser.IsLoaner = user.IsLoaner;
             originalUser.IsAdmin = user.IsAdmin;
-            
+            //originalUser.ConcurrencyStamp = user.ConcurrencyStamp;
+            _repo.SaveChanges();
 
-            _repo.Update<ApplicationUser>(originalUser);
+            //_repo.Update<ApplicationUser>(originalUser);
 
         }
     }
 }
+
+//public List<LoanerViewModel> getLoaners()
+//{
+//    var loaners = _repo.Query<Loaner>().Include(l => l.CarsToLoan).Select(
+//        l => new LoanerViewModel
+//        {
+//            //DisplayName = l.DisplayName,
+//            //FirstName = l.FirstName,
+//            //HasDamageInsurance = l.HasDamageInsurance,
+//            //LastName = l.LastName,
+//            //HasLicense = l.HasLicense,
+//            ////HasTheftInsurance = l.HasTheftInsurance,
+//            //Email = l.Email,
+//            CarsToLoan = l.CarsToLoan,
+//            //IsLoaner = l.IsLoaner,
+//            //Id = l.Id
+//        }).ToList();
+
+//    return loaners;
+//}

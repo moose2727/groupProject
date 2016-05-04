@@ -19,10 +19,10 @@
             return this.profileResource.get({ id: id });
         }
 
-        public getLoaners() {
-            
-            return this.profileResource.getLoaners();
-        }
+        //public getLoaners() {
+      
+        //    return this.profileResource.getLoaners();
+        //}
 
         public updateUser(userToUpdate) {
             debugger;

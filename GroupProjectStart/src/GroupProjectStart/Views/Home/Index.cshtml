@@ -31,19 +31,20 @@
                 <li class="active">
                     <a ng-if="account.getClaim('isAdmin')" href="/profiles">Profiles</a>
                 </li>
+                
+            </ul>
+            <ul class="nav navbar-nav navButtons pull-right">
                 <li class="active">
                     <a ng-show="account.isLoggedIn()" href="/profile/{{account.getUserId()}}">My Profile</a>
                 </li>
-            </ul>
-            <ul class="nav navbar-nav navButtons pull-right">
                 <li class="active" ng-hide="account.isLoggedIn()">
-                    <a ng-click="account.showSignInModal()">Log In</a>
+                    <a class="navbar-right-btn" ng-click="account.showSignInModal()">Log In</a>
                 </li>
                 <li class="active" ng-hide="account.isLoggedIn()">
-                    <a ng-click="account.showSignUpModal()">Sign Up</a>
+                    <a class="navbar-right-btn" account.showSignUpModal()>Sign Up</a>
                 </li>
                 <li class="active" ng-show="account.isLoggedIn()">
-                    <a ng-click="account.logout()">Logout</a>
+                    <a class="navbar-right-btn" ng-click="account.logout()">Logout</a>
                 </li>
             </ul>
         </div>
