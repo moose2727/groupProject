@@ -50,8 +50,12 @@ namespace GroupProjectStart.Services
             var total = ((driverRating.PaymentExperience) + (driverRating.ProfessionalismOfDriver) + (driverRating.PromptReplies) + (driverRating.SchedulingExperience) + (driverRating.Trustworthiness) + (driverRating.ConditionOfReturnedCar) + (driverRating.DeliveryExperience)) / 7;
             driverRating.OverallRating = total;
 
-            user.AverageRating = (user.AverageRating * user.DriverRatings.Count + total) / user.DriverRatings.Count;
-
+            if (user.DriverRatings.Count == 0) {
+                user.AverageRating = ((user.AverageRating * user.DriverRatings.Count) + total) / user.DriverRatings.Count;
+            } else
+            {
+                user.AverageRating = ((user.AverageRating * (user.DriverRatings.Count - 1)) + total) / user.DriverRatings.Count;
+            }
             return user.AverageRating;
         }
 

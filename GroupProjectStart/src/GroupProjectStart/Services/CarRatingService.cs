@@ -52,9 +52,14 @@ namespace GroupProjectStart.Services
             var total = ((carRating.IndoorAirQuality) + (carRating.InsideCleanliness) + (carRating.OutsideCleanliness) + (carRating.ProfessionalismOfOwner) + (carRating.SafetyFeatures) + (carRating.TireQuality) + (carRating.ElectricalFunctions) + (carRating.EngineOperation) + (carRating.DeliveryExperience)) / 9;
             carRating.OverallRating = total;
 
+            if (car.CarRatings.Count == 0)
+            {
+                car.AverageRating = (car.AverageRating * car.CarRatings.Count + total) / car.CarRatings.Count;
+            } else
+            {
+                car.AverageRating = ((car.AverageRating * (car.CarRatings.Count - 1) + total)) / car.CarRatings.Count;
 
-            car.AverageRating = (car.AverageRating * car.CarRatings.Count + total) / car.CarRatings.Count;
-
+            }
             return car.AverageRating;
         }
 
