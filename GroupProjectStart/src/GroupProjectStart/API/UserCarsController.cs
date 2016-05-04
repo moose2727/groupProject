@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using GroupProjectStart.Services;
+using GroupProjectStart.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -25,6 +26,23 @@ namespace GroupProjectStart.API
         {
             var data = _repo.GetUserCars();
             return Ok(data);
+        }
+
+        [HttpGet]
+        [Route("browse")]
+        public IEnumerable<ApplicationUser> getPage(int page)
+        {
+            var cars = _repo.GetPageCars(page);
+            return cars;
+        }
+
+        [HttpGet]
+        [Route("totalcount")]
+        public IActionResult getAll()
+        {
+            var cars = _repo.getAllUsers();
+            return Ok(cars);
+            
         }
 
         // GET api/values/5

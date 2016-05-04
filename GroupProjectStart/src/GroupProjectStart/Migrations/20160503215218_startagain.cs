@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 
 namespace GroupProjectStart.Migrations
 {
-    public partial class restart : Migration
+    public partial class startagain : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -72,9 +72,9 @@ namespace GroupProjectStart.Migrations
                     HwyMpg = table.Column<int>(nullable: false),
                     Image = table.Column<string>(nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
-                    Make = table.Column<string>(nullable: true),
+                    Make = table.Column<string>(nullable: false),
                     Miles = table.Column<int>(nullable: false),
-                    Model = table.Column<string>(nullable: true),
+                    Model = table.Column<string>(nullable: false),
                     Price = table.Column<decimal>(nullable: false),
                     Seats = table.Column<int>(nullable: false),
                     Transmission = table.Column<string>(nullable: true),
@@ -99,9 +99,9 @@ namespace GroupProjectStart.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ApplicationUserId = table.Column<string>(nullable: true),
                     IsViewable = table.Column<bool>(nullable: false),
-                    Message = table.Column<string>(nullable: true),
+                    Message = table.Column<string>(nullable: false),
                     TimeCreated = table.Column<DateTime>(nullable: false),
-                    Title = table.Column<string>(nullable: true)
+                    Title = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -229,9 +229,9 @@ namespace GroupProjectStart.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CarId = table.Column<int>(nullable: true),
                     IsViewable = table.Column<bool>(nullable: false),
-                    Message = table.Column<string>(nullable: true),
+                    Message = table.Column<string>(nullable: false),
                     TimeCreated = table.Column<DateTime>(nullable: false),
-                    Title = table.Column<string>(nullable: true)
+                    Title = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

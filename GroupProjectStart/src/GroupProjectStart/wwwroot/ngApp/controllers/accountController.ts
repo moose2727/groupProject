@@ -78,7 +78,6 @@ namespace GroupProjectStart.Controllers {
         public validationMessages;
 
         public login() {
-            debugger;
             this.accountService.login(this.loginUser).then(() => {
                 this.$location.path('/');
                 this.ok();
@@ -104,7 +103,6 @@ namespace GroupProjectStart.Controllers {
         public image;
 
         public register() {
-            debugger;
             this.registerUser.image = this.image;
             this.accountService.register(this.registerUser).then(() => {
                 //this.registerUser.image = this.image;

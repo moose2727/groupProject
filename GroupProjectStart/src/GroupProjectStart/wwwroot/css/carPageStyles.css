@@ -27,6 +27,11 @@
    
 }
 
+#carPageBody {
+    background-color: #a52020;
+    margin-left: 10px;
+}
+
 #carRepeat {
     background-color:  #2c2727;
     color: white;
@@ -35,16 +40,35 @@
 }
 
 #carProps {
-    background-color: #432727;
+  margin-top: 5px;
   margin-bottom: 15px;
 }
 
 #rateCarBut {
-    margin-bottom: 10px;
+    margin-top: 55px;
+    margin-bottom: 5px;
+   
 }
 
 #rateDriverBut {
     margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#thumbnailCars {
+      
+    color: black;
+    font-size: 14px;
+    font-weight:700;
+}
+
+#sideCarP {
+    color: black;
+    font-size: 20px;
+}
+
+#carDeets {
+    margin-top: -12px;
 }
 
 /*something*/

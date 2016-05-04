@@ -56,17 +56,17 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" placeholder="Year" name="year" class="form-control" autocomplete="off" ng-model="controller.carToAdd.year" required /> <span ng-show="carAddForm.year.$touched && carAddForm.year.$error.required" class="error"></span>
+                                <input type="text" placeholder="Year" name="year" class="form-control" autocomplete="off" ng-model="controller.carToAdd.year" required /> <span ng-show="carAddForm.year.$touched && carAddForm.year.$error.required" class="error"></span><p>{{controller.errorMessages.year[0]}}</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" name="make" placeholder="Make" class="form-control" autocomplete="off" ng-model="controller.carToAdd.make" required /><span ng-show="carAddForm.make.$touched && carAddForm.make.$error.required" class="error"></span>
+                                <input type="text" name="make" placeholder="Make" class="form-control" autocomplete="off" ng-model="controller.carToAdd.make" required /><span ng-show="carAddForm.make.$touched && carAddForm.make.$error.required" class="error"></span><p>{{controller.errorMessages.make[0]}}</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" name="model" placeholder="Model" class="form-control" autocomplete="off" ng-model="controller.carToAdd.model" required /><span ng-show="carAddForm.model.$touched && carAddForm.model.$error.required" class="error"></span>
+                                <input type="text" name="model" placeholder="Model" class="form-control" autocomplete="off" ng-model="controller.carToAdd.model" required /><span ng-show="carAddForm.model.$touched && carAddForm.model.$error.required" class="error"></span><p>{{controller.errorMessages.model[0]}}</p>
                             </div>
                         </div>
                         <div class="col-md-3">
