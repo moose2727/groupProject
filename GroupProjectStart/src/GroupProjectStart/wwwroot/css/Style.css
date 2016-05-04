@@ -2,20 +2,30 @@
 
 #promo-1 {
     background-image: url("http://s31.postimg.org/tt3jep7nv/free_forest_road_wallpaper_2.jpg");
-}
-#HomeCircles {
-    color: white;
+
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+
 .welcome {
-    color: #E7B25E;
+    color: white;
     font-size: 32px;
 }
   
 .welcome-paragraph {
-   color: #ff6a00;   
+   color: white; 
+   font-size: 20px;  
 }
     
+#homeRegisterBut {
+    margin-bottom: 5px;
+}
+
+#uploadBut {
+    margin-left: 10px;
+}
+
 .btn.btn-success.btn-block {
     /*color: #ff6a00;*/
     /*background-color:#000;*/
@@ -30,13 +40,15 @@
     border-color: red red red;
 }
 
+
+    #testing {
+        background-color: #a52020;
+        color: white;
+    }
+ 
   
-#content-2-2 {
-      background-color: gray;
-  color: orange;
-    }  
-  
-.feature-text, h3 {
+.feature-text {
+    background-color: black;
     font-size: 22px;
     padding-top: 10px;
   }

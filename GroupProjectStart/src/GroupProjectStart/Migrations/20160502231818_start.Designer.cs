@@ -8,8 +8,8 @@ using GroupProjectStart.Models;
 namespace GroupProjectStart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160502210032_restart")]
-    partial class restart
+    [Migration("20160503215218_startagain")]
+    partial class startagain
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -110,11 +110,13 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<bool>("IsActive");
 
-                    b.Property<string>("Make");
+                    b.Property<string>("Make")
+                        .IsRequired();
 
                     b.Property<int>("Miles");
 
-                    b.Property<string>("Model");
+                    b.Property<string>("Model")
+                        .IsRequired();
 
                     b.Property<decimal>("Price");
 
@@ -138,11 +140,13 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<bool>("IsViewable");
 
-                    b.Property<string>("Message");
+                    b.Property<string>("Message")
+                        .IsRequired();
 
                     b.Property<DateTime>("TimeCreated");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Title")
+                        .IsRequired();
 
                     b.HasKey("Id");
                 });
@@ -156,11 +160,13 @@ namespace GroupProjectStart.Migrations
 
                     b.Property<bool>("IsViewable");
 
-                    b.Property<string>("Message");
+                    b.Property<string>("Message")
+                        .IsRequired();
 
                     b.Property<DateTime>("TimeCreated");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Title")
+                        .IsRequired();
 
                     b.HasKey("Id");
                 });

@@ -749,6 +749,89 @@ namespace GroupProjectStart.Models
 
                 //}
                 }
+                        },
+
+                              new Car {
+
+                            Year = 2013,
+                            Make = "Ford",
+                            Model = "Mustang",
+                            Price = 189.00m,
+                            Door = 2,
+                            Image = "http://blog.caranddriver.com/wp-content/uploads/2015/07/2015-Ford-Mustang-GT-Apollo-Edition-102-876x535.jpg",
+                            Miles = 34000,
+                            Seats = 4,
+                            HwyMpg = 21,
+                            CtyMpg = 15,
+
+                            Condition = "Excellent",
+                            Transmission = "Manual",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                            Reviews = new List<CarReview>
+                            {
+                                 new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                     new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                                         new CarReview
+                                 {
+                                      Title = "Decent",
+                                       Message = "How nice!But I think it still can't beat spending time with rabbots who talk to the koalas!They are very hilarious!",
+                                        TimeCreated = DateTime.Now
+                                 },
+                            },
+                            CarRatings = new List<RatingCar>
+                            {
+                //                    new RatingCar
+                //    {
+                //        TireQuality = 5,
+                //        OutsideCleanliness = 5,
+                //        InsideCleanliness = 5,
+                //        EngineOperation = 5,
+                //        IndoorAirQuality = 5,
+                //        SafetyFeatures = 5,
+                //        ElectricalFunctions = 5,
+                //        DeliveryExperience = 1,
+                //        ProfessionalismOfOwner = 2,
+
+                //    },
+
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 5,
+                //    IndoorAirQuality = 5,
+                //    SafetyFeatures = 4,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 2,
+                //    ProfessionalismOfOwner = 2,
+
+                //},
+
+                //new RatingCar
+                //{
+                //    TireQuality = 5,
+                //    OutsideCleanliness = 5,
+                //    InsideCleanliness = 5,
+                //    EngineOperation = 5,
+                //    IndoorAirQuality = 3,
+                //    SafetyFeatures = 2,
+                //    ElectricalFunctions = 4,
+                //    DeliveryExperience = 2,
+                //    ProfessionalismOfOwner = 1,
+
+                //}
+                }
                         }
 
 
@@ -1110,11 +1193,28 @@ namespace GroupProjectStart.Models
 
                 //}
                 }
-                        }
+                        },
+
+                           new Car {
+
+                            Year = 2015,
+                            Make = "Toyota",
+                            Model = "Prius",
+                            Price = 115.00m,
+                            Door = 4,
+                            Image = "http://blogs-images.forbes.com/tonybradley/files/2014/04/670px-toyota_prius_iii_20090710_front.jpg",
+                            Miles = 23000,
+                            Seats = 5,
+                            HwyMpg = 57,
+                            CtyMpg = 93,
+
+                            Condition = "Great",
+                            Transmission = "Automatic",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
 
 
                     },
-
+                    }
                 };
                 await userManager.CreateAsync(Morgan, "Secret123!");
 
@@ -1450,7 +1550,24 @@ namespace GroupProjectStart.Models
 
                 //}
                 }
-                        }
+                        },
+                              new Car {
+
+                            Year = 2007,
+                            Make = "Kia",
+                            Model = "Optima",
+                            Price = 75.50m,
+                            Door = 4,
+                            Image = "http://carphotos.cardomain.com/ride_images/3/3447/2761/33616380014_original.jpg",
+                            Miles = 67500,
+                            Seats = 5,
+                            HwyMpg = 30,
+                            CtyMpg = 26,
+
+                            Condition = "Good",
+                            Transmission = "Automatic",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                              }
 
 
                     },
@@ -1827,7 +1944,25 @@ namespace GroupProjectStart.Models
 
                 //}
                 }
-                        }
+                        },
+
+                             new Car {
+
+                            Year = 2011,
+                            Make = "Mercedes",
+                            Model = "SLR Mclaren",
+                            Price = 349.50m,
+                            Door = 2,
+                            Image = "http://www.motoringexposure.com/wp-content/gallery/wheelsandmore-mercedes-benz-slr-mclaren-707-edition/mercedes_felgen_slr_wheels_722.jpg",
+                            Miles = 17000,
+                            Seats = 2,
+                            HwyMpg = 21,
+                            CtyMpg = 18,
+
+                            Condition = "Excellent",
+                            Transmission = "Manual",
+                            Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
+                             }
 
 
                     },

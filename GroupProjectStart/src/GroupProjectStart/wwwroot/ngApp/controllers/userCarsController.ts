@@ -3,14 +3,34 @@
     export class UserCarsController {
         public users;
         public ratingPercent;
+        public totalCars;
+        public currentPage = 1;
+        public maxSize = 3;
+        public itemsPerPage = 2;
 
 
 
         constructor(
             private userCarsService: GroupProjectStart.Services.UserCarsService, private $uibModal: ng.ui.bootstrap.IModalService) {
-            this.users = this.userCarsService.getUserCars();
+            debugger;
+            this.totalCars = 0;
+            this.getCars();
+
+
+//this.users = this.userCarsService.getUserCars();
         }
 
+
+        getCars() {
+            this.userCarsService.getTotalCars().then((data) => {
+                debugger;
+                this.totalCars = data.length;
+            });
+
+            this.userCarsService.getCarPage(this.currentPage).then((data) => {
+                this.users = data;
+            });
+        }
 
         public carRateModal(id) {
 

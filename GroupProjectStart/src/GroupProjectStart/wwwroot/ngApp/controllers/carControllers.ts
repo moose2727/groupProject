@@ -11,8 +11,6 @@
             private $uibModal: ng.ui.bootstrap.IModalService,
             public $stateParams: ng.ui.IStateParamsService) {
 
-            console.log(this.currentPage);
-
             //this.carService.getCarsShortList(this.currentPage).$promise.then((data) => {
 
             //    //this.totalItems = this.cars.length;
@@ -34,11 +32,11 @@
         getCars() {
             this.carService.getCarsAmount().then((data) => {
                 this.totalItems = data.length;
-                console.log(data.length);
+              
             });
             this.carService.getCarsShortList(this.currentPage).then((data) => {
                 this.cars = data;
-                console.log(data);
+               
             });
         }
 
@@ -84,14 +82,12 @@
         }
 
         saveCar(id, carToAdd) {
-            debugger;
             this.carToAdd.image = this.image
             this.carService.saveCar(this.userId, this.carToAdd).then(() => {
-                debugger;
+              
                 this.$state.go('cars');
             }).catch((err) => {
-                debugger;
-                console.log(err);
+               
             });
         }
 
