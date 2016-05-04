@@ -21,7 +21,7 @@ namespace GroupProjectStart.API
         }
         // GET: api/values
         [HttpGet]
-        public IEnumerable<ApplicationUser> Get()
+        public IEnumerable<UserVM> Get()
         {
             return _repo.getUsers();
         }
@@ -49,7 +49,7 @@ namespace GroupProjectStart.API
 
         // POST api/values
         [HttpPost]
-        public IActionResult Post([FromBody]ApplicationUser user)
+        public IActionResult Post([FromBody]UserVM user)
         {
             _repo.UpdateUser(user);
             return Ok();

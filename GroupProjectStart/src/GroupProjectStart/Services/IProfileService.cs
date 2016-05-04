@@ -6,9 +6,9 @@ namespace GroupProjectStart.Services
 {
     public interface IProfileService
     {
-        ApplicationUser getUser(string id);
-        List<ApplicationUser> getUsers();
-        void UpdateUser(ApplicationUser user);
+        UserVM getUser(string id);
+        List<UserVM> getUsers();
+        void UpdateUser(UserVM user);
         //List<LoanerViewModel> getLoaners();
         //List<Loaner> GetSpecifics();
     }
