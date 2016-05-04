@@ -7,7 +7,7 @@ namespace GroupProjectStart.Controllers {
         public image;
 
         public register() {
-            debugger;
+        
             this.registerUser.image = this.image;
             this.accountService.register(this.registerUser).then(() => {
                 //this.registerUser.image = this.image;
@@ -17,8 +17,23 @@ namespace GroupProjectStart.Controllers {
                 this.validationMessages = results;
             });
         }
+
+        public pickFile() {
+            this.filepickerService.pick({
+                mimetype: 'image/*',
+                cropRatio: 4/4,
+            }, this.fileUploaded.bind(this));
+        }
+
+        private fileUploaded(file) {
+            this.file = file;
+            this.$scope.$apply();
+            this.image = file.url;
+        }
+
         constructor(private accountService: GroupProjectStart.Services.AccountService,
-            private $location: ng.ILocationService) {
+            private $location: ng.ILocationService, private filepickerService: any,
+            private $scope: ng.IScope) {
 
         }
 

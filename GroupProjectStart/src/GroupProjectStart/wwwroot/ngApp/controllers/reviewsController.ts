@@ -4,6 +4,7 @@
     export class DriverReviewController {
         public reviews;
         public userId;
+        public errorMessages;
 
         constructor(
             private driverReviewService: GroupProjectStart.Services.DriverReviewService,
@@ -32,6 +33,7 @@
     export class CreateCarReviewController {
         public reviewToCreate;
         public carId;
+        public errorMessages;
 
         constructor(
             private carReviewService: GroupProjectStart.Services.CarReviewService,
@@ -54,16 +56,19 @@
         saveCarReview() {
             
             this.carReviewService.saveCarReview(this.id, this.reviewToCreate).then(() => {
-                
+
                 this.ok();
                 this.$state.reload();
-            });
+            }).catch((err) => {
+                this.errorMessages = err.data;
+            });               
         }
     }
 
     export class CreateDriverReviewController {
         public reviewToCreate;
         public userId;
+        public errorMessages;
 
         constructor(
             private driverReviewService: GroupProjectStart.Services.DriverReviewService,
@@ -84,6 +89,8 @@
             this.driverReviewService.saveDriverReview(this.id, this.reviewToCreate).then(() => {
                 this.ok();
                 this.$state.reload();
+            }).catch((err) => {
+                this.errorMessages = err.data;
             });
         }
     }
