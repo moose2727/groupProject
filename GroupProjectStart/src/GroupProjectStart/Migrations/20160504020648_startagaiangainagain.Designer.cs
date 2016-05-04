@@ -8,8 +8,8 @@ using GroupProjectStart.Models;
 namespace GroupProjectStart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160503215218_startagain")]
-    partial class startagain
+    [Migration("20160504020648_startagaiangainagain")]
+    partial class startagaiangainagain
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

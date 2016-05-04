@@ -12,7 +12,6 @@
         }
 
         saveDriverRating(id, ratingToSave) {
-            debugger;
             return this.driverRatingResource.save({ id: id }, ratingToSave).$promise;
         }
 

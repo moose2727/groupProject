@@ -21,8 +21,8 @@
                             <div class="col-md-12">
                                 MPG: HWY = <span ng-show="{{controller.car.hwyMpg}}">{{controller.car.hwyMpg}} CITY = {{controller.car.ctyMpg}}</span>
 
-                                Description: {{controller.car.description}}
-                                Date Added: {{controller.car.dateAdded}}
+                                Description: {{controller.car.description}}<br />
+                                Date Added: {{controller.car.dateAdded | date}}
                             </div>
                         
                             <div class="col-lg-6">
@@ -82,4 +82,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

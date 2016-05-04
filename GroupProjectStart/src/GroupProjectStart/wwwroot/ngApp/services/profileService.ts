@@ -25,7 +25,6 @@
         //}
 
         public updateUser(userToUpdate) {
-            debugger;
             return this.profileResource.save(userToUpdate);
         }
     }

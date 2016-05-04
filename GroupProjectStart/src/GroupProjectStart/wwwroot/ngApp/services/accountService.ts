@@ -28,7 +28,6 @@ namespace GroupProjectStart.Services {
 
 
         public login(loginUser) {
-            debugger;
             return this.$q((resolve, reject) => {
                 this.$http.post('/api/account/login', loginUser).then((result) => {
                         this.storeUserInfo(result.data);
@@ -141,13 +140,11 @@ namespace GroupProjectStart.Services {
         }
 
         public upgradeUser(id) {
-            debugger;
-            return this.$http.post('/api/account/upgradeUser/'+ id, id);
+            this.$http.post('/api/account/upgradeUser/'+ id, id);
         }
 
         public downgradeUser(id) {
-            debugger;
-            return this.$http.post('/api/account/downgradeUser/' + id, id);
+            this.$http.post('/api/account/downgradeUser/' + id, id);
         }
 
         constructor

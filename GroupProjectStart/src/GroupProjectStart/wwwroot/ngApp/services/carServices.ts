@@ -10,7 +10,6 @@
         }
 
         getCarsShortList(num) {
-            console.log(num);
             let randomResource = this.$resource('/api/cars/browse');
             return randomResource.query({ num: num }).$promise;
         }
@@ -39,7 +38,6 @@
         }
 
         saveCar(id, carToSave) {
-            debugger;
             return this.carResource.save({ id: id }, carToSave).$promise;
 
         }
