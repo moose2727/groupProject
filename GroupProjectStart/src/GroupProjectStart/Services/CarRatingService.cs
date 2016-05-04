@@ -58,7 +58,10 @@ namespace GroupProjectStart.Services
             return car.AverageRating;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
         public void DeleteCarRating(int id)
         {
             var carRating = _repo.Query<RatingCar>().Where(c => c.Id == id).FirstOrDefault();
