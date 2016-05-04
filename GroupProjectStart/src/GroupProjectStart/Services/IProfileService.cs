@@ -9,7 +9,5 @@ namespace GroupProjectStart.Services
         UserVM getUser(string id);
         List<UserVM> getUsers();
         void UpdateUser(UserVM user);
-        //List<LoanerViewModel> getLoaners();
-        //List<Loaner> GetSpecifics();
     }
 }

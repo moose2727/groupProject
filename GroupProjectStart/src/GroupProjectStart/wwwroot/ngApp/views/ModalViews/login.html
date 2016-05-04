@@ -14,9 +14,6 @@
         <div class="modal-body col-md-offset-2">
             <fieldset>
                 <legend>Login Now</legend>
-                <ul>
-                    <!-- ngRepeat: error in controller.validationMessages -->
-                </ul>
 
                 <form ng-submit="controller.login()" class="form-horizontal ng-pristine ng-valid">
                     <div style="margin-bottom: 25px" class="input-group">
@@ -25,7 +22,7 @@
                     </div>
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input ng-model="controller.loginUser.password" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Password">
+                        <input type="password" ng-model="controller.loginUser.password" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Password">
                     </div>
                     <div>
                         <input type="submit" value="Login" class="btn btn-primary col-md-4">

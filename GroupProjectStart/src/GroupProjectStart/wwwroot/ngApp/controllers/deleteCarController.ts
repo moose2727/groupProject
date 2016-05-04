@@ -13,8 +13,6 @@
             this.carToDelete = this.carService.getCar(this.id);
         }
 
-        
-
         deleteCar() {
             this.carService.deleteCar(this.id).then(() => {
                 this.ok();

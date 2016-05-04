@@ -11,22 +11,8 @@
             private $uibModal: ng.ui.bootstrap.IModalService,
             public $stateParams: ng.ui.IStateParamsService) {
 
-            //this.carService.getCarsShortList(this.currentPage).$promise.then((data) => {
-
-            //    //this.totalItems = this.cars.length;
-            //    this.cars = data;
-            //    console.log(this.totalItems);
-            //});
-
             this.totalItems = 0;
             this.getCars();
-
-
-
-            //this.carService.getCars(this.currentPage).then((data) => {
-            //    this.cars = data.cars;
-            //    this.totalItems = data.totalCount;
-            //});
         }
 
         getCars() {
@@ -106,10 +92,6 @@
             this.file = file;
             this.$scope.$apply();
             this.image = file.url;
-        }
-
-        
+        }       
     }
-
-
 }

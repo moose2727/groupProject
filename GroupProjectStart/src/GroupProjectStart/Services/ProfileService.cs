@@ -90,31 +90,9 @@ namespace GroupProjectStart.Services
             originalUser.Image = user.Image;
             originalUser.IsLoaner = user.IsLoaner;
             originalUser.IsAdmin = user.IsAdmin;
-            //originalUser.ConcurrencyStamp = user.ConcurrencyStamp;
             _repo.SaveChanges();
 
-            //_repo.Update<ApplicationUser>(originalUser);
 
         }
     }
 }
-
-//public List<LoanerViewModel> getLoaners()
-//{
-//    var loaners = _repo.Query<Loaner>().Include(l => l.CarsToLoan).Select(
-//        l => new LoanerViewModel
-//        {
-//            //DisplayName = l.DisplayName,
-//            //FirstName = l.FirstName,
-//            //HasDamageInsurance = l.HasDamageInsurance,
-//            //LastName = l.LastName,
-//            //HasLicense = l.HasLicense,
-//            ////HasTheftInsurance = l.HasTheftInsurance,
-//            //Email = l.Email,
-//            CarsToLoan = l.CarsToLoan,
-//            //IsLoaner = l.IsLoaner,
-//            //Id = l.Id
-//        }).ToList();
-
-//    return loaners;
-//}

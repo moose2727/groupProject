@@ -11,12 +11,12 @@
     color: white;
     font-size: 32px;
 }
-  
+
 .welcome-paragraph {
-   color: white; 
-   font-size: 20px;  
+    color: white;
+    font-size: 20px;
 }
-    
+
 #homeRegisterBut {
     margin-bottom: 5px;
 }
@@ -25,42 +25,35 @@
     margin-left: 14px;
 }
 
-.btn.btn-success.btn-block {
-    /*color: #ff6a00;*/
-    /*background-color:#000;*/
-    /*background-image: linear-gradient(to bottom, #000, #000);
-    border-color: #000 #000 #000;*/
-}
 .btn.btn-success.btn-block:hover {
     color: #ff6a00;
-    /*background-color: #000;*/
-    background-image: linear-gradient(to bottom, black ,black;
+    background-image: linear-gradient(to bottom, black,black;
     background-size: cover;
     border-color: red red red;
 }
 
 
-    #testing {
-        background-color: #a52020;
-        color: white;
-    }
- 
-  
+#testing {
+    background-color: #a52020;
+    color: white;
+}
+
+
 .feature-text {
     background-color: black;
     font-size: 22px;
     padding-top: 10px;
-  }
+}
 
-  .feature-text, p {
+.feature-text, p {
     font-size: 14px;
     padding-bottom: 15px;
-  }
+}
 
 .icon {
     padding-top: 25px;
-  }
-  
+}
+
 .copyright-bar {
     padding: 10px;
     background-color: #000;
@@ -85,44 +78,43 @@
     background-color: red;
 }
 
- /* css for logout view*/
+/* css for logout view*/
 
 ul#user_spot li {
-    float:left;
-    position:relative;
+    float: left;
+    position: relative;
     padding: 5px;
     background-color: #ccc;
 }
+
 ul#user_spot_links {
-    position:absolute;
-    top:28px;
-    display:none;
-}
-ul#user_spot_links li {
-    float:none;
-    clear:both;
-    padding: 5px;
-    background-color: #aaa;
-    border: 1px solid #999;
-    white-space: nowrap;
-}
-ul#user_spot:hover ul#user_spot_links {
-    display:block;
+    position: absolute;
+    top: 28px;
+    display: none;
 }
 
-#iconimage
-{
-  height:80%;
-   width: 80%;
+    ul#user_spot_links li {
+        float: none;
+        clear: both;
+        padding: 5px;
+        background-color: #aaa;
+        border: 1px solid #999;
+        white-space: nowrap;
+    }
+
+ul#user_spot:hover ul#user_spot_links {
+    display: block;
+}
+
+#iconimage {
+    height: 80%;
+    width: 80%;
     margin: 0 auto;
-  border-style: solid;
- 
-  border-radius:50%;
-  overflow:hidden;
-  
+    border-style: solid;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .progressbar {
     width: 160px;
 }
-

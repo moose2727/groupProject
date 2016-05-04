@@ -31,15 +31,10 @@ namespace GroupProjectStart.Services
 
         public decimal AddCarRating(int Id, RatingCar carRating)
         {
-            //_repo.Add(carRating);
-            //_repo.SaveChanges();
             var car = _repo.Query<Car>().Where(c => c.Id == Id).Include(c => c.CarRatings).FirstOrDefault();
             car.CarRatings.Add(carRating);
             _repo.SaveChanges();
-            //var total = ((carRating.IndoorAirQuality) + (carRating.InsideCleanliness) + (carRating.OutsideCleanliness) + (carRating.ProfessionalismOfOwner) + (carRating.SafetyFeatures) + (carRating.TireQuality) + (carRating.ElectricalFunctions) + (carRating.EngineOperation) + (carRating.DeliveryExperience)) / 9;
-            //carRating.OverallRating = total;
 
-            //car.AverageRating = (car.AverageRating * car.CarRatings.Count + total) / car.CarRatings.Count;
             this.CalculateCarRating(car, carRating);
             _repo.SaveChanges();
 

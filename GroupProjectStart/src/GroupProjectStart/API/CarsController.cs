@@ -21,27 +21,13 @@ namespace GroupProjectStart.API
             this._repo = repo;
         }
 
-        //private ApplicationDbContext _db;
-
-        //public CarsController(ApplicationDbContext db)
-        //{
-        //    this._db = db;
-        //}
 
         // GET: api/values
-
-        //[HttpGet("pagination/{page}")]
-        //public IActionResult GetPage(int page)
-        //{
-        //    var data = _repo.GetCars(page);
-        //    return Ok(data);
-        //}
 
         [HttpGet]
         [Route("browse")]
         public IEnumerable<Car> getpage(int num)
         {
-            //var cars = _db.Cars.Skip(4 * (num - 1)).Take(4).ToList();
             var cars = _repo.GetCarShortList(num);
             return cars;
         }
@@ -50,7 +36,6 @@ namespace GroupProjectStart.API
         [Route("totalcount")]
         public IActionResult getpage()
         {
-            //var cars = _db.Cars.Skip(4 * (num - 1)).Take(4).ToList();
             var cars = _repo.GetAllCars();
             return Ok(cars);
         }
@@ -67,19 +52,19 @@ namespace GroupProjectStart.API
         public IActionResult Post(string id, [FromBody]Car car)
         {
             if (ModelState.IsValid)
-            { 
-            if (car.Id == 0)
             {
-                _repo.AddCar(id, car);
+                if (car.Id == 0)
+                {
+                    _repo.AddCar(id, car);
+                }
+                else
+                {
+                    _repo.UpdateCar(car);
+                }
+                return Ok(car);
             }
-            else
-            {
-                _repo.UpdateCar(car);
-            }
-            return Ok(car);
+            return HttpBadRequest(ModelState);
         }
-        return HttpBadRequest(ModelState);
-    }
 
         // PUT api/values/5
         [HttpPut("{id}")]

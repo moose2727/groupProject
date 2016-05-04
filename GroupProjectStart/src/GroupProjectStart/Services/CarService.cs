@@ -31,24 +31,6 @@ namespace GroupProjectStart.Services
             this._repo = repo;
         }
 
-        //public PagingVM GetCars(int page)
-        //{
-
-        //    const int ITEMS_PER_PAGE = 4;
-
-        //    var cars = _repo.Query<Car>()
-        //        .OrderBy(c => c.Id)
-        //        .Skip(page * ITEMS_PER_PAGE)
-        //        .Take(ITEMS_PER_PAGE)
-        //        .ToList();
-        //    var numCars = _repo.Query<Car>().Count();
-        //    var vm = new PagingVM
-        //    {
-        //        Cars = cars,
-        //        TotalCount = numCars
-        //    };
-        //    return vm;
-        //}
 
         public Car GetCar(int id)
         {
@@ -61,8 +43,7 @@ namespace GroupProjectStart.Services
             var user = _repo.Query<ApplicationUser>().Where(u => u.Id == id).Include(u => u.CarsToLoan).FirstOrDefault();
             car.DateAdded = DateTime.Now;
             user.CarsToLoan.Add(car);
-            _repo.SaveChanges();
-            //_repo.Add(car);    
+            _repo.SaveChanges();  
         }
 
         public void DeleteCar(int id)

@@ -12,7 +12,7 @@
         <div class="col-md-5">
             <div class="edit-user">
                 <div>
-                    <button class="btn btn-primary glyphicon glyphicon-edit" ng-click="controller.editProfileModal(controller.user.id)"><span class="icon">Edit profile details</span></button>
+                    <button class="btn btn-primary glyphicon glyphicon-edit" ng-if="account.getUserName() == controller.user.userName" ng-click="controller.editProfileModal(controller.user.id)"><span class="icon">Edit profile details</span></button>
                 </div>
                 <br />
                 <div>
@@ -174,10 +174,11 @@
                             </a>
                         </div>
                         <div class="col-md-6">
-                            <div class="editCarButtons">
+                            <div class="editCarButtons" ng-if="account.getUserName() == controller.user.userName">
                                 <div class="profile-car-btn">
                                     <button ng-if="car.isActive == true" class="btn btn-danger glyphicon glyphicon-remove-sign" ng-click="controller.deactivateCar(car.id)"><span class="icon">Deactivate</span></button>
                                     <button ng-if="car.isActive == false" class="btn btn-success glyphicon glyphicon-ok-sign" ng-click="controller.activateCar(car.id)"><span class="icon">Activate</span></button>
+
                                 </div>
 
                                 <br />
@@ -216,4 +217,3 @@
         </div>
     </div>
 </div>
-<!-- comment -->

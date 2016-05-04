@@ -15,11 +15,9 @@ namespace GroupProjectStart.Services
     public class DriverReviewService : IDriverReviewService
     {
         IGenericRepository _repo;
-        //ApplicationDbContext _db;
         public DriverReviewService(IGenericRepository repo)
         {
             this._repo = repo;
-            //_db = db;
         }
 
         public List<DriverReview> GetReviews()
@@ -39,27 +37,8 @@ namespace GroupProjectStart.Services
         {
             var _db = sp.GetService<ApplicationDbContext>();
 
-            //Task<Task> t = null;
-            //try
-            //{
-            // t = Task.WhenAny(Get(review.Title, review.Message), Task.Delay(5000));
             var result = await Get(review.Message);
 
-            //}
-            //catch
-            //{
-
-            //}
-
-            //if (t.Status != TaskStatus.Canceled || t.Status == TaskStatus.RanToCompletion)
-            //{
-            //    var result = await t;
-
-            //    // Convert result into SentinmentInfo object before you call save method.
-
-            //    // call your save method, look at Associated entitites lesson in coder camps.
-
-            //}
             review.SentimentEntities = new List<SentimentInfo>();
             foreach (var r in result)
             {
@@ -74,8 +53,7 @@ namespace GroupProjectStart.Services
             }
 
 
-            // _repo.Add(review);
-            //var user = _repo.Query<ApplicationUser>().Where(u => u.Id == Id).Include(u => u.Reviews).FirstOrDefault();
+           
             review.TimeCreated = DateTime.Now;
 
 
@@ -83,8 +61,6 @@ namespace GroupProjectStart.Services
             user.Reviews.Add(review);
             _db.SaveChanges();
            
-
-            //_repo.SaveChanges();
         }
 
         public void UpdateReview(DriverReview review)

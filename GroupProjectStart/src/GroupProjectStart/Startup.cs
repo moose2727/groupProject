@@ -149,7 +149,6 @@ namespace GroupProjectStart
                 );
             });
 
-
             // initialize sample data
             SampleData.Initialize(app.ApplicationServices).Wait();
 

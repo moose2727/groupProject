@@ -4,57 +4,8 @@
     <div class="row searchCars">
         <form class="col-sm-12">
             <div class="col-md-2 col-md-offset-1">
-                <!--<div class="form-group">
-                    <label for="carMake">
-                        <strong>Car Brand:</strong>
-                    </label>
-
-                        <select class="form-control dropdown" id="carMake"  ng-repeat="user in controller.users">
-
-                            <option>sdklfja</option>
-
-                        </select>
-
-                </div>-->
             </div>
-            <!--<div class="col-md-2">
-                <div class="form-group">
-                    <label for="carModel">
-                        <strong>Car Model:</strong>
-                    </label>
-                    <select class="form-control" id="carModel" ng-repeat="user in controller.users">
-                        <option ng-repeat="option in user.carsToLoan" value="{{option.id}}">{{option.model}}</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="form-group">
-                    <label for="carYear">
-                        <strong>Car Year:</strong>
-                    </label>
-                    <select class="form-control" id="carYear" ng-repeat="user in controller.users">
-                        <option ng-repeat="option in user.carsToLoan" value="{{option.id}}">{{option.year}}</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="form-group">
-                    <label for="carPrice">
-                        <strong>Car Price a Day:</strong>
-                    </label>
-                    <select class="form-control" id="carPrice" ng-repeat="user in controller.users">
-                        <option ng-repeat="option in user.carsToLoan" value="{{option.id}}">{{option.price}}</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-2">
 
-                <label for="submit">
-                    <strong class="advanced" ng- data-ng-mousemove="">Search</strong>
-                </label>
-                <button type="submit" class="src btn btn-sm red">Search<i class="glyphicon glyphicon-search"></i></button>
-
-            </div>-->
         </form>
     </div>
 
@@ -93,14 +44,7 @@
                                             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: {{user.averageRating / 5 * 100}}%">
 
                                             </div>
-
                                         </div>
-
-                                        <!--<img ng-if="{{user.image == null}}" src="http://www.realestatetaxgroup.com/wp-content/uploads/2013/03/empty-profile.png" style="height: 50px; width: 50px" />-->
-
-
-
-
 
                                         <div class="btn btn-block btn-danger" ng-click="controller.driverRateModal(user.id)" id="rateDriverBut">RATE OWNER</div>
 

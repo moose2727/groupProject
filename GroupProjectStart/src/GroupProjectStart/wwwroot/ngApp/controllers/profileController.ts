@@ -6,7 +6,6 @@
         constructor(
             private profileService: GroupProjectStart.Services.ProfileService) {
             this.users = this.profileService.getUsers();
-            //this.loaners = this.profileService.getLoaners();
 
         }
     }

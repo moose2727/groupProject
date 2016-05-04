@@ -50,9 +50,7 @@ namespace GroupProjectStart.Services
                 };
                 review.SentimentEntities.Add(sentiment);
             }
-            // _repo.Add(review);
-            // var car = _repo.Query<Car>().Where(c => c.Id == Id).Include(c => c.Reviews).FirstOrDefault();
-            //review.TimeCreated = DateTime.Now;
+
             review.TimeCreated = DateTime.Now;
 
             var car = _db.Cars.Where(c => c.Id == Id).Include(u => u.Reviews).FirstOrDefault();

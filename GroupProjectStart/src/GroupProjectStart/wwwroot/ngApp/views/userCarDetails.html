@@ -24,9 +24,9 @@
                                 Description: {{controller.car.description}}<br />
                                 Date Added: {{controller.car.dateAdded | date}}
                             </div>
-                        
+
                             <div class="col-lg-6">
-                               
+
                                 <div class="btn btn-block btn-danger" ng-click="controller.carReviewModal(controller.car.id)" id="rateDriverBut">REVIEW CAR</div>
                                 <div class="btn btn-block btn-danger" ng-click="controller.carRateModal(controller.car.id)" id="rateDriverBut">RATE CAR</div>
                                 <div class="btn btn-block btn-danger" ng-click="controller.carReviewDetails(controller.car.id)" id="rateDriverBut">VIEW CAR REVIEWS</div><br />
@@ -57,7 +57,7 @@
                                     <li class="list-group-item">User Name: {{controller.user.displayName}}</li>
                                     <li class="list-group-item">Name: {{controller.user.firstName}} {{controller.user.lastName}}</li>
                                     <li class="list-group-item">Rating:  {{controller.user.averageRating}}</li>
-                                   
+
                                 </ul>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: {{controller.user.averageRating / 5 * 100}}%">
@@ -66,30 +66,25 @@
 
                                 </div>
 
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="col-lg-6">
-                                    <!--<ul class="list-group" id="userDetails">
-                                        <li class="list-group-item">User Name:{{controller.user.displayName}}</li>
-                                        <li class="list-group-item">Name:{{controller.user.firstName}} {{controller.user.lastName}}</li>
-                                        <li class="list-group-item">Rating: {{controller.user.averageRating}}</li>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-6">
+                                        <br />
+                                        <div class="btn btn-block btn-danger" ng-click="controller.driverRateModal(controller.user.id)" id="rateDriverBut">RATE OWNER</div>
+                                        <div class="btn btn-block btn-danger" ng-click="controller.driverReviewModal(controller.user.id)" id="rateDriverBut">REVIEW OWNER</div>
+                                        <div class="btn btn-block btn-danger" ng-click="controller.ownerReviewDetails(controller.user.id)" id="rateDriverBut">VIEW OWNER REVIEWS</div>
 
-                                    </ul>--><br />
-                                    <div class="btn btn-block btn-danger" ng-click="controller.driverRateModal(controller.user.id)" id="rateDriverBut">RATE OWNER</div>
-                                    <div class="btn btn-block btn-danger" ng-click="controller.driverReviewModal(controller.user.id)" id="rateDriverBut">REVIEW OWNER</div>
-                                    <div class="btn btn-block btn-danger" ng-click="controller.ownerReviewDetails(controller.user.id)" id="rateDriverBut">VIEW OWNER REVIEWS</div>
+                                    </div>
 
                                 </div>
-                     
                             </div>
-                        </div>
-                     
 
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
