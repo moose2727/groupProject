@@ -11,7 +11,6 @@ namespace GroupProjectStart.Services
         void AddCar(string id, Car car);
         void DeleteCar(int id);
         Car GetCar(int id);
-        //PagingVM GetCars(int page);
         List<Car> GetCarShortList(int pagenum);
         List<Car> GetAllCars();
         int GetCarNumber(); 

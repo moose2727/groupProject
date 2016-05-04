@@ -14,9 +14,6 @@
             private userCarsService: GroupProjectStart.Services.UserCarsService, private $uibModal: ng.ui.bootstrap.IModalService) {
             this.totalCars = 0;
             this.getCars();
-
-
-//this.users = this.userCarsService.getUserCars();
         }
 
 
@@ -69,7 +66,6 @@
         public carReviews;
         public userReviews;
         public errorMessages;
-        //test
 
         constructor(
             private userCarsService: GroupProjectStart.Services.UserCarsService,

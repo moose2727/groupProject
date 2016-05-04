@@ -4,7 +4,6 @@ namespace GroupProjectStart {
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider,
-        //uiGmapGoogleMapApiProvider: any,
         filepickerProvider: any
     ) => {
         //google maps key would go here but we shouldn't need one for this project

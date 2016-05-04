@@ -5,10 +5,11 @@
 
 //namespace GroupProjectStart.Models
 //{
-//    public class Loaner : ApplicationUser
+//    public class RenterLoaner : Renter, ILoaner
 //    {
+//        //public bool HasDamageInsurance { get; set; }
+//        //public bool HasLicense { get; set; }
 //        public ICollection<Car> CarsToLoan { get; set; }
 //        public bool HasTheftInsurance { get; set; }
-
 //    }
 //}

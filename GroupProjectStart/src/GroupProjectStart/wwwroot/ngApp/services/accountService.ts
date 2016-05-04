@@ -82,8 +82,6 @@ namespace GroupProjectStart.Services {
             });
         }
 
-
-
         getExternalLogins(): ng.IPromise<{}> {
             return this.$q((resolve, reject) => {
                 let url = `api/Account/getExternalLogins?returnUrl=%2FexternalLogin&generateState=true`;
@@ -139,10 +137,12 @@ namespace GroupProjectStart.Services {
             return messages;
         }
 
+        //grants a user the isLoaner claim
         public upgradeUser(id) {
             return this.$http.post('/api/account/upgradeUser/'+ id, id);
         }
 
+        //revokes the isLoaner claim from a user
         public downgradeUser(id) {
             return this.$http.post('/api/account/downgradeUser/' + id, id);
         }

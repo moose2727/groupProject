@@ -105,19 +105,11 @@ namespace GroupProjectStart.Controllers {
         public register() {
             this.registerUser.image = this.image;
             this.accountService.register(this.registerUser).then(() => {
-                //this.registerUser.image = this.image;
                 this.$location.path('/');
-                //this.ok();
             }).catch((results) => {
                 this.validationMessages = results;
             });
         }
-
-        //public ok() {
-
-        //    this.$uibModalInstance.close();
-
-        //}
 
         public pickFile() {
             this.filepickerService.pick({
@@ -135,8 +127,6 @@ namespace GroupProjectStart.Controllers {
         constructor(
             private accountService: GroupProjectStart.Services.AccountService,
             private $location: ng.ILocationService,
-            //private $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance,
-            //private x,
             private $state: ng.ui.IStateService,
             private $stateParams: ng.ui.IStateParamsService,
             private filepickerService: any,

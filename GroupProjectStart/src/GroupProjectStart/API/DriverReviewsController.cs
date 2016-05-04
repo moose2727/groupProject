@@ -33,41 +33,6 @@ namespace GroupProjectStart.API
            
             }
 
-        // GET: api/values
-        //[HttpGet("{sampletext}")]
-        //public async Task<List<Entity>> Get(string sampletext)
-        //{
-        //    using (var client = new HttpClient())
-        //    {
-        //        var values = new Dictionary<string, string>
-        //            {
-        //               { "apikey", "20516fb6c289bac88bd5703e6ded4401ba95f983" },
-        //               { "text", sampletext },
-        //               { "outputMode", "json"},
-        //               { "sentiment", "1"},
-        //               { "disambiguate", "0"},
-        //               { "linkedData", "0"},
-        //               { "coreference", "0"},
-        //               { "quotations", "0"}
-        //            };
-
-        //        var content = new FormUrlEncodedContent(values);
-        //        content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
-        //        var response = await client.PostAsync("http://gateway-a.watsonplatform.net/calls/text/TextGetRankedNamedEntities", content);
-        //        var responseString = await response.Content.ReadAsStringAsync();
-
-        //        if (!string.IsNullOrEmpty(responseString))
-        //        {
-        //            SentimentData sentimentData = JsonConvert.DeserializeObject<SentimentData>(responseString);
-        //            return sentimentData.entities;
-        //        }
-
-
-        //        return new List<Entity>();
-        //    }
-
-        //}
-
         // GET api/values/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
