@@ -129,14 +129,11 @@
         }
 
         public deactivateLoaner() {
-            debugger;
             this.user.isLoaner = false;
             this.profileService.updateUser(this.user);
         }
 
         public upgradeUser() {
-            debugger;
-            
             this.user.isLoaner = true;
             this.profileService.updateUser(this.user);
             if (!this.accountService.getClaim('isLoaner')) {
@@ -162,7 +159,6 @@
         }
 
         public downgradeUser() {
-            debugger;
             this.user.isLoaner = false;
             this.profileService.updateUser(this.user);
             this.accountService.downgradeUser(this.user.id);

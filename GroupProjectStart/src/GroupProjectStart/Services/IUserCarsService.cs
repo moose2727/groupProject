@@ -7,5 +7,7 @@ namespace GroupProjectStart.Services
     {
         ApplicationUser getUserCar(string id);
         List<ApplicationUser> GetUserCars();
+        List<ApplicationUser> GetPageCars(int pagenum);
+            List<ApplicationUser> getAllUsers();
     }
 }

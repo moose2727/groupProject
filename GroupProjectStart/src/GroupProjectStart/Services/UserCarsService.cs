@@ -26,6 +26,18 @@ namespace GroupProjectStart.Services
             return cars;
         }
 
+        public List<ApplicationUser> GetPageCars(int pagenum)
+        {
+            var cars = _repo.Query<ApplicationUser>().Skip(2 * (pagenum - 1)).Take(2).Include(u => u.CarsToLoan).ToList();
+            return cars;
+        }
+
+        public List<ApplicationUser> getAllUsers()
+        {
+            var users = _repo.Query<ApplicationUser>().ToList();
+            return users;
+        }
+
         //public List<LoanerViewModel> getLoaners()
         //{
         //    var loaners = _repo.Query<Loaner>().Include(l => l.CarsToLoan).Select(
