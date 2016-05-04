@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 
 namespace GroupProjectStart.Migrations
 {
-    public partial class start : Migration
+    public partial class startAgain : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
