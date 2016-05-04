@@ -33,9 +33,7 @@
 
         public becomeLoanerModal(id) {
             if (!this.accountService.getClaim('isLoaner')) {
-                this.accountService.upgradeUser(this.user.id).then(() => {
-                    this.$state.reload();
-                });
+                this.accountService.upgradeUser(this.user.id);
             }
             this.$uibModal.open({
                 templateUrl: 'ngApp/views/modalViews/becomeLoaner.html',
@@ -49,9 +47,7 @@
         }
 
         public removeLoanerModal(id) {
-            this.accountService.downgradeUser(this.user.id).then(() => {
-                this.$state.reload();
-            });
+            this.accountService.downgradeUser(this.user.id);
             this.$uibModal.open({
                 templateUrl: 'ngApp/views/modalViews/removeLoaner.html',
                 controller: GroupProjectStart.Controllers.RemoveLoanerController,
@@ -179,29 +175,29 @@
         //    }
         //}
 
-        public upgradeUser() {
-            debugger;
-            //this.user.isLoaner = true;
-            //this.profileService.updateUser(this.user);
-            if (!this.accountService.getClaim('isLoaner')) {
-                this.accountService.upgradeUser(this.user.id);
-            }
-            //this.isLoanerTrue();
+        //public upgradeUser() {
+        //    debugger;
+        //    //this.user.isLoaner = true;
+        //    //this.profileService.updateUser(this.user);
+        //    if (!this.accountService.getClaim('isLoaner')) {
+        //        this.accountService.upgradeUser(this.user.id);
+        //    }
+        //    //this.isLoanerTrue();
 
-        }
+        //}
 
-        public downgradeUser() {
-            debugger;
-            //this.user.isLoaner = false;
-            //this.profileService.updateUser(this.user);
-            if (this.accountService.getClaim('isLoaner')) {
-                this.accountService.downgradeUser(this.user.id).then(() => {
-                    this.$state.reload();
-                });
-            }
-            // this.isLoanerFalse();
+        //public downgradeUser() {
+        //    debugger;
+        //    //this.user.isLoaner = false;
+        //    //this.profileService.updateUser(this.user);
+        //    if (this.accountService.getClaim('isLoaner')) {
+        //        this.accountService.downgradeUser(this.user.id).then(() => {
+        //            this.$state.reload();
+        //        });
+        //    }
+        //    // this.isLoanerFalse();
 
-        }
+        //}
     }
 
     export class EditProfileController {

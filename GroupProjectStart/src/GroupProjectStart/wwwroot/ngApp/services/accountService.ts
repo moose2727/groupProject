@@ -140,11 +140,11 @@ namespace GroupProjectStart.Services {
         }
 
         public upgradeUser(id) {
-            this.$http.post('/api/account/upgradeUser/'+ id, id);
+            return this.$http.post('/api/account/upgradeUser/'+ id, id);
         }
 
         public downgradeUser(id) {
-            this.$http.post('/api/account/downgradeUser/' + id, id);
+            return this.$http.post('/api/account/downgradeUser/' + id, id);
         }
 
         constructor
