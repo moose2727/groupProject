@@ -22,7 +22,7 @@
 }
 
 #uploadBut {
-    margin-left: 10px;
+    margin-left: 14px;
 }
 
 .btn.btn-success.btn-block {
@@ -125,3 +125,4 @@ ul#user_spot:hover ul#user_spot_links {
 .progressbar {
     width: 160px;
 }
+

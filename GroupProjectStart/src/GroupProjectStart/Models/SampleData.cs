@@ -505,7 +505,7 @@ namespace GroupProjectStart.Models
                     HasDamageInsurance = false,
                     HasLicense = false,
                     IsLoaner = true,
-                    Image = "https://plus.google.com/101603345753650624311/about?pid=5852505067492066914&oid=101603345753650624311",
+                    Image = "http://freeofpain.org/wp-content/uploads/icon-person1.png",
                     CarsToLoan = new List<Car>
                     {
 

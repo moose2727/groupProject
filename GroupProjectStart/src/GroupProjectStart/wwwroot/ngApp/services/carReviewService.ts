@@ -18,7 +18,6 @@
         }
 
         saveCarReview(id, reviewToSave) {
-            debugger;
             return this.reviewResource.save({ id: id }, reviewToSave).$promise;
         }
 

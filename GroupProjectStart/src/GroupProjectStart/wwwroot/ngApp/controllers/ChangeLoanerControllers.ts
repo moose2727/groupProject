@@ -17,7 +17,6 @@
         }
 
         public upgradeUser() {
-            debugger;
             this.user.isLoaner = true;
             this.profileService.updateUser(this.user);
             this.close();
@@ -46,7 +45,6 @@
         }
 
         public downgradeUser() {
-            debugger;
             this.user.isLoaner = false;
             this.profileService.updateUser(this.user);
             this.close();

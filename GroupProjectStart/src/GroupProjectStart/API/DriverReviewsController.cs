@@ -79,16 +79,19 @@ namespace GroupProjectStart.API
         [HttpPost("{id}")]
         public IActionResult Post(string id, [FromBody]DriverReview driverReview)
         {
-            
-            if(driverReview.Id == 0)
+            if (ModelState.IsValid)
             {
-                _repo.AddDriverReview(id, driverReview, HttpContext.ApplicationServices);
+                if (driverReview.Id == 0)
+                {
+                    _repo.AddDriverReview(id, driverReview, HttpContext.ApplicationServices);
+                }
+                else
+                {
+                    _repo.UpdateReview(driverReview);
+                }
+                return Ok(driverReview);
             }
-            else
-            {
-                _repo.UpdateReview(driverReview);
-            }
-            return Ok(driverReview);
+            return HttpBadRequest(ModelState);
         }
 
         // PUT api/values/5
