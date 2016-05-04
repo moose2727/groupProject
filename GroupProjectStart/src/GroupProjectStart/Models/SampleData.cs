@@ -70,48 +70,48 @@ namespace GroupProjectStart.Models
                 caleb = new ApplicationUser
                 {
                     DriverRatings = new List<RatingDriver>
-                        {
-                            //new RatingDriver
-                            //{
-                            //     ConditionOfReturnedCar = 4,
-                            //     PaymentExperience = 4,
-                            //     ProfessionalismOfDriver = 3,
-                            //     PromptReplies = 2,
-                            //     SchedulingExperience = 3,
-                            //     Trustworthiness = 5,
-                            //     DeliveryExperience = 2
-                            //},
-                            //  new RatingDriver
-                            //{
-                            //     ConditionOfReturnedCar = 4,
-                            //     PaymentExperience = 4,
-                            //     ProfessionalismOfDriver = 3,
-                            //     PromptReplies = 2,
-                            //     SchedulingExperience = 3,
-                            //     Trustworthiness = 5,
-                            //     DeliveryExperience = 2
-                            //},
-                            //    new RatingDriver
-                            //{
-                            //     ConditionOfReturnedCar = 4,
-                            //     PaymentExperience = 3,
-                            //     ProfessionalismOfDriver = 4,
-                            //     PromptReplies = 3,
-                            //     SchedulingExperience = 4,
-                            //     Trustworthiness = 4,
-                            //     DeliveryExperience = 4
-                            //},
-                            //      new RatingDriver
-                            //{
-                            //     ConditionOfReturnedCar = 5,
-                            //     PaymentExperience = 4,
-                            //     ProfessionalismOfDriver = 3,
-                            //     PromptReplies = 2,
-                            //     SchedulingExperience = 4,
-                            //     Trustworthiness = 5,
-                            //     DeliveryExperience = 3
-                            //},
-                        },
+                    {
+                        //new RatingDriver
+                        //{
+                        //     ConditionOfReturnedCar = 4,
+                        //     PaymentExperience = 4,
+                        //     ProfessionalismOfDriver = 3,
+                        //     PromptReplies = 2,
+                        //     SchedulingExperience = 3,
+                        //     Trustworthiness = 5,
+                        //     DeliveryExperience = 2
+                        //},
+                        //  new RatingDriver
+                        //{
+                        //     ConditionOfReturnedCar = 4,
+                        //     PaymentExperience = 4,
+                        //     ProfessionalismOfDriver = 3,
+                        //     PromptReplies = 2,
+                        //     SchedulingExperience = 3,
+                        //     Trustworthiness = 5,
+                        //     DeliveryExperience = 2
+                        //},
+                        //    new RatingDriver
+                        //{
+                        //     ConditionOfReturnedCar = 4,
+                        //     PaymentExperience = 3,
+                        //     ProfessionalismOfDriver = 4,
+                        //     PromptReplies = 3,
+                        //     SchedulingExperience = 4,
+                        //     Trustworthiness = 4,
+                        //     DeliveryExperience = 4
+                        //},
+                        //      new RatingDriver
+                        //{
+                        //     ConditionOfReturnedCar = 5,
+                        //     PaymentExperience = 4,
+                        //     ProfessionalismOfDriver = 3,
+                        //     PromptReplies = 2,
+                        //     SchedulingExperience = 4,
+                        //     Trustworthiness = 5,
+                        //     DeliveryExperience = 3
+                        //},
+                    },
                     Reviews = new List<DriverReview>
                         {
                            new DriverReview
@@ -130,7 +130,7 @@ namespace GroupProjectStart.Models
                            {
                                 Title = "Easter is weird",
                                 Message = "If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?",
-                                TimeCreated = DateTime.Now
+                                TimeCreated = new DateTime(2016, 5, 3),
                            },
                         },
                     UserName = "Caleb@Something.com",
@@ -149,6 +149,7 @@ namespace GroupProjectStart.Models
 
                     new Car
                     {
+                        
                         Make = "Dodge",
                         Model = "Ram",
                         Year = 1992,
@@ -159,7 +160,8 @@ namespace GroupProjectStart.Models
                         Condition = "Okay",
                         CtyMpg = 19,
                         HwyMpg = 26,
-                        DateAdded = DateTime.Now,
+                        DateAdded= new DateTime(2016, 5, 3),
+
                         Miles = 215108,
                         Seats = 3,
                         Transmission = "Manual",
@@ -178,6 +180,7 @@ namespace GroupProjectStart.Models
                             Seats = 5,
                             HwyMpg = 31,
                             CtyMpg = 26,
+                            DateAdded= new DateTime(2016, 5, 3),
                             Reviews = new List<CarReview>
                             {
                                 new CarReview
@@ -260,6 +263,7 @@ namespace GroupProjectStart.Models
                             Seats = 5,
                             HwyMpg = 31,
                             CtyMpg = 26,
+                            DateAdded= new DateTime(2016, 5, 3),
                              Reviews = new List<CarReview>
                             {
                                 new CarReview
@@ -341,7 +345,7 @@ namespace GroupProjectStart.Models
                             Seats = 4,
                             HwyMpg = 34,
                             CtyMpg = 27,
-
+                            DateAdded= new DateTime(2016, 5, 3),
                             Condition = "Good",
                             Transmission = "Manual",
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
@@ -515,6 +519,7 @@ namespace GroupProjectStart.Models
                             Image = "https://www.filestackapi.com/api/file/kOE3yg4nRsCuf8Qn0gAo",
                             Miles = 100157,
                             Seats = 4,
+                            DateAdded= new DateTime(2016, 5, 3),
                             HwyMpg = 31,
                             CtyMpg = 25,
                             Reviews = new List<CarReview>
@@ -598,6 +603,7 @@ namespace GroupProjectStart.Models
                             Miles = 6800,
                             Seats = 5,
                             HwyMpg = 28,
+                            DateAdded= new DateTime(2016, 5, 3),
                             CtyMpg = 23,
                              Reviews = new List<CarReview>
                             {
@@ -679,6 +685,7 @@ namespace GroupProjectStart.Models
                             Miles = 1300,
                             Seats = 4,
                             HwyMpg = 21,
+                            DateAdded= new DateTime(2016, 5, 3),
                             CtyMpg = 14,
 
                             Condition = "Good",
@@ -763,7 +770,7 @@ namespace GroupProjectStart.Models
                             Seats = 4,
                             HwyMpg = 21,
                             CtyMpg = 15,
-
+                            DateAdded= new DateTime(2016, 5, 3),
                             Condition = "Excellent",
                             Transmission = "Manual",
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
@@ -935,6 +942,7 @@ namespace GroupProjectStart.Models
                         Image = "https://www.filestackapi.com/api/file/EdU1kfMaRhGz0OEs0RFT",
                         Door = 2,
                         Price = 155m,
+                        DateAdded= new DateTime(2016, 5, 3),
                         IsActive = false
                     },
 
@@ -946,6 +954,7 @@ namespace GroupProjectStart.Models
                         Image = "https://www.filestackapi.com/api/file/xJ8KjImR22slLbvyMlFw",
                         Door = 4,
                         Price = 130,
+                        DateAdded= new DateTime(2016, 5, 3),
                         IsActive = true
                     },
 
@@ -960,6 +969,7 @@ namespace GroupProjectStart.Models
                             Miles = 15000,
                             Seats = 5,
                             HwyMpg = 26,
+                            DateAdded= new DateTime(2016, 5, 3),
                             CtyMpg = 21,
                             Reviews = new List<CarReview>
                             {
@@ -1042,6 +1052,7 @@ namespace GroupProjectStart.Models
                             Miles = 7500,
                             Seats = 5,
                             HwyMpg = 32,
+                            DateAdded= new DateTime(2016, 5, 3),
                             CtyMpg = 28,
                              Reviews = new List<CarReview>
                             {
@@ -1124,7 +1135,7 @@ namespace GroupProjectStart.Models
                             Seats = 4,
                             HwyMpg = 21,
                             CtyMpg = 14,
-
+                            DateAdded= new DateTime(2016, 5, 3),
                             Condition = "Good",
                             Transmission = "Manual",
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
@@ -1207,7 +1218,7 @@ namespace GroupProjectStart.Models
                             Seats = 5,
                             HwyMpg = 57,
                             CtyMpg = 93,
-
+                            DateAdded= new DateTime(2016, 5, 3),
                             Condition = "Great",
                             Transmission = "Automatic",
                             Description = "Some random stuff, this is mainly for testing so dont take it seriously. BLAH BLAH hehehe what the hell.",
@@ -1316,6 +1327,7 @@ namespace GroupProjectStart.Models
                             Image = "https://www.filestackapi.com/api/file/lwkSy8JHTNyf9D5QgXsL",
                             Miles = 32000,
                             Seats = 5,
+                            DateAdded= new DateTime(2016, 5, 3),
                             HwyMpg = 25,
                             CtyMpg = 20,
                             Reviews = new List<CarReview>
@@ -1398,6 +1410,7 @@ namespace GroupProjectStart.Models
                             Image = "https://www.filestackapi.com/api/file/jXpehPlzQrKzcISOJkTi",
                             Miles = 47000,
                             Seats = 4,
+                            DateAdded= new DateTime(2016, 5, 3),
                             HwyMpg = 22,
                             CtyMpg = 18,
                              Reviews = new List<CarReview>
@@ -1478,6 +1491,7 @@ namespace GroupProjectStart.Models
                             Door = 2,
                             Image = "https://www.filestackapi.com/api/file/zwbJN4URb2nznKSy9EWR",
                             Miles = 600,
+                            DateAdded= new DateTime(2016, 5, 3),
                             Seats = 7,
                             HwyMpg = 0,
                             CtyMpg = 0,
@@ -1557,6 +1571,7 @@ namespace GroupProjectStart.Models
                             Make = "Kia",
                             Model = "Optima",
                             Price = 75.50m,
+                            DateAdded= new DateTime(2016, 5, 3),
                             Door = 4,
                             Image = "http://carphotos.cardomain.com/ride_images/3/3447/2761/33616380014_original.jpg",
                             Miles = 67500,
@@ -1710,6 +1725,7 @@ namespace GroupProjectStart.Models
                             Image = "https://www.filestackapi.com/api/file/u2TCZtdwQaGNTZrAD9Mo",
                             Miles = 46000,
                             Seats = 4,
+                            DateAdded= new DateTime(2016, 5, 3),
                             HwyMpg = 21,
                             CtyMpg = 19,
                             Reviews = new List<CarReview>
@@ -1789,6 +1805,7 @@ namespace GroupProjectStart.Models
                             Model = "Accord",
                             Price = 95m,
                             Door = 4,
+                            DateAdded= new DateTime(2016, 5, 3),
                             Image = "https://www.filestackapi.com/api/file/jWKp4ClSYWpV6S2Ula56",
                             Miles = 23000,
                             Seats = 5,
@@ -1870,6 +1887,7 @@ namespace GroupProjectStart.Models
                             Model = "MX-5 Miata",
                             Price = 199.99m,
                             Door = 2,
+                            DateAdded= new DateTime(2016, 5, 3),
                             Image = "https://www.filestackapi.com/api/file/7oWVVomgRIqhjTVpBD3u",
                             Miles = 600,
                             Seats = 7,
@@ -1953,6 +1971,7 @@ namespace GroupProjectStart.Models
                             Model = "SLR Mclaren",
                             Price = 349.50m,
                             Door = 2,
+                            DateAdded= new DateTime(2016, 5, 3),
                             Image = "http://www.motoringexposure.com/wp-content/gallery/wheelsandmore-mercedes-benz-slr-mclaren-707-edition/mercedes_felgen_slr_wheels_722.jpg",
                             Miles = 17000,
                             Seats = 2,

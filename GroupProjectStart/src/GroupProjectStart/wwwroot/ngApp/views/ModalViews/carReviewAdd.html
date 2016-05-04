@@ -1,16 +1,20 @@
-﻿<div class="rewivemodel">
-    <form id="contact_form" method="POST" enctype="multipart/form-data" ng-submit="controller.saveDriverReview()">
-        <div class="row">
-            <label for="name">Review Title</label>
-            <input id="name" class="input" name="name" type="text" value="" size="30" ng-model="controller.reviewToCreate.title" />
+﻿<div class="container">
+    <div class="col-lg-4 text-center">
+        <div class="rewivemodel">
+            <form id="contact_form" method="POST" enctype="multipart/form-data" ng-submit="controller.saveCarReview()">
+                <div class="text-center">
+                    <label for="name">Review Title</label><br />
+                    <input id="name" class="input" name="name" type="text" value="" size="60" ng-model="controller.reviewToCreate.title" /><br />
+                </div>
 
+                <div class="text-center">
+                    <label for="message">Your Review:</label><br />
+                    <textarea id="message" class="input" name="message" rows="7" cols="60" ng-model="controller.reviewToCreate.message" style="vertical-align:middle"></textarea><br />
+                </div>
+                <button type="submit" class="btn btn-success btn-block" style="margin-top: 2em; margin-left:8em">
+                    Submit
+                </button>
+            </form>
         </div>
-        <div class="row" style="margin-top: 2em">
-            <label for="message">Your Review:</label>
-            <textarea id="message" class="input" name="message" rows="7" cols="30" ng-model="controller.reviewToCreate.message" style="vertical-align:middle"></textarea><br />
-        </div>
-        <button type="submit" class="btn btn-success" style="margin-top: 2em; margin-left:8em">
-            Submit
-        </button>
-    </form>
+    </div>
 </div>

@@ -81,7 +81,6 @@
         }
 
         saveDriverReview() {
-            debugger;
             this.driverReviewService.saveDriverReview(this.id, this.reviewToCreate).then(() => {
                 this.ok();
                 this.$state.reload();

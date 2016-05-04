@@ -1,24 +1,18 @@
 ﻿<div class="row driverReviews">
     <div class="col-lg-12">
         <div class="col-lg-12">
-            <div class="col-lg-6">
-                <img class="img-responsive" ng-src="{{controller.car.image}}" style="height: 250px; width: 350px;" />
+            <div class="col-lg-3">
+                <img class="img-responsive" ng-src="{{controller.user.image}}" style="height: 150px; width: 150px;" />
             </div>
             <ul class="list-group table-responsive" id="userDetails">
-          
-                <li class="list-group-item">Details: {{controller.car.year}} {{controller.car.make}} {{controller.car.model}}</li>
-                <li class="list-group-item">Rating:  {{controller.car.averageRating}}/5</li>
-                <li class="list-group-item">Doors:  {{controller.car.door}}/5</li>
-                <li class="list-group-item">Price Per Day:  {{controller.car.price}}/5</li>
-                <li class="list-group-item">Condition:  {{controller.car.condition}}/5</li>
-
-
-
+                <li class="list-group-item">User Name: {{controller.user.displayName}}</li>
+                <li class="list-group-item">Name: {{controller.user.firstName}} {{controller.user.lastName}}</li>
+                <li class="list-group-item">Rating:  {{controller.user.averageRating}}/5</li>
 
             </ul>
         </div>
         <div class="col-lg-12">
-            <div ng-repeat="review in controller.car.reviews">
+            <div ng-repeat="review in controller.user.reviews">
                 <div class="col-lg-12 list-group reviewRepeat">
                     <div class="col-lg-8 list-group-item-info pull-left reviewRepeat">
                         {{review.title}} <hr id="reviewHr" />

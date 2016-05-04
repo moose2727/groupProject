@@ -1,189 +1,168 @@
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="GroupProjectStart">
-<head>
-    <title></title>
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="~/css/Style.css" rel="stylesheet" />
-    <base href="/" />
-    
-</head>
-<body>
 
+<div class="container">
     <!-- Start Promo -->
-    <section id="promo-1" class="content-block promo-1 min-height-100px bg-offwhite">
-        <div class="container">
-
-            <div class="row">
-                <form ng-submit="controller.register()">
-                    <div class="col-md-5">
-                        <div class="welcome">
-                            <h2>Take an adventure.</h2>
-                        </div>
-                        <div class="welcome-paragraph">
-                            <p></p>
-                        </div>
-                        <div class="row">
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input ng-model="controller.registerUser.firstName"  type="text" placeholder="First name" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input ng-model="controller.registerUser.lastName" type="text" placeholder="Last name" class="form-control">
-                                </div>
-                            </div>
-                            <div>
-                                <div class="form-group col-md-6">
-                                    <input ng-model="controller.registerUser.displayName" type="text" placeholder="User name" class="form-control">
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <input ng-model="controller.registerUser.email" type="text" placeholder="Email address" class="form-control">
-                                </div>
-                            </div>
-
-                        </div>
 
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input ng-model="controller.registerUser.password" type="text" placeholder="Password" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input ng-model="controller.registerUser.confirmPassword" type="text" placeholder="Confirm Password" class="form-control">
-                                </div>
-                            </div>
+    <div class="row" id="promo-1">
 
-                            <div class="row">
-                                <div class="col-md-11" style="margin-left:1em">
-                                    <div class="input-group form-group">
-                                        <span class="input-group-addon">
-                                            <input ng-model="controller.registerUser.isLoaner" type="checkbox" aria-label="...">
-                                        </span>
-
-                                        <label class="form-control">Check this if you wish to post your car!</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="form-group">
-
-                                        <input type="button" id="uploatBut" class="form-control" value="Upload Image" ng-click="controller.pickFile()" />
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-                        </div>
-
-                        <center><button type="submit" id="homeRegisterBut" class="btn btn-danger btn-lg btn-block">Register Now!</button></center>
-
-                    </div><!-- /.col -->
-
-                    <div class="col-md-6 col-md-offset-1">
-
-                        <div class="video-wrapper">
-                            <iframe width="560" height="315" src="https://youtu.be/ScMzIvxBSi4" frameborder="0" allowfullscreen=""></iframe>
-                        </div>
-
-                    </div><!-- /.col -->
-                </form>
-            </div><!-- /.row -->
-
-        </div>
-    </section>
-    <!--// END Promo -->
-    <!-- Start Features -->
-   
-               <!-- Start Row -->
-            <!--<div class="row">
-                <div>
-                    <div id="homeBottom" class="col-sm-4 col-xs-12 text-center">
-                        <div class="icon-outline">
-                            <span class="fa fa-send"></span>
-                        </div>
-                        <div class="feature-text">
-
-                            <img class="icon img-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoSmePx9y5B4tiLl4D71Jo4ckkIFloP_HOil4NLPncquqAXoWqzQ" width="300">
-                            <h3>Rent in <strong>Two Steps</strong>:</h3>
-                            <h3>Get behind the wheel easier!</h3>
-                            <p>Start building a personal business relationship with the owner and reduce your rental costs by cutting out the rental agency.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <div class="icon-outline">
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="feature-text">
-                            <img class="icon img-circle" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQuXnOK-YhaC8CW3vjIYvGI7Bk0Z_q1pel_uCzIaQBH-3XSWbCU" width="200">
-
-                            <h3><strong>Step 1:</strong></h3>
-                            <h3>Pick out the car that is right for you.</h3>
-                            <p>Review our exclusive list of privately owned vehicles to fit your personal needs.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <div class="icon-outline">
-                            <span class="fa fa-tags"></span>
-                        </div>
-                        <div class="feature-text">
-                            <img class="icon img-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQowmUrqSKLNdkOIQQlx6V76-_LH3lmw86xC0Za54HHc6cyuJFSbw" width="300">
-
-                            <h3><strong>Step 2:</strong></h3>
-                            <h3>Rent directly from the owner.</h3>
-                            <p>The owner will provide a level of service and care as if you are driving their personal vehicle...because you are.</p>
-                        </div>
-                    </div>
+        <div class="col-md-5">
+            <form ng-submit="controller.register()">
+                <div class="welcome">
+                    <h2>Take an adventure.</h2>
                 </div>
-            </div>-->
-            <!--// END Row -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12" style="background-color: #a52020; color: white;">
-                <div class="bottomHome">
-                    <div class="col-md-4 text-center">
-                        <img style="margin-top: 10px;" class="icon img-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoSmePx9y5B4tiLl4D71Jo4ckkIFloP_HOil4NLPncquqAXoWqzQ" width="300">
-                        <h3>Rent in <strong>Two Steps</strong>:</h3>
-                        <h3>Get behind the wheel easier!</h3>
-                        <p>Start building a personal business relationship with the owner and reduce your rental costs by cutting out the rental agency.</p>
+                <div class="welcome-paragraph">
+                    <p></p>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input ng-model="controller.registerUser.firstName" type="text" placeholder="First name" class="form-control">
+                        </div>
                     </div>
-                    <div class="col-md-4 text-center">
-                        <img style="margin-top: 10px;" class="icon img-circle" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQuXnOK-YhaC8CW3vjIYvGI7Bk0Z_q1pel_uCzIaQBH-3XSWbCU" width="200">
-                        <h3><strong>Step 1:</strong></h3>
-                        <h3>Pick out the car that is right for you.</h3>
-                        <p>Review our exclusive list of privately owned vehicles to fit your personal needs.</p>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input ng-model="controller.registerUser.lastName" type="text" placeholder="Last name" class="form-control">
+                        </div>
                     </div>
-                    <div class="col-md-4 text-center">
-                        <img style="margin-top: 10px;" class="icon img-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQowmUrqSKLNdkOIQQlx6V76-_LH3lmw86xC0Za54HHc6cyuJFSbw" width="300">
-                        <h3><strong>Step 2:</strong></h3>
-                        <h3>Rent directly from the owner.</h3>
-                        <p>The owner will provide a level of service and care as if you are driving their personal vehicle...because you are.</p>
+                    <div>
+                        <div class="form-group col-md-6">
+                            <input ng-model="controller.registerUser.displayName" type="text" placeholder="User name" class="form-control">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <input ng-model="controller.registerUser.email" type="text" placeholder="Email address" class="form-control">
+                        </div>
                     </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input ng-model="controller.registerUser.password" type="text" placeholder="Password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input ng-model="controller.registerUser.confirmPassword" type="text" placeholder="Confirm Password" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-11" style="margin-left:1em">
+                            <div class="input-group form-group">
+                                <span class="input-group-addon">
+                                    <input ng-model="controller.registerUser.isLoaner" type="checkbox" aria-label="...">
+                                </span>
+
+                                <label class="form-control">Check this if you wish to post your car!</label>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+
+                                <input type="button" id="uploatBut" class="form-control" value="Upload Image" ng-click="controller.pickFile()" />
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <center><button type="submit" id="homeRegisterBut" class="btn btn-danger btn-lg btn-block">Register Now!</button></center>
+            </form>
+        </div><!-- /.col -->
+        <div class="col-md-7"></div>
+
+    </div>
+</div><!-- /.row -->
+<!--// END Promo -->
+<!-- Start Features -->
+<!-- Start Row -->
+<!--<div class="row">
+    <div>
+        <div id="homeBottom" class="col-sm-4 col-xs-12 text-center">
+            <div class="icon-outline">
+                <span class="fa fa-send"></span>
+            </div>
+            <div class="feature-text">
+
+                <img class="icon img-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoSmePx9y5B4tiLl4D71Jo4ckkIFloP_HOil4NLPncquqAXoWqzQ" width="300">
+                <h3>Rent in <strong>Two Steps</strong>:</h3>
+                <h3>Get behind the wheel easier!</h3>
+                <p>Start building a personal business relationship with the owner and reduce your rental costs by cutting out the rental agency.</p>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-12 text-center">
+            <div class="icon-outline">
+                <span class="fa fa-star"></span>
+            </div>
+            <div class="feature-text">
+                <img class="icon img-circle" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQuXnOK-YhaC8CW3vjIYvGI7Bk0Z_q1pel_uCzIaQBH-3XSWbCU" width="200">
+
+                <h3><strong>Step 1:</strong></h3>
+                <h3>Pick out the car that is right for you.</h3>
+                <p>Review our exclusive list of privately owned vehicles to fit your personal needs.</p>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-12 text-center">
+            <div class="icon-outline">
+                <span class="fa fa-tags"></span>
+            </div>
+            <div class="feature-text">
+                <img class="icon img-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQowmUrqSKLNdkOIQQlx6V76-_LH3lmw86xC0Za54HHc6cyuJFSbw" width="300">
+
+                <h3><strong>Step 2:</strong></h3>
+                <h3>Rent directly from the owner.</h3>
+                <p>The owner will provide a level of service and care as if you are driving their personal vehicle...because you are.</p>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--// END Row -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12" style="background-color: #a52020; color: white;">
+            <div class="bottomHome">
+                <div class="col-md-4 text-center">
+                    <img style="margin-top: 10px;" class="icon img-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoSmePx9y5B4tiLl4D71Jo4ckkIFloP_HOil4NLPncquqAXoWqzQ" width="300">
+                    <h3>Rent in <strong>Two Steps</strong>:</h3>
+                    <h3>Get behind the wheel easier!</h3>
+                    <p>Start building a personal business relationship with the owner and reduce your rental costs by cutting out the rental agency.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img style="margin-top: 10px;" class="icon img-circle" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQuXnOK-YhaC8CW3vjIYvGI7Bk0Z_q1pel_uCzIaQBH-3XSWbCU" width="200">
+                    <h3><strong>Step 1:</strong></h3>
+                    <h3>Pick out the car that is right for you.</h3>
+                    <p>Review our exclusive list of privately owned vehicles to fit your personal needs.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img style="margin-top: 10px;" class="icon img-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQowmUrqSKLNdkOIQQlx6V76-_LH3lmw86xC0Za54HHc6cyuJFSbw" width="300">
+                    <h3><strong>Step 2:</strong></h3>
+                    <h3>Rent directly from the owner.</h3>
+                    <p>The owner will provide a level of service and care as if you are driving their personal vehicle...because you are.</p>
                 </div>
             </div>
         </div>
     </div>
-   
-    <!--// END Features -->
-    <!-- Start Copyright Bar -->
-    <div class="copyright-bar" style="background-color:  #2c2727; color: white;">
-        <div class="container text-center">
-            <div class="copyright-text">
-                <p>© COPYRIGHT 2016 - RENT MY CAR - ALL RIGHTS RESERVED.</p>
-                <p>Powered by Sentiment Calculator</p>
-            </div>
+ 
+</div>
+
+<!--// END Features -->
+<!-- Start Copyright Bar -->
+<!--<div class="container"  style="background-color:  #2c2727; color: white;">
+    <div class="text-center">
+        <div class="copyright-text">
+            <p>© COPYRIGHT 2016 - RENT MY CAR - ALL RIGHTS RESERVED.</p>
+            <p>Powered by Sentiment Calculator</p>
         </div>
     </div>
-    <!--// End Copyright Bar -->
-
-</body>
-</html> 
+</div>-->
+<!--// End Copyright Bar -->
