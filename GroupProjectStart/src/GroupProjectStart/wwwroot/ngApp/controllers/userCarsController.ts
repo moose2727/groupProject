@@ -12,7 +12,6 @@
 
         constructor(
             private userCarsService: GroupProjectStart.Services.UserCarsService, private $uibModal: ng.ui.bootstrap.IModalService) {
-            debugger;
             this.totalCars = 0;
             this.getCars();
 
@@ -23,7 +22,6 @@
 
         getCars() {
             this.userCarsService.getTotalCars().then((data) => {
-                debugger;
                 this.totalCars = data.length;
             });
 
@@ -70,6 +68,7 @@
         public car;
         public carReviews;
         public userReviews;
+        public errorMessages;
         //test
 
         constructor(

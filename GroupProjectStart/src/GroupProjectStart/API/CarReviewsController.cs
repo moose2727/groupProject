@@ -42,15 +42,19 @@ namespace GroupProjectStart.API
         //ADD CAR REVIEW
         public IActionResult Post(int id, [FromBody]CarReview review)
         {
-            if(review.Id == 0)
+            if (ModelState.IsValid)
             {
-                _repo.AddCarReview(id, review, HttpContext.ApplicationServices);
+                if (review.Id == 0)
+                {
+                    _repo.AddCarReview(id, review, HttpContext.ApplicationServices);
+                }
+                else
+                {
+                    _repo.UpdateReview(review);
+                }
+                return Ok(review);
             }
-            else
-            {
-                _repo.UpdateReview(review);
-            }
-            return Ok(review);
+            return HttpBadRequest(ModelState);
         }
 
         //// POST api/values
