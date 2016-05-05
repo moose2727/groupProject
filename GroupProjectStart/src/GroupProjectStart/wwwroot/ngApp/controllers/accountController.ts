@@ -28,6 +28,8 @@ namespace GroupProjectStart.Controllers {
             return this.accountService.getExternalLogins();
         }
 
+
+        //opens sign in modal
         public showSignInModal(x) {
 
             this.$uibModal.open({
@@ -42,6 +44,8 @@ namespace GroupProjectStart.Controllers {
             });
 
         }
+
+        //opens signup modal
         public showSignUpModal(x) {
 
             this.$uibModal.open({
@@ -111,6 +115,8 @@ namespace GroupProjectStart.Controllers {
             });
         }
 
+
+        //filepicker methods//
         public pickFile() {
             this.filepickerService.pick({
                 mimetype: 'image/*',
@@ -123,6 +129,8 @@ namespace GroupProjectStart.Controllers {
             this.$scope.$apply();
             this.image = file.url;
         }
+
+        //
 
         constructor(
             private accountService: GroupProjectStart.Services.AccountService,

@@ -18,6 +18,12 @@ namespace GroupProjectStart.Services
             this._repo = repo;
         }
 
+
+        /// <summary>
+        /// 
+        /// Gets a list of users
+        /// 
+        /// </summary>
         public List<UserVM> getUsers()
         {
             var users = _repo.Query<ApplicationUser>().Include(u => u.Reviews).ToList();
@@ -51,7 +57,11 @@ namespace GroupProjectStart.Services
         }
 
 
-
+        /// <summary>
+        /// 
+        /// Gets a single user
+        /// 
+        /// </summary>
         public UserVM getUser(string id)
         {
             var user = _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).Where(u => u.Id == id).FirstOrDefault();
@@ -77,6 +87,12 @@ namespace GroupProjectStart.Services
             return vm;
         }
 
+
+        /// <summary>
+        /// 
+        /// Updates a users info
+        /// 
+        /// </summary>
         public void UpdateUser(UserVM user)
         {
             var originalUser = _repo.Query<ApplicationUser>().Where(u => u.Id == user.Id).FirstOrDefault();

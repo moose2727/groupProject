@@ -10,6 +10,7 @@ namespace GroupProjectStart.Services {
             // store claims
             this.$window.sessionStorage.setItem('claims', JSON.stringify(userInfo.claims));
 
+            // store user id
             this.$window.sessionStorage.setItem('id', userInfo.userId);
         }
 

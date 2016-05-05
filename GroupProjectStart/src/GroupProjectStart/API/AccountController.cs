@@ -55,15 +55,25 @@ namespace GroupProjectStart.Controllers
             return vm;
         }
 
+
+        /// <summary>
+        /// 
+        /// Grants a user the isLoaner claim
+        /// 
+        /// </summary>
         [HttpPost("upgradeUser/{id}")]
         public async Task<IActionResult> UpgradeUser(string id)
         {
-            
             var user = await _userManager.FindByIdAsync(id);
             await _userManager.AddClaimAsync(user, new Claim("IsLoaner", "true"));
             return Ok();
         }
 
+        /// <summary>
+        /// 
+        /// Revokes the isLoaner claim from a user
+        /// 
+        /// </summary>
         [HttpPost("downgradeUser/{id}")]
         public async Task<IActionResult> DowngradeUser(string id)
         {

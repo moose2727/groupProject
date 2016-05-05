@@ -10,15 +10,18 @@
                 }
             });
         }
+
+        //gets all users
         public getUsers() {
             return this.profileResource.query();
         }
 
-        public getUser(id) {
-           
+        //gets single user
+        public getUser(id) {  
             return this.profileResource.get({ id: id });
         }
 
+        //updates user info
         public updateUser(userToUpdate) {
             return this.profileResource.save(userToUpdate);
         }

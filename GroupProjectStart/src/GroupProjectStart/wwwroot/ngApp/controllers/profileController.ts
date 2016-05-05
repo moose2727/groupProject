@@ -30,6 +30,7 @@
             this.getUser();
         }
 
+        //opens modal to become loaner
         public becomeLoanerModal(id) {
             if (!this.accountService.getClaim('isLoaner')) {
                 this.accountService.upgradeUser(this.user.id);
@@ -45,6 +46,7 @@
             });
         }
 
+        //opens modal to remove loaner
         public removeLoanerModal(id) {
             this.accountService.downgradeUser(this.user.id);
             this.$uibModal.open({
@@ -58,6 +60,7 @@
             });
         }
 
+        //opens modal to edit profile
         public editProfileModal(id) {
             this.$uibModal.open({
                 templateUrl: 'ngApp/views/modalViews/editProfile.html',
@@ -70,6 +73,7 @@
             });
         }
 
+        //opens modal to delete car
         public removeCarModal(id) {
             this.$uibModal.open({
                 templateUrl: 'ngApp/views/modalViews/deleteCar.html',
@@ -82,6 +86,7 @@
             });
         }
 
+        //opens modal to edit car
         public editCarModal(id) {
             this.$uibModal.open({
                 templateUrl: 'ngApp/views/modalViews/carEdit.html',
@@ -94,6 +99,7 @@
             });
         }
 
+        //saves a car to the database
         saveCar() {
             this.carToAdd.applicationUserId = this.user.id;
             this.carToAdd.image = this.image
@@ -104,6 +110,7 @@
             });
         }
 
+        //filepicker methods//
         public pickFile() {
             this.filepickerService.pick({
                 mimetype: 'image/*',
@@ -115,14 +122,16 @@
             this.$scope.$apply();
             this.image = file.url;
         }
-        
+        //
 
+
+        //gets a single user
         public getUser() {
             let userId = this.$stateParams['id']
             this.user = this.profileService.getUser(userId);
         }
 
-
+        //changes isActive bool to true
         public activateCar(id) {
             this.carService.getCar(id).$promise.then((car) => {
                 car.isActive = true;
@@ -132,72 +141,18 @@
             });
         }
 
-        
-
+        //changes isActive bool to false
         public deactivateCar(id) {
-            //debugger;
-            //let car = this.carService.getCar(id);
-            //console.log(car);
             this.carService.getCar(id).$promise.then((car) => {
                 car.isActive = false;
                 this.carService.saveCar(this.user.id, car).then((data) => {
                     this.$state.reload();
                 })
             });
-            //console.log(this.car)
-
-            //this.getCar(id).then(() => {
-            //    this.$state.reload();
-            //})
-
-            //this.carService.saveCar(this.car).then((data) => {
-            //    this.$state.reload();
-            //})
         }
-
-
-        //public isLoanerFalse() {
-        //    if (this.user.isLoaner == true) {
-        //        this.user.isLoaner = false;
-        //        this.profileService.updateUser(this.user).$promise.then(() => {
-        //            this.$state.reload();
-        //        });
-        //    }
-        //}
-
-        //public isLoanerTrue() {
-        //     if (this.user.isLoaner == false) {
-        //        this.user.isLoaner = true;
-        //        this.profileService.updateUser(this.user).$promise.then(() => {
-        //            this.$state.reload();
-        //        });
-        //    }
-        //}
-
-        //public upgradeUser() {
-        //    debugger;
-        //    //this.user.isLoaner = true;
-        //    //this.profileService.updateUser(this.user);
-        //    if (!this.accountService.getClaim('isLoaner')) {
-        //        this.accountService.upgradeUser(this.user.id);
-        //    }
-        //    //this.isLoanerTrue();
-
-        //}
-
-        //public downgradeUser() {
-        //    debugger;
-        //    //this.user.isLoaner = false;
-        //    //this.profileService.updateUser(this.user);
-        //    if (this.accountService.getClaim('isLoaner')) {
-        //        this.accountService.downgradeUser(this.user.id).then(() => {
-        //            this.$state.reload();
-        //        });
-        //    }
-        //    // this.isLoanerFalse();
-
-        //}
     }
+
+
 
     export class EditProfileController {
 
@@ -215,12 +170,14 @@
 
         }
 
+        //updates users info
         editUser() {
             this.profileService.updateUser(this.user)
             this.$state.reload();
             this.close();
         }
 
+        //closes modal
         close() {
             this.$uibModalInstance.close()
         }
