@@ -21,9 +21,17 @@
     overflow: hidden;
 }
 
+#carPaging {
+    background-color:  #2c2727;
+}
+
+uib-pagination {
+    background-color:  #2c2727;
+}
+
 #userCarBody {
-    
-    background-color: #a52020;
+    color: white;
+    background-color:  #2c2727;
    
 }
 
