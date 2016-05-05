@@ -27,13 +27,14 @@ namespace GroupProjectStart.Services
 
         public List<ApplicationUser> GetPageCars(int pagenum)
         {
-            var cars = _repo.Query<ApplicationUser>().Skip(2 * (pagenum - 1)).Take(2).Include(u => u.CarsToLoan).ToList();
+            var cars = _repo.Query<ApplicationUser>().Where(u => u.CarsToLoan.Count != 0).Skip(2 * (pagenum - 1)).Take(2).Include(u => u.CarsToLoan).ToList();
+          
             return cars;
         }
 
         public List<ApplicationUser> getAllUsers()
         {
-            var users = _repo.Query<ApplicationUser>().ToList();
+            var users = _repo.Query<ApplicationUser>().Where(u => u.CarsToLoan.Count != 0).ToList();
             return users;
         }
 
@@ -41,7 +42,6 @@ namespace GroupProjectStart.Services
 
         public ApplicationUser getUserCar(string id)
         {
-
             var user = _repo.Query<ApplicationUser>().Include(u => u.CarsToLoan).Include(u => u.Reviews).ThenInclude(r => r.SentimentEntities).Where(u => u.Id == id).FirstOrDefault();
        
             return user;
